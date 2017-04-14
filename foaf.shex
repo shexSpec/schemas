@@ -1,0 +1,37 @@
+PREFIX : <http://xmlns.com/foaf/0.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+BASE <http://xmlns.com/foaf/0.1/>
+
+<Agent> {
+  :gender .*;
+  :yahooChatID .*;
+  :account .*;
+  :birthday .*;
+  :icqChatID .*;
+  :aimChatID .*;
+  :jabberID .*;
+  :made .*;
+  :mbox .*;
+  :interest .*;
+  :tipjar .*;
+  :skypeID .*;
+  :topic_interest .*;
+  :age .*;
+  :mbox_sha1sum .*;
+  :status .*;
+  :msnChatID .*;
+  :openid .*;
+  :holdsAccount .*;
+  :weblog .*;
+} AND (@<Group> OR @<Person> OR @<Organization>)
+  // rdfs:seeAlso :maker, :member
+
+<Document> {
+  :topic .*;
+  :primaryTopic .*;
+  :sha1 .*;
+} AND (@<Image> OR @<PersonalProfileDocument>)
+  AND NOT (@<Project> OR @<Organization>)
+  // rdfs:seeAlso :workInfoHomepage, :workplaceHomepage, :page, :accountServiceHomepage, :openid, :tipjar, :schoolHomepage, :publications, :isPrimaryTopicOf, :interest, :homepage, :weblog
+
+
