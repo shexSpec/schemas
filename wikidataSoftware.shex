@@ -47,7 +47,7 @@ start = @<wikidata-software>
 #TODO I need to figure out how to add P3680 statement supported by and a list of trusted accounts
 
 <P275_license> {
-	ps:P275 IRI;
+	ps:P275 IRI@<license>;
 }
 
 <P348_software_version> {
@@ -55,26 +55,35 @@ start = @<wikidata-software>
 }
 
 <P856_official_website> {
-	ps:P856 IRI;
+	ps:P856 LITERAL;
 }
-# I'm not sure if IRI is correct for official website
 
 <P178_developer> {
 	ps:P178 IRI;
 }
 
 <P1072_readable_file_format> {
-	ps:P1072 IRI;
+	ps:P1072 IRI@<file_format>;
 }
 
 <P1073_writable_file_format> {
-	ps:1073 IRI;
+	ps:1073 IRI@<file_format>;
 }
 
 <P306_operating_system>{
-	ps:P306 IRI;
+	ps:P306 IRI@<operating_system>;
 }
 
 <P2749_PRONOM_software_id> {
 	ps:P2749 LITERAL;
+}
+
+<license> {
+	ps:P279 [wd:Q79719];
+}
+<file_format> {
+	ps:P31 [wd:Q235557];
+}
+<operating_system> {
+	ps:P31 [wd:Q9135];
 }
