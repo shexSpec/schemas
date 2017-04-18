@@ -1,0 +1,39 @@
+#Shape Expression for software on Wikidata
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+start = <wikidata-software>
+
+<wikidata-software> {
+	wdt:P31	wd:Q7397 ;
+	
+	# P275 = license
+	p:275
+	
+	# P348 = software version
+	p:348
+	
+	# P856 = official website
+	P:856
+	
+	# P178 = developer
+	p:178
+  
+  # P1072 = readable file format
+  p:1072
+  
+  # P1073 = writable file format
+  p:1073
+  
+  # P306 = operating system
+  p:306
+  
+  # P2749 = PRONOM software identifier
+  p:2749
+}
