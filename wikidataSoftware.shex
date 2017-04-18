@@ -53,3 +53,28 @@ start = @<wikidata-software>
 <P348_software_version> {
 	ps:P348 LITERAL;
 }
+
+<P856_official_website> {
+	ps:P856 IRI;
+}
+# I'm not sure if IRI is correct for official website
+
+<P178_developer> {
+	ps:P178 IRI;
+}
+
+<P1072_readable_file_format> {
+	ps:P1072 IRI;
+}
+
+<P1073_writable_file_format> {
+	ps:1073 IRI;
+}
+
+<P306_operating_system>{
+	ps:P306 IRI;
+}
+
+<P2749_PRONOM_software_id> {
+	ps:P2749 LITERAL;
+}
