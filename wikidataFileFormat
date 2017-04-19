@@ -11,7 +11,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 # Shape expression for Wikidata statements related to file formats
 
 <P31_instance_of_file_format> {
-  ps:P31 IRI@<file_format>;
+  ps:P31 [wd:Q235557];
 }
 
 <P275_license> {
@@ -35,6 +35,15 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 }
 
 <P1365_replaces> {
-  ps:P1365 IRI@
+  ps:P1365 IRI@<file_format>;
+}
   
 # for replaces- maybe I need the file format and the version?
+
+<P1366_replaced_by> {
+  ps:P1366 IRI@<file_format>;
+}
+
+<license> {
+	ps:P279 [wd:Q79719];
+}
