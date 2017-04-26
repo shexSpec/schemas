@@ -27,10 +27,18 @@ Add the following qualifiers to your reference so the source can be tracked down
 }
 
 <P813_retrieved> {
-        ps:813
+        ps:813 LITERAL;
 }
 
 #how do i indicate that retrieved should always be used with reference url?
+
+<P1065_archive_url> {
+         ps:1065 LITERAL;
+}
+
+
+
+
 #journal
 
 #book
