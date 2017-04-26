@@ -11,14 +11,6 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 start = @<wikidata-software>
 
 #web
-reference URL (P854) and link it to the URL of the webpage
-Add the following qualifiers to your reference so the source can be tracked down if the URL changes:
-
-    publication date (P577) → the publication date of the webpage. If no publication date is provided use retrieved (P813), the date when the data was taken from the web page.
-    title (P1476) → title of the webpage
-    archive URL (P1065) → archived webpage
-    archive date (P2960) → date of archived webpage
-    language (P2439) → language of the webpage
     
 # Shape Expression for Wikidata references for software items
 
@@ -36,6 +28,9 @@ Add the following qualifiers to your reference so the source can be tracked down
          ps:1065 LITERAL;
 }
 
+<P2960_archive_date> {
+        ps:2960 LITERAL;
+}
 
 
 
