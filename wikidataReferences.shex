@@ -1,0 +1,39 @@
+#Shape Expression for references on Wikidata
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+start = @<wikidata-software>
+
+#web
+reference URL (P854) and link it to the URL of the webpage
+Add the following qualifiers to your reference so the source can be tracked down if the URL changes:
+
+    publication date (P577) → the publication date of the webpage. If no publication date is provided use retrieved (P813), the date when the data was taken from the web page.
+    title (P1476) → title of the webpage
+    archive URL (P1065) → archived webpage
+    archive date (P2960) → date of archived webpage
+    language (P2439) → language of the webpage
+    
+# Shape Expression for Wikidata references for software items
+
+<P854_referenece_url> {
+        ps:P854 LITERAL;
+}
+
+<P813_retrieved> {
+        ps:813
+}
+
+#how do i indicate that retrieved should always be used with reference url?
+#journal
+
+#book
+
+#PRONOM
+
