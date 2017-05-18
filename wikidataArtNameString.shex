@@ -8,7 +8,13 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
-start = <wikidata-journal>
+start = <wikicite> 
+
+<wikicite> {
+   p:P31 @<P31_instance_of_scientific_article> ;
+   p:P50 @<P50_author_node> ;
+   p:P2093 @<P2093_author_name_string> .
+}
 
 #<wikidata-journal> {
 #	wdt:P31	wd:Q13442814 ;
