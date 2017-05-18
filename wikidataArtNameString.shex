@@ -1,0 +1,44 @@
+#Shape Expression for software on Wikidata
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+start = <wikidata-journal>
+
+#<wikidata-journal> {
+#	wdt:P31	wd:Q13442814 ;
+#	
+#	 P1476 = title
+#	p:1476
+#	
+#	 P1680 = subtitle
+#	p:1680
+#	
+#	 P2093 = author name string
+#	P:2093
+#	
+#	 P50 = author
+#	p:50
+# 
+# 	P577 = publication date
+# 	p:577
+# 
+# 	P364 = original language of work
+# 	p:364
+# 
+# 	P1433 = published in
+# 	p:1433
+# 
+# 	P356 = DOI
+# 	p:356
+#}
+
+# Shape expression for Wikidata journal article
+<P31_instance_of_scientific_article> {
+	ps:P31 [wd:Q13442814];
+}
