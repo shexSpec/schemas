@@ -11,9 +11,11 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 start = <wikicite> 
 
 <wikicite> {
-   p:P31 @<P31_instance_of_scientific_article> ;
-   p:P50 @<P50_author_node> ;
-   p:P2093 @<P2093_author_name_string> .
+   p:P31 @<P31_instance_of_scientific_article>+ ;
+   
+   # p XOR q   = ( p AND NOT q )  OR ( NOT p AND q )   
+   ((p:P50 @<P50_author_node>+ AND NOT p:P2093 @<P2093_author_name_string>+) OR 
+    (NOT p:P50 @<P50_author_node>+ AND p:P2093 @<P2093_author_name_string>+))+ .
 }
 
 #<wikidata-journal> {
@@ -47,4 +49,10 @@ start = <wikicite>
 # Shape expression for Wikidata journal article
 <P31_instance_of_scientific_article> {
 	ps:P31 [wd:Q13442814];
+	pr:P249 @<reference> ;
+}
+
+<P50_instance_of_scientific_article> {
+	ps:P50 [wd:Q13442814];
+	pr:P249 @<reference> ;
 }
