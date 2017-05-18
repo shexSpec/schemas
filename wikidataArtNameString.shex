@@ -1,4 +1,4 @@
-#Shape Expression for software on Wikidata
+#Shape Expression for journal articles on Wikidata
 
 #BASE <http://base.example/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
