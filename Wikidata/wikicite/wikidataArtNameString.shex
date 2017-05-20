@@ -11,40 +11,23 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 start = <wikicite> 
 
 <wikicite> {
-   p:P31 @<P31_instance_of_scientific_article>+ ;
-   
-   # p XOR q   = ( p AND NOT q )  OR ( NOT p AND q )   
-   ((p:P50 @<P50_author_node>+ AND NOT p:P2093 @<P2093_author_name_string>+) OR 
-    (NOT p:P50 @<P50_author_node>+ AND p:P2093 @<P2093_author_name_string>+))+ .
-}
+   # STATEMENTS
+   p:P31 @<P31_instance_of_scientific_article> ;
+   p:P1476 @<P1476_title> ;
+   p:P1680 @<P1680_subtitle> ;
+   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+
+   p:P577 @<P577_publication_date> ;
+   p:P364 @<P364_original_language_of_work> ;
+   p:P1433 @<P1433_published_in> ;
+   p:P2860 @<P2860_cites> ;
 
-#<wikidata-journal> {
-#	wdt:P31	wd:Q13442814 ;
-#	
-#	 P1476 = title
-#	p:1476
-#	
-#	 P1680 = subtitle
-#	p:1680
-#	
-#	 P2093 = author name string
-#	P:2093
-#	
-#	 P50 = author
-#	p:50
-# 
-# 	P577 = publication date
-# 	p:577
-# 
-# 	P364 = original language of work
-# 	p:364
-# 
-# 	P1433 = published in
-# 	p:1433
-# 
-# 	P356 = DOI
-# 	p:356
-#}
+   # IDENTIFIERS
+   p:P365 @<P365_DOI>*
+   p:P698 @<P698_Pubmed_ID>{0,1}
+   p:P932 @<P932_PMCID>{0,1}  
+   
+   #SITELINKS 
+}
 
 # Shape expression for Wikidata journal article
 <P31_instance_of_scientific_article> {
@@ -53,6 +36,6 @@ start = <wikicite>
 }
 
 <P50_instance_of_scientific_article> {
-	ps:P50 [wd:Q13442814];
+	ps:P50 [wd:Q13442814]; # More article types needed
 	pr:P249 @<reference> ;
 }
