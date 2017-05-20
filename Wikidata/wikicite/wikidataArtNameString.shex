@@ -1,6 +1,5 @@
 #Shape Expression for journal articles on Wikidata
 
-#BASE <http://base.example/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX wd: <https://www.wikidata.org/wiki/>
@@ -15,16 +14,16 @@ start = <wikicite>
    p:P31 @<P31_instance_of_scientific_article> ;
    p:P1476 @<P1476_title> ;
    p:P1680 @<P1680_subtitle> ;
-   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+
+   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
    p:P577 @<P577_publication_date> ;
    p:P364 @<P364_original_language_of_work> ;
    p:P1433 @<P1433_published_in> ;
    p:P2860 @<P2860_cites> ;
 
    # IDENTIFIERS
-   p:P365 @<P365_DOI>*
-   p:P698 @<P698_Pubmed_ID>{0,1}
-   p:P932 @<P932_PMCID>{0,1}  
+   p:P365 @<P365_DOI>* ;
+   p:P698 @<P698_Pubmed_ID>{0,1} ;
+   p:P932 @<P932_PMCID>{0,1} ;   
    
    #SITELINKS 
 }
@@ -32,10 +31,17 @@ start = <wikicite>
 # Shape expression for Wikidata journal article
 <P31_instance_of_scientific_article> {
 	ps:P31 [wd:Q13442814];
-	pr:P249 @<reference> ;
+	prov:wasDerivedFrom @<reference> ;
 }
 
-<P50_instance_of_scientific_article> {
-	ps:P50 [wd:Q13442814]; # More article types needed
-	pr:P249 @<reference> ;
+<P50_author> {
+	ps:P50 IRI; 
+	prov:wasDerivedFrom @<reference> ;
 }
+
+<P1476_title> {
+	ps:P1476 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1680_subtitle>
