@@ -39,9 +39,53 @@ start = <wikicite>
 	prov:wasDerivedFrom @<reference> ;
 }
 
+<P2093_author_name_string> {
+	ps:P2093	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
 <P1476_title> {
 	ps:P1476 LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P1680_subtitle>
+<P1680_subtitle> {
+	ps:P1680 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P577_publication_date> {
+	ps:P577	xsd:datetime ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P364_original_language_of_work> {
+ 	ps:P364	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1433_published_in> {
+	ps:P1433	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2860_cites> {
+	ps:P2860	@<wikicite> ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P365_DOI> {
+	ps:P365	LITERAL;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P698_Pubmed_ID> {
+	ps:P698 [0-9]+ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P932_PMCID> {
+	ps:P932	[0-9]+ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
