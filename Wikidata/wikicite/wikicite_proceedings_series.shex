@@ -1,0 +1,19 @@
+# Proceedings series
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+start = <wikicite_proceedings> 
+
+<wikicite_proceedings_series>  {
+   # STATEMENTS
+   p:P31 @<P31_instance_of_proceedings_series> ;
+  
+   # IDENTIFIERS
+   
+   #SITELINKS 
+}
