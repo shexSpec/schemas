@@ -1,0 +1,33 @@
+# Shape Expression for Funders on Wikidata
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+start = <wikicite-funder> 
+
+<wikicite-funder> {
+   # STATEMENTS
+   p:P31 @<P31_instance_of_funder> ;
+
+   # IDENTIFIERS
+   p:P3153 @<P3153_Crossref_funder_ID>+ ;
+     
+   #SITELINKS 
+}
+
+<P31_instance_of_funder> {
+	ps:P31 [wd:Q650241 #financial institute 
+			wd:Q382996 #Incentive program
+			#......
+			];
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P3153_Crossref_funder_ID> {
+	ps:P3153 Literal; 
+	prov:wasDerivedFrom @<reference> ;
+}
