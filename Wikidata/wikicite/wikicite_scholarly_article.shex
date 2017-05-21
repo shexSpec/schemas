@@ -19,11 +19,40 @@ start = <wikicite>
    p:P364 @<P364_original_language_of_work> ;
    p:P1433 @<P1433_published_in> ;
    p:P2860 @<P2860_cites> ;
-
+   p:P98 @<P98_editor> ;
+   
+   p:P478 @<P478_volume> ;
+   p:P433 @<P433_issue> ;
+   p:P304 @<P304_pages> ;
+   p:P1104 @<P1104_number_of_pages> ;
+   p:P275 @<P275_license> ;
+   p:P953 @<P953_full_work_available_at> ;
+   p:P407 @<P407_language_of_work_or_name> ;
+   p:P364 @<P364_original_language_of_work> ;
+   p:P921 @<P921_main_subject> ;
+   p:P373 @<P373_commons_category> ;
+   p:P859 @<P859_sponsor> ;
+   p:P1352 @<P1352_data_available_at> ;
+   p:P2507 @<corrigendum_erratum> ;
+   p:P854 	@<P854_reference_URL> ; # Shouldn't this be a reference property?  
    # IDENTIFIERS
    p:P365 @<P365_DOI>* ;
    p:P698 @<P698_Pubmed_ID>{0,1} ;
-   p:P932 @<P932_PMCID>{0,1} ;   
+   p:P932 @<P932_PMCID>{0,1} ; 
+   
+   p:P2322	@<P2322_article_ID> ;
+   p:P818	@<P818_arXiv_ID> ;
+   p:P819	@<P819_bibcode> ;
+   p:P2007	@<P2007_ZooBank_publication_ID> ;
+   p:P888	@<P888_JSTOR_article_ID> ;
+   p:P893	@<P893_Social_Science_Research_Network_ID> ;
+   p:P2880	@<P2880_NIOSHTIC-2_ID> ;
+   p:P1610	@<P1610_Dialnet_article> ;
+   p:P3181	@<P3181_OpenCitations_bibliographic_resource_ID> ;
+   p:P3332	@<P3332_ACM_Digital_Library_citation_ID> ;
+   p:P3431	@<P3431_Publons_Publication_ID> ;
+   
+     
    
    #SITELINKS 
 }

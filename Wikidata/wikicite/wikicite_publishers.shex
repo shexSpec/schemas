@@ -5,16 +5,48 @@ PREFIX wd: <https://www.wikidata.org/wiki/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX 
 
 start = <wikicite_publishers> 
 
 <wikicite_publishers>  {
    # STATEMENTS
-   p:P31 @<P31_instance_of_proceedings> ;
+   p:P31 @<P31_instance_of_publishers> ;
+   p:P1662 @<P1661_DOI_Prefix> ;
+   p:P159 @<P159_headquarters_location> ;
+   p:P101 @<P101_field_of_work> ;
+   p:P373 @<P373_Commons_category> ;
   
    # IDENTIFIERS
    
    #SITELINKS 
+}
+
+## Shapes
+<P31_instance_of_publishers> {
+	ps:P31	[
+		wd:Q2085381 # publisher
+	]
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1661_DOI_Prefix> {
+	ps:P1661	LITERAL ; # Might be replace by a proper REGEX for a DOI prefix
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P159_headquarters_location> {
+	ps:P159	@<location> ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P373_Commons_category> {
+	ps:P373
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<location> {
+	ps:P625	schema:location ;
 }
 
 ## REFERENCES
