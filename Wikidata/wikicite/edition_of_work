@@ -1,0 +1,81 @@
+#Shape Expression for editions of work on Wikidata
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+start = <wikicite> 
+
+<wikicite> {
+   # STATEMENTS
+   p:P31 @<P31_instance_of_book> ;
+   p:P1476 @<P1476_title> ;
+   p:P1680 @<P1680_subtitle> ;
+   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
+   p:P304 @<P304_pages> ;
+   p:P577 @<P577_publication_date> ;
+   p:P364 @<P364_original_language_of_work> ;
+   p:629 @<P629_edition_or_translation_of> ;
+   p:P98 @<P98_editor> ;
+   
+   # IDENTIFIERS
+p:1844 @<P1844_Hathi_Trust_ID>* ;
+p:648 @<P648_Open_Library_ID> ;
+
+# Shape expression for Wikidata edition of a work
+<P31_instance_of_book> {
+	ps:P31 [wd:Q571];
+	prov:wasDerivedFrom @<reference> ;
+}
+
+
+<P1476_title> {
+	ps:P1476 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1680_subtitle> {
+	ps:P1680 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P50_author> {
+	ps:P50 IRI; 
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2093_author_name_string> {
+	ps:P2093	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P304_pages> {
+	ps:P304	LITERAL;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P577_publication_date> {
+	ps:P577	xsd:datetime ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P364_original_language_of_work> {
+	ps:P364	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P364_original_language_of_work> {
+ 	ps:P364	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P629_edition_or_translation_of>  {
+	ps:P629	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+
+
