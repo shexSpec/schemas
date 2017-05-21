@@ -1,0 +1,82 @@
+{
+  "type": "Schema",
+  "start": {
+    "type": "NodeConstraint",
+    "datatype": "file:///Users/andra/projects/schemas/Wikidata/wikicite/wikicite-funder"
+  },
+  "shapes": [
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P31",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P31_instance_of_funder"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P3153",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P3153_Crossref_funder_ID",
+            "min": 1,
+            "max": "INF"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/wikicite-funder"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P31",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "values": [
+                "https://www.wikidata.org/wiki/Q650241",
+                "https://www.wikidata.org/wiki/Q382996"
+              ]
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P31_instance_of_funder"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P3153",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "nodeKind": "literal"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P3153_Crossref_funder_ID"
+    },
+    {
+      "type": "Shape",
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+    }
+  ],
+  "@context": "https://shexspec.github.io/context.jsonld"
+}

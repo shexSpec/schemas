@@ -6,6 +6,7 @@ PREFIX wd: <https://www.wikidata.org/wiki/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
 
 start = <wikicite> 
 
@@ -82,7 +83,7 @@ start = <wikicite>
 }
 
 <P365_DOI> {
-	ps:P365	^(doi\:)?\d{2}\.\d{4}.*$ ;
+	ps:P365 /^doi\:)?\d{2}\.\d{4}.*$/ ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -117,7 +118,7 @@ start = <wikicite>
 }
 
 <P698_Pubmed_ID> {
-	ps:P698 ^\d+$ ;
+	ps:P698 /^\d+$/ ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
