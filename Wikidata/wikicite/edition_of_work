@@ -15,9 +15,9 @@ start = <wikicite>
    p:P1476 @<P1476_title> ;
    p:P1680 @<P1680_subtitle> ;
    (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
+   p:P304 @<P304_pages> ;
    p:P577 @<P577_publication_date> ;
    p:P364 @<P364_original_language_of_work> ;
-   p:P1433 @<P1433_published_in> ;
    p:629 @<P629_edition_or_translation_of> ;
    p:P98 @<P98_editor> ;
    
@@ -31,14 +31,34 @@ p:648 @<P648_Open_Library_ID> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
+
+<P1476_title> {
+	ps:P1476 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1680_subtitle> {
+	ps:P1680 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
 <P50_author> {
 	ps:P50 IRI; 
 	prov:wasDerivedFrom @<reference> ;
 }
 
+<P2093_author_name_string> {
+	ps:P2093	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
 
 <P304_pages> {
 	ps:P304	LITERAL;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P577_publication_date> {
+	ps:P577	xsd:datetime ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -52,13 +72,10 @@ p:648 @<P648_Open_Library_ID> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P407_language_of_work_or_name>  {
-	ps:P407	IRI ;
+<P629_edition_or_translation_of>  {
+	ps:P629	IRI ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
 
-<P577_publication_date> {
-	ps:P577	xsd:datetime ;
-	prov:wasDerivedFrom @<reference> ;
-}
+
