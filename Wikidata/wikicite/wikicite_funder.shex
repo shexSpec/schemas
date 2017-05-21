@@ -31,3 +31,7 @@ start = <wikicite-funder>
 	ps:P3153 Literal; 
 	prov:wasDerivedFrom @<reference> ;
 }
+
+## REFERENCES
+
+<reference> {}

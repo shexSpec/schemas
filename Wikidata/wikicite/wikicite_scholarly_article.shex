@@ -89,3 +89,7 @@ start = <wikicite>
 	prov:wasDerivedFrom @<reference> ;
 }
 
+## REFERENCES
+
+<reference> {}
+
