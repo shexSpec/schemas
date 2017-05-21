@@ -33,7 +33,7 @@ start = <wikicite>
    p:P373 @<P373_commons_category> ;
    p:P859 @<P859_sponsor> ;
    p:P1352 @<P1352_data_available_at> ;
-   p:P2507 @<corrigendum_erratum> ;
+   p:P2507 @<P2507_corrigendum_erratum> ;
    p:P854 	@<P854_reference_URL> ; # Shouldn't this be a reference property?  
    # IDENTIFIERS
    p:P365 @<P365_DOI>* ;
@@ -51,9 +51,7 @@ start = <wikicite>
    p:P3181	@<P3181_OpenCitations_bibliographic_resource_ID> ;
    p:P3332	@<P3332_ACM_Digital_Library_citation_ID> ;
    p:P3431	@<P3431_Publons_Publication_ID> ;
-   
-     
-   
+      
    #SITELINKS 
 }
 
@@ -68,23 +66,28 @@ start = <wikicite>
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P2093_author_name_string> {
-	ps:P2093	LITERAL ;
+<P275_license> {
+	ps:P275	@<license> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P1476_title> {
-	ps:P1476 LITERAL ;
+<P304_pages> {
+	ps:P304	LITERAL;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P1680_subtitle> {
-	ps:P1680 LITERAL ;
+<P364_original_language_of_work> {
+	ps:P364	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P577_publication_date> {
-	ps:P577	xsd:datetime ;
+<P365_DOI> {
+	ps:P365	^(doi\:)?\d{2}\.\d{4}.*$ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P373_commons_category> {
+	ps:P373	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -93,8 +96,123 @@ start = <wikicite>
 	prov:wasDerivedFrom @<reference> ;
 }
 
+<P407_language_of_work_or_name>  {
+	ps:P407	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P433_issue> {
+	ps:433	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P478_volume> {
+	ps:P478	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P577_publication_date> {
+	ps:P577	xsd:datetime ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P698_Pubmed_ID> {
+	ps:P698 ^\d+$ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P819_bibcode> {
+	ps:P819	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P854_reference_URL> {
+	ps:P854	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P859_sponsor> {
+	ps:P859	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P818_arXiv_ID> {
+	ps:P818	^(\w+(\-\w+)?(\.\w+)?/)?\d{4,7}(\.\d{4}(v\d+)?)?$ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P888_JSTOR_article_ID> {
+	ps:P888	^\d+$ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P893_Social_Science_Research_Network_ID> {
+	ps:P893	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P921_main_subject> {
+	ps:P921	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P932_PMCID> {
+	ps:P932	PMC\d+ ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P953_full_work_available_at> {
+	ps:P953	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1104_number_of_pages> {
+	ps:P1104	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1352_data_available_at> {
+	ps:P1352	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
 <P1433_published_in> {
 	ps:P1433	IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1476_title> {
+	ps:P1476 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1610_Dialnet_article> {
+	ps:P1610	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P1680_subtitle> {
+	ps:P1680 LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2007_ZooBank_publication_ID> {
+	ps:P2007	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2093_author_name_string> {
+	ps:P2093	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2322_article_ID> {
+	ps:P2322	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2507_corrigendum_erratum> {
+	ps:P2507	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -103,20 +221,33 @@ start = <wikicite>
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P365_DOI> {
-	ps:P365	LITERAL;
+<P2880_NIOSHTIC-2_ID> {
+	ps:P2880	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P698_Pubmed_ID> {
-	ps:P698 [0-9]+ ;
+<P3181_OpenCitations_bibliographic_resource_ID> {
+	ps:P3181	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P932_PMCID> {
-	ps:P932	[0-9]+ ;
+<P3332_ACM_Digital_Library_citation_ID> {
+	ps:P3332	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
 }
+
+<P3431_Publons_Publication_ID> {
+	ps:P3431	LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<license> {
+	ps:P31	[
+		wd:Q79719 # License
+		]
+	prov:wasDerivedFrom @<reference> ;
+}
+
 
 ## REFERENCES
 
