@@ -1,0 +1,70 @@
+#Shape Expression for journal articles from the life sciences on Wikidata
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+
+start = <wikicite_life_science_article> 
+
+<wikicite_life_science_article> {
+   # STATEMENTS
+   p:P31 @<P31_instance_of_scientific_article> ,
+   p:P1476 @<P1476_title> ,
+   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ,
+   
+   # IDENTIFIERS
+   p:P365 @<P365_DOI>* ,
+   p:P698 @<P698_Pubmed_ID> ,
+   p:P932 @<P932_PMCID>{0,1} ,
+}
+
+
+# Shape expression for Wikidata journal article
+<P31_instance_of_scientific_article> {
+	ps:P31 IRI,
+	prov:wasDerivedFrom @<reference> ,
+}
+
+<P50_author> {
+	ps:P50 IRI, 
+	prov:wasDerivedFrom @<reference> ,
+}
+
+<P365_DOI> {
+	ps:P365 LITERAL ,
+	prov:wasDerivedFrom @<reference> ,
+}
+
+<P698_Pubmed_ID> {
+	ps:P698 LITERAL ,
+	prov:wasDerivedFrom @<reference> ,
+}
+
+<P932_PMCID> {
+	ps:P932	LITERAL ,
+	prov:wasDerivedFrom @<reference> ,
+}
+
+<P1476_title> {
+	ps:P1476 LITERAL ,
+	prov:wasDerivedFrom @<reference> ,
+}
+
+<P2093_author_name_string> {
+	ps:P2093	LITERAL ,
+	prov:wasDerivedFrom @<reference> ,
+}
+
+
+
+
+## REFERENCES
+
+<reference> {
+   pr:P248	IRI ,
+}

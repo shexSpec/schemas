@@ -1,0 +1,237 @@
+{
+  "type": "Schema",
+  "start": {
+    "type": "NodeConstraint",
+    "datatype": "file:///Users/andra/projects/schemas/Wikidata/wikicite/wikicite_life_science_article"
+  },
+  "shapes": [
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P31",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P31_instance_of_scientific_article"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P1476",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P1476_title"
+          },
+          {
+            "type": "OneOf",
+            "expressions": [
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/P50",
+                "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P50_author",
+                "min": 0,
+                "max": -1
+              },
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/P2093",
+                "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P2093_author_name_string",
+                "min": 0,
+                "max": -1
+              }
+            ],
+            "min": 1,
+            "max": -1
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P365",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P365_DOI",
+            "min": 0,
+            "max": -1
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P698",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P698_Pubmed_ID"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P932",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P932_PMCID",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/wikicite_life_science_article"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P31",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "values": [
+                "https://www.wikidata.org/wiki/Q13442814"
+              ]
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P31_instance_of_scientific_article"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P50",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "nodeKind": "iri"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P50_author"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P365",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "pattern": "^doi:\\)?[0-9]{2}\\.[0-9]{4}.*$"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P365_DOI"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P698",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "pattern": "^[0-9]+$"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P698_Pubmed_ID"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P932",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "pattern": "PMC[0-9]+"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P932_PMCID"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P1476",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "nodeKind": "literal"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P1476_title"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/statement/P2093",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "nodeKind": "literal"
+            }
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P2093_author_name_string"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/reference/P248",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "iri"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/reference"
+    }
+  ],
+  "@context": "https://shexspec.github.io/context.jsonld"
+}
