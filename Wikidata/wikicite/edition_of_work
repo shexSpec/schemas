@@ -67,11 +67,6 @@ p:648 @<P648_Open_Library_ID> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P364_original_language_of_work> {
- 	ps:P364	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
-}
-
 <P629_edition_or_translation_of>  {
 	ps:P629	IRI ;
 	prov:wasDerivedFrom @<reference> ;
