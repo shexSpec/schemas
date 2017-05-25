@@ -8,7 +8,7 @@ PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 
-start = <wikicite> 
+start = @<wikicite> 
 
 <wikicite> {
    # STATEMENTS
