@@ -1,0 +1,182 @@
+{
+  "type": "Schema",
+  "start": "file:///Users/andra/projects/schemas/Wikidata/wikicite/wikicite",
+  "shapes": [
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P31",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P31_instance_of_book"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P1476",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P1476_title"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P1680",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P1680_subtitle",
+            "min": 0,
+            "max": -1
+          },
+          {
+            "type": "OneOf",
+            "expressions": [
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/P50",
+                "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P50_author"
+              },
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/P2093",
+                "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P2093_author_name_string"
+              }
+            ],
+            "min": 1,
+            "max": -1
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P304",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P304_pages",
+            "min": 0,
+            "max": 1
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P577",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P577_publication_date"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P364",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P364_original_language_of_work"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.wikidata.org/prop/P98",
+            "valueExpr": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P98_editor"
+          }
+        ]
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/wikicite"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P31",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "values": [
+            "http://www.wikidata.org/entity/Q571"
+          ]
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P31_instance_of_book"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P1476",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "literal"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P1476_title"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P1680",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "literal"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P1680_subtitle"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P50",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "iri"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P50_author"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P2093",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "literal"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P2093_author_name_string"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P304",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "literal"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P304_pages"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P577",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P577_publication_date"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P364",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "iri"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P364_original_language_of_work"
+    },
+    {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://www.wikidata.org/prop/statement/P98",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "nodeKind": "iri"
+        }
+      },
+      "id": "file:///Users/andra/projects/schemas/Wikidata/wikicite/P98_editor"
+    }
+  ],
+  "@context": "https://shexspec.github.io/context.jsonld"
+}
