@@ -24,6 +24,7 @@ start = <wikicite>
    # IDENTIFIERS
 p:1844 @<P1844_Hathi_Trust_ID>* ;
 p:648 @<P648_Open_Library_ID> ;
+}
 
 # Shape expression for Wikidata work
 <P31_instance_of_book> {
