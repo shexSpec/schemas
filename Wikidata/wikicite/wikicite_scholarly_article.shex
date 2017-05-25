@@ -32,7 +32,7 @@ start = <wikicite>
    p:P953 @<P953_full_work_available_at> ;
    p:P407 @<P407_language_of_work_or_name> ;
    p:P364 @<P364_original_language_of_work> ;
-   p:P921 @<P921_main_subject> ;
+   p:P921 @<P921_main_subject> ;                  
    p:P373 @<P373_commons_category> ;
    p:P859 @<P859_sponsor> ;
    p:P1352 @<P1352_data_available_at> ;
@@ -155,7 +155,7 @@ start = <wikicite>
 }
 
 <P921_main_subject> {
-	ps:P921	IRI ;
+	ps:P921	IRI+ ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
