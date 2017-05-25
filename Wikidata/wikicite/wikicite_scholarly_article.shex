@@ -17,6 +17,7 @@ start = <wikicite>
    p:P1476 @<P1476_title> ;
    p:P1680 @<P1680_subtitle> ;
    (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
+   pq:P1545 @<P1545_series_ordinal> ; #this is an optional qualifier to be used to indicate author order
    p:P577 @<P577_publication_date> ;
    p:P364 @<P364_original_language_of_work> ;
    p:P1433 @<P1433_published_in> ;
@@ -250,6 +251,9 @@ start = <wikicite>
 	prov:wasDerivedFrom @<reference> ;
 }
 
+<P1545_series_ordinal> {
+	pq:P1545  LITERAL ;
+	prov:wasDerivedFrom @<reference> ;
 
 ## REFERENCES
 
