@@ -2,7 +2,7 @@
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
@@ -22,8 +22,8 @@ start = @<wikicite>
    p:P98 @<P98_editor> ;
    
    # IDENTIFIERS
-p:1844 @<P1844_Hathi_Trust_ID>* ;
-p:648 @<P648_Open_Library_ID> ;
+   # p:1844 @<P1844_Hathi_Trust_ID>* ;
+   # p:648 @<P648_Open_Library_ID> ;
 }
 
 # Shape expression for Wikidata work
@@ -71,4 +71,8 @@ p:648 @<P648_Open_Library_ID> ;
 <P98_editor> {
 	ps:P98 IRI ;
 	prov:wasDerivedFrom @<reference> ;
+}
+
+<reference> {
+	# TODO
 }
