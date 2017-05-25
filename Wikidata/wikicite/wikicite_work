@@ -68,4 +68,7 @@ p:648 @<P648_Open_Library_ID> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-
+<P98_editor> {
+	ps:P98 IRI ;
+	prov:wasDerivedFrom @<reference> ;
+}
