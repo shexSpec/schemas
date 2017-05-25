@@ -59,12 +59,12 @@ start = @<wikicite>
 }
 
 <P577_publication_date> {
-	ps:P577	xsd:datetime ;
+	ps:P577	xsd:dateTime ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
 <P364_original_language_of_work> {
-	ps:P364	LITERAL ;
+	ps:P364	IRI ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
