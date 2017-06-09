@@ -67,6 +67,7 @@ start = <wikicite>
 <P50_author> {
 	ps:P50 IRI; 
 	prov:wasDerivedFrom @<reference> ;
+	pq:P1545 LITERAL;
 }
 
 <P98_editor> {
