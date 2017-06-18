@@ -9,7 +9,12 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 
 <civic_variant_record> {
  	# P31 = instance of
- 	p:P31 { ps:P31	@<variant_type> ;
+ 	p:P31 { ps:P31	[ wd:Q15304597 ] ; # Q15304597 = sequence variant
+	        prov:wasDerivedFrom @<civic-variant-reference>;
+		  }+
+		  
+ 	# P279 = instance of
+ 	p:P279 { ps:P279	@<variant_type> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
 		  }+
 			
@@ -133,6 +138,12 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 	pr:P813	xsd:dateTime ;
 }
 
+<variant_type> {
+   p:P3986 {
+      ps:P3986	LITERAL ;
+	  ps:P2888	IRI ;
+   }
+}
 
 ## LISTS
 <human-chromosomes> [
@@ -169,6 +180,3 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 				wd:Q21067546 # Genome assembly GRCh37
 			]
 			
-<variant_type> [
-		       wd:Q27429979 # Missense variant
-]
