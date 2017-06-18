@@ -1,0 +1,43 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+start = @<wikidata-human_protein>
+
+<wikidata-human_protein> {
+# STATEMENTS
+p:P279 @<P279_subclass_of_protein>+ ;
+p:P702 @<P703_found_in_taxon_human>+ ;
+
+# IDENTIFIERS
+p:P352 @<P352_uniprot_id>+ ;
+}
+
+# Shape expressions for Wikidata statements
+<P279_subclass_of_protein> { 
+    ps:P279 wd:Q8054 ;
+	prov:wasDerivedFrom @<uniprot-reference>;
+} 
+
+<P352_uniprot_id> {
+	ps:P352 LITERAL ;
+	prov:wasDerivedFrom @<uniprot-reference>;
+}
+
+<P703_found_in_taxon_human> {	
+     ps:P703 [wd:Q15978631] ;
+	 prov:wasDerivedFrom @<uniprot-reference>+ 
+} 
+
+# REFERENCES
+<uniprot-reference> {
+	pr:P248	[wd:Q905695] ;
+	pr:P352	LITERAL ;
+	pr:P813	xsd:dateTime ;
+}
