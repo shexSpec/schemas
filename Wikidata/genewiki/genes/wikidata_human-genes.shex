@@ -138,7 +138,8 @@ start = @<wikidata-human_gene>
 }
 
 <ensembl-gene-reference> {
-      pr:P248	[wd:Q27975061] ;
+      pr:P248	[wd:Q27975061
+	             wd:Q30227110] ;
 	  pr:P594	LITERAL ;
 }
 
