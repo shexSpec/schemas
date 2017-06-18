@@ -6,22 +6,24 @@ PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 <civic_variant_record> {
  	# P31 = instance of
  	p:P31 { ps:P31	[ wd:Q15304597 ] ; # Q15304597 = sequence variant
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-		  }+
+		  }+;
 		  
  	# P279 = instance of
  	p:P279 { ps:P279	@<variant_type> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-		  }+
+		  }+;
 			
  	# P3343 = biological variant of
 	p:P3343 { ps:P3343	@<human_gene> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-		    }{1}
+		    }{1};
 	
 	# The properties genomic start and genomic end are both optional, but if one exist the others needs to exist as well
 	# P644 = genomic start
@@ -45,39 +47,39 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 	          # P2175 = medical condition treated 
 	 		  pq:P2175	@<wikidata-disease>+ ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
-			}*
+			}* ;
   	# P3355 = negative therapeutic predictor
  	p:P3355 { ps:P3355	@<pharmaceutical_drug> ;
 	          # P2175 = medical condition treated 
 	 		  pq:P2175	@<wikidata-disease>+ ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
-			}*
+			}* ;
 	
   	# P3356 = positive diagnostic predictor
  	p:P3356 { ps:P3356	@<wikidata-disease>+ ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
-			}*
+			}* ;
 			
   	# P3357 = negative diagnostic predictor
  	p:P3357 { ps:P3356	@<wikidata-disease>+ ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
-			}*
+			}* ;
 			
   	# P3358 = positive prognostic predictor
  	p:P3358 { ps:P3358	@<wikidata-disease>+ ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
-			}*
+			}* ;
 			
   	# P3359 = negative prognostic predictor
  	p:P3359 { ps:P3359	@<wikidata-disease>+ ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
-			}* 
+			}* ;
 
 ## IDENTIFIERS
  	# P3329 = instance of
  	p:P3329 { ps:P3329	@<variant_type> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-}
+} ;
 
 <civic-variant-reference> {
       # P248 = Stated in
@@ -86,7 +88,7 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 	  pr:P854	LITERAL ;
 	  # P813 = retrieved
 	  pr:P813	xsd:dateTime ;
-}
+} ;
 
 <civic-evidence-reference> {
       # P248 = Stated in
@@ -95,55 +97,55 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 	  pr:P854	LITERAL ;
 	  # P813 = retrieved
 	  pr:P813	xsd:dateTime ;
-}
+} ;
 
 <genomic-location-provenance> {
 	pq:P1057	@<human-chromosomes>+ ;	
 	pq:P659	@<genomic-assembly>+ ;
 	prov:wasDerivedFrom @<ensembl-gene-reference>+ ;  
-} 
+} ;
 
 <provenance> {
-	prov:wasDerivedFrom @<civic_reference> .
-}
+	prov:wasDerivedFrom @<civic_reference> ;
+} ;
 
 <civic_reference> {
 	pr:P248	@<citation> ;
 	pr:P813	xsd:dateTime ;
-	pr:P854	IRI .
-}
+	pr:P854	IRI ;
+} ;
 
 <citation> {
 	wdt:P31		wd:Q13442814 ;	
 	wdt:P698	LITERAL ;
 	wdt:P356	LITERAL ;
-}
+} ;
 
 <pharmaceutical_drug> {
     # P31 = instance of & wd:Q12140 = Pharmaceutical drug
  	p:P31 { ps:P31	[wd:Q12140] ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
-			}*
+			}* ;
 			
     # P274 = chemical formula
  	p:P274 { ps:P274	LITERAL ;
  	          prov:wasDerivedFrom @<pubchem-compound-reference>+ ;
-			}*
-}
+			}* ;
+} ;
 
 <pubchem-compound-reference> {
 	pr:P248 [wd:Q278487] ;
 	pr:P662	LITERAL ;
 	pr:1476	LITERAL ;
 	pr:P813	xsd:dateTime ;
-}
+} ;
 
 <variant_type> {
    p:P3986 {
       ps:P3986	LITERAL ;
 	  ps:P2888	IRI ;
-   }
-}
+   } ;
+} ;
 
 ## LISTS
 <human-chromosomes> [
@@ -173,10 +175,12 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 				wd:Q202771  # human chromosome Y
 				wd:Q27075  # human chromosome MT
 
-			]
+			] ;
 			
 <genomic-assembly> [
    				wd:Q20966585 # Genome assembly GRCh38
 				wd:Q21067546 # Genome assembly GRCh37
-			]
+				
+			] ;
+
 			

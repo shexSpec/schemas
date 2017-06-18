@@ -137,12 +137,6 @@ start = @<wikidata-human_gene>
 	  pr:P594	LITERAL ;
 }
 
-<uniprot-reference> {
-	pr:P248	[wd:Q905695] ;
-	pr:P352	LITERAL ;
-	pr:P813	xsd:dateTime ;
-}
-
 <homologene-reference> {
 	pr:P248 IRI;
 	pr:P593 LITERAL;
@@ -195,26 +189,11 @@ start = @<wikidata-human_gene>
 				wd:Q22809711 # reverse strand
 				wd:Q22809680 # forward strand
 ]
-
-
-########################################################
-##
-## Externally defined shape expressions
-##
-########################################################
-
-## <wikidata-human_protein.shex date: 27 february 2017
-## please check for updates. 
-## TODO: Discuss with ShEx dev team to allow remote embedding of external shapes. 
-##
-
+ 
 <wikidata-human_protein> {
 # STATEMENTS
-p:P279 @<P279_subclass_of_protein>+ ;
-p:P702 @<P703_found_in_taxon_human>+ ;
-
-# IDENTIFIERS
-p:P352 @<P352_uniprot_id>+ ;
+p:P279 @<P279_subclass_of_protein> ;
+p:P352 @<P352_uniprot_id> ;
 }
 
 # Shape expressions for Wikidata statements
@@ -225,13 +204,8 @@ p:P352 @<P352_uniprot_id>+ ;
 
 <P352_uniprot_id> {
 	ps:P352 LITERAL ;
-	prov:wasDerivedFrom @<uniprot-reference>;
+	prov:wasDerivedFrom @<uniprot-reference> ;
 }
-
-<P703_found_in_taxon_human> {	
-     ps:P703 [wd:Q15978631] ;
-	 prov:wasDerivedFrom @<uniprot-reference>+ ;
-} 
 
 # REFERENCES
 <uniprot-reference> {
