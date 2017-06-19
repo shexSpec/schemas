@@ -45,34 +45,34 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
  	p:P3354 { ps:P3354	@<pharmaceutical_drug> ;
 	          # P2175 = medical condition treated 
 	 		  pq:P2175	@<wikidata-disease> ;
- 	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
+ 	          prov:wasDerivedFrom @<wikicite>+ ;
 			}* ;
 			
   	# P3355 = negative therapeutic predictor
  	p:P3355 { ps:P3355	@<pharmaceutical_drug> ;
 	          # P2175 = medical condition treated 
 	 		  pq:P2175	@<wikidata-disease> ;
- 	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
+ 	          prov:wasDerivedFrom @<wikicite>+ ;
 			}* ;
 	
   	# P3356 = positive diagnostic predictor
  	p:P3356 { ps:P3356	@<wikidata-disease> ;
- 	          prov:wasDerivedFrom @<civic-evidence-reference>+;
+ 	          prov:wasDerivedFrom @<wikicite>+;
 			}* ;
 			
   	# P3357 = negative diagnostic predictor
  	p:P3357 { ps:P3356	@<wikidata-disease> ;
- 	          prov:wasDerivedFrom @<civic-evidence-reference>+;
+ 	          prov:wasDerivedFrom @<wikicite>+;
 			}* ;
 			
   	# P3358 = positive prognostic predictor
  	p:P3358 { ps:P3358	@<wikidata-disease> ;
- 	          prov:wasDerivedFrom @<civic-evidence-reference>+;
+ 	          prov:wasDerivedFrom @<wikicite>+;
 			}* ;
 			
   	# P3359 = negative prognostic predictor
  	p:P3359 { ps:P3359	@<wikidata-disease> ;
- 	          prov:wasDerivedFrom @<civic-evidence-reference>+;
+ 	          prov:wasDerivedFrom @<wikicite>+;
 			}* ;
 
 ## IDENTIFIERS
@@ -123,6 +123,10 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 	pr:P813	xsd:dateTime ;
 	pr:P854	IRI ;
 } 
+
+<wikicite> {
+   prov:wasDerivedFrom @<citation> ;
+}
 
 <citation> {
 	wdt:P31		wd:Q13442814 ;	
