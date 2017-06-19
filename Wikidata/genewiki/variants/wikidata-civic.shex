@@ -9,21 +9,21 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
-<civic_variant_record> {
+<wikidata-civic_variant_record> {
  	# P31 = instance of
  	p:P31 { ps:P31	[ wd:Q15304597 ] ; # Q15304597 = sequence variant
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-		  }+;
+		  }+ ;
 		  
  	# P279 = instance of
  	p:P279 { ps:P279	@<variant_type> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-		  }+;
+		  }+ ;
 			
  	# P3343 = biological variant of
 	p:P3343 { ps:P3343	@<human_gene> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-		    }{1};
+		    } ;
 	
 	# The properties genomic start and genomic end are both optional, but if one exist the others needs to exist as well
 	# P644 = genomic start
@@ -33,7 +33,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 		ps:P645 LITERAL+ ;
 		p:P644 @<genomic-location-provenance>+;	
 		p:P645 @<genomic-location-provenance>+;
-	)*;
+	)* ;
 
  	# P1057 = chromosome					
  	p:P1057	{
@@ -43,43 +43,47 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
  	}* ;
 	 
   	# P3354 = positive therapeutic predictor
- 	p:P3354 { ps:P3354	@<wikidata-drug>+ ;
+ 	p:P3354 { ps:P3354	@<pharmaceutical_drug> ;
 	          # P2175 = medical condition treated 
-	 		  pq:P2175	@<wikidata-disease>+ ;
+	 		  pq:P2175	@<wikidata-disease> ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
 			}* ;
+			
   	# P3355 = negative therapeutic predictor
  	p:P3355 { ps:P3355	@<pharmaceutical_drug> ;
 	          # P2175 = medical condition treated 
-	 		  pq:P2175	@<wikidata-disease>+ ;
+	 		  pq:P2175	@<wikidata-disease> ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+ ;
 			}* ;
 	
   	# P3356 = positive diagnostic predictor
- 	p:P3356 { ps:P3356	@<wikidata-disease>+ ;
+ 	p:P3356 { ps:P3356	@<wikidata-disease> ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
 			}* ;
 			
   	# P3357 = negative diagnostic predictor
- 	p:P3357 { ps:P3356	@<wikidata-disease>+ ;
+ 	p:P3357 { ps:P3356	@<wikidata-disease> ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
 			}* ;
 			
   	# P3358 = positive prognostic predictor
- 	p:P3358 { ps:P3358	@<wikidata-disease>+ ;
+ 	p:P3358 { ps:P3358	@<wikidata-disease> ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
 			}* ;
 			
   	# P3359 = negative prognostic predictor
- 	p:P3359 { ps:P3359	@<wikidata-disease>+ ;
+ 	p:P3359 { ps:P3359	@<wikidata-disease> ;
  	          prov:wasDerivedFrom @<civic-evidence-reference>+;
 			}* ;
 
 ## IDENTIFIERS
- 	# P3329 = instance of
+
+ 	# P3329 = CIViCid
  	p:P3329 { ps:P3329	@<variant_type> ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
-} ;
+    
+    }
+} 
 
 <civic-variant-reference> {
       # P248 = Stated in
@@ -88,7 +92,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 	  pr:P854	LITERAL ;
 	  # P813 = retrieved
 	  pr:P813	xsd:dateTime ;
-} ;
+} 
 
 <civic-evidence-reference> {
       # P248 = Stated in
@@ -97,29 +101,35 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 	  pr:P854	LITERAL ;
 	  # P813 = retrieved
 	  pr:P813	xsd:dateTime ;
-} ;
+} 
 
 <genomic-location-provenance> {
 	pq:P1057	@<human-chromosomes>+ ;	
 	pq:P659	@<genomic-assembly>+ ;
 	prov:wasDerivedFrom @<ensembl-gene-reference>+ ;  
-} ;
+} 
+
+<ensembl-gene-reference> {
+      pr:P248	[wd:Q27975061
+	             wd:Q30227110 ] ;
+	  pr:P594	LITERAL ;
+}
 
 <provenance> {
 	prov:wasDerivedFrom @<civic_reference> ;
-} ;
+} 
 
 <civic_reference> {
 	pr:P248	@<citation> ;
 	pr:P813	xsd:dateTime ;
 	pr:P854	IRI ;
-} ;
+} 
 
 <citation> {
 	wdt:P31		wd:Q13442814 ;	
 	wdt:P698	LITERAL ;
 	wdt:P356	LITERAL ;
-} ;
+} 
 
 <pharmaceutical_drug> {
     # P31 = instance of & wd:Q12140 = Pharmaceutical drug
@@ -131,21 +141,39 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
  	p:P274 { ps:P274	LITERAL ;
  	          prov:wasDerivedFrom @<pubchem-compound-reference>+ ;
 			}* ;
-} ;
+} 
 
 <pubchem-compound-reference> {
 	pr:P248 [wd:Q278487] ;
 	pr:P662	LITERAL ;
 	pr:1476	LITERAL ;
 	pr:P813	xsd:dateTime ;
-} ;
+} 
 
 <variant_type> {
    p:P3986 {
       ps:P3986	LITERAL ;
 	  ps:P2888	IRI ;
    } ;
-} ;
+} 
+
+<human_gene> {
+   p:P31 { 
+    ps:P31 [wd:Q7187] ;
+   } ;
+   p:P703 {	
+        ps:P703 [wd:Q15978631] ;
+   }  ;
+   p:P351 {
+	ps:P351 LITERAL ;
+   } ;
+}
+
+<wikidata-disease> {
+   p:P699 {
+     ps:P699	LITERAL ;  
+   }
+}
 
 ## LISTS
 <human-chromosomes> [
@@ -174,13 +202,12 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 				wd:Q61333  # human chromosome X
 				wd:Q202771  # human chromosome Y
 				wd:Q27075  # human chromosome MT
-
-			] ;
+			] 
 			
 <genomic-assembly> [
    				wd:Q20966585 # Genome assembly GRCh38
 				wd:Q21067546 # Genome assembly GRCh37
 				
-			] ;
+			] 
 
 			
