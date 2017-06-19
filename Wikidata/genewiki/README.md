@@ -4,6 +4,18 @@ This repository collects Shape Expression to model and validate Wikidata items a
 Running Shape expressions requires shex.js. Installation instructions can be found [here](https://github.com/shexSpec/shex.js/)
 ## Usage
 With shex.js running the following commands downloads the shapes collected here and run them against a select set of on topic items. 
+### Human gene
+```
+./bin/validate -x https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/wikidata_human-genes.shex -d https://www.wikidata.org/wiki/Special:EntityData/Q17853226.ttl
+
+``` 
+
+### Disease
+```
+./bin/validate -x https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/wikidata_disease.shex -d https://www.wikidata.org/wiki/Special:EntityData/Q35869.ttl -s wikidata-disease -n http://www.wikidata.org/entity/Q35869
+``` 
+
+
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
