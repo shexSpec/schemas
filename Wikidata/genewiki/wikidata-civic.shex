@@ -125,10 +125,6 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 } 
 
 <wikicite> {
-   prov:wasDerivedFrom @<citation> ;
-}
-
-<citation> {
 	wdt:P31		wd:Q13442814 ;	
 	wdt:P698	LITERAL ;
 	wdt:P356	LITERAL ;
