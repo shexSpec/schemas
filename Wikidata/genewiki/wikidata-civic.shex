@@ -79,7 +79,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 ## IDENTIFIERS
 
  	# P3329 = CIViCid
- 	p:P3329 { ps:P3329	@<variant_type> ;
+ 	p:P3329 { ps:P3329	LITERAL ;
 	        prov:wasDerivedFrom @<civic-variant-reference>;
     
     }
