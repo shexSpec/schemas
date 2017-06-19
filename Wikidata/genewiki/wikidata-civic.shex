@@ -89,7 +89,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
       # P248 = Stated in
       pr:P248	[wd:Q20641742 wd:Q20950174 ] ;
 	  # P854 = reference URL
-	  pr:P854	LITERAL ;
+	  pr:P854	IRI ;
 	  # P813 = retrieved
 	  pr:P813	xsd:dateTime ;
 } 
@@ -98,7 +98,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
       # P248 = Stated in
       pr:P248	[wd:Q20641742 wd:Q20950174 ] ;
 	  # P854 = reference URL
-	  pr:P854	LITERAL ;
+	  pr:P854	IRI ;
 	  # P813 = retrieved
 	  pr:P813	xsd:dateTime ;
 } 
