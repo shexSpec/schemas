@@ -15,7 +15,10 @@ With shex.js running the following commands downloads the shapes collected here 
 ./bin/validate -x https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/wikidata_disease.shex -d https://www.wikidata.org/wiki/Special:EntityData/Q35869.ttl -s wikidata-disease -n http://www.wikidata.org/entity/Q35869
 ``` 
 
-
+### CIViC variant
+``` 
+.//Users/andra/bin/validate -x https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/wikidata-civic.shex -d https://www.wikidata.org/wiki/Special:EntityData/Q21851559.ttl -s wikidata-civic_variant_record -n http://www.wikidata.org/entity/Q21851559
+```
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
