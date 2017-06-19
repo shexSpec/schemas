@@ -39,7 +39,7 @@ start = @<wikidata-human_gene>
 # Shape expressions for Wikidata statements
 <P31_instance_of_gene> { 
     ps:P31 [wd:Q7187] ;
-	prov:wasDerivedFrom @<ensembl-gene-reference> ;
+	prov:wasDerivedFrom @<ncbi-gene-reference> OR @<ensembl-gene-reference> ;
 } 
 <P279_subclass_of_gene> { 
     ps:P279 @<gene_types> ;
@@ -142,6 +142,7 @@ start = @<wikidata-human_gene>
       pr:P248	[wd:Q27975061
 	             wd:Q30227110 ] ;
 	  pr:P594	LITERAL ;
+	  pr:P17 	IRI ;
 }
 
 <homologene-reference> {
