@@ -1,5 +1,5 @@
 PREFIX wp: <https://en.wikipedia.org/wiki/>
-PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wd: <https://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX schema: <http://schema.org/>
 PREFIX p: <http://www.wikidata.org/prop/>
