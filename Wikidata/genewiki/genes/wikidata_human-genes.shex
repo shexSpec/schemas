@@ -142,7 +142,6 @@ start = @<wikidata-human_gene>
       pr:P248	[wd:Q27975061
 	             wd:Q30227110 ] ;
 	  pr:P594	LITERAL ;
-	  pr:P17 	IRI ;
 }
 
 <homologene-reference> {
