@@ -96,7 +96,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 <civic-evidence-reference> {
       # P248 = Stated in
-      pr:P248	[wd:Q20641742 wd:Q20950174 ] ;
+      pr:P248	[wd:Q27612411] ;
 	  # P854 = reference URL
 	  pr:P854	IRI ;
 	  # P813 = retrieved
