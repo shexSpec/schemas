@@ -114,10 +114,6 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 	  pr:P594	LITERAL ;
 }
 
-<provenance> {
-	prov:wasDerivedFrom @<civic_reference> ;
-} 
-
 <civic_reference> {
 	pr:P248	@<wikicite> ;
 	pr:P813	xsd:dateTime ;
