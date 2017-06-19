@@ -119,7 +119,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 } 
 
 <civic_reference> {
-	pr:P248	@<citation> ;
+	pr:P248	@<wikicite> ;
 	pr:P813	xsd:dateTime ;
 	pr:P854	IRI ;
 } 
