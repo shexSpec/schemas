@@ -24,7 +24,7 @@ start = @<wikidata-human_gene>
 	p:P703 @<P703_found_in_taxon_human>{1} ;
 	p:P1057 @<P1057_chromosome>* ;
 	p:P2888 @<P2888_exact_match>+ ;
-	p:P2548 @<P2548_strand_orrientation> ;
+	p:P2548 @<P2548_strand_orientation> ;
 	
 	#IDENTIFIERS
 	p:P351 @<P351_ncbi_gene_id>{1} ;
@@ -87,8 +87,8 @@ start = @<wikidata-human_gene>
 		prov:wasDerivedFrom @<miriam_reference> OR @<ncbi-gene-reference> ;
 }
 
-<P2548_strand_orrientation> {	
-   ps:P2548	@<strand-orrientation> ;
+<P2548_strand_orientation> {	
+   ps:P2548	@<strand-orientation> ;
    pq:P659		@<genomic-assembly>+ ;
    prov:wasDerivedFrom @<ensembl-gene-reference>+ ;
 }
@@ -192,7 +192,7 @@ start = @<wikidata-human_gene>
 				wd:Q21067546 # Genome assembly GRCh37
 			]
 			
-<strand-orrientation> [
+<strand-orientation> [
 				wd:Q22809711 # reverse strand
 				wd:Q22809680 # forward strand
 ]
