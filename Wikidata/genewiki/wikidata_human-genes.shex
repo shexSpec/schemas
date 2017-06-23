@@ -132,7 +132,8 @@ start = @<wikidata-human_gene>
 ## REFERENCES
 <ncbi-gene-reference> {
       pr:P248	[wd:Q20641742
-	             wd:Q20950174 ] ;
+	         wd:Q20950174
+		 wd:Q29458763 ] ;
 	  pr:P351	LITERAL ;
 	  pr:P813	xsd:dateTime ;
 	  prv:P813	IRI ;
