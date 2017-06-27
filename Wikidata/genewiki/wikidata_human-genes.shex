@@ -36,7 +36,7 @@ start = @<wikidata-human_gene>
 	p:P593 @<P593_homologene_id>* ;
 
 	# Negative shapes
-	p:P352 @<P352_uniprot_id>{0} ;
+	p:P352 @<P352_uniprot_id_wor>{0} ;
 }
 
 # Shape expressions for Wikidata statements
@@ -102,7 +102,7 @@ start = @<wikidata-human_gene>
 	prov:wasDerivedFrom @<ncbi-gene-reference>+ ;
 }
 
-<P352_uniprot_id> {
+<P352_uniprot_id_wor> {
     ps:P352 LITERAL ;
 }
 	
