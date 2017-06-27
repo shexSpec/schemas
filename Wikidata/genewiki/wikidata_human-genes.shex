@@ -27,13 +27,16 @@ start = @<wikidata-human_gene>
 	p:P2548 @<P2548_strand_orientation> ;
 	
 	#IDENTIFIERS
-	p:P351 @<P351_ncbi_gene_id>{1} ;
+	p:P351 @<P351_ncbi_gene_id> ;
 	p:P353 @<P353_hgnc_gene_symbol>* ;
 	p:P354 @<P354_hgnc_gene_id>* ;
 	p:P594 @<P594_ensembl_gene_id>* ;
 	p:P639 @<P639_refseq_rna_id>* ;
 	p:P704 @<P704_ensembl_transcript_id>* ;
 	p:P593 @<P593_homologene_id>* ;
+
+	# Negative shapes
+	p:P352 @<P352_uniprot_id>{0} ;
 }
 
 # Shape expressions for Wikidata statements
@@ -97,6 +100,10 @@ start = @<wikidata-human_gene>
 <P351_ncbi_gene_id> {
 	ps:P351 LITERAL ;
 	prov:wasDerivedFrom @<ncbi-gene-reference>+ ;
+}
+
+<P352_uniprot_id> {
+    ps:P352 LITERAL ;
 }
 	
 <P353_hgnc_gene_symbol> {
