@@ -31,9 +31,6 @@ start = @<wikidata-human_gene>
 	p:P353 @<P353_hgnc_gene_symbol>* ;
 	p:P354 @<P354_hgnc_gene_id>* ;
 	p:P594 @<P594_ensembl_gene_id>* ;
-	p:P639 @<P639_refseq_rna_id>* ;
-	p:P704 @<P704_ensembl_transcript_id>* ;
-	p:P593 @<P593_homologene_id>* ;
 
 	# Negative shapes
 	p:P352 @<P352_uniprot_id_wor>{0} ;
@@ -52,14 +49,14 @@ start = @<wikidata-human_gene>
 <P644_genomic_start> {
    ps:P644 LITERAL ;
    pq:P1057	@<human-chromosomes>+ ;	
-   pq:P659	@<genomic-assembly>+ ;
+   pq:P659	@<genomic-assembly>{1,2} ;
    prov:wasDerivedFrom @<ensembl-gene-reference> ;
 }
 
 <P645_genomic_end> {
    ps:P645 LITERAL ;
    pq:P1057	@<human-chromosomes>+ ;	
-   pq:P659	@<genomic-assembly>+ ;
+   pq:P659	@<genomic-assembly>{1,2} ;
    prov:wasDerivedFrom @<ensembl-gene-reference> ;
 }
 	
@@ -81,7 +78,7 @@ start = @<wikidata-human_gene>
 
 <P1057_chromosome> {	
    ps:P1057 @<human-chromosomes> ;
-   pq:P659	@<genomic-assembly> ;
+   pq:P659	@<genomic-assembly>{1,2} ;
    prov:wasDerivedFrom @<ensembl-gene-reference> ;
 }
 	
@@ -92,7 +89,7 @@ start = @<wikidata-human_gene>
 
 <P2548_strand_orientation> {	
    ps:P2548	@<strand-orientation> ;
-   pq:P659		@<genomic-assembly> ;
+   pq:P659		@<genomic-assembly>{1,2} ;
    prov:wasDerivedFrom @<ensembl-gene-reference> ;
 }
 	
@@ -116,24 +113,10 @@ start = @<wikidata-human_gene>
    prov:wasDerivedFrom @<ncbi-gene-reference> ;
 }
 
-<P593_homologene_id> {
-   ps:P593 LITERAL ;
-   prov:wasDerivedFrom @<ncbi-gene-reference> ;
-}
 	
 <P594_ensembl_gene_id> {
    ps:P594 LITERAL ;
    prov:wasDerivedFrom @<ensembl-gene-reference> ;
-}
-	
-<P639_refseq_rna_id> {
-   ps:P639 LITERAL ;
-   prov:wasDerivedFrom @<ncbi-gene-reference> ;
-}
-	
-<P704_ensembl_transcript_id> {
-   ps:P704 LITERAL ;
-   prov:wasDerivedFrom @<ensembl-gene-reference> OR <ncbi-gene-reference> ;
 }
 
 ## REFERENCES
