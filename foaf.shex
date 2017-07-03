@@ -1,5 +1,9 @@
+# Made from http://xmlns.com/foaf/spec/
+# elides OnlineChatAccount, OnlineEcommerceAccount, OnlineGamingAccount
+
 PREFIX : <http://xmlns.com/foaf/0.1/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 BASE <http://xmlns.com/foaf/0.1/>
 
 <Agent> {
@@ -24,7 +28,7 @@ BASE <http://xmlns.com/foaf/0.1/>
   :holdsAccount .*;
   :weblog .*;
 } AND (@<Group> OR @<Person> OR @<Organization>)
-  // rdfs:seeAlso :maker, :member
+  # Used with: :maker, :member
 
 <Document> {
   :topic .*;
@@ -32,6 +36,55 @@ BASE <http://xmlns.com/foaf/0.1/>
   :sha1 .*;
 } AND (@<Image> OR @<PersonalProfileDocument>)
   AND NOT (@<Project> OR @<Organization>)
-  // rdfs:seeAlso :workInfoHomepage, :workplaceHomepage, :page, :accountServiceHomepage, :openid, :tipjar, :schoolHomepage, :publications, :isPrimaryTopicOf, :interest, :homepage, :weblog
+  # Used with: rdfs:seeAlso :workInfoHomepage, :workplaceHomepage, :page, :accountServiceHomepage, :openid, :tipjar, :schoolHomepage, :publications, :isPrimaryTopicOf, :interest, :homepage, :weblog
 
+<Group> {
+  :member @<Agent>*
+}
 
+<Person> {
+  :plan .*;
+  :surname .*;
+  :geekcode .*;
+  :pastProject .*;
+  :lastName .*;
+  :family_name .*;
+  :publications @<Document>*;
+  :currentProject .*;
+  :familyName .*;
+  :firstName .*;
+  :workInfoHomepage @<Document>*;
+  :myersBriggs .*;
+  :schoolHomepage @<Document>*;
+  :img @<Image>*;
+  :workplaceHomepage @<Document>*;
+  :knows @<Person>*
+} AND @<Agent> AND @wgs84:SpatialThingShape
+  AND NOT (@<Project> OR @<Organization>)
+# Used with: knows
+
+<OnlineAccount> {
+  :accountName .*;
+  :accountServiceHomepage @<Document>*
+}
+
+wgs84:SpatialThingShape {
+  wgs84:lat .;
+  wgs84:long .
+}
+
+<Organization> {
+} AND @<Agent>
+  AND NOT (@<Document> OR @<Person>)
+
+<Image> {
+  :depicts .*;
+  :thumbnail @<Image>*
+} AND @<Document>
+# Used Wtih img thumbnail depiction
+
+<PersonalProfileDocument> {
+} AND @<Document>
+
+<Project> {
+} AND NOT (@<Document> OR @<Person>)
