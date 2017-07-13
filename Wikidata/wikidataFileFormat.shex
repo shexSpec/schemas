@@ -23,15 +23,25 @@ start = @<wikidata-file_format>
 	
 	p:P1163 @<P1633_media_type>* ;
 	
+	#identifiers
 	
+	p:P2748 @<P2748_pronom_id>* ;
+	
+	p:P3266 @<P3266_locfdd_id>* ;
+	
+	p:P3381 @<P3381_ffw_id>* ;
 	
 
 <P31_instance_of_file_format> {
-  ps:P31 [wd:Q235557];
+  ps:P31 [wd:Q235557] ;
+}
+
+<P279_subclass_of_file_format> {
+  ps:P279 @<file_format_types>
 }
 
 <P275_license> {
-  ps:P275 IRI@<license>;
+ ps:P275 IRI@<license>;
 }
 
 <P178_developer> {
@@ -50,16 +60,21 @@ start = @<wikidata-file_format>
   ps:P1163 LITERAL;
 }
 
-<P1365_replaces> {
-  ps:P1365 IRI@<file_format>;
-}
+#<P1365_replaces> {
+#  ps:P1365 IRI@<file_format>;
+#}
   
 # for replaces- maybe I need the file format and the version?
 
-<P1366_replaced_by> {
-  ps:P1366 IRI@<file_format>;
-}
+#<P1366_replaced_by> {
+ # ps:P1366 IRI@<file_format>;
+#}
 
 <license> {
 	ps:P279 [wd:Q79719];
 }
+
+<developer> [
+	wd:Q5482740 
+	]
+	
