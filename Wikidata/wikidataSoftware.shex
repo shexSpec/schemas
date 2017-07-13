@@ -20,26 +20,22 @@ start = @<wikidata-software>
 	
 	p:275 @<P275_license>* ;
 	
-	# P348 = software version
-	p:348
+	p:348 @<P348_software_version>* ;
 	
-	# P856 = official website
-	P:856
+	P:856 @<P856_official_website>* ;
 	
-	# P178 = developer
-	p:178
+	p:178 @<P178_developer>* ; 
  
- 	P1072 = readable file format
- 	p:1072
+ 	p:1072 @<P1072_readable_file_format>* ;
  
- 	P1073 = writable file format
- 	p:1073
+ 	p:1073 @<P1073_writable_file_format>* ;
  
  	P306 = operating system
- 	p:306
- 
- 	P2749 = PRONOM software identifier
-# 	p:2749
+ 	p:306 @<P306_operating_system>* ;
+	
+	#identifiers
+	p:2749 @<P2749_PRONOM_software_identifier> ;
+
 }
 
 # Shape expression for Wikidata statements related to software
@@ -47,8 +43,6 @@ start = @<wikidata-software>
 	ps:P31 [wd:Q7397];
 }
 
-#TODO I will need to expand this to also capture P279 subclass of software
-#TODO I need to figure out how to add P3680 statement supported by and a list of trusted accounts
 
 <P275_license> {
 	ps:P275 IRI@<license>;
