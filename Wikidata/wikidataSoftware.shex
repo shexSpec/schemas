@@ -13,31 +13,32 @@ PREFIX ps: <http://www.wikidata.org/prop/statement/>
 
 start = @<wikidata-software>
 
-#<wikidata-software> {
-#	wdt:P31	wd:Q7397 ;
-#	
-#	# P275 = license
-#	p:275
-#	
-#	# P348 = software version
-#	p:348
-#	
-#	# P856 = official website
-#	P:856
-#	
-#	# P178 = developer
-#	p:178
-# 
-# 	P1072 = readable file format
-# 	p:1072
-# 
-# 	P1073 = writable file format
-# 	p:1073
-# 
-# 	P306 = operating system
-# 	p:306
-# 
-# 	P2749 = PRONOM software identifier
+<wikidata-software> {
+	#statements
+	p:P31 @<P31_instance_of_software> ;
+	p:P279 @<P279_subclass_of_software>+ ;
+	
+	p:275 @<P275_license>* ;
+	
+	# P348 = software version
+	p:348
+	
+	# P856 = official website
+	P:856
+	
+	# P178 = developer
+	p:178
+ 
+ 	P1072 = readable file format
+ 	p:1072
+ 
+ 	P1073 = writable file format
+ 	p:1073
+ 
+ 	P306 = operating system
+ 	p:306
+ 
+ 	P2749 = PRONOM software identifier
 # 	p:2749
 }
 
