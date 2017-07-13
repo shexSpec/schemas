@@ -60,15 +60,9 @@ start = @<wikidata-file_format>
   ps:P1163 LITERAL;
 }
 
-#<P1365_replaces> {
-#  ps:P1365 IRI@<file_format>;
-#}
-  
-# for replaces- maybe I need the file format and the version?
-
-#<P1366_replaced_by> {
- # ps:P1366 IRI@<file_format>;
-#}
+<P3381_ffw_id> {
+  ps:P3381 LITERAL;
+}
 
 <license> {
 	ps:P279 [wd:Q79719];
