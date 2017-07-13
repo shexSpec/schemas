@@ -10,6 +10,22 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 # Shape expression for Wikidata statements related to file formats
 
+start = @<wikidata-file_format>
+
+<wikidata-file_format> {
+	#statements
+	p:P31 @<P31_instance_of_file_format> ;
+	p:P279 @<P279_subclass_of_file_format>+ ;
+	
+	p:P275 @<P275_license>* ;
+	
+	p:178 @<P178_developer>* ; 
+	
+	p:P1163 @<P1633_media_type>* ;
+	
+	
+	
+
 <P31_instance_of_file_format> {
   ps:P31 [wd:Q235557];
 }
