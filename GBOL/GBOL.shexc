@@ -1,0 +1,3187 @@
+#See http://gbol.life/ for more details
+PREFIX : <http://gbol.life/0.1/>
+PREFIX schema: <http://schemas.talis.com/2005/address/schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX degrees: <http://purl.org/ontology/bibo/degrees/>
+PREFIX gen: <http://empusa.org/0.1/>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX so: <http://purl.obolibrary.org/obo/>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX event: <http://purl.org/NET/c4dm/event.owl#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX prism: <http://prismstandard.org/namespaces/1.2/basic/>
+PREFIX wv: <http://vocab.org/waiver/terms/norms>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX empusa: <http://empusa.org/0.1/>
+PREFIX provo: <http://www.w3.org/ns/prov#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX sapp: <http://sapp.systemsbiology.nl/0.1/>
+PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX status: <http://purl.org/ontology/bibo/status/>
+
+:Sequence {
+  :sequenceVersion xsd:Integer?
+    // skos:definition "The version of the sequence" ;
+  :shortName xsd:String?
+    // skos:definition "The short name of the sequence" ;
+  :assembly @:Sequence?
+    // skos:definition "The optional assembly information of the sequence" ;
+  :xref @sapp:InterProScanModels*
+    // skos:definition "Reference to entries in other databases which also represent the same sequence. Note that the GBOLDocment xref and sequence xref can point to same GenBank/EBML entry." ;
+  :length xsd:Long?
+    // skos:definition "Length of the sequence" ;
+  :feature @:NASequence*
+    // skos:definition "The set of features annotating the sequence" ;
+  :standardName xsd:String?
+    // skos:definition "The standard name of the feature"
+    // skos:editorialNote "Added to gene feature, besides the gene property"
+    // :ddbjLabel "standard_name" ;
+  :citation @:Sample*
+    // skos:definition "A link to a specific citation"
+    // skos:editorialNote "Replaced in GBOl to citation reference in both the feature and Sequence Object" ;
+  :note @:GBOLDataSet*
+    // skos:editorialNote "Each feature can have note"
+    // :ddbjLabel "note"
+    // skos:definition "A extra note on the sequence itself, do not add notes related to the GBOLDocument or sample." ;
+  :commonname xsd:String?
+    // skos:definition "The common name of the sequence" ;
+  :description xsd:String
+    // skos:definition "A short description of the sequence" ;
+  :sequence xsd:String?
+    // skos:definition "The sequence, encoded with the default DNA(including degenerated nucleotides), RNA(including degenerated nucleotides) or protein encoding. For any special items please use the modifiedBase and modifiedResidue features." ;
+  :sha384 xsd:String
+    // skos:definition "The hash key of  the sequence" ;
+  :alternativeNames xsd:String*
+    // skos:definition "Any alternative names of the sequence" ;
+  :recommendedName xsd:String?
+    // skos:definition "The recommended name of the sequence" ;
+  :function xsd:String?
+    // :ddbjLabel "function"
+    // skos:definition "Short description of the function"
+    // skos:editorialNote "Added feature, every feature can have a textual function describtion, this is more broad then what genbank actually has" ;
+  :accession xsd:String?
+    // skos:definition "Accession identifier of a given sequence object" ;
+  :organism @:Source?
+    // skos:definition "The organism from which the sequence orginates from" ;
+  :sample @:Source?
+    // skos:definition "Sample from which the sequence is originating"
+}
+// skos:definition "Represents a physical sequence@en"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+// rdfs:comment "Physical sequence can be a DNA, RNA or Protein molecule@en"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  :Protein OR
+  :NASequence 
+)
+
+:ArtificialRecognizedRegion {
+  rdf:type [:ArtificialRecognizedRegion]
+}
+OR
+:SequenceTaggedSite OR
+:PrimerBinding 
+
+:Plasmid {
+  :plasmidName xsd:String?
+    // skos:definition "The name of the plasmid" ;
+  rdf:type [:Plasmid]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:editorialNote "A plasmid sequence"
+
+:NaturalVariation {
+  :frequency xsd:Double?
+    // :ddbjLabel "frequency"
+    // skos:editorialNote "Added to only natural variation feature, indicating the frequency of the variation"
+    // skos:definition "The frequency of this variation within the population" ;
+  rdf:type [:NaturalVariation]
+}
+// rdfs:comment "used to describe alleles, RFLP's,and other naturally occurring mutations and  polymorphisms; variability arising as a result of genetic manipulation (e.g. site directed mutagenesis) should be described with the misc_difference feature;use /replace=\"\" to annotate deletion, e.g.variation   4..5 /replace=\"\""
+// :ddbjLabel "variation"
+// :subDomain "SequenceFeatureCore"
+// skos:definition "A related sequence or allele contains stable mutations from the same gene (e.g., RFLPs, polymorphisms, etc.) which differ from the parent sequence at the given location;"
+
+bibo:Website {
+  rdf:type [bibo:Website] ;
+  bibo:hasPart @bibo:Journal+
+}
+// :subDomain "BIBO"
+// rdfs:label "Website@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A group of Webpages accessible on the Web.@en"
+
+:tmRNA {
+  :product xsd:String?
+    // :ddbjLabel "product"
+    // skos:editorialNote "Product description only present in CDS"
+    // skos:definition "The functional name" ;
+  :tagPeptide @:tmRNA?
+    // :ddbjLabel "tag_peptide"
+    // skos:editorialNote "property of tmRNA, points to a Region"
+    // skos:definition "base location encoding the polypeptide for proteolysis tag of tmRNA and its termination codon;" ;
+  rdf:type [:tmRNA]
+}
+// skos:definition "transfer messenger RNA; tmRNA acts as a tRNA first,and then as an mRNA that encodes a peptide tag; the ribosome translates this mRNA region of tmRNA and attaches the encoded peptide tag to the C-terminus of the unfinished protein; this attached tag targets the protein for destruction or proteolysis;"
+// :ddbjLabel "tmRNA"
+// :subDomain "SequenceFeatureCore"
+
+:MobileElement {
+  :mobileElementName xsd:String
+    // skos:definition "The name of the mobile element" ;
+  :mobileElementType [:Transposon :NonLTRRetrotransposon :MITE :Retrotransposon :SINE :InsertionSequence :OtherMobileElementType :Integron :LINE]
+    // skos:definition "Mobile element type"
+    // skos:editorialNote "replaced with mobileElementType and mobileElement properties"
+    // :ddbjLabel "mobile_element_type" ;
+  rdf:type [:MobileElement]
+}
+// :ddbjLabel "mobile_element"
+// skos:definition "Region of genome containing mobile elements;@en"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0001837@en"
+// :subDomain "SequenceFeatureCore"
+
+:Scaffold {
+  rdf:type [:Scaffold] ;
+  :sourceContigs @:Scaffold*
+}
+// skos:definition "A scaffolded set of contigs.@en"
+// :subDomain "SequenceFeatureCore"
+
+:Telomere {
+  rdf:type [:Telomere]
+}
+// :ddbjLabel "telomere"
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000624@en"
+// skos:definition "Region of biological interest identified as a telomere and which has been experimentally characterized;@en"
+// rdfs:comment "The telomere feature describes the interval of DNA that corresponds to a specific structure at the end of the linear eukaryotic chromosome which is required for the integrity and maintenance of the end; this region is unique compared to the rest of the chromosome and represent the physical end of the chromosome;@en"
+
+:MiscFeature {
+  rdf:type [:MiscFeature]
+}
+// skos:definition "Region of biological interest which cannot be described by any other featureKey; a new or rare feature;"
+// rdfs:comment "This key should not be used when the need is merely to mark a region in order to comment on it or to use it in another feature's location"
+// :ddbjLabel "misc_feature"
+// :subDomain "SequenceFeatureCore"
+
+:TranscriptFeature {
+  rdf:type [:TranscriptFeature]
+}
+OR
+:PolyASite OR
+:FivePrimeUTR OR
+:ThreePrimeUTR OR
+:CDS 
+
+:NASequence {
+  :macronuclear xsd:Boolean?
+    // :ddbjLabel "macronuclear"
+    // skos:definition "Indicates that this sequence from the macro-nuclear DNA from an organism which undergoes chromosomal differentiation between macro-nuclear and micro-nuclear stages." ;
+  :proviral xsd:Boolean?
+    // :ddbjLabel "proviral"
+    // skos:definition "Indicates that this sequence is obtained from a virus or phage that is integrated into the genome of another organism" ;
+  :topology [:Circular :Linear]?
+    // skos:definition "The topology of the sequence (linear, circular)" ;
+  :integratedInto @:NASequence?
+    // skos:definition "If this NA object is integrated into another NA object, for example a phage genome which is integrated into a bacterial genome or a plasmid which is integrated into a yeast genome." ;
+  :rearranged xsd:Boolean?
+    // :ddbjLabel "rearranged"
+    // skos:definition "Indicates if the sequence has undergone somatic rearrangement as part of an adaptive immune response. If equal to false it is the unrearranged sequence that was inherited from the parental germ line. If equal to true the sequence has undergone somatic rearrangement as part of an adaptive immune response. If not defined it is not applicable to the sequence or unknown." ;
+  :cloneLib xsd:String?
+    // :ddbjLabel "clone_lib"
+    // skos:definition "If a clone library was used for sequencing, specify the clone library" ;
+  :feature @:NASequence*
+    // skos:definition "The set of features annotating the sequence" ;
+  :clone xsd:String*
+    // :ddbjLabel "clone"
+    // skos:definition "If a clone library was used for sequencing, the sequence can orginate from one or more clones" ;
+  :translTable xsd:Integer?
+    // :ddbjLabel "transl_table"
+    // skos:editorialNote "Added to the NAObject class, all features under this object use this translation table"
+    // skos:definition "The translation table of the nucleotide sequence, if not present its inherited from the parent NASequence" ;
+  :strandType [:SingleStrandedDNA :ComplementaryDNA :DoubleStrandedRNA :SingleStrandedRNA :DoubleStrandedDNA]
+    // skos:definition "The type of the strand"
+}
+// rdfs:comment "Physical nucleotide sequence can be a DNA or RNA molecule being either single or double stranded.@en"
+// rdfs:comment "Represents a physical nucleotide sequence@en"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  {
+    rdf:type [:NASequence]
+  }
+  OR
+  :CompleteNASequence OR
+  :Transcript OR
+  :UncompleteNASequence 
+)
+
+:ncRNA {
+  :product xsd:String?
+    // :ddbjLabel "product"
+    // skos:editorialNote "Product description only present in CDS"
+    // skos:definition "The functional name" ;
+  :ncRNAClass [:snRNA :piRNA :siRNA :RNaseMRPRNA :ncRNATypeOther :antisenseRNA :ribozyme :guideRNA :SRPRNA :lncRNA :scRNA :YRNA :vaultRNA :RNasePRNA :rasiRNA :telomeraseRNA :snoRNA :autocatalyticallySplicedIntron :hammerheadRibozyme :miRNA]
+    // skos:definition "The type of the non coding RNA"
+    // skos:editorialNote "enum added to ncRNA"
+    // :ddbjLabel "ncRNA_class" ;
+  rdf:type [:ncRNA]
+}
+// skos:example "/ncRNA_class=\"miRNA\"/ncRNA_class=\"siRNA\"/ncRNA_class=\"scRNA\""
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "ncRNA"
+// rdfs:comment "the ncRNA feature is not used for ribosomal and transferRNA annotation, for which the rRNA and tRNA featureKeysshould be used, respectively;"
+// skos:definition "a non-protein-coding gene, other than ribosomal RNA and transfer RNA, the functional molecule of which is the RNAtranscript;"
+
+:IntegratedVirus {
+  :integratedRegion @:IntegratedVirus
+    // skos:definition "The region of the virus genome that is integrated" ;
+  rdf:type [:IntegratedVirus] ;
+  :virusGenome @:IntegratedVirus?
+    // skos:definition "Reference to the sequence of the virus, genes of the integrated virus can be annotated directly on genome as well as on the virus genome"
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "A virus genome integrated into another genome@en"
+
+foaf:Person {
+  foaf:givenName xsd:String?
+    // skos:definition "The given name of a person" ;
+  foaf:mbox IRI?
+    // skos:definition "mail address use  URI scheme (see RFC 2368)." ;
+  foaf:familyName xsd:String?
+    // skos:definition "The familyName of the person, preferable use the surName property" ;
+  foaf:surName xsd:String?
+    // skos:definition "The first name of the person" ;
+  bibo:suffixName xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "suffix name@en"
+    // skos:definition "The suffix of a name"
+    // rdfs:comment "The suffix of a name@en" ;
+  foaf:homepage xsd:String?
+    // skos:definition "Homepage of the person (for example link to linkedin or research gate)"
+    // skos:scopeNote "Used to link an agent to its homepage (which is a web page accessible using a URL).@en" ;
+  foaf:depiction IRI?
+    // skos:scopeNote "Used to link an agent with an image that depict it.@en"
+    // skos:definition "Image of the person use link to image" ;
+  foaf:title xsd:String?
+    // skos:definition "Title of the person  (Mr, Mrs, Ms, Dr. etc)" ;
+  foaf:firstName xsd:String?
+    // skos:definition "The first name of the person" ;
+  foaf:phone xsd:String?
+    // skos:definition "The phone number of the person" ;
+  :orcid IRI
+    // skos:definition "The unique identifier to identify the scientist" ;
+  bibo:prefixName xsd:String?
+    // rdfs:label "prefix name@en"
+    // rdfs:comment "The prefix of a name@en"
+    // skos:definition "The prefix of a name"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:localityName xsd:String?
+    // skos:definition "Used to name the locality of a publisher, an author, etc."
+}
+// :subDomain "DocumentWiseProv"
+AND
+(
+  {
+    rdf:type [foaf:Person]
+  }
+  OR
+  provo:Person 
+)
+
+:GeographicalCoordinate {
+  rdf:type [:GeographicalCoordinate] ;
+  :latitude xsd:Double
+    // skos:definition "latitude given in degrees. Positive is to the north, negative is to the south." ;
+  :longitude xsd:Double
+    // skos:definition "longitude given in degrees. Positive is to the east, negative is to the west."
+}
+// :subDomain "DocumentCore"
+// skos:definition "Location denotes by its geographical coordinates@en"
+
+:ModifiedResidue {
+  :residue IRI
+    // skos:definition "The residue type as defined within the 'Protein Modification Ontology' (http://www.psidev.info/MOD)" ;
+  :unmodifiedState xsd:String?
+    // skos:definition "Short description denoted the state of the protein if the residue in the unmodified state. For example 'protein in inactive state'" ;
+  rdf:type [:ModifiedResidue] ;
+  :modificationFunction IRI?
+    // skos:definition "If applicable, the biological process in which this modification is involved. Use a Biological Process from the GO ontology." ;
+  :modifiedState xsd:String?
+    // skos:definition "Short description denoted the state of the protein if the residue in the modified state. For example 'protein in active state'"
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "Denotes a modified residue or residue that is typically modified within a protein@en"
+
+sapp:InterProScanModels {
+  :description xsd:String
+    // skos:definition "A short description of the sequence" ;
+  rdf:type [sapp:InterProScanModels] ;
+  :name xsd:String?
+    // skos:definition "An optional name for the sample" ;
+  :xref @sapp:InterProScanModels*
+    // skos:definition "Reference to entries in other databases which also represent the same sequence. Note that the GBOLDocment xref and sequence xref can point to same GenBank/EBML entry." ;
+  :accession xsd:String?
+    // skos:definition "Accession identifier of a given sequence object" ;
+  :key xsd:String?
+}
+
+:Feature {
+  :artificialLocation [:HeterogeneousPopulation :LowQualitySeqRegion]?
+    // :ddbjLabel "artificial_location"
+    // skos:editorialNote "Indicate that a feature has a artificial location with reason, added to feature, was originally only possible for mRNA and CDS to fix frameshifts"
+    // skos:editorialNote "key:mRNA, CDS"
+    // skos:definition "Indicate that the location is artificial because of a heterogeneous population for low quality sequence region" ;
+  :xref @sapp:InterProScanModels*
+    // skos:definition "Reference to entries in other databases which also represent the same sequence. Note that the GBOLDocment xref and sequence xref can point to same GenBank/EBML entry." ;
+  :function xsd:String?
+    // :ddbjLabel "function"
+    // skos:definition "Short description of the function"
+    // skos:editorialNote "Added feature, every feature can have a textual function describtion, this is more broad then what genbank actually has" ;
+  :provenance @:Note
+    // skos:definition "The provenance of the XREF holding the origin of the XRef" ;
+  :accession xsd:String?
+    // skos:definition "Accession identifier of a given sequence object" ;
+  :standardName xsd:String?
+    // skos:definition "The standard name of the feature"
+    // skos:editorialNote "Added to gene feature, besides the gene property"
+    // :ddbjLabel "standard_name" ;
+  :location @sapp:Phobius ;
+  :citation @:Sample*
+    // skos:definition "A link to a specific citation"
+    // skos:editorialNote "Replaced in GBOl to citation reference in both the feature and Sequence Object" ;
+  :note @:GBOLDataSet*
+    // skos:editorialNote "Each feature can have note"
+    // :ddbjLabel "note"
+    // skos:definition "A extra note on the sequence itself, do not add notes related to the GBOLDocument or sample." ;
+  :phenotype xsd:String?
+    // skos:definition "Associated phenotypic property"
+    // :ddbjLabel "phenotype"
+    // skos:editorialNote "Added to feature, every feature can have an associated phenotypic effect"
+}
+// skos:definition "Adds a functional description to a range or multiple ranges of a biological sequence.@en"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000110@en"
+AND
+(
+  :GeneralFeature OR
+  :ProteinFeature OR
+  :NAFeature 
+)
+
+bibo:Webpage {
+  rdf:type [bibo:Webpage]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Webpage@en"
+// :subDomain "BIBO"
+// rdfs:comment "A web page is an online document available (at least initially) on the world wide web. A web page is written first and foremost to appear on the web, as distinct from other online resources such as books, manuscripts or audio documents which use the web primarily as a distribution mechanism alongside other more traditional methods such as print.@en"
+
+:UncompleteNASequence {
+  rdf:type [:UncompleteNASequence]
+}
+OR
+:Contig OR
+:Read OR
+:Scaffold 
+
+bibo:LegalDecision {
+  bibo:subsequentLegalDecision @bibo:LegalDecision?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:comment "A legal decision on appeal that takes action on a case (affirming it, reversing it, etc.).@en"
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/isReferencedBy" ;
+  bibo:affirmedBy @bibo:LegalDecision?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:comment "A legal decision that affirms a ruling.@en"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/subsequentLegalDecision" ;
+  rdf:type [bibo:LegalDecision] ;
+  bibo:reversedBy @bibo:LegalDecision?
+    // rdfs:comment "A legal decision that reverses a ruling.@en"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/subsequentLegalDecision"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Decision@en"
+// :subDomain "BIBO"
+// rdfs:comment "A document containing an authoritative determination (as a decree or judgment) made after consideration of facts or law.@en"
+
+:PartSequence {
+  :includedRegion @:PartSequence
+    // skos:definition "The included region of referenced sequence, only exact position must be used to denote the start en end region, reference property should be empty. Use the strand property to include forward or reverse complement strand."
+}
+// skos:definition "A part of the sequence included from another sequence."
+// :subDomain "SequenceFeatureCore"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+AND
+(
+  :PartXRefSequence OR
+  :PartIncludedSequence 
+)
+
+:MaturedRNA {
+  rdf:type [:MaturedRNA]
+}
+OR
+:tmRNA OR
+:rRNA OR
+:mRNA OR
+:tRNA OR
+:ncRNA 
+
+:Read {
+  rdf:type [:Read]
+}
+// skos:definition "A single read from a sequencer.@en"
+// :subDomain "SequenceFeatureCore"
+
+:Satellite {
+  rdf:type [:Satellite] ;
+  :satelliteType [:CommonSattellite :MicroSatellite :MiniSatellite]
+    // skos:definition "The type of the satalite" ;
+  :satelliteName xsd:String
+    // skos:definition "Specific name of the satalite"
+}
+// skos:definition "A DNA satellite@en"
+// :subDomain "DocumentCore"
+
+:Provenance {
+  :annotation @:Provenance?
+    // skos:definition "Note on the provenance" ;
+  :origin @:XRefProvenance
+    // skos:definition "Link to the data-wise provenance"
+}
+// rdfs:label "Provenance"
+// skos:definition "Capturing element wise provenance, hold reference to datawise provenance@en"
+// :subDomain "ElementWiseProv"
+AND
+(
+  {
+    rdf:type [:Provenance]
+  }
+  OR
+  :FeatureProvenance OR
+  :XRefProvenance 
+)
+
+bibo:LegalDocument {
+  bibo:argued xsd:Date
+    // rdfs:comment "The date on which a legal case is argued before a court. Date is of format xsd:date@en"
+    // rdfs:label "date argued@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:court @bibo:LegalDocument
+    // rdfs:domain "http://purl.org/ontology/bibo/LegalDocument"
+    // rdfs:label "court@en"
+    // rdfs:comment "A court associated with a legal document; for example, that which issues a decision.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+}
+// rdfs:comment "A legal document; for example, a court decision, a brief, and so forth.@en"
+// :subDomain "BIBO"
+// rdfs:label "Legal Document@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+AND
+(
+  {
+    rdf:type [bibo:LegalDocument]
+  }
+  OR
+  bibo:LegalCaseDocument OR
+  bibo:Legislation 
+)
+
+bibo:Magazine {
+  rdf:type [bibo:Magazine] ;
+  bibo:hasPart @bibo:Journal+
+}
+// :subDomain "BIBO"
+// rdfs:comment "A periodical of magazine Articles. A magazine is a publication that is issued periodically, usually bound in a paper cover, and typically contains essays, stories, poems, etc., by many writers, and often photographs and drawings, frequently specializing in a particular subject or area, as hobbies, news, or sports.@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Magazine@en"
+
+:Region {
+  rdf:type [:Region] ;
+  :begin @:Region
+    // skos:definition "The begin position comes always first then the the end position. So for a gene on the reverse complementary strain the begin position is equal to the stop position. We use the same positioning definition as in GenBank and Faldo." ;
+  :strand [:BothStrandsPosition :ReverseStrandPosition :ForwardStrandPosition]?
+    // skos:definition "The strand on which it is positioned" ;
+  :end @:Region
+    // skos:definition "The begin position comes always first then the the end position. So for a gene on the reverse complementary strain the begin position is equal to the stop position. We use the same positioning definition as in GenBank and Faldo."
+}
+// rdfs:comment "The begin position comes always first then the the end position. So for a gene on the reverse complementary strain the begin position is equal to the stop position. We use the same positioning definition as in GenBank and Faldo."
+// :subDomain "LocationCore"
+
+bibo:Image {
+  rdf:type [bibo:Image]
+}
+OR
+bibo:Map 
+
+:MiscRecomb {
+  rdf:type [:MiscRecomb] ;
+  :recombinationType [:Meiotic :RecombinationTypeOther :ChromosomeBreakpoint :NonallelicHomologous :Mitotic]
+    // skos:definition "The type of recombination"
+}
+// :ddbjLabel "misc_recomb"
+// skos:definition "Site of any generalized, site-specific or replicativere combination event where there is a breakage and reunion of duplex DNA that cannot be described by other recombination keys or qualifiers of source key(/proviral);@en"
+// :subDomain "SequenceFeatureCore"
+
+provo:Activity {
+  provo:endedAtTime xsd:DateTime?
+    // skos:definition "The time at which the activity is ended, if unknown set equal to startedAt." ;
+  provo:generated @provo:Activity*
+    // skos:definition "Description of each generated data set" ;
+  provo:startedAtTime xsd:DateTime?
+    // skos:definition "The time at which the activity is started" ;
+  :wasAssociatedWith @provo:Activity?
+    // skos:definition "The agent which be performed this activity" ;
+  provo:wasInformedBy @provo:Activity?
+    // skos:definition "Denote the parent activity that initiated this task" ;
+  provo:used @provo:Activity*
+    // skos:definition "Description of each of the Data Sets used"
+}
+// :subDomain "DocumentWiseProv"
+AND
+(
+  {
+    rdf:type [provo:Activity]
+  }
+  OR
+  :AnnotationActivity 
+)
+
+bibo:Brief {
+  rdf:type [bibo:Brief]
+}
+// rdfs:comment "A written argument submitted to a court.@en"
+// :subDomain "BIBO"
+// rdfs:label "Brief@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:ImmunoglobulinFeature {
+  rdf:type [:ImmunoglobulinFeature] ;
+  :immunoglobulinRegionType [:ConstantRegion :SwitchRegion :VariableSegment :JoiningSegment :DiversitySegment :GapRegion :VariableRegion]
+    // skos:definition "The type of the immunoglobulin region"
+}
+// :subDomain "SequenceFeatureCore"
+
+:Exon {
+  rdf:type [:Exon]
+}
+// :ddbjLabel "exon"
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000147@en"
+// skos:definition "region of genome that codes for portion of spliced mRNA,rRNA and tRNA; may contain 5'UTR, all CDSs and 3' UTR;"
+
+bibo:Film {
+  rdf:type [bibo:Film]
+}
+// rdfs:comment "aka movie.@en"
+// :subDomain "BIBO"
+// rdfs:label "Film@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+sapp:TMHMM {
+  :sequence xsd:String?
+    // skos:definition "The sequence, encoded with the default DNA(including degenerated nucleotides), RNA(including degenerated nucleotides) or protein encoding. For any special items please use the modifiedBase and modifiedResidue features." ;
+  :type xsd:String ;
+  :location @sapp:Phobius ;
+  rdf:type [sapp:TMHMM]
+}
+// rdfs:label "TMHMM"
+
+:ConservedRegion {
+  rdf:type [:ConservedRegion]
+}
+OR
+:ProteinDomain OR
+:CatalyticDomain 
+
+:OneOfPosition {
+  :position xsd:Long
+    // skos:definition "The exact position (5 prime to 3 prime)" ;
+  rdf:type [:OneOfPosition]
+}
+// :subDomain "LocationCore"
+// skos:editorialNote "A position that can be either at one of the given positions. We currently have no support to include InRange, Before or After positions. If needed please notify us."
+// skos:editorialNote "Taken over from Faldo ontology, although Faldo ontology does allow for inclusion of regions. This causes the possibility of an ill defined loop as region can include OneOfPosition again, which has no semantical meaning."
+
+bibo:Newspaper {
+  rdf:type [bibo:Newspaper] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:comment "A periodical of documents, usually issued daily or weekly, containing current news, editorials, feature articles, and usually advertising.@en"
+// :subDomain "BIBO"
+// rdfs:label "Newspaper@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:ProteinInteractionSide {
+  rdf:type [:ProteinInteractionSide] ;
+  :bindingProtein @:ProteinInteractionSide?
+    // skos:definition "If known, a region within another protein that binds this region. If region of other protein is unknown use fuzzy position from begin to end."
+}
+// skos:definition "Region of the protein that bind to another protein@en"
+// :subDomain "SequenceFeatureCore"
+
+:ProteinRepeat {
+  :rptUnitSeq xsd:String?
+    // :ddbjLabel "rpt_unit_seq"
+    // skos:editorialNote "Property of the repeat feature, use string to note pattern"
+    // skos:definition "Pattern of the repeat. For example (NAG)8(WN)2" ;
+  :rptUnitRange @:RepeatFeature?
+    // :ddbjLabel "rpt_unit_range"
+    // skos:editorialNote "Property of the repeat region"
+    // skos:definition "Base range of the sequence that constitutes a repeated sequence" ;
+  rdf:type [:ProteinRepeat]
+}
+// skos:definition "A repeat within a protein"
+// :subDomain "SequenceFeatureCore"
+
+owl:Thing {
+  rdf:type [owl:Thing]
+}
+
+:PCRPrimer {
+  rdf:type [:PCRPrimer] ;
+  :primerSequence xsd:String
+    // skos:definition "The primer sequence should be presented in 5'>3' order and should be given in the IUPAC degenerate-base alphabet. Except,the modified bases must be enclosed within angle brackets <>. Sample: 'cg<i>gtgtytcrtact'." ;
+  :primerName xsd:String?
+    // skos:definition "The name of the primer"
+}
+// :subDomain "DocumentCore"
+// skos:definition "A single primer.@en"
+
+:MiscRna {
+  :product xsd:String?
+    // :ddbjLabel "product"
+    // skos:editorialNote "Product description only present in CDS"
+    // skos:definition "The functional name" ;
+  rdf:type [:MiscRna]
+}
+// skos:definition "Any transcript that cannot be defined by other transcript types (precursor_RNA, mRNA, ncRNA, rRNA, tmRNA and tRNA);"
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "misc_RNA"
+
+:SequenceAssembly {
+  :sequencePart @:SequenceAssembly+
+    // skos:definition "Sorted list of parts that upon concatonation forms the complete sequence." ;
+  rdf:type [:SequenceAssembly] ;
+  :provenance @:Note
+    // skos:definition "The provenance of the XREF holding the origin of the XRef"
+}
+// skos:definition "An assembly of a sequence based on other sequences."
+// rdfs:comment "An assembly is defined by list of parts that can either be included sequences or gaps. If a sequence is include a region of the included sequence must be specified. If a gap is include a known or estimated gap length must be specified, if unknown the gap length defaults to 100. The sequence at the gaps is equal to N. The provenance of the assembly process can be included."
+// :subDomain "SequenceFeatureCore"
+
+bibo:Conference {
+  rdf:type [bibo:Conference]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A meeting for consultation or discussion.@en"
+// rdfs:label "Conference@en"
+// :subDomain "BIBO"
+
+:IntraMembraneRegion {
+  :cTerminalMembrane xsd:String?
+    // skos:definition "Name of the membrane on the c terminal side" ;
+  rdf:type [:IntraMembraneRegion] ;
+  :nTerminalMembrane xsd:String?
+    // skos:definition "Name of the membrane on the n terminal side"
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "Region in-between two membranes@en"
+
+void:Dataset {
+  dc:language xsd:String?
+    // skos:scopeNote "Used to link a bibliographic resource to the language used to express it.@en"
+    // skos:definition "The language of this resource." ;
+  void:uriSpace IRI?
+    // skos:definition "This property can be used to state that all entity URIs in a dataset start with a given string. In other words, they share a common “URI namespace”." ;
+  void:uriLookupEndpoint IRI?
+    // skos:definition "A protocol endpoint for simple URI lookups for this data set." ;
+  dc:description xsd:String?
+    // skos:definition "A textual description of the dataset." ;
+  rdfs:comment xsd:String?
+    // skos:definition "A comment on the dataset" ;
+  void:dataDump IRI?
+    // skos:definition "If available, the RDF dump of the dataset." ;
+  wv:norms IRI?
+    // skos:definition "Norms are not legally binding but represent the general principles or \"code of conduct\" adopted by a community for access and use of resources" ;
+  rdfs:label xsd:String
+    // skos:definition "A additional label for the dataset" ;
+  void:sparqlEndpoint IRI?
+    // skos:definition "An optional sparql endpoint to query the dataset" ;
+  dc:hasVersion xsd:String
+    // skos:definition "The textual description of the version of the document, please not the version property in GBOLDataSet" ;
+  void:uriRegexPattern xsd:String?
+    // skos:definition "In cases where a simple string prefix match is insufficient, this property can be used. It expresses a regular expression pattern that matches the URIs of the dataset's entities." ;
+  dc:license IRI?
+    // skos:definition "A legal document giving official permission to do something with this dataset. It must be an IRI referencing to an resolvable URI returning the text of the license." ;
+  wv:waiver xsd:String?
+    // skos:definition "Best practice is use the URI of a waiver legal document as the value of this property." ;
+  dc:title xsd:String?
+    // skos:definition "The name of the dataset."
+}
+// skos:definition "The fundamental concept of VoID is the dataset. A dataset is a set of RDF triples that are published, maintained or aggregated by a single provider. Unlike RDF graphs, which are purely mathematical constructs [RDF-CONCEPTS], the term dataset has a social dimension: we think of a dataset as a meaningful collection of triples, that deal with a certain topic, originate from a certain source or process, are hosted on a certain server, or are aggregated by a certain custodian. Also, typically a dataset is accessible on the Web, for example through resolvable HTTP URIs or through a SPARQL endpoint, and it contains sufficiently many triples that there is benefit in providing a concise summary.\n\nSince most datasets describe a well-defined set of entities, datasets can also be seen as a set of descriptions of certain entities, which often share a common URI prefix (such as http://dbpedia.org/resource/).\n\nIn VoID, a dataset is modelled as an instance of the void:Dataset class. Such a void:Dataset instance is a single RDF resource that represents the entire dataset, and thus allows us to easily make statements about the entire dataset and all its triples.\n\nThe relationship between a void:Dataset instance and the concrete triples contained in the dataset is established through access information, such as the address of a SPARQL endpoint where the triples can be accessed."
+// :subDomain "DocumentCore"
+// skos:editorialNote "#Fields we could include from FAIR\n#fields taken from fair\n#dcterms:isPartOf IRI*;\n#fdp-o:metadataIssued xsd:dateTime;\n#fdp-o:metadataModified xsd:dateTime;     \n#dcterms:issued xsd:dateTime*;\n#dcterms:modified xsd:dateTime*; \n# dcterms:rights IRI*; \n#dcterms:conformsTo IRI*; \n #fdp-o:metadataIdentifier @:metadataID;   \n# dcterms:publisher @:agent+;;\n#dcat:landingPage IRI*;\n#dcat:theme IRI+;\n#dcat:keyword xsd:string*;   \n#Links to distribution@en"
+AND
+(
+  {
+    rdf:type [void:Dataset]
+  }
+  OR
+  :Database OR
+  :GBOLDataSet OR
+  :DataFile 
+)
+
+sapp:HMM {
+  :ALIlocation @sapp:HMM ;
+  rdf:type [sapp:HMM] ;
+  :TDievalue xsd:Double ;
+  :FSevalue xsd:Double ;
+  :FSscore xsd:Double ;
+  :ENVlocation @sapp:HMM ;
+  :TDdomainsTotal xsd:Integer ;
+  :accuracy xsd:Double ;
+  :TDcevalue xsd:Double ;
+  :HMMlocation @sapp:HMM ;
+  :FSbias xsd:Double ;
+  :TDbias xsd:Double ;
+  :TDscore xsd:Double ;
+  :TDdomainNumber xsd:Integer
+}
+
+foaf:Agent {
+  foaf:name xsd:String
+    // skos:definition "A human readable (user) name of the agent"
+}
+// skos:scopeNote "Used to describe any \"agent\" related to bibliographic items. Such agents can be persons, organizations or groups of any kind.@en"
+// :subDomain "DocumentWiseProv"
+AND
+(
+  {
+    rdf:type [foaf:Agent]
+  }
+  OR
+  foaf:Person OR
+  foaf:Organization OR
+  provo:Agent 
+)
+
+bibo:Periodical {
+  rdf:type [bibo:Periodical]
+}
+OR
+bibo:Magazine OR
+bibo:Code OR
+bibo:CourtReporter OR
+bibo:Newspaper OR
+bibo:Journal 
+
+bibo:Interview {
+  rdf:type [bibo:Interview]
+}
+// rdfs:comment "A formalized discussion between two or more people.@en"
+// :subDomain "BIBO"
+// rdfs:label "Interview@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:PublicDataFile {
+  :accessedOn xsd:DateTime?
+    // skos:definition "The time point at which the file was downloaded" ;
+  rdf:type [:PublicDataFile] ;
+  :url IRI?
+    // skos:definition "Optional an URL it was downloaded from"
+}
+// skos:definition "A public file that is available on the INTERNET"
+// :subDomain "DocumentWiseProv"
+
+:ProteinStructure {
+  rdf:type [:ProteinStructure] ;
+  :structureType [:BetaStrand :AlphaHelix :CoiledCoil :Turn]
+    // skos:definition "The type of secondary structure"
+}
+// skos:definition "Defines the secondary structure of the protein for the given region@en"
+// :subDomain "SequenceFeatureCore"
+
+:RegulationSite {
+  rdf:type [:RegulationSite] ;
+  :regulatoryClass [:Terminator :ImprintingControlRegion :ReplicationRegulatoryRegion :LocusControlRegion :Attenuator :Insulator :TATABox :Silencer :RecodingStimulatoryRegion :Minus35Signal :RibosomeBindingSite :CAATSignal :GCSignal :Riboswitch :MatrixAttachmentRegion :Enhancer :Promoter :TranscriptionalCisRegulatoryRegion :OtherRegulation :Minus10Signal :PolyASignalSequence :ResponseElement :EnhancerBlockingElement :DNaseIHypersensitiveSite]?
+    // skos:definition "The type of regulation"
+    // skos:editorialNote "Add to RegulationSite class, enumeration from the enumeration in genbank created"
+    // :ddbjLabel "regulatory_class"
+}
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "regulatory"
+// rdfs:comment "This feature has replaced the following Feature Keys on 15-DEC-2014: enhancer, promoter, CAAT_signal, TATA_signal, -35_signal, -10_signal, RBS, GC_signal, polyA_signal, attenuator, terminator, misc_signal."
+// skos:definition "Any region of sequence that functions in the regulation of transcription or translation;@en"
+// skos:editorialNote "type class created, only present in the RegulationSite feature@en"
+
+:FeatureProvenance {
+  :onProperty IRI*
+    // skos:definition "Provenance applies to the given properties or the existence of the feature it self (use gbol:Existance), if not defined it all applies to all properties." ;
+  rdf:type [:FeatureProvenance]
+}
+// rdfs:comment "All subclasses of FeatureProvenance belong to the extensional part of the GBOL ontology. Each subclass is specific to a tool.@en"
+// :subDomain "ElementWiseProv"
+
+:AnnotationSoftware {
+  :codeRepository IRI?
+    // skos:definition "The (GIT) repository containing the code of the tool" ;
+  :commitId xsd:String?
+    // skos:definition "The String that uniquely identifies the last commit of the code used." ;
+  :version xsd:Integer
+    // skos:definition "The version of database" ;
+  rdf:type [:AnnotationSoftware] ;
+  foaf:homepage xsd:String?
+    // skos:definition "Homepage of the person (for example link to linkedin or research gate)"
+    // skos:scopeNote "Used to link an agent to its homepage (which is a web page accessible using a URL).@en"
+}
+// :subDomain "DocumentWiseProv"
+
+:PartGap :PartGapKnownLength OR
+:PartGapUnknownLength 
+
+bibo:Article {
+  rdf:type [bibo:Article]
+}
+OR
+bibo:AcademicArticle 
+
+:Position {
+  rdf:type [:Position]
+}
+OR
+:FuzzyPosition OR
+:ExactPosition 
+
+:WaterBasedGeographicalLocation {
+  :ocean [:Indian_Ocean :Southern_Ocean :North_Sea :Baltic_Sea :Mediterranean_Sea :Ross_Sea :Atlantic_Ocean :Pacific_Ocean :Tasman_Sea :Arctic_Ocean]
+    // skos:definition "The name of the ocean" ;
+  rdf:type [:WaterBasedGeographicalLocation]
+}
+// skos:definition "A geographical location in a ocean, identified by an ocean name@en"
+// :subDomain "DocumentCore"
+
+:InBetween {
+  rdf:type [:InBetween] ;
+  :after @:InBetween
+    // skos:definition "The base after which the in between two bases location is located" ;
+  :strand [:BothStrandsPosition :ReverseStrandPosition :ForwardStrandPosition]?
+    // skos:definition "The strand on which it is positioned"
+}
+// rdfs:comment "Identifies a location between two bases"
+// :subDomain "LocationCore"
+// skos:editorialNote "Faldo also has a before property, but as before is equal to after + 1 we removed this property."
+
+:Contig {
+  rdf:type [:Contig]
+}
+// skos:definition "An assembly of separate reads@en"
+// skos:definition "#Optionally point to the reads, from which the contig is build. Use assembly property to define complete assembly.\nsourceReads @:Contig*;@en"
+// :subDomain "SequenceFeatureCore"
+
+:MaturePeptide {
+  rdf:type [:MaturePeptide]
+}
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "mat_peptide"
+// rdfs:comment "The location does not include the stop codon (unlike the corresponding CDS)"
+// skos:definition "Mature peptide or protein, after completion of the post-translational modifications."
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000419@en"
+
+:ProteinBinding {
+  rdf:type [:ProteinBinding]
+}
+// skos:definition "non-covalent protein binding site on nucleic acid;"
+// :ddbjLabel "protein_bind"
+// rdfs:comment "note that featureKey regulatory with /regulatory_class=\"ribosome_binding_site\"should be used for ribosome binding sites."
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000410@en"
+// :subDomain "SequenceFeatureCore"
+
+:AnnotationResult {
+  provo:wasAttributedTo @provo:Entity?
+    // skos:definition "The agent that performed or initiated the activity that generated this entity" ;
+  provo:wasGeneratedBy @provo:Entity?
+    // skos:definition "The annotation activity that created this annotation result"
+}
+// :subDomain "DocumentWiseProv"
+// rdfs:label "AnnotationResult"
+AND
+(
+  {
+    rdf:type [:AnnotationResult]
+  }
+  OR
+  :AnnotationLinkSet 
+)
+
+:ProvenanceAnnotation {
+  :provenanceNote xsd:String?
+    // skos:definition "Note on the provenance" ;
+  :reference @:Citation
+    // skos:definition "List of references supporting the annotation" ;
+  :experiment xsd:String?
+    // skos:definition "The experimental evidence for the feature annotation (use Evidence Ontology term if possible)"
+    // skos:editorialNote "Replaced with the provenance infrastructure, use the onProperty property to denote to which property it relates" ;
+  :derivedFrom @:ProvenanceAnnotation*
+    // skos:definition "Optionally give a list of features upon which it is based"
+}
+// skos:definition "The element wise annotation of the provenance. This element is typically related to one feature or qualifier, but can be shared among multiple."
+// :subDomain "ElementWiseProv"
+AND
+(
+  {
+    rdf:type [:ProvenanceAnnotation]
+  }
+  OR
+  sapp:HMM OR
+  sapp:WoLFPSort OR
+  sapp:Priam OR
+  sapp:ENZDP OR
+  sapp:Prodigal OR
+  sapp:SignalP OR
+  sapp:TMHMM OR
+  sapp:InterProScanModels OR
+  sapp:Blast OR
+  sapp:Phobius OR
+  sapp:InterProScan 
+)
+
+bibo:Workshop {
+  rdf:type [bibo:Workshop]
+}
+// :subDomain "BIBO"
+// rdfs:label "Workshop@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A seminar, discussion group, or the like, that emphasizes exchange of ideas and the demonstration and application of techniques, skills, etc.@en"
+
+:TransMembraneRegion {
+  rdf:type [:TransMembraneRegion]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "Region of the protein that is within a membrane@en"
+
+:UnknownLengthAssemblyGap {
+  :estimatedLength xsd:Integer?
+    // skos:editorialNote "Added to unknonwassemblygap, to indicate the estimated length of the gap"
+    // skos:definition "The estimated gap length, if not given its unknown and defaults to 100" ;
+  rdf:type [:UnknownLengthAssemblyGap]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "gap of unknown length in the sequence"
+// rdfs:comment "The gap must be denoted with a series of N's in the sequence, if the assembly gap is of unknown length then number of N must be equal to the estimated length. If that is unknown it default to 100 and so should be denoted with 100 N's in the sequence. No upper or lower limit is set on the size of the gap."
+// :ddbjLabel "gap"
+
+:Note {
+  :text xsd:String
+    // skos:definition "The textual description of the note" ;
+  :provenance @:Note
+    // skos:definition "The provenance of the XREF holding the origin of the XRef" ;
+  rdf:type [:Note]
+}
+// :subDomain "DocumentCore"
+// rdfs:label "Note"
+
+:TranslExcept {
+  :aminoAcid [:Asn :MeIle :Nva :Tyr :Trp :Nle :Val :aIle :Gln :Orn :MeLys :Abu :Aib :Ahe :Apm :Xle :bAad :Dbu :Des :Glx :Phe :His :MeVal :AminoAcidOther :bAla :Ide :Acp :EtGly :Ala :Ile :Met :Ser :FourAbu :Asp :TERM :Gly :Aad :Asx :Glu :Sec :EtAsn :Lys :ThreeHyp :FourHyp :Thr :Dpm :aHyl :Hyl :MeGly :Xaa :Pro :bAib :Dpr :Arg :Leu :Pyl :Cys]
+    // skos:definition "The encoded amino acid" ;
+  rdf:type [:TranslExcept] ;
+  :exceptRegion @:TranslExcept
+    // skos:definition "The position of region which translate to other amino acid then the default translation table"
+}
+// :subDomain "SequenceFeatureCore"
+
+:Organism {
+  :taxonomyLineage @:Organism*
+    // skos:definition "The lineage of the organism from which the sequence originates, should match to the lineage of the referenced taxonomy" ;
+  rdf:type [:Organism] ;
+  :taxonomy @:Organism?
+    // skos:definition "The taxonomy of the organism from which the sequence originates" ;
+  :scientificName xsd:String?
+    // skos:definition "The taxonomic name of the organism from which the sequence originates, should match to the name of the referenced taxonomy"
+}
+// :subDomain "DocumentCore"
+// skos:definition "The living envelope in which all SequenceObject are enclosed."
+
+:CrossLink {
+  :crossLinkType xsd:String?
+    // skos:definition "Textual description of the crosslink type" ;
+  :crossLinkTo @:CrossLink
+    // skos:definition "Link to the other cross link" ;
+  rdf:type [:CrossLink]
+}
+// skos:editorialNote "TODO: we could make enumeration for cross link types in the future@en"
+// skos:definition "A side that covalently crosslinks to another crosslink side@en"
+// :subDomain "SequenceFeatureCore"
+// rdfs:comment "The cross links are linked togather, so use the location of the other cross link feature to determine location of the partnering base."
+
+:XRefProvenance {
+  rdf:type [:XRefProvenance] ;
+  :origin @:XRefProvenance
+    // skos:definition "Link to the data-wise provenance"
+}
+// rdfs:label "XRefProvenance"
+// :subDomain "ElementWiseProv"
+
+bibo:Excerpt {
+  rdf:type [bibo:Excerpt]
+}
+OR
+bibo:Quote 
+
+:Protein {
+  :feature @:NASequence*
+    // skos:definition "The set of features annotating the sequence" ;
+  rdf:type [:Protein]
+}
+// skos:definition "Represents any protein sequence"
+// rdfs:comment "The IRI of a sequence of must be equal to http://gbol.live/0.1/protein/<SHA-384 key of protein sequence>."
+// :subDomain "SequenceFeatureCore"
+
+:StructureFeature {
+  rdf:type [:StructureFeature]
+}
+OR
+:MiscStructure OR
+:StemLoop 
+
+:AfterPosition {
+  :position xsd:Long
+    // skos:definition "The exact position (5 prime to 3 prime)" ;
+  rdf:type [:AfterPosition]
+}
+// rdfs:comment "A location that is somewhere after the given position."
+// :subDomain "LocationCore"
+// skos:editorialNote "Missing from the faldo ontology, taken from the genbank format. In Faldo it is supposed to be modeled with a InRange position that has no end attribute. We did not agree with this design in faldo as it does not reflect the semantics."
+
+bibo:Map {
+  rdf:type [bibo:Map]
+}
+// rdfs:comment "A graphical depiction of geographic features.@en"
+// rdfs:label "Map@en"
+// :subDomain "BIBO"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:DataFile {
+  :containedEntity @:DataFile*
+    // skos:definition "Optional list of entities that are contained within the file"
+}
+// :subDomain "DocumentWiseProv"
+// skos:definition "An independent file on local disk or remote repository."
+AND
+(
+  {
+    rdf:type [:DataFile]
+  }
+  OR
+  :LocalDataFile OR
+  :PublicDataFile 
+)
+
+:CollectionOfRegions {
+  :members @:BagOfRegions+
+    // skos:definition "A set of regions making up a location spreader over multiple regions. The members inherit the reference value from this CollectionOfRegions object."
+}
+// rdfs:comment "A region that is separated over several regions. Ordering of the regions is given by using the the rdfs:_n property."
+// skos:editorialNote "Taken over from Faldo."
+// :subDomain "LocationCore"
+AND
+(
+  {
+    rdf:type [:CollectionOfRegions]
+  }
+  OR
+  :ListOfRegions OR
+  :BagOfRegions 
+)
+
+:CatalyticDomain {
+  rdf:type [:CatalyticDomain]
+}
+// :subDomain "SequenceFeatureCore"
+// rdfs:comment "Use collection of regions to denote all elements of the active side.@en"
+// skos:definition "The regions that form the catalytic region of protein.@en"
+
+:ModifiedBase {
+  :modBase [:BaseI6a :BaseCm :BaseGal_q :BaseM5c :BaseS2t :BaseM2a :BaseM4c :BaseDhu :BaseGm :BaseMam5u :BaseOther :BaseFm :BaseM6a :BaseMam5s2u :BaseI :BaseM1f :BaseMo5u :BaseT6a :BaseCmnm5s2u :BaseMs2i6a :BaseQ :BaseMcm5s2u :BaseM22g :BaseMan_q :BaseO5u :BaseMs2t6a :BaseCmnm5u :BaseS4u :BaseMt6a :BaseS2u :BaseMv :BaseMcm5u :BaseOsyw :BaseP :BaseM2g :BaseM1g :BaseYw :BaseChm5u :BaseM1a :BaseM3c :BaseM7g :BaseT :BaseS2c :BaseAc4c :BaseX :BaseUm :BaseM1i :BaseTm]
+    // skos:editorialNote "Enumeration type added, property is in modified base feature"
+    // :ddbjLabel "mod_base"
+    // skos:definition "The type of modification" ;
+  :modificationFunction IRI?
+    // skos:definition "If applicable, the biological process in which this modification is involved. Use a Biological Process from the GO ontology." ;
+  rdf:type [:ModifiedBase]
+}
+// skos:definition "The indicated nucleotide is a modified nucleotide and should be substituted for by the indicated molecule(given in the mod_base qualifier value)"
+// :ddbjLabel "modified_base"
+// rdfs:comment "value is limited to the restricted vocabulary for modified base abbreviations;"
+// :subDomain "SequenceFeatureCore"
+
+foaf:Organization {
+  foaf:logo IRI?
+    // skos:definition "Link to logo of organization" ;
+  foaf:mbox IRI?
+    // skos:definition "mail address use  URI scheme (see RFC 2368)." ;
+  foaf:based_near xsd:String?
+    // skos:definition "Location to which the organization is based near"
+    // skos:scopeNote "Used to link an agent, related to bibliographic things, to a place where it is based near: can be a city, a monument, a building, etc.@en" ;
+  rov:legalName xsd:String?
+    // skos:definition "The legal name of the organization" ;
+  foaf:phone xsd:String?
+    // skos:definition "The phone number of the person" ;
+  foaf:homepage xsd:String?
+    // skos:definition "Homepage of the person (for example link to linkedin or research gate)"
+    // skos:scopeNote "Used to link an agent to its homepage (which is a web page accessible using a URL).@en"
+}
+// :subDomain "DocumentWiseProv"
+AND
+(
+  {
+    rdf:type [foaf:Organization]
+  }
+  OR
+  provo:Organization 
+)
+
+:AnnotationActivity {
+  provo:endedAtTime xsd:DateTime?
+    // skos:definition "The time at which the activity is ended, if unknown set equal to startedAt." ;
+  provo:startedAtTime xsd:DateTime?
+    // skos:definition "The time at which the activity is started"
+}
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+// :subDomain "DocumentWiseProv"
+AND
+(
+  :ManualAnnotationActivity OR
+  :AutomaticAnnotationActivity 
+)
+
+:mRNA {
+  rdf:type [:mRNA]
+}
+// skos:definition "messenger RNA; includes 5'untranslated region (5'UTR),coding sequences (CDS, exon) and 3'untranslated region(3'UTR);"
+// :ddbjLabel "mRNA"
+// :subDomain "SequenceFeatureCore"
+
+:ReplicationOrigin {
+  :replicationDirection [:Both :Reverse :Forward]?
+    // skos:definition "The direction of the replication can be forward, reverse or both" ;
+  rdf:type [:ReplicationOrigin]
+}
+// skos:definition "Origin of replication; starting site for duplication of nucleic acid to give two identical copies;@en"
+// :ddbjLabel "rep_origin"
+// rdfs:comment "/direction has valid values: RIGHT, LEFT, or BOTH."
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000296@en"
+// :subDomain "SequenceFeatureCore"
+
+:PublishedGBOLDataSet {
+  :lastPublishedRelease xsd:Integer?
+    // skos:definition "The version of the version that has been last published" ;
+  :holddate xsd:Date?
+    // skos:definition "The date until which the GBOL dataset should not published (only present on non public entries)" ;
+  :lastPublishedDate xsd:Date?
+    // skos:definition "The last time the this GBOL data has been published" ;
+  :firstPublicRelease xsd:Integer?
+    // skos:definition "The version of the record when it was first published" ;
+  :firstPublic xsd:Date?
+    // skos:definition "The date at which the record was first published" ;
+  rdf:type [:PublishedGBOLDataSet] ;
+  :abstract xsd:String?
+    // skos:definition "The abstract of the publication" ;
+  :releaseStatus xsd:String?
+    // skos:definition "A free string to keep track of the release status (for private use, not present on public entries)" ;
+  :dblinks @:PublishedGBOLDataSet*
+    // skos:definition "Cross references to other databases containing the same record"
+}
+// :subDomain "DocumentCore"
+// rdfs:comment "This class can also describe converted GenBank or EMBL entries that have been published@en"
+// skos:definition "A GBOLDataSet that has been published@en"
+
+:PartIncludedSequence {
+  :includedSequence @:PartIncludedSequence
+    // skos:definition "Reference to the sequence that is included" ;
+  rdf:type [:PartIncludedSequence]
+}
+// skos:definition "A part of the sequence included from another sequence that is included within the same GBOL document."
+// :subDomain "SequenceFeatureCore"
+
+:InRangePosition {
+  :endPosition xsd:Long ;
+  :beginPosition xsd:Long ;
+  rdf:type [:InRangePosition]
+}
+// :subDomain "LocationCore"
+// skos:editorialNote "Taken over from the faldo ontology as it is."
+// rdfs:comment "Location is somewhere between the begin and end."
+
+:UpdatedSequence {
+  rdf:type [:UpdatedSequence] ;
+  :compare IRI
+    // skos:definition "The functional name"
+    // skos:editorialNote "Only present in Updated sequence feature, with a reference to the old sequence"
+    // :ddbjLabel "compare"
+}
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "old_sequence"
+// rdfs:comment "/replace=\"\" is used to annotate deletion, e.g.old_sequence 12..15/replace=\"\"NOTE: This featureKey is not valid in entries/recordscreated from 15-Oct-2007."
+// skos:definition "The presented variation revises a previous version of the sequence at the given location;"
+
+:TransferOrigin {
+  rdf:type [:TransferOrigin]
+}
+// skos:definition "Origin of transfer; region of a DNA molecule where transfer isinitiated during the process of conjugation or mobilization@en"
+// :ddbjLabel "oriT"
+// rdfs:comment "rep_origin should be used for origins of replication; /direction has legal values RIGHT, LEFT and BOTH, however only RIGHT and LEFT are valid when used in conjunction with the oriT feature; origins of transfer can be present in the chromosome;plasmids can contain multiple origins of transfer"
+// skos:editorialNote "#* The direction of the transfer, can be forward or reverse, which effect the direction of the integrated dna strand.\ntransferDirection type::Direction?;@en"
+// :subDomain "SequenceFeatureCore"
+
+:LocalDataFile {
+  :retrievedOn xsd:DateTime?
+    // skos:definition "Optional a time point at which the file was downloaded" ;
+  :localFileName xsd:String
+    // skos:definition "The local file name" ;
+  rdf:type [:LocalDataFile] ;
+  :retrievedFrom IRI?
+    // skos:definition "Optional an URL it was downloaded from" ;
+  :localFilePath xsd:String
+    // skos:definition "The local file path"
+}
+// skos:definition "A file on the local disk"
+// :subDomain "DocumentWiseProv"
+
+:GBOLDataSet {
+  :keywords xsd:String*
+    // skos:definition "A list of keyword describing the content of the GBOL data set" ;
+  :annotationResults @:GBOLDataSet*
+    // skos:definition "All annotation result within the GBOL data set" ;
+  :samples @:GBOLDataSet*
+    // skos:definition "All samples from which the sequence objects are collected" ;
+  :organisms @:GBOLDataSet*
+    // skos:definition "All associated organisms" ;
+  :entryType [:HighThoughputGenomeSequencingEntry :GenomeSurveySequenceEntry :EnvironmentalSamplingSequencesEntry :StandardEntry :HighThoughputCDNASequencingEntry :TranscriptomeShotgunAssemblyEntry :ExpressedSequenceTagEntry :PatentEntry :WholeGenomeShotgunEntry :SequenceTaggedSiteEntry :MassGenomeAnnotationEntry]
+    // skos:definition "The type of this GBOLDataSet" ;
+  :xref @sapp:InterProScanModels*
+    // skos:definition "Reference to entries in other databases which also represent the same sequence. Note that the GBOLDocment xref and sequence xref can point to same GenBank/EBML entry." ;
+  :references @:GBOLDataSet*
+    // skos:definition "A set of references associated to the GBOLDataSet" ;
+  :version xsd:Integer
+    // skos:definition "The version of database" ;
+  :note @:GBOLDataSet*
+    // skos:editorialNote "Each feature can have note"
+    // :ddbjLabel "note"
+    // skos:definition "A extra note on the sequence itself, do not add notes related to the GBOLDocument or sample." ;
+  :linkedDataBases @:GBOLDataSet*
+    // skos:definition "All databases that are linked by any of the contained XRefs" ;
+  :sequences @:GBOLDataSet*
+    // skos:definition "All dna objects included within the GBOL data set"
+}
+// skos:definition "A complete annotation record stored in GBOL file"
+// rdfs:comment "This class acts as root object of all the data stored within a GBOL file"
+// :framing "ROOT\n:linkedDatabases\n:annotationResults\n:samples\n:sequenceObjects@en"
+// :subDomain "DocumentCore"
+AND
+(
+  {
+    rdf:type [:GBOLDataSet]
+  }
+  OR
+  :PublishedGBOLDataSet 
+)
+
+bibo:Journal {
+  rdf:type [bibo:Journal] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:label "Journal@en"
+// :subDomain "BIBO"
+// rdfs:comment "A periodical of scholarly journal Articles.@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:Sample {
+  :cellType xsd:String?
+    // :ddbjLabel "cell_type"
+    // skos:definition "The cell type from which the sequence was obtained, please use term from 'Cell Ontology' (http://cellontology.org/) where possible" ;
+  :name xsd:String?
+    // skos:definition "An optional name for the sample" ;
+  :haplotype xsd:String?
+    // :ddbjLabel "haplotype"
+    // skos:definition "For the host from which the sample was obtained the name for a combination of alleles that are linked together on the same physical chromosome. In the absence of recombination, each haplotype is inherited as a unit, and may be used to track gene flow in populations." ;
+  :cultivar xsd:String?
+    // :ddbjLabel "cultivar"
+    // skos:definition "The cultivar (cultivated variety) of plant from which sample was obtained." ;
+  :chromosome xsd:String?
+    // :ddbjLabel "chromosome"
+    // skos:editorialNote "Both present on the sample and the chromosome object."
+    // skos:definition "The name of the chromosome from which the sample was obtained (using PCR)." ;
+  :serotype xsd:String?
+    // :ddbjLabel "serotype"
+    // skos:definition "The serological typing of the species within the sample by its antigenic properties" ;
+  :citation @:Sample*
+    // skos:definition "A link to a specific citation"
+    // skos:editorialNote "Replaced in GBOl to citation reference in both the feature and Sequence Object" ;
+  :note @:GBOLDataSet*
+    // skos:editorialNote "Each feature can have note"
+    // :ddbjLabel "note"
+    // skos:definition "A extra note on the sequence itself, do not add notes related to the GBOLDocument or sample." ;
+  :subSpecies xsd:String?
+    // :ddbjLabel "sub_species"
+    // skos:definition "The name or identifier of the sub-species from which the sample was obtained (using PCR)." ;
+  :description xsd:String
+    // skos:definition "A short description of the sequence" ;
+  :isolationSource xsd:String?
+    // skos:definition "Describes the physical, environmental and/or local geographical source of the biological sample from which the sequence was derived. Use geographicalLocation to denote the geographical location (examples: 'permanent Antarctic sea ice', 'rumen isolates from standard Pelleted ration-fed steer #67', 'denitrifying activated sludge from carbon limited continuous reactor')"
+    // :ddbjLabel "isolation_source" ;
+  :popVariant xsd:String?
+    // :ddbjLabel "pop_variant"
+    // skos:definition "The name of the subpopulation or phenotype from which the sample was collected." ;
+  :variety xsd:String?
+    // :ddbjLabel "variety"
+    // skos:definition "The variety of the host from which the sample was derived. Use cultivar if the host is a cultivated plant." ;
+  :ecotype xsd:String?
+    // :ddbjLabel "ecotype"
+    // skos:definition "The specific name of the host from which the sample has been collected, where the name indicates to which habitat/ecological enviroment the host has adopted to. Example: 'Columbia', which indicate that this Arabidopsis adopted itself with a hairier phenotype to deal with the especially sunny habitat." ;
+  :identifiedBy @:Sample?
+    // skos:definition "The name of the expert who identified the specimen taxonomically"
+    // :ddbjLabel "identified_by" ;
+  :environmentalSample xsd:Boolean?
+    // :ddbjLabel "environmental_sample"
+    // skos:definition "This denotes that this sample is the result of a bulk NA extraction method, therefore the organism of the sample and associated sequence(s) are not (exactly) known." ;
+  :geographicalCoordinate @:Sample?
+    // skos:definition "The geographical coordinates(latitude + longtitude) of the location where the specimen was collected" ;
+  :organelle IRI?
+    // :ddbjLabel "organelle"
+    // skos:definition "Type of membrane-bound intracellular structure from which the sample was obtained. Use a 'cellelar component' term from the GO ontology." ;
+  :subStrain xsd:String?
+    // :ddbjLabel "sub_strain"
+    // skos:definition "The name or identifier of a genetically or otherwise modified strain from which the sample was obtained (using PCR). The parental strain from which it is derived should be annotated with the strain property." ;
+  :sex xsd:String?
+    // :ddbjLabel "sex"
+    // skos:definition "The sex of the organism from which the sample was obtained. Sex is used for eukaryotic organisms that undergo meiosis with sexually dimorphic gametes. For prokaryotes, and for eukaryotes that undergo meiosis without sexually dimorphic gametes please use the mathingType property." ;
+  :matingType xsd:String?
+    // :ddbjLabel "mating_type"
+    // skos:definition "The mating type of the organism from which the sample was obtained. Mating type is used for prokaryotes, and for eukaryotes that undergo meiosis without sexually dimorphic gametes. For eukaryotic organisms that undergo meiosis with sexually dimorphic gametes please use the sex property." ;
+  :sourceMaterial @:Sample*
+    // skos:definition "Identification of the material in a collection from which the sample is derived. Entries with more than one sampleSource indicates that the sequence was obtained from a sample that was deposited (by the submitter or a collaborator) in more than one collection." ;
+  rdf:type [:Sample] ;
+  :strain xsd:String?
+    // :ddbjLabel "strain"
+    // skos:definition "The name or identifier of the strain from which the sample was obtained (using PCR)." ;
+  :collectedBy @:Sample*
+    // :ddbjLabel "collected_by"
+    // skos:definition "The persons or institute who collected the specimen" ;
+  :isolate xsd:String?
+    // :ddbjLabel "isolate"
+    // skos:definition "Individual isolate from which the sequence was obtained. For example ('Patient #152','DGGE band PSBAC-13')" ;
+  :proviralExtraction xsd:Boolean?
+    // skos:definition "Indicate that this sample is an proviral sequence extracted from another organism using PCR." ;
+  :devStage xsd:String?
+    // :ddbjLabel "dev_stage"
+    // skos:definition "The developmental stage at which the organism was when the sample was obtained" ;
+  :tissueLib xsd:String?
+    // :ddbjLabel "tissue_lib"
+    // skos:definition "The tissue library from which the sample was obtained" ;
+  :xref @sapp:InterProScanModels*
+    // skos:definition "Reference to entries in other databases which also represent the same sequence. Note that the GBOLDocment xref and sequence xref can point to same GenBank/EBML entry." ;
+  :labHost xsd:String?
+    // rdfs:comment "the full binomial scientific name of the host organism shouldbe used when known; extra conditional information relating tothe host may also be included"
+    // :ddbjLabel "lab_host"
+    // skos:definition "Scientific name of the laboratory host used to propagate the source organism from which the sample was obtained. The full binomial scientific name of the host organism should be used when known. Extra conditional information relating to the host may also be included. For example '12 year old human with IBD' for a gut bacteria." ;
+  :PCRPrimers @:Sample?
+    // :ddbjLabel "PCR_primers" ;
+  :geographicalLocation @:Sample?
+    // skos:definition "The geographical location(country or ocean) from which the sample is collected" ;
+  :haplogroup xsd:String?
+    // :ddbjLabel "haplogroup"
+    // skos:definition "For the host from which the sample was obtained the name for a group of similar haplotypes that share some sequence variation. Haplogroups are often used to track migration of population groups." ;
+  :map xsd:String?
+    // skos:editorialNote "Added to NAFeature, each DNA feature can a chromosom map location"
+    // skos:definition "The map location on the chromosome from which the sample was obtained (using PCR)."
+    // :ddbjLabel "map" ;
+  :plasmid xsd:String?
+    // skos:editorialNote "Present on the plasmid as 'plasmidName' and plasmid on the sample."
+    // skos:definition "The name or identifier of plasmid from which the sample was obtained (using PCR)."
+    // :ddbjLabel "plasmid" ;
+  :subClone xsd:String?
+    // :ddbjLabel "sub_clone"
+    // skos:definition "The name or identifier of the sub-clone from which the sample was obtained (using PCR)." ;
+  :host @:Sample?
+    // :ddbjLabel "host"
+    // skos:definition "The host of the organism (from which the sample was obtained), which it lives in, upon or attached to in its natural enviroment." ;
+  :segment xsd:String?
+    // skos:definition "The name or identifier of virus or phage (segment) from which the sample was obtained (using PCR)."
+    // :ddbjLabel "segment" ;
+  :tissueType xsd:String?
+    // :ddbjLabel "tissue_type"
+    // skos:definition "The tissue type from which the sample was obtained, use term from the 'BRENDA Tissue and Enzyme Source Ontology' whenever possible" ;
+  :collectionDate xsd:DateTime?
+    // :ddbjLabel "collection_date"
+    // skos:definition "The date and time on which the specimen was collected." ;
+  :altitude xsd:Double?
+    // :ddbjLabel "altitude"
+    // skos:definition "Altitude of the location from which the sample was collected in metres above or below nominal sea level" ;
+  :cellLine xsd:String?
+    // skos:definition "The cell line from which the sequence was obtained, please use term from 'Cell Line Ontology' (http://www.clo-ontology.org/) where possible"
+    // :ddbjLabel "cell_line"
+}
+// :subDomain "DocumentCore"
+// skos:editorialNote "# removed & moved\n\n#bioMaterial xsd:String?;\n#cultureCollection xsd:String?;\n#specimenVoucher xsd:String?;\n#--> merged to sourceMaterial, use collectionSampleType to identify type\n#country type::Country?; -> replaced with geographicalLocation\n#latLon-> replaced with geographicalCoordinate\n#serovar xsd:String?; -> killed store under seroType\n#focus xsd:boolean?; --> replaced with the integratedInto property in the sequence object\n#transgenic xsd:boolean?; --> replaced with the integratedInto property in the sequence object\n#mol_type --> removed replaced with strandType & NASequence subclasses\n\n#germline xsd:boolean?; --> moved to sequence & removed replace with rearranged = false\n#rearranged xsd:boolean?; --> moved to sequence\n\n#clone xsd:String?;  --> move to sequence, is a bit outdated now a days\n#cloneLib xsd:String?; --> move to sequence, is a bit outdated now a days\n#proviral xsd:boolean?; --> moved to sequence & set proviralExtraction = true on sample\n#division --> removed information already captures by the taxonomy property\n#organism --> replaced with taxonomy in organism object linked to sequence object\n#type_material --> replaced with the nomenclaturalType in the TaxonomyRef under the Sequence object@en"
+// skos:definition "Description of the biological sample. Each sequence should define from which sample they are derived.@en"
+
+:CRISPRCassette {
+  :spacer @:CRISPRCassette+
+    // skos:definition "The regions that contain a spacer" ;
+  rdf:type [:CRISPRCassette]
+}
+// :subDomain "SequenceFeatureCore"
+// rdfs:label "CRISPRCassette"
+
+sapp:WoLFPSort {
+  rdf:type [sapp:WoLFPSort] ;
+  :score xsd:Double?
+}
+// skos:editorialNote "WoLFPSort Module from SAPP\nURL: gitlab.com/sapp/wolfpsort"
+// rdfs:label "WoLFPSort"
+
+:ThreePrimeUTR {
+  rdf:type [:ThreePrimeUTR]
+}
+// skos:definition "Region at the 3' end of a mature transcript (following the stop codon) that is not translated into a protein@en"
+// :ddbjLabel "3'UTR"
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000205@en"
+
+:Homology {
+  :homologousTo IRI
+    // skos:definition "The entity to which it is homologous to, being either another protein or cluster of proteins. If identifier is a non public identifier use http://gbol.life/0.1/<id>" ;
+  rdf:type [:Homology]
+}
+// skos:definition "Denote a region to be homologous to another entity, which is either another na sequence or cluster of na sequences@en"
+// :subDomain "SequenceFeatureCore"
+
+:SequenceTaggedSite {
+  rdf:type [:SequenceTaggedSite]
+}
+// rdfs:comment "STS location to include primer(s) in primer_bind key or primers."
+// skos:definition "Sequence tagged site; short, single-copy DNA sequence that characterizes a mapping landmark on the genome and can be detected by PCR; a region of the genome can be mapped by determining the order of a series of STS;@en"
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "STS"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000331@en"
+
+bibo:CourtReporter {
+  rdf:type [bibo:CourtReporter] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Court Reporter@en"
+// :subDomain "BIBO"
+// rdfs:comment "A collection of legal cases.@en"
+
+bibo:Code {
+  rdf:type [bibo:Code] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A collection of statutes.@en"
+// rdfs:label "Code@en"
+// :subDomain "BIBO"
+
+bibo:Chapter {
+  rdf:type [bibo:Chapter]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A chapter of a book.@en"
+// :subDomain "BIBO"
+// rdfs:label "Chapter@en"
+
+:Chromosome {
+  :chromosome xsd:String?
+    // :ddbjLabel "chromosome"
+    // skos:editorialNote "Both present on the sample and the chromosome object."
+    // skos:definition "The name of the chromosome from which the sample was obtained (using PCR)." ;
+  rdf:type [:Chromosome]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:editorialNote "A chromosomal sequence"
+
+:Base {
+  rdf:type [:Base] ;
+  :at @:Base
+    // skos:definition "The position of the base" ;
+  :strand [:BothStrandsPosition :ReverseStrandPosition :ForwardStrandPosition]?
+    // skos:definition "The strand on which it is positioned"
+}
+// rdfs:comment "One-based inclusive same as in GenBank and Faldo"
+// rdfs:comment "Identifies a single base."
+// skos:editorialNote "Taken over from the GenBank format and associated ENA tools."
+// :subDomain "LocationCore"
+
+:AnnotationLinkSet {
+  rdf:type [:AnnotationLinkSet]
+}
+// skos:definition "An annotation result that exist out of a set of XRefs.@en"
+// :subDomain "DocumentWiseProv"
+// rdfs:label "AnnotationLinkSet"
+
+:Qualifier {
+  :provenance @:Note
+    // skos:definition "The provenance of the XREF holding the origin of the XRef"
+}
+// rdfs:label "Qualifier"
+// :subDomain "ElementWiseProv"
+// rdfs:comment "The origin point the entity you which the qualifier belong, such a LinkSet or AnnotationResult. Whereas the provenance point to the supporting evidence of the qualifier"
+AND
+(
+  {
+    rdf:type [:Qualifier]
+  }
+  OR
+  :XRef OR
+  :Note OR
+  :Citation 
+)
+
+:rRNA {
+  :product xsd:String?
+    // :ddbjLabel "product"
+    // skos:editorialNote "Product description only present in CDS"
+    // skos:definition "The functional name" ;
+  rdf:type [:rRNA]
+}
+// rdfs:comment "rRNA sizes should be annotated with the /product qualifier."
+// skos:definition "mature ribosomal RNA; RNA component of the ribonucleo protein particle (ribosome) which assembles amino acids into proteins."
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "rRNA"
+
+sapp:Priam {
+  :evalue xsd:Double?
+    // skos:definition "InterProScan properties" ;
+  :bitScore xsd:Float ;
+  :sourceRegion @sapp:Priam ;
+  :profileRegioin @sapp:Priam ;
+  rdf:type [sapp:Priam] ;
+  :alignLength xsd:Integer? ;
+  :profileId xsd:String ;
+  :foundCatalyticPattern xsd:String ;
+  :profileLength xsd:Integer? ;
+  :positiveHitProbability xsd:Float ;
+  :profileProportion xsd:Float ;
+  :isBestOverlap xsd:String ;
+  :queryStrand xsd:String?
+}
+// rdfs:label "Priam"
+
+:Location {
+  :reference @:Citation
+    // skos:definition "List of references supporting the annotation"
+}
+// rdfs:comment "If reference is not given it is equal to the reference of the parent RegionOfRegion object or is equal to parent Sequence Object."
+// :subDomain "LocationCore"
+// skos:editorialNote "We put the reference property in the LocatableObject class and not in the Position class as in the Faldo ontology. A position within sequence A and within sequence B does not make any sense, it is possible to determine what's in between, therefore the reference should be on the region object. However a region can be collection of other regions spread over different reference sequences, such as the mdg4 gene of Drosophila."
+AND
+(
+  {
+    rdf:type [:Location]
+  }
+  OR
+  :Base OR
+  :Region OR
+  :CollectionOfRegions OR
+  :InBetween 
+)
+
+:TaxonomyRef {
+  rdf:type [:TaxonomyRef] ;
+  :nomenclaturalType [:Allotype :ReferenceStrain :Hapanotype :Lectotype :Epitype :Isosyntype :NeotypeStrain :Paralectotype :ExType :Isotype :TypeStrain :Paratype :TypeMaterial :Syntype :Neotype :Holotype]?
+}
+// skos:definition "A xref which point to a database containing taxomic classification, which is typically the uniprot taxonomic database.@en"
+// :subDomain "DocumentCore"
+
+:Transcript {
+  :feature @:NASequence*
+    // skos:definition "The set of features annotating the sequence" ;
+  :exonList @:Transcript?
+    // skos:definition "This list off exons that form this transcript, in case of prokaryote it contains one element"
+}
+// skos:editorialNote "No provenance included here, as sequence object represent a sequence that might originitate either from a sample or an exonlist. The exon list caries the provenance, as this the element that is/can be predicted."
+// skos:definition "Sequence of nucleotide molecule created after transcribtion@en"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  {
+    rdf:type [:Transcript]
+  }
+  OR
+  :MaturedRNA OR
+  :PrecursorRNA OR
+  :MiscRna 
+)
+
+:Source {
+  rdf:type [:Source] ;
+  :organism @:Source?
+    // skos:definition "The organism from which the sequence orginates from" ;
+  :sample @:Source?
+    // skos:definition "Sample from which the sequence is originating"
+}
+// skos:definition "Indicate other sample source of the sequence then associated to the seqeunce object.@en"
+// rdfs:comment "Transgenic sequences can have parts that have another source.@en"
+// :ddbjLabel "source"
+// :subDomain "SequenceFeatureCore"
+// skos:editorialNote "transgenic sequences must have at least two source featurekeys; in a transgenic sequence the source featureKeydescribing the organism that is the recipient of the DNAmust span the entire sequence;see Appendix III /organelle for a list of <organelle_value>@en"
+
+:RepeatRegion {
+  rdf:type [:RepeatRegion]
+}
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000657@en"
+// skos:definition "Region of genome containing repeating units;@en"
+// :ddbjLabel "repeat_region"
+// :subDomain "SequenceFeatureCore"
+
+provo:SoftwareAgent {
+  rdf:type [provo:SoftwareAgent]
+}
+OR
+:AnnotationSoftware 
+
+bibo:MultiVolumeBook {
+  rdf:type [bibo:MultiVolumeBook] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Multivolume Book@en"
+// :subDomain "BIBO"
+// rdfs:comment "A loose, thematic, collection of Documents, often Books.@en"
+
+:PartGapKnownLength {
+  rdf:type [:PartGapKnownLength] ;
+  :gapLength xsd:Integer
+    // skos:definition "Denote the length of the gap"
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "A gap within the assembly with a known length"
+
+bibo:BookSection {
+  bibo:chapter xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator"
+    // rdfs:comment "An chapter number@en"
+    // rdfs:label "chapter@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A section of a book.@en"
+// rdfs:label "Book Section@en"
+// :subDomain "BIBO"
+AND
+(
+  {
+    rdf:type [bibo:BookSection]
+  }
+  OR
+  bibo:Chapter 
+)
+
+bibo:AudioVisualDocument {
+  bibo:director @bibo:AudioVisualDocument*
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/contributor"
+    // rdfs:label "director"
+    // rdfs:comment "A Film director.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "An audio-visual document; film, video, and so forth.@en"
+// rdfs:label "audio-visual document@en"
+// :subDomain "BIBO"
+AND
+(
+  {
+    rdf:type [bibo:AudioVisualDocument]
+  }
+  OR
+  bibo:Film 
+)
+
+:tRNA {
+  :product xsd:String?
+    // :ddbjLabel "product"
+    // skos:editorialNote "Product description only present in CDS"
+    // skos:definition "The functional name" ;
+  :anticodon @:tRNA?
+    // skos:definition "The anti codon of the TRNA"
+    // skos:editorialNote "linked to tRNA which points to a AntiCodon object"
+    // :ddbjLabel "anticodon" ;
+  rdf:type [:tRNA]
+}
+// skos:definition "mature transfer RNA, a small RNA molecule (75-85 bases long) that mediates the translation of a nucleic acid sequence into an amino acid sequence;"
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "tRNA"
+
+:SequencePart :PartGap OR
+:PartSequence 
+
+:ManualAnnotationActivity {
+  :wasAssociatedWith @provo:Activity?
+    // skos:definition "The agent which be performed this activity" ;
+  rdf:type [:ManualAnnotationActivity]
+}
+// skos:definition "A manual curation activity"
+// rdfs:comment "If the start and end time are not known, both can be set equal to the time at which the annotation is committed to the database."
+// :subDomain "DocumentWiseProv"
+
+bibo:Literature {
+  bibo:isbn10 xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/isbn"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:uri xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "uri@en"
+    // rdfs:comment "Universal Resource Identifier of a document@en"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier" ;
+  bibo:doi xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:asin xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:cites @bibo:Literature*
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/references"
+    // rdfs:comment "Relates a document to another document that is cited\nby the first document as reference, comment, review, quotation or for\nanother purpose.@en"
+    // rdfs:label "cites@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:oclcnum xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier" ;
+  dc:rights xsd:String?
+    // skos:scopeNote "Used to describe rights related to a bibliographic resource.@en" ;
+  bibo:distributor @bibo:Literature?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:comment "Distributor of a document or a collection of documents.@en"
+    // rdfs:label "distributor@en" ;
+  bibo:editor @bibo:Literature?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/contributor"
+    // rdfs:comment "A person having managerial and sometimes policy-making responsibility for the editorial part of a publishing firm or of a newspaper, magazine, or other publication.@en"
+    // rdfs:label "editor" ;
+  dc:dateSubmitted xsd:Date? ;
+  dc:dateAccepted xsd:Date? ;
+  bibo:issuer @bibo:Literature?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "issuer"
+    // rdfs:comment "An entity responsible for issuing often informally published documents such as press releases, reports, etc."
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/publisher" ;
+  dc:created xsd:Date?
+    // skos:scopeNote "Used to describe the creation date of a bibliographic item@en"
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/date" ;
+  bibo:contributorList @bibo:Literature*
+    // rdfs:comment "An ordered list of contributors. Normally, this list is seen as a priority list that order contributors by importance.@en"
+    // rdfs:label "list of contributors@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:locator xsd:String?
+    // rdfs:comment "A description (often numeric) that locates an item within a containing document or collection.@en"
+    // rdfs:label "locator@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:translator @bibo:Literature?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/contributor"
+    // rdfs:comment "A person who translates written document from one language to another.@en"
+    // rdfs:label "translator" ;
+  bibo:eanucc13 xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:translationOf @bibo:Literature?
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/isVersionOf"
+    // rdfs:comment "Relates a translated document to the original document.@en"
+    // rdfs:label "translation of@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:shortTitle xsd:String?
+    // rdfs:comment "The abbreviation of a title.@en"
+    // rdfs:label "short title@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:shortDescription xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  dc:format @bibo:Literature?
+    // skos:example "<dc:format>\n   <dc:MediaTypeOrExtent>\n     <rdf:value>text/html</rdf:value>\n     <rdfs:label>HTML</rdfs:label>\n   </dc:MediaTypeOrExtent>\n </dc:format>@en"
+    // skos:scopeNote "Used to describe the format of a bibliographic resource.@en" ;
+  bibo:numPages xsd:Integer?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "number of pages@en"
+    // rdfs:comment "The number of pages contained in a document@en" ;
+  bibo:edition xsd:String?
+    // rdfs:comment "The name defining a special edition of a document. Normally its a literal value composed of a version number and words.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "edition@en" ;
+  dc:description xsd:String?
+    // skos:definition "A textual description of the dataset." ;
+  bibo:identifier xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  dc:issued xsd:Date?
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/date"
+    // skos:scopeNote "Used to describe the issue date of a bibliographic resource@en" ;
+  dc:subject xsd:String?
+    // skos:scopeNote "Used to describe the subject of a bibliographic resource.@en" ;
+  bibo:pages xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "pages@en"
+    // rdfs:comment "A string of non-contiguous page spans that locate a Document within a Collection. Example: 23-25, 34, 54-56. For continuous page ranges, use the pageStart and pageEnd properties.@en"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator" ;
+  bibo:lccn xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:owner @bibo:Literature?
+    // rdfs:comment "Owner of a document or a collection of documents.@en"
+    // rdfs:label "owner@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  dc:title xsd:String?
+    // skos:definition "The name of the dataset." ;
+  bibo:handle xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier" ;
+  bibo:sici xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  rdf:value xsd:String?
+    // skos:definition "The mime type of the format"
+    // skos:scopeNote "Used to describe the content of a bibo:Document and othr bibliographic resouces.\n\nWe suggest to use this property instead of the deprecated \"bibo:content\" one.@en" ;
+  bibo:producer @bibo:Literature?
+    // rdfs:label "producer@en"
+    // rdfs:comment "Producer of a document or a collection of documents.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:citedBy @bibo:Literature*
+    // rdfs:comment "Relates a document to another document that cites the\nfirst document.@en"
+    // rdfs:range "http://purl.org/ontology/bibo/Document"
+    // rdfs:label "cited by@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // owl:inverseOf "http://purl.org/ontology/bibo/cites"
+    // rdfs:domain "http://purl.org/ontology/bibo/Document" ;
+  bibo:editorList @bibo:Literature*
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/contributorList"
+    // rdfs:comment "An ordered list of editors. Normally, this list is seen as a priority list that order editors by importance.@en"
+    // rdfs:label "list of editors@en" ;
+  bibo:upc xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:pageStart xsd:String?
+    // rdfs:comment "Starting page number within a continuous page range.@en"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "page start@en" ;
+  bibo:presentedAt @bibo:Literature?
+    // rdfs:subPropertyOf "http://purl.org/NET/c4dm/event.owl#produced_in"
+    // rdfs:comment "Relates a document to an event; for example, a paper to a conference.@en"
+    // rdfs:label "presented at@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // owl:inverseOf "http://purl.org/ontology/bibo/presents" ;
+  dc:publisher @bibo:Literature?
+    // skos:scopeNote "Used to link a bibliographic item to its publisher.@en" ;
+  dc:contributor @bibo:Literature*
+    // skos:scopeNote "Used to link a bibliographic item to one of its contributor: can be an author, an editor, a publisher, etc.@en" ;
+  bibo:volume xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator"
+    // rdfs:comment "A volume number@en"
+    // rdfs:label "volume@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:number xsd:String?
+    // rdfs:label "number@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:comment "A generic item or document number. Not to be confused with issue number.@en" ;
+  bibo:section xsd:String?
+    // rdfs:label "section@en"
+    // skos:example "Di Rado, Alicia. 1995. Trekking through college: Classes explore\nmodern society using the world of Star trek. Los Angeles Times, March\n15, sec. A, p. 3.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator"
+    // rdfs:comment "A section number@en" ;
+  bibo:coden xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier" ;
+  dc:abstract xsd:String? ;
+  bibo:pageEnd xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator"
+    // rdfs:comment "Ending page number within a continuous page range.@en"
+    // rdfs:label "page end@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  dc:language xsd:String?
+    // skos:scopeNote "Used to link a bibliographic resource to the language used to express it.@en"
+    // skos:definition "The language of this resource." ;
+  bibo:transcriptOf @bibo:Literature?
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/relation"
+    // rdfs:comment "Relates a document to some transcribed original.@en"
+    // rdfs:label "transcript of@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:isbn13 xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/isbn" ;
+  dc:relation IRI* ;
+  bibo:reproducedIn @bibo:Literature*
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/isPartOf"
+    // rdfs:comment "The resource in which another resource is reproduced.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:content xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // skos:historyNote "bibo:content has been deprecated; we recommend to use \"rdf:value\" for this purpose. Here is the rational behind this choice: http://www.w3.org/TR/2004/REC-rdf-primer-20040210/#rdfvalue@en"
+    // owl:deprecated "true^^http://www.w3.org/2001/XMLSchema#boolean"
+    // rdfs:label "content@en"
+    // rdfs:comment "This property is for a plain-text rendering of the content of a Document. While the plain-text content of an entire document could be described by this property.@en" ;
+  bibo:reviewOf @bibo:Literature*
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "review of@en"
+    // rdfs:comment "Relates a review document to a reviewed thing (resource, item, etc.).@en"
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/relation" ;
+  bibo:status [<http://purl.org/ontology/bibo/status/peerReviewed> <http://purl.org/ontology/bibo/status/rejected> <http://purl.org/ontology/bibo/status/unpublished> <http://purl.org/ontology/bibo/status/legal> <http://purl.org/ontology/bibo/status/forthcoming> <http://purl.org/ontology/bibo/status/nonPeerReviewed> <http://purl.org/ontology/bibo/status/accepted> <http://purl.org/ontology/bibo/status/draft> <http://purl.org/ontology/bibo/status/published>]?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // skos:editorialNote "We are not defining, using an enumeration, the range of the bibo:status to the defined list of bibo:DocumentStatus. We won't do it because we want people to be able to define new status if needed by some special usecases. Creating such an enumeration would restrict this to happen.@en"
+    // skos:editorialNote "We are not defining, using an enumeration, the range of the bibo:status to the defined list of bibo:DocumentStatus. We won't do it because we want people to be able to define new status if needed by some special usecases. Creating such an enumeration would restrict this to happen."
+    // rdfs:label "status@en"
+    // rdfs:comment "The publication status of (typically academic) content.@en" ;
+  bibo:pmid xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:gtin14 xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier" ;
+  bibo:authorList @bibo:Literature*
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "list of authors@en"
+    // rdfs:comment "An ordered list of authors. Normally, this list is seen as a priority list that order authors by importance.@en"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/contributorList"
+}
+// :subDomain "BIBO"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+AND
+(
+  bibo:Collection OR
+  bibo:Document 
+)
+
+:BeforePosition {
+  rdf:type [:BeforePosition] ;
+  :position xsd:Long
+    // skos:definition "The exact position (5 prime to 3 prime)"
+}
+// skos:editorialNote "Missing from the faldo ontology, taken from the GenBank format. In Faldo it is supposed to be modeled with a InRange position that has no begin attribute. We did not agree with this design in faldo as it does not reflect the semantics."
+// :subDomain "LocationCore"
+// rdfs:comment "A location that is somewhere before the given position."
+
+:Citation {
+  :reference @:Citation
+    // skos:definition "List of references supporting the annotation" ;
+  :highlight xsd:String?
+    // skos:definition "The highlighted text of paper which is important" ;
+  rdf:type [:Citation]
+}
+// :subDomain "DocumentCore"
+// skos:definition "A citation added to a feature"
+
+sapp:Phobius {
+  :description xsd:String
+    // skos:definition "A short description of the sequence" ;
+  :type xsd:String ;
+  rdf:type [sapp:Phobius] ;
+  :location @sapp:Phobius
+}
+// rdfs:label "Phobius"
+
+bibo:PersonalCommunication {
+  rdf:type [bibo:PersonalCommunication]
+}
+// rdfs:comment "A communication between an agent and one or more specific recipients.@en"
+// rdfs:label "Personal Communication@en"
+// :subDomain "BIBO"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+bibo:Slideshow {
+  rdf:type [bibo:Slideshow] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:comment "A presentation of a series of slides, usually presented in front of an audience with written text and images.@en"
+// rdfs:label "Slideshow@en"
+// :subDomain "BIBO"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+provo:Entity {
+  provo:wasAttributedTo @provo:Entity?
+    // skos:definition "The agent that performed or initiated the activity that generated this entity" ;
+  provo:wasGeneratedBy @provo:Entity?
+    // skos:definition "The annotation activity that created this annotation result" ;
+  provo:wasDerivedFrom @provo:Entity*
+    // skos:definition "Any entries used as input in the activity that created this entity"
+}
+// :subDomain "DocumentWiseProv"
+AND
+(
+  {
+    rdf:type [provo:Entity]
+  }
+  OR
+  :Database OR
+  :AnnotationResult OR
+  :TemporaryFile OR
+  :GBOLDataSet OR
+  :GBOLLinkSet OR
+  :DataFile 
+)
+
+bibo:Patent {
+  rdf:type [bibo:Patent]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Patent@en"
+// :subDomain "BIBO"
+// rdfs:comment "A document describing the exclusive right granted by a government to an inventor to manufacture, use, or sell an invention for a certain number of years.@en"
+
+:FivePrimeUTR {
+  rdf:type [:FivePrimeUTR]
+}
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "5'UTR"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000204@en"
+// skos:definition "region at the 5' end of a mature transcript (preceding the initiation codon) that is not translated into a protein;@en"
+
+:MaterialSource {
+  :collectionCode xsd:String
+    // skos:definition "The collection code of the collection within the given institute" ;
+  rdf:type [:MaterialSource] ;
+  :collectionSampleType [:OtherCollection :SpecimenVoucher :CultureCollection]
+    // skos:definition "Type of the collection sample" ;
+  :institutionCode xsd:String
+    // skos:definition "code of the institution taken from the list available at ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/coll_dump.txt" ;
+  :sampleId xsd:String?
+    // skos:definition "The id of the sample within the given collection"
+}
+// :subDomain "DocumentCore"
+// skos:definition "Describes a sample within a (long term storage) collection.@en"
+
+bibo:Standard {
+  rdf:type [bibo:Standard]
+}
+// :subDomain "BIBO"
+// rdfs:comment "A document describing a standard@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Standard@en"
+
+bibo:DocumentPart {
+  rdf:type [bibo:DocumentPart]
+}
+OR
+bibo:BookSection OR
+bibo:Slide OR
+bibo:Excerpt 
+
+:MiscStructure {
+  rdf:type [:MiscStructure]
+}
+// :ddbjLabel "misc_structure"
+// skos:definition "any secondary or tertiary nucleotide structure or conformation that cannot be described by other Structure keys (stem_loop and D-loop);"
+// :subDomain "SequenceFeatureCore"
+
+:Intron {
+  rdf:type [:Intron]
+}
+// skos:definition "a segment of DNA that is transcribed, but removed from within the transcript by splicing together the sequences(exons) on either side of it;"
+// :ddbjLabel "intron"
+// :ddbjLabel "iDNA"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000188@en"
+// :subDomain "SequenceFeatureCore"
+
+:XRef {
+  :secondaryAccession xsd:String*
+    // skos:definition "The optional secondary accession ids" ;
+  :db @:XRef
+    // skos:definition "The database to with the links link to" ;
+  :provenance @:Note
+    // skos:definition "The provenance of the XREF holding the origin of the XRef" ;
+  :accession xsd:String?
+    // skos:definition "Accession identifier of a given sequence object"
+}
+// :subDomain "DocumentCore"
+AND
+(
+  {
+    rdf:type [:XRef]
+  }
+  OR
+  :TaxonomyRef 
+)
+
+:GeneralFeature {
+  rdf:type [:GeneralFeature]
+}
+// rdfs:comment "Use this feature to add a citation to a given (sub)sequence"
+// skos:definition "General feature used to add general notes"
+// :subDomain "SequenceFeatureCore"
+
+bibo:Slide {
+  rdf:type [bibo:Slide]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Slide@en"
+// :subDomain "BIBO"
+// rdfs:comment "A slide in a slideshow@en"
+
+:Taxon {
+  rdf:type [:Taxon] ;
+  :taxonRank [:RankFamily :RankLevel4 :RankLevel16 :RankLevel28 :RankLevel8 :RankSubGenus :RankLevel20 :RankClass :RankLevel12 :RankLevel24 :RankInfraOrder :RankSuperPhylum :RankKingdom :RankInfraClass :RankLevel5 :RankSubFamily :RankLevel1 :RankLevel17 :RankSuperKingdom :RankSpecies :RankLevel9 :RankLevel21 :RankLevel13 :RankLevel25 :RankSuperOrder :RankSubPhylum :RankLevel2 :RankForma :RankSubClass :RankPhylum :RankLevel26 :RankLevel18 :RankTribe :RankLevel6 :RankSuperFamily :RankOrder :RankLevel10 :RankLevel22 :RankLevel14 :RankParvOrder :RankSpeciesSubGroup :RankSubOrder :RankLevel3 :RankSubSpecies :RankLevel15 :RankGenus :RankLevel27 :RankLevel19 :RankVarietas :RankLevel7 :RankLevel11 :RankLevel23 :RankSubTribe :RankSuperClass :RankSpeciesGroup :RankSubKingdom]
+    // skos:definition "The rank of the taxon" ;
+  :taxonName xsd:String
+    // skos:definition "The name of the taxon"
+}
+// skos:definition "Simple taxon class to define a taxon in a lineage"
+// :subDomain "DocumentCore"
+
+:TranscriptionElement :IntegratedVirus OR
+:Intron OR
+:Gene OR
+:Exon OR
+:Operon 
+
+:RepeatFeature {
+  :rptType [:YPrimeElement :Inverted :CentromericRepeat :Nested :Flanking :Terminal :CRISPRRepeat :TelomericRepeat :Direct :Tandem :Dispersed :LongTerminalRepeat :RepeatTypeOther :XElementCombinatorialRepeat :NonLtrRetrotransposonPolymericTract]?
+    // skos:definition "The type of the repeat"
+    // :ddbjLabel "rpt_type"
+    // skos:editorialNote "RepeatType added, only present in the RepeatFeature class and subclasses" ;
+  :rptUnitSeq xsd:String?
+    // :ddbjLabel "rpt_unit_seq"
+    // skos:editorialNote "Property of the repeat feature, use string to note pattern"
+    // skos:definition "Pattern of the repeat. For example (NAG)8(WN)2" ;
+  :rptUnitRange @:RepeatFeature?
+    // :ddbjLabel "rpt_unit_range"
+    // skos:editorialNote "Property of the repeat region"
+    // skos:definition "Base range of the sequence that constitutes a repeated sequence" ;
+  :satellite @:RepeatFeature*
+    // :ddbjLabel "satellite"
+    // skos:editorialNote "Sattellite class added to describe the satellites, optional property of the repeat region"
+    // skos:definition "If repeat contains on or more satellites specify with this property the types of the satellites" ;
+  :rptFamily xsd:String?
+    // :ddbjLabel "rpt_family"
+    // skos:editorialNote "Repeat family free string, no ontology yet connected"
+    // skos:definition "The familiy of the repeat"
+}
+// skos:definition "Feature for which a repetitive unit can be defined@en"
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000657@en"
+AND
+(
+  {
+    rdf:type [:RepeatFeature]
+  }
+  OR
+  :Centromere OR
+  :CRISPRCassette OR
+  :RepeatRegion OR
+  :Telomere OR
+  :MobileElement 
+)
+
+:SignalPeptide {
+  rdf:type [:SignalPeptide] ;
+  :signalTarget IRI?
+    // skos:definition "If known specify target, use a 'cellelar component' from the GO terms ontology"
+}
+// :ddbjLabel "sig_peptide"
+// skos:definition "The sequence holding the targetting information used to post-translationally export or import a sequence into any of the organels. This amino acid terminal sequence is typically removed during or shortly after import or export."
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000418@en"
+// :subDomain "SequenceFeatureCore"
+
+provo:Agent {
+  provo:actedOnBehalfOf @provo:Agent?
+    // skos:definition "Tells that this agent performed something for another agent. For example PFam domain scan actedOnBehalfOf InterproScan or a curator that actedOnBehalfOf the EBI."
+}
+// :subDomain "DocumentWiseProv"
+AND
+(
+  {
+    rdf:type [provo:Agent]
+  }
+  OR
+  provo:Organization OR
+  provo:SoftwareAgent OR
+  provo:Person 
+)
+
+:PrimerBinding {
+  rdf:type [:PrimerBinding] ;
+  :PCRConditions xsd:String?
+    // :ddbjLabel "PCR_conditions"
+    // skos:definition "A textual description of the PCR conditions needed for this primer"
+    // skos:editorialNote "only present in primerBinding feature"
+}
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0005850@en"
+// skos:editorialNote "PCR components and reaction times maybe stored under the \"/PCR_conditions\" qualifier; since PCR reactions most often involve pairs of primers,a single primer_bind key may use the order() operator with two locations, or a pair of primer_bind keys may be used.@en"
+// rdfs:comment "Used to annotate the site on a given sequence to which a primer molecule binds - not intended to represent the sequence of the primer molecule itself@en"
+// skos:definition "Non-covalent primer binding site for initiation of replication, transcription, or reverse transcription;includes site(s) for synthetic e.g., PCR primer elements;@en"
+// :ddbjLabel "primer_bind"
+
+:Gene {
+  :allele xsd:String*
+    // :ddbjLabel "allele"
+    // skos:definition "List of names of known allele variants of the gene" ;
+  :geneSymbol xsd:String?
+    // skos:definition "Symbol of the gene (not the symbol of the resulting protein)" ;
+  :exon @:ExonList+
+    // skos:definition "All exons that are part of the gene" ;
+  :transcript @:Gene*
+    // skos:definition "All transcripts that are derived from the gene" ;
+  :geneSymbolSynonym xsd:String*
+    // skos:definition "Alternative/old gene symbols" ;
+  :intron @:Gene*
+    // skos:definition "All introns that are part of the gene" ;
+  :pseudogene [:Allelic :Proccessed :Unitary :Unprocessed :PseudoGeneTypeUnknown]?
+    // skos:definition "If this gene is a pseudo gene, indicate the type"
+    // :ddbjLabel "pseudogene"
+    // skos:editorialNote "Feature added to the Gene feature, removed from all other features." ;
+  :locusTag xsd:String?
+    // skos:editorialNote "Added to gene class, any sub elements related to gene should have the same locus tag in the genbank file"
+    // :ddbjLabel "locus_tag"
+    // skos:definition "Locus tag of the gene" ;
+  rdf:type [:Gene] ;
+  :oldLocusTag xsd:String?
+    // skos:editorialNote "Added to gene class, any sub elements related to gene should have the same old locus tag in the genbank file"
+    // :ddbjLabel "old_locus_tag"
+    // skos:definition "Old locus tag of the gene"
+}
+// rdfs:comment "the gene feature describes the interval of DNA that corresponds to a genetic trait or phenotype; the feature is, by definition, not strictly bound to it's positions at the ends;  it is meant to represent a region where the gene is located."
+// skos:definition "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions."
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "gene"
+
+bibo:Event {
+  bibo:organizer @bibo:Event*
+    // rdfs:label "organizer@en"
+    // rdfs:comment "The organizer of an event; includes conference organizers, but also government agencies or other bodies that are responsible for conducting hearings.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:presents @bibo:Event*
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "presents@en"
+    // rdfs:comment "Relates an event to associated documents; for example, conference to a paper.@en"
+    // rdfs:subPropertyOf "http://purl.org/NET/c4dm/event.owl#product" ;
+  bibo:place xsd:String*
+}
+// skos:exactMatch "http://purl.org/NET/c4dm/event.owl#Event"
+// :subDomain "BIBO"
+AND
+(
+  {
+    rdf:type [bibo:Event]
+  }
+  OR
+  bibo:PersonalCommunication OR
+  bibo:Conference OR
+  bibo:Workshop OR
+  bibo:Interview OR
+  bibo:Performance OR
+  bibo:Hearing 
+)
+
+:AssemblyGap {
+  :gapType [:WithinScaffoldGap :RepeatBetweeenScaffoldsGap :BetweenScaffoldsGap :CentromereGap :UnknownGap :TelemereGap :ShortArmGap :RepeatWithinScaffoldGap :HeterochromatinGap]
+    // skos:editorialNote "Added to the Gap class"
+    // :ddbjLabel "gap_type"
+    // skos:definition "The type of the gap" ;
+  :linkageEvidence [:WithinClone :LinkageNA :AlignGenus :AlignXGenus :Strobe :PairedEnds :PCR :Unspecified :CloneContig :Map :AlignTranscript]?
+    // skos:editorialNote "add to the Gap feature class, enumeration created"
+    // :ddbjLabel "linkage_evidence"
+    // skos:definition "The linkage evidence use to link the sequences on both sides"
+}
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000730@en"
+// :subDomain "SequenceFeatureCore"
+// skos:definition "A gap within the sequence@en"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+// rdfs:comment "The gap must be denoted with a series of N's in the sequence, if the assembly gap is of unknown length then number of N must be equal to the estimated length. If that is unknown it default to 100 and so should be denoted with 100 N's in the sequence. No upper or lower limit is set on the size of the gap."
+AND
+(
+  :KwownLengthAssemblyGap OR
+  :UnknownLengthAssemblyGap 
+)
+
+sapp:ENZDP {
+  :support xsd:String? ;
+  :maxbitscore xsd:Float? ;
+  :ratio xsd:String? ;
+  rdf:type [sapp:ENZDP] ;
+  :likelihoodscore xsd:Float? ;
+  :pattern xsd:String* ;
+  :ambigous xsd:String?
+}
+
+:ExonList {
+  :exon @:ExonList+
+    // skos:definition "All exons that are part of the gene" ;
+  :provenance @:Note
+    // skos:definition "The provenance of the XREF holding the origin of the XRef" ;
+  rdf:type [:ExonList] ;
+  :phenotype xsd:String?
+    // skos:definition "Associated phenotypic property"
+    // :ddbjLabel "phenotype"
+    // skos:editorialNote "Added to feature, every feature can have an associated phenotypic effect"
+}
+// :subDomain "DocumentCore"
+
+bibo:Manuscript {
+  rdf:type [bibo:Manuscript]
+}
+// rdfs:comment "An unpublished Document, which may also be submitted to a publisher for publication.@en"
+// :subDomain "BIBO"
+// rdfs:label "Manuscript@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+bibo:Book {
+  rdf:type [bibo:Book]
+}
+OR
+bibo:Proceedings 
+
+provo:Person {
+  rdf:type [provo:Person]
+}
+OR
+:Curator 
+
+:CompleteNASequence {
+  :organism @:Source?
+    // skos:definition "The organism from which the sequence orginates from"
+}
+// skos:definition "Complete sequences of physical nucleotide molecule.@en"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  {
+    rdf:type [:CompleteNASequence]
+  }
+  OR
+  :MiscNA OR
+  :Plasmid OR
+  :Chromosome 
+)
+
+:ExactPosition {
+  rdf:type [:ExactPosition] ;
+  :position xsd:Long
+    // skos:definition "The exact position (5 prime to 3 prime)"
+}
+// :subDomain "LocationCore"
+// rdfs:comment "Default Position type, points to an exactly known position."
+// skos:editorialNote "Taken over from the faldo ontology. We include a 'compressed' format which allows for putting directly a xsd:PositiveInteger value within the LocatableObject without using a separate ExactPosition object. Not included the N- and C-TerminalPositidon from Faldo as all positions are counting from the 5' or N terminal site. C-Terminal counting is rarely used and can also be done from N terminal site, if that is not possible its means we have undefined sequence length which is anyhow incomparable."
+
+:VariationFeature {
+  :replace xsd:String?
+    // :ddbjLabel "replace"
+    // skos:editorialNote "Add to variantion class, replace describes the new sequence.\nThis needs further improvement\n* Old versus new or new versus old\n* make use of A>C standard format"
+}
+// skos:definition "Annotation on the sequence of modified bases in comparison to@en"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  :NaturalVariation OR
+  :MiscVariation OR
+  :UpdatedSequence 
+)
+
+bibo:Quote {
+  rdf:type [bibo:Quote]
+}
+// rdfs:comment "An excerpted collection of words.@en"
+// :subDomain "BIBO"
+// rdfs:label "Quote@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:MiscVariation {
+  rdf:type [:MiscVariation]
+}
+// :ddbjLabel "misc_difference"
+// :subDomain "SequenceFeatureCore"
+// skos:definition "Any variation other then a natural or an updated sequence variation."
+// rdfs:comment "the misc_difference featureKey should be used to describe variability that arises as a result of genetic manipulation (e.g. site directed mutagenesis); use /replace=\"\" to annotate deletion, e.g.misc_difference 412..433/replace=\"\""
+
+:DLoop {
+  rdf:type [:DLoop]
+}
+// :ddbjLabel "D-loop"
+// skos:definition "Displacement loop; a region within mitochondrial DNA in which a short stretch of RNA is paired with one strand of DNA, displacing the original partner DNA strand in this region; also used to describe the displacement of a region of one strand of duplex DNA by a single stranded invader in the reaction catalyzed by RecA protein.@en"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000297@en"
+// :subDomain "SequenceFeatureCore"
+
+sapp:RNAmmer {
+  rdf:type [sapp:RNAmmer] ;
+  :attribute xsd:String? ;
+  :score xsd:Double?
+}
+// :fromTool "RNAmmer"
+// rdfs:label "RNAmmer"
+
+bibo:Document {
+  rdf:type [bibo:Document]
+}
+OR
+bibo:Image OR
+bibo:Report OR
+bibo:CollectedDocument OR
+bibo:Thesis OR
+bibo:Standard OR
+bibo:PersonalCommunicationDocument OR
+bibo:Note OR
+bibo:AudioDocument OR
+bibo:DocumentPart OR
+bibo:LegalDocument OR
+bibo:Manual OR
+bibo:AudioVisualDocument OR
+bibo:Article OR
+bibo:Slideshow OR
+bibo:Manuscript OR
+bibo:Book OR
+bibo:Webpage OR
+bibo:Patent OR
+bibo:ReferenceSource 
+
+sapp:Blast {
+  :evalue xsd:Double?
+    // skos:definition "InterProScan properties" ;
+  :alignmentLength xsd:Integer? ;
+  :percIdentity xsd:Float? ;
+  :mismatches xsd:Integer? ;
+  :bitscore xsd:Float? ;
+  :gaps xsd:Integer?
+}
+// rdfs:comment "BLAST Modules from SAPP\nURL: gitlab.com/sapp/Blast"
+// rdfs:label "Blast"
+AND
+(
+  {
+    rdf:type [sapp:Blast]
+  }
+  OR
+  sapp:Cog 
+)
+
+bibo:CollectedDocument {
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:comment "A document that simultaneously contains other documents.@en"
+// :subDomain "BIBO"
+// rdfs:label "Collected Document@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+AND
+(
+  {
+    rdf:type [bibo:CollectedDocument]
+  }
+  OR
+  bibo:EditedBook OR
+  bibo:Issue 
+)
+
+rdf:List {
+  rdf:type [rdf:List]
+}
+
+sapp:Cog {
+  :label xsd:String? ;
+  :membershipClass xsd:String? ;
+  :organismName xsd:String? ;
+  rdf:type [sapp:Cog] ;
+  :letter xsd:String?
+}
+// skos:editorialNote "COG results obtained through a BLAST approach"
+// rdfs:label "Cog"
+
+:MiscBinding {
+  rdf:type [:MiscBinding]
+}
+// rdfs:comment "note that featureKey regulatory with /regulatory_class=\"ribosome_binding_site\"should be used for ribosome binding sites."
+// skos:definition "Site in nucleic acid which covalently or non-covalently binds another moiety that cannot be described by any other binding key (primer_bind or protein_bind);@en"
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "misc_binding"
+
+:RecognizedRegion {
+  rdf:type [:RecognizedRegion]
+}
+OR
+:BiologicalRecognizedRegion OR
+:ArtificialRecognizedRegion 
+
+bibo:AudioDocument {
+  rdf:type [bibo:AudioDocument]
+}
+// rdfs:comment "An audio document; aka record.@en"
+// rdfs:label "audio document@en"
+// :subDomain "BIBO"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:ProteinFeature {
+  rdf:type [:ProteinFeature]
+}
+OR
+:ProteinHomology OR
+:ProteinStructure OR
+:BindingSide OR
+:SignalPeptide OR
+:ModifiedResidue OR
+:CrossLink OR
+:ImmunoglobulinFeature OR
+:ProteinRepeat OR
+:Chain OR
+:ConservedRegion OR
+:ProPeptide OR
+:MaturePeptide OR
+:IntraMembraneRegion OR
+:TransMembraneRegion 
+
+:BindingSide {
+  rdf:type [:BindingSide]
+}
+OR
+:MoietyBindingSide OR
+:ProteinInteractionSide OR
+:NABindingSide 
+
+:BiologicalRecognizedRegion {
+  :boundMoiety xsd:String?
+    // skos:editorialNote "Now linked to the biological recognized region"
+    // skos:editorialNote "should belong to biological recognised region, the bound_moiety being the identity that recognises the reactions, which can be a sequence, protein, protein complex or any other molecule."
+    // skos:definition "Textual description of the moiety recognizing the region"
+    // :ddbjLabel "bound_moiety"
+}
+// skos:definition "A region on genomic sequence that is recognized by a biological entity or process.@en"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  {
+    rdf:type [:BiologicalRecognizedRegion]
+  }
+  OR
+  :ProteinBinding OR
+  :MiscRecomb OR
+  :TransferOrigin OR
+  :ReplicationOrigin OR
+  :MiscBinding OR
+  :DLoop OR
+  :RegulationSite 
+)
+
+bibo:AcademicArticle {
+  rdf:type [bibo:AcademicArticle]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Academic Article@en"
+// rdfs:comment "A scholarly academic article, typically published in a journal.@en"
+// :subDomain "BIBO"
+
+bibo:Manual {
+  rdf:type [bibo:Manual]
+}
+// rdfs:label "Manual@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A small reference book, especially one giving instructions.@en"
+// :subDomain "BIBO"
+
+:MiscNA {
+  rdf:type [:MiscNA]
+}
+// skos:editorialNote "Anything that is not a miscellaneous transcript, not a chromosome, not a plasmid or uncomplete NA sequence"
+// :subDomain "SequenceFeatureCore"
+
+bibo:Email {
+  rdf:type [bibo:Email]
+}
+// rdfs:comment "A written communication addressed to a person or organization and transmitted electronically.@en"
+// rdfs:label "EMail@en"
+// :subDomain "BIBO"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:KwownLengthAssemblyGap {
+  rdf:type [:KwownLengthAssemblyGap]
+}
+// skos:definition "gap with known gap size between two components of a genome or transcriptome assembly;@en"
+// rdfs:comment "The length of gap can be determined based on the associated location. The sequence at the denoted position must be a series of N's."
+// :ddbjLabel "assembly_gap"
+// :subDomain "SequenceFeatureCore"
+
+:PartXRefSequence {
+  :includedXRefSequence @:PartXRefSequence
+    // skos:definition "The xref from which the sequence is included" ;
+  rdf:type [:PartXRefSequence] ;
+  :includedXRefVersion xsd:String?
+    // skos:definition "The version of the sequence to include, should be specified if referenced resoure can have multiple versions. If not specified it referes to the first version."
+}
+// skos:definition "A part of the sequence included from another sequence that is included from an externally referenced resource."
+// :subDomain "SequenceFeatureCore"
+
+bibo:ReferenceSource {
+  rdf:type [bibo:ReferenceSource]
+}
+// :subDomain "BIBO"
+// rdfs:comment "A document that presents authoritative reference information, such as a dictionary or encyclopedia .@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Reference Source@en"
+
+:PartGapUnknownLength {
+  rdf:type [:PartGapUnknownLength]
+}
+// :subDomain "SequenceFeatureCore"
+// rdfs:comment "The sequence is filled with N for the estimated length otherwise a sequence of 100 N's are included"
+// skos:definition "A gap within the assembly with unknown sequence length"
+// skos:definition "#* The estimated gap length, if not given its unknown and defaults to 100\nestimatedLength xsd:PositiveInteger?;"
+
+bibo:Report {
+  rdf:type [bibo:Report]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// :subDomain "BIBO"
+// rdfs:label "Report@en"
+// rdfs:comment "A document describing an account or statement describing in detail an event, situation, or the like, usually as the result of observation, inquiry, etc..@en"
+
+:CDS {
+  :product xsd:String?
+    // :ddbjLabel "product"
+    // skos:editorialNote "Product description only present in CDS"
+    // skos:definition "The functional name" ;
+  rdf:type [:CDS] ;
+  :translExcept @:CDS*
+    // skos:definition "Indicate all codons, which have translation other then the default translation of the translation table"
+    // skos:editorialNote "TranslException object describes the translation exceptions on the CDS feature."
+    // :ddbjLabel "transl_except" ;
+  :proteinId xsd:String?
+    // skos:definition "The ID of the protein if translated from this CDS (format ^\\s*([A-Z]{3}\\d{5})(\\.)(\\d+)\\s*$)"
+    // skos:editorialNote "Added to the CDS, proteins can be merged from different species and therefore could have differrent identifiers when merged"
+    // :ddbjLabel "protein_id" ;
+  :ribosomalSlippage xsd:Boolean?
+    // skos:definition "Indicate the presence of ribosomal slippage, the slippage region are excluded from the CDS using a CollectionOfRegions location for the CDS on the transcript."
+    // skos:editorialNote "Boolean value indicating the presence of ribosomal slippage, slippage regiion are excluded from CDS using CollectionOfRegions location"
+    // :ddbjLabel "ribosomal_slippage" ;
+  :exception xsd:String?
+    // skos:editorialNote "depecrated, not be used any more in GBOL"
+    // :ddbjLabel "exception"
+    // skos:definition "Deprecated feature, which is imported from GenBank, mark a unconventional translation of the transcript" ;
+  :codonStart xsd:Integer?
+    // skos:definition "If the start position is unknown, indicate with this property, where the first complete codon can be found"
+    // skos:editorialNote "Included in the exon as the reading frame can be shifted if the exon is part of a CDS"
+    // :ddbjLabel "codon_start" ;
+  :protein @:CDS
+    // skos:definition "The resulting product protein when translating this CDS, each protein should have an IRI equal to http://gbol.live/0.1/protein/<SHA-384 key of protein sequence>."
+}
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000316@en"
+// skos:editorialNote "TransLExcept class added to ontology, only CDS has this property\n\n/codon_start has valid value of 1 or 2 or 3, indicating the offset at which the first complete codon of a coding feature can be found, relative to the first base of that feature; /transl_table defines the genetic code table used if other than the universal genetic code table; genetic code exceptions outside the range of the specified tables is reported in /transl_except qualifier; /protein_id consists of a stable ID portion (3+5 format with 3 position letters and 5 numbers) plus a version number after the decimal point; when the protein sequence encoded by the CDS changes, only the version number of the /protein_id value is incremented; the stable part of the /protein_id remains unchanged and as a result will permanently be associated with a given protein;"
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "CDS"
+// skos:definition "Coding sequence; sequence of nucleotides that corresponds with the sequence of amino acids in a protein (location includes stop codon); feature includes amino acid conceptual translation.@en"
+
+bibo:Proceedings {
+  rdf:type [bibo:Proceedings]
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A compilation of documents published from an event, such as a conference.@en"
+// :subDomain "BIBO"
+// rdfs:label "Proceedings@en"
+
+:Curator {
+  rdf:type [:Curator] ;
+  :orcid IRI
+    // skos:definition "The unique identifier to identify the scientist"
+}
+// :subDomain "DocumentWiseProv"
+// rdfs:label "Curator"
+
+bibo:PersonalCommunicationDocument {
+  bibo:recipient @bibo:PersonalCommunicationDocument*
+    // rdfs:comment "An agent that receives a communication document.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "recipient"
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Personal Communication Document@en"
+// :subDomain "BIBO"
+// rdfs:comment "A personal communication manifested in some document.@en"
+AND
+(
+  {
+    rdf:type [bibo:PersonalCommunicationDocument]
+  }
+  OR
+  bibo:Email OR
+  bibo:Letter 
+)
+
+:AntiCodon {
+  :antiCodingRegion @:AntiCodon
+    // skos:definition "The position of the anticodon within the tRNA transcript" ;
+  :aminoAcid [:Asn :MeIle :Nva :Tyr :Trp :Nle :Val :aIle :Gln :Orn :MeLys :Abu :Aib :Ahe :Apm :Xle :bAad :Dbu :Des :Glx :Phe :His :MeVal :AminoAcidOther :bAla :Ide :Acp :EtGly :Ala :Ile :Met :Ser :FourAbu :Asp :TERM :Gly :Aad :Asx :Glu :Sec :EtAsn :Lys :ThreeHyp :FourHyp :Thr :Dpm :aHyl :Hyl :MeGly :Xaa :Pro :bAib :Dpr :Arg :Leu :Pyl :Cys]
+    // skos:definition "The encoded amino acid" ;
+  :antiCodonSequence xsd:String
+    // skos:definition "The sequence of the anticodon use [TGAC]" ;
+  rdf:type [:AntiCodon]
+}
+// skos:definition "Complete description of an AntiCodon"
+// :subDomain "SequenceFeatureCore"
+
+bibo:EditedBook {
+  rdf:type [bibo:EditedBook]
+}
+// rdfs:comment "An edited book.@en"
+// :subDomain "BIBO"
+// rdfs:label "Edited Book@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+bibo:Thesis {
+  rdf:type [bibo:Thesis] ;
+  bibo:degree [degrees:ma degrees:phd degrees:ms]?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "degree@en"
+    // rdfs:comment "The thesis degree.@en"
+    // skos:editorialNote "We are not defining, using an enumeration, the range of the bibo:degree to the defined list of bibo:ThesisDegree. We won't do it because we want people to be able to define new degress if needed by some special usecases. Creating such an enumeration would restrict this to happen.@en"
+    // skos:editorialNote "We are not defining, using an enumeration, the range of the bibo:degree to the defined list of bibo:ThesisDegree. We won't do it because we want people to be able to define new degress if needed by some special usecases. Creating such an enumeration would restrict this to happen."
+}
+// rdfs:comment "A document created to summarize research findings associated with the completion of an academic degree.@en"
+// rdfs:label "Thesis@en"
+// :subDomain "BIBO"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+bibo:LegalCaseDocument {
+  rdf:type [bibo:LegalCaseDocument]
+}
+OR
+bibo:Brief OR
+bibo:LegalDecision 
+
+bibo:Performance {
+  rdf:type [bibo:Performance] ;
+  bibo:performer @bibo:Performance*
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/contributor"
+    // rdfs:label "performer"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+}
+// rdfs:comment "A public performance.@en"
+// :subDomain "BIBO"
+// rdfs:label "Performance@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+dc:MediaTypeOrExtent {
+  rdf:type [dc:MediaTypeOrExtent] ;
+  rdfs:label xsd:String
+    // skos:definition "A additional label for the dataset" ;
+  rdf:value xsd:String?
+    // skos:definition "The mime type of the format"
+    // skos:scopeNote "Used to describe the content of a bibo:Document and othr bibliographic resouces.\n\nWe suggest to use this property instead of the deprecated \"bibo:content\" one.@en"
+}
+// :subDomain "BIBO"
+
+:ProteinHomology {
+  :targetRegion @:ProteinHomology?
+    // skos:definition "An optional region to indicate to which part it is homologous to" ;
+  rdf:type [:ProteinHomology] ;
+  :homologousTo IRI
+    // skos:definition "The entity to which it is homologous to, being either another protein or cluster of proteins. If identifier is a non public identifier use http://gbol.life/0.1/<id>" ;
+  :homologousToDesc xsd:String?
+    // skos:definition "An optional description of the element to which it is homologous to"
+}
+// skos:definition "Denote a region to be homologous to another entity, which is either another protein or cluster of proteins"
+// :subDomain "SequenceFeatureCore"
+
+bibo:Hearing {
+  rdf:type [bibo:Hearing]
+}
+// rdfs:comment "An instance or a session in which testimony and arguments are presented, esp. before an official, as a judge in a lawsuit.@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:label "Hearing@en"
+// :subDomain "BIBO"
+
+:NAFeature {
+  :map xsd:String?
+    // skos:editorialNote "Added to NAFeature, each DNA feature can a chromosom map location"
+    // skos:definition "The map location on the chromosome from which the sample was obtained (using PCR)."
+    // :ddbjLabel "map"
+}
+// :subDomain "SequenceFeatureCore"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+AND
+(
+  :TranscriptFeature OR
+  :MiscFeature OR
+  :Source OR
+  :GenomicFeature OR
+  :SequenceAnnotation 
+)
+
+bibo:Note {
+  rdf:type [bibo:Note] ;
+  bibo:annotates IRI*
+    // rdfs:subPropertyOf "http://purl.org/dc/terms/relation"
+    // rdfs:comment "Critical or explanatory note for a Document.@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+    // rdfs:label "annotates@en"
+}
+// rdfs:label "Note@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// :subDomain "BIBO"
+// rdfs:comment "Notes or annotations about a resource.@en"
+
+:PolyASite {
+  rdf:type [:PolyASite]
+}
+// :ddbjLabel "polyA_site"
+// skos:definition "Site on an RNA transcript to which will be added adenine residues by post-transcriptional polyadenylation;@en"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000553@en"
+// :subDomain "SequenceFeatureCore"
+
+:Database {
+  rdf:type [:Database] ;
+  :releaseDate xsd:Date?
+    // skos:definition "The release date of the database" ;
+  :version xsd:Integer
+    // skos:definition "The version of database" ;
+  :id xsd:String
+    // skos:definition "The Id of database, typically typed as a  prefix"
+}
+// :subDomain "DocumentWiseProv"
+// skos:definition "The description of the database containing entities to which XREF elements can reference to.@en"
+
+:FuzzyPosition :InRangePosition OR
+:AfterPosition OR
+:OneOfPosition OR
+:BeforePosition 
+
+:LandBasedGeographicalLocation {
+  rdf:type [:LandBasedGeographicalLocation] ;
+  :country [:Andorra :Myanmar :East_Timor :Honduras :Solomon_Islands :Svalbard :Sierra_Leone :Malawi :Burma :UnknownCountry :Marshall_Islands :Colombia :Clipperton_Island :American_Samoa :Azerbaijan :Madagascar :Martinique :Brunei :Cocos_Islands :Cote_d_Ivoire :Saint_Pierre_and_Miquelon :Bahrain :Armenia :Benin :India :Burundi :State_of_Palestine :Kazakhstan :Oman :Philippines :Cyprus :Cape_Verde :Cuba :Somalia :Nicaragua :Romania :Italy :Navassa_Island :Viet_Nam :Baker_Island :Bermuda :Lithuania :Samoa :Yugoslavia :Czechoslovakia :Algeria :Mexico :Liechtenstein :Belarus :Slovakia :Namibia :Montenegro :Seychelles :Chad :Europa_Island :Malaysia :Bangladesh :Moldova :British_Guiana :Kyrgyzstan :Syria :Barbados :USA :Tokelau :Poland :Line_Islands :Chile :Tanzania :Qatar :Comoros :Anguilla :Latvia :El_Salvador :Niger :Mongolia :Republic_of_the_Congo :Mauritania :Kenya :Tunisia :Jamaica :Saint_Lucia :Hungary :Isle_of_Man :Jordan :France :Nauru :Taiwan :Laos :Eritrea :Argentina :Kiribati :Korea :Paraguay :North_Korea :Swaziland :Wake_Island :Fiji :Kingman_Reef :Costa_Rica :Paracel_Islands :Saudi_Arabia :French_Southern_and_Antarctic_Lands :Botswana :Kuwait :Guadeloupe :Germany :Serbia :Zimbabwe :Bolivia :Cambodia :Maldives :Gibraltar :Belgian_Congo :Czech_Republic :Hong_Kong :Egypt :Gaza_Strip :Greenland :Sri_Lanka :Japan :Kerguelen_Archipelago :GuineaBissau :Norfolk_Island :Albania :Borneo :USSR :Western_Sahara :Luxembourg :Dominica :Spratly_Islands :Austria :Vanuatu :Cameroon :French_Polynesia :Palau :Ireland :Turkmenistan :Papua_New_Guinea :Guatemala :Denmark :Jarvis_Island :Mozambique :Portugal :Macau :Finland :Virgin_Islands :Belgium :Zambia :Djibouti :Ecuador :Netherlands :Suriname :Tromelin_Island :South_Korea :Northern_Mariana_Islands :Niue :Trinidad_and_Tobago :Bosnia_and_Herzegovina :Libya :Antarctica :Guernsey :Netherlands_Antilles :Slovenia :Burkina_Faso :Micronesia :Saint_Helena :Uganda :United_Arab_Emirates :Gabon :Iran :Zaire :South_Georgia_and_the_South_Sandwich_Islands :Senegal :Estonia :Howland_Island :Glorioso_Islands :Reunion :Johnston_Atoll :Mayotte :Indonesia :Ghana :United_Kingdom :Brazil :Switzerland :Bouvet_Island :Pakistan :Australia :Guam :Greece :Turks_and_Caicos_Islands :Curacao :Serbia_and_Montenegro :West_Bank :Central_African_Republic :Morocco :Bhutan :Sudan :Aruba :Ukraine :Togo :British_Virgin_Islands :Liberia :Midway_Islands :Georgia :Falkland_Islands :Peru :Cook_Islands :San_Marino :Sint_Maarten :Cayman_Islands :South_Sudan :Belize :Saint_Vincent_and_the_Grenadines :Christmas_Island :Antigua_and_Barbuda :Tuvalu :Macedonia :Rwanda :Juan_de_Nova_Island :Israel :Haiti :Mali :Nigeria :Iraq :China :Former_Yugoslav_Republic_of_Macedonia :French_Guiana :Palmyra_Atoll :Sao_Tome_and_Principe :Pitcairn_Islands :Afghanistan :Spain :Lesotho :Norway :Nepal :Thailand :Lebanon :Democratic_Republic_of_the_Congo :Angola :Bassas_da_India :Bahamas :Faroe_Islands :Bulgaria :Turkey :Panama :New_Caledonia :New_Zealand :Heard_Island_and_McDonald_Islands :Uzbekistan :Tonga :Wallis_and_Futuna :Sweden :Guyana :Ashmore_and_Cartier_Islands :Gambia :Saint_Kitts_and_Nevis :Malta :Siam :Tajikistan :Mauritius :Croatia :Equatorial_Guinea :Monaco :South_Africa :Russia :Singapore :Kosovo :Uruguay :Venezuela :Ethiopia :Dominican_Republic :Guinea :Yemen :Jan_Mayen :Jersey :Canada :Coral_Sea_Islands :Montserrat :Puerto_Rico :Iceland :Grenada]
+    // skos:definition "The country"
+    // :ddbjLabel "country"
+}
+// :subDomain "DocumentCore"
+// skos:definition "A geographical location on land, identified by a country name@en"
+
+:AutomaticAnnotationActivity {
+  :wasAssociatedWith @provo:Activity?
+    // skos:definition "The agent which be performed this activity" ;
+  :parameterString xsd:String
+    // skos:definition "The parameter string as used to start the software for the this activity, parameters referencing to another dataset used must be specified with {IRI}. So for example '-threshold 0.05 -i {:datasetIn1}'. Each of referenced input datasets must be also be referenced with the prov:used property" ;
+  rdf:type [:AutomaticAnnotationActivity]
+}
+// :subDomain "DocumentWiseProv"
+
+:ProteinDomain {
+  rdf:type [:ProteinDomain] ;
+  :secondarySignature IRI*
+    // skos:definition "Secondary signature of the domain typically the interproscan ID" ;
+  :signatureDesc xsd:String?
+    // skos:definition "Optional short description of the signature" ;
+  :signature IRI
+    // skos:definition "The reference to signature of the domain (Gene3d, Pfam, etc)" ;
+  :domainType [:Family :Domain]?
+    // skos:definition "Option to denote the type of domain"
+}
+// skos:definition "A conserved domain or family within a protein@en"
+// :subDomain "SequenceFeatureCore"
+
+sapp:InterProScan {
+  :evalue xsd:Double?
+    // skos:definition "InterProScan properties" ;
+  rdf:type [sapp:InterProScan] ;
+  :familyName xsd:String? ;
+  :score xsd:Double?
+}
+// skos:editorialNote "InterProScan Module from SAPP\nURL: gitlab.com/sapp/annotation/interproscan"
+// rdfs:label "InterProScan"
+
+:UnsureBases {
+  rdf:type [:UnsureBases]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0001086@en"
+// skos:definition "A small region of sequenced bases, which could not be confidently identified.@en"
+// rdfs:comment "a small region of sequenced bases, generally 10 or fewer in its length, which could not be confidently identified. Such a region might contain called bases(A, T, G, or C), or a mixture of called-bases and uncalled-bases ('N').The unsure feature should not be used when annotating gaps in genome assemblies.Please refer to assembly_gap feature for gaps within the sequence of an assembled genome. For annotation of gaps in other sequences than assembled genomes use the gap feature. *Note as observed in GCA_000018045 the unsure region can be larger*@en"
+// rdfs:comment "use /replace=\"\" to annotate deletion, e.g. unsure      11..15 /replace=\"\""
+// :ddbjLabel "unsure"
+
+:TemporaryFile {
+  rdf:type [:TemporaryFile] ;
+  provo:wasDerivedFrom @provo:Entity*
+    // skos:definition "Any entries used as input in the activity that created this entity"
+}
+// skos:definition "A temporary file, which is derived from another prov:Entity@en"
+// rdfs:comment "Use this class to describe temporary files that contain only information from another prov:Entity, but is formatted differently. Temporary files are typically generated to create files with the correct format for the different tools and output of these tools that need to be converted back.@en"
+// :subDomain "DocumentWiseProv"
+
+bibo:Statute {
+  rdf:type [bibo:Statute]
+}
+// rdfs:comment "A bill enacted into law.@en"
+// :subDomain "BIBO"
+// rdfs:label "Statute@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:AssemblyAnnotation {
+  rdf:type [:AssemblyAnnotation]
+}
+OR
+:AssemblyGap OR
+:UnsureBases 
+
+bibo:Issue {
+  rdf:type [bibo:Issue] ;
+  bibo:issue xsd:String
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/locator"
+    // rdfs:comment "An issue number@en"
+    // rdfs:label "issue@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "something that is printed or published and distributed, esp. a given number of a periodical@en"
+// :subDomain "BIBO"
+// rdfs:label "Issue@en"
+
+:BagOfRegions {
+  rdf:type [:BagOfRegions] ;
+  :members @:BagOfRegions+
+    // skos:definition "A set of regions making up a location spreader over multiple regions. The members inherit the reference value from this CollectionOfRegions object."
+}
+// rdfs:comment "Equal to the join in the GenBank format. Unordered set of regions."
+// :subDomain "LocationCore"
+// skos:editorialNote "Taken over from Faldo"
+
+:Operon {
+  rdf:type [:Operon] ;
+  :operonId xsd:String?
+    // skos:definition "Tag identifier of the operon"
+}
+// :ddbjLabel "operon"
+// skos:definition "Region containing polycistronic transcript including a cluster of genes that are under the control of the same regulatory sequences/promotor and in the same biological pathway@en"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000178@en"
+// :subDomain "SequenceFeatureCore"
+
+:MoietyBindingSide {
+  :bindingMoiety xsd:String
+    // skos:definition "Name of the binding moiety" ;
+  rdf:type [:MoietyBindingSide]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "Region of the protein that bind to some moiety@en"
+
+bibo:Collection {
+  bibo:eissn xsd:String?
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/"
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier" ;
+  bibo:numVolumes xsd:String?
+    // rdfs:label "number of volumes@en"
+    // rdfs:comment "The number of volumes contained in a collection of documents (usually a series, periodical, etc.).@en"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI" ;
+  bibo:issn xsd:String?
+    // rdfs:subPropertyOf "http://purl.org/ontology/bibo/identifier"
+    // rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+  bibo:hasPart @bibo:Journal+
+}
+// skos:editorialNote "Properties a defined on the root, this is just a temporary note that can be used for that task\n\n#bibo:distributor @foaf:Agent?;\n#bibo:editor @foaf:Agent?;\n#bibo:issuer @foaf:Agent?;\n#bibo:owner @foaf:Agent?;\n#bibo:producer @foaf:Agent?;\n#bibo:translator @foaf:Agent?;\n#bibo:doi xsd:String?;\n#bibo:eissn xsd:String?; \n#bibo:issn xsd:String?; \n#bibo:asin xsd:String?; \n#bibo:identifier xsd:String?; \n#bibo:coden xsd:String?; \n#bibo:eanucc13 xsd:String?; \n#bibo:gtin14 xsd:String?; \n#bibo:handle xsd:String?; \n#bibo:isbn10 xsd:String?; \n#bibo:isbn13 xsd:String?; \n#bibo:lccn xsd:String?; \n#bibo:numVolumes xsd:String?; \n#bibo:oclcnum xsd:String?; \n#bibo:pmid xsd:String?; \n#bibo:sici xsd:String?; \n#bibo:upc xsd:String?; \n#bibo:uri xsd:String?;@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+// rdfs:comment "A collection of Documents or Collections@en"
+// rdfs:label "Collection@en"
+// :subDomain "BIBO"
+AND
+(
+  {
+    rdf:type [bibo:Collection]
+  }
+  OR
+  bibo:Website OR
+  bibo:Periodical OR
+  bibo:Series OR
+  bibo:MultiVolumeBook 
+)
+
+:Chain {
+  rdf:type [:Chain]
+}
+// skos:definition "A chain within the mature protein@en"
+// :subDomain "SequenceFeatureCore"
+
+sapp:SignalP {
+  :cMax xsd:Float
+    // skos:definition "SignalP properties" ;
+  :yMax xsd:Float ;
+  :sMax xsd:Float ;
+  :cPos @sapp:SignalP ;
+  :sPos @sapp:SignalP ;
+  :yPos @sapp:SignalP ;
+  :network xsd:String ;
+  :signal xsd:String ;
+  :sMean xsd:Float ;
+  :d xsd:Float ;
+  :dMaxCut xsd:Float ;
+  rdf:type [sapp:SignalP]
+}
+
+bibo:Legislation {
+  rdf:type [bibo:Legislation]
+}
+OR
+bibo:Statute OR
+bibo:Bill 
+
+bibo:Bill {
+  rdf:type [bibo:Bill]
+}
+// rdfs:comment "Draft legislation presented for discussion to a legal body.@en"
+// :subDomain "BIBO"
+// rdfs:label "Bill@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:SequenceAnnotation {
+  rdf:type [:SequenceAnnotation]
+}
+OR
+:AssemblyAnnotation OR
+:ModifiedBase OR
+:VariationFeature 
+
+:ListOfRegions {
+  :members @:BagOfRegions+
+    // skos:definition "A set of regions making up a location spreader over multiple regions. The members inherit the reference value from this CollectionOfRegions object." ;
+  rdf:type [:ListOfRegions]
+}
+// rdfs:comment "Equal to the order in the genbank format. Ordered set of regions. Order is denoted with the rdfs:_n predicate."
+// :subDomain "LocationCore"
+// skos:editorialNote "Taken over from Faldo"
+
+bibo:Letter {
+  rdf:type [bibo:Letter]
+}
+// rdfs:label "Letter@en"
+// :subDomain "BIBO"
+// rdfs:comment "A written or printed communication addressed to a person or organization and usually transmitted by mail.@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+:Centromere {
+  rdf:type [:Centromere]
+}
+// rdfs:comment "The centromere feature describes the interval of DNA that corresponds to a region where chromatids are held and a kinetochore is formed@en"
+// skos:definition "Region of biological interest identified as a centromere and which has been experimentally characterized;"
+// :subDomain "SequenceFeatureCore"
+// :ddbjLabel "centromere"
+// skos:exactMatch "http://purl.obolibrary.org/obo/SO_0000577@en"
+
+:NABindingSide {
+  rdf:type [:NABindingSide]
+}
+// skos:definition "#* If known specify the Protein binding region on the dna or rna\nbindingRegion ProteinBinding?;\n#* If unknown give a short description of the region to which this side within the protein binds to. \nbindingRegionDesc xsd:String?;@en"
+// :subDomain "SequenceFeatureCore"
+// skos:definition "Region that bind to a dna or rna molecule.@en"
+
+:PCRPrimerSet {
+  rdf:type [:PCRPrimerSet] ;
+  :forwardPrimer @:PCRPrimerSet+
+    // skos:definition "The forward primer(s)" ;
+  :reversePrimer @:PCRPrimerSet+
+    // skos:definition "The reverse primer(s)"
+}
+// :subDomain "DocumentCore"
+// skos:definition "The definition of a primer pair that can be used for a PCR. Multiple forward and/or reverse primers might be defined.@en"
+
+:GeographicalLocation {
+  :locality xsd:String?
+    // skos:definition "The locality (aka the name of a village)" ;
+  :region xsd:String?
+    // skos:definition "The region within the country or coast along the ocean"
+}
+// :subDomain "DocumentCore"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+AND
+(
+  :LandBasedGeographicalLocation OR
+  :WaterBasedGeographicalLocation 
+)
+
+:ProPeptide {
+  rdf:type [:ProPeptide]
+}
+// :subDomain "SequenceFeatureCore"
+// skos:definition "The part of a protein that is proteolytically cleaved during the protein's maturation, e.g. the internal residues of proinsulin, the N-terminal residues of pepsinogen. If the propeptide is a signal peptide please use the SingalPeptide class.@en"
+
+:PrecursorRNA {
+  rdf:type [:PrecursorRNA]
+}
+// rdfs:comment "used for RNA which may be the result of post-transcriptional processing;  if the RNA in question is known not to have been processed, use theprim_transcript key."
+// :ddbjLabel "precursor_RNA"
+// :ddbjLabel "prim_transcript"
+// :subDomain "SequenceFeatureCore"
+// skos:definition "any RNA species that is not yet the mature RNA product, which needs to be described;may have associated transcripts."
+
+:GenomicFeature {
+  :operon @:GenomicFeature
+    // :ddbjLabel "operon"
+    // skos:editorialNote "Link to operon added in genomic feature"
+    // skos:definition "Operon to which the genetic element belongs to"
+}
+// skos:definition "All features that can be present on a genome@en"
+// gen:virtual "true^^http://www.w3.org/2001/XMLSchema#boolean"
+// :subDomain "SequenceFeatureCore"
+AND
+(
+  :Homology OR
+  :TranscriptionElement OR
+  :StructureFeature OR
+  :RepeatFeature OR
+  :RecognizedRegion 
+)
+
+provo:Organization {
+  rdf:type [provo:Organization]
+}
+// :subDomain "DocumentWiseProv"
+
+bibo:Series {
+  rdf:type [bibo:Series] ;
+  bibo:hasPart @bibo:Journal+
+}
+// rdfs:comment "A loose, thematic, collection of Documents, often Books.@en"
+// :subDomain "BIBO"
+// rdfs:label "Series@en"
+// rdfs:isDefinedBy "http://purl.org/ontology/bibo/^^http://www.w3.org/2001/XMLSchema#anyURI"
+
+sapp:Prodigal {
+  :rbsSpacer xsd:String? ;
+  :startType xsd:String? ;
+  :gcContent xsd:String? ;
+  :rbsMotif xsd:String?
+}
+// :fromTool "Prodigal"
+// rdfs:label "Prodigal"
+AND
+(
+  {
+    rdf:type [sapp:Prodigal]
+  }
+  OR
+  sapp:RNAmmer 
+)
+
+:GBOLLinkSet {
+  :target @:GBOLLinkSet+
+    // skos:definition "The set of database that are target of the references associated to this link set"
+}
+// rdfs:comment "All databases references by the XREF entities within this LinkSet must be referenced by the target property.@en"
+// :subDomain "DocumentWiseProv"
+// skos:definition "Describes and contains the dataset-wise provenance of a set of XREF elements within a GBOLDataSet.@en"
+AND
+(
+  {
+    rdf:type [:GBOLLinkSet]
+  }
+  OR
+  :AnnotationLinkSet 
+)
+
+:StemLoop {
+  rdf:type [:StemLoop]
+}
+// skos:definition "hairpin; a double-helical region formed by base-pairingbetween adjacent (inverted) complementary sequences in asingle strand of RNA or DNA."
+// :ddbjLabel "stem_loop"
+// :subDomain "SequenceFeatureCore"
+
