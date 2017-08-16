@@ -17,13 +17,11 @@ start = <wikicite>
    p:P1476 @<P1476_title> ;
    p:P1680 @<P1680_subtitle> ;
    (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
-   pq:P1545 @<P1545_series_ordinal> ; #this is an optional qualifier to be used to indicate author order
    p:P577 @<P577_publication_date> ;
    p:P364 @<P364_original_language_of_work> ;
    p:P1433 @<P1433_published_in> ;
    p:P2860 @<P2860_cites> ;
    p:P98 @<P98_editor> ;
-   
    p:P478 @<P478_volume> ;
    p:P433 @<P433_issue> ;
    p:P304 @<P304_pages> ;
@@ -67,6 +65,7 @@ start = <wikicite>
 <P50_author> {
 	ps:P50 IRI; 
 	prov:wasDerivedFrom @<reference> ;
+	pq:P1545 LITERAL;
 }
 
 <P98_editor> {
@@ -207,6 +206,7 @@ start = <wikicite>
 <P2093_author_name_string> {
 	ps:P2093	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
+	pq:P1545 LITERAL;
 }
 
 <P2322_article_ID> {

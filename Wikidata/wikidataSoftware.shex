@@ -3,39 +3,39 @@
 #BASE <http://base.example/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wd: <http://www.wikidata.org/wiki/>
+PREFIX ent: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
 start = @<wikidata-software>
 
-#<wikidata-software> {
-#	wdt:P31	wd:Q7397 ;
-#	
-#	# P275 = license
-#	p:275
-#	
-#	# P348 = software version
-#	p:348
-#	
-#	# P856 = official website
-#	P:856
-#	
-#	# P178 = developer
-#	p:178
-# 
-# 	P1072 = readable file format
-# 	p:1072
-# 
-# 	P1073 = writable file format
-# 	p:1073
-# 
-# 	P306 = operating system
-# 	p:306
-# 
-# 	P2749 = PRONOM software identifier
-# 	p:2749
+<wikidata-software> {
+	#statements
+	p:P31 @<P31_instance_of_software> ;
+	p:P279 @<P279_subclass_of_software>+ ;
+	
+	p:275 @<P275_license>* ;
+	
+	p:348 @<P348_software_version>* ;
+	
+	P:856 @<P856_official_website>* ;
+	
+	p:178 @<P178_developer>* ; 
+ 
+ 	p:1072 @<P1072_readable_file_format>* ;
+ 
+ 	p:1073 @<P1073_writable_file_format>* ;
+ 
+ 	P306 = operating system
+ 	p:306 @<P306_operating_system>* ;
+	
+	#identifiers
+	p:2749 @<P2749_PRONOM_software_identifier> ;
+
 }
 
 # Shape expression for Wikidata statements related to software
@@ -43,8 +43,6 @@ start = @<wikidata-software>
 	ps:P31 [wd:Q7397];
 }
 
-#TODO I will need to expand this to also capture P279 subclass of software
-#TODO I need to figure out how to add P3680 statement supported by and a list of trusted accounts
 
 <P275_license> {
 	ps:P275 IRI@<license>;

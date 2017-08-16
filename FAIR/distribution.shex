@@ -1,0 +1,38 @@
+PREFIX : <http://shex.fairdata.solutions/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX fdp-o: <http://rdf.biosemantics.org/ontologies/fdp-o#>
+PREFIX r3d: <http://www.re3data.org/schema/3-0#>
+PREFIX lang: <http://id.loc.gov/vocabulary/iso639-1/>
+
+
+:distributionMetadata IRI {
+  a [dcat:Distribution];
+  dcterms:title	xsd:string;
+  dcterms:language IRI*;
+  dcterms:description xsd:string*;
+  dcterms:isPartOf IRI*;
+  rdfs:label xsd:string*;
+  dcterms:hasVersion xsd:string;
+  fdp-o:metadataIssued xsd:dateTime;
+  fdp-o:metadataModified xsd:dateTime;
+  dcterms:issued xsd:dateTime*;
+  dcat:mediaType xsd:string+;
+  dcat:format xsd:string*;
+  dcat:byteSize xsd:decimal*;
+  dcterms:modified xsd:dateTime*;
+  dcterms:rights IRI*;
+  dcterms:conformsTo IRI*;
+  dcterms:license IRI;
+  (dcat:downloadURL IRI | dcat:accessURL IRI);
+  fdp-o:metadataIdentifier @:metadataID
+}
+
+:metadataID IRI {
+  dcterms:identifier xsd:string
+
+} 
