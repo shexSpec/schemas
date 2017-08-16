@@ -1,0 +1,51 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX edam: <http://purl.bioontology.org/ontology/EDAM/>
+PREFIX SIO: <http://semanticscience.org/resource/>
+PREFIX EFO: <http://www.ebi.ac.uk/efo/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wdp: <http://www.wikidata.org/prop/direct/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+<PTM_identification> {
+    rdf:type	EDAM:operation_3755 ;
+	prov:used	@<biosample> OR @<protein_identification> ;
+	obi:OBI_0000299	@<measurement> ;
+}
+
+@<protein_identification> {
+   rdf:type	EDAM:operation_3767 ;
+}
+
+<biosample> []   # From the diagram it is not clear what a biosample would be.
+
+<measurement> {
+	rdf:type	efo:EFO_0001444 ;
+}
+
+<MS_intensity> {
+   rdf:type		obo:IAO_0000004 ;
+   obo:IAO_0000004	@<measurement> ; # Is quality measurement of
+   sio:SIO_000300	LITERAL ;
+   sio:refersTo		@<proteolytic cleavage product> 
+}
+
+<proteolytic cleavage product> {
+ 	rdf:type	PR:000018264 ;
+	sio:refersTo	@<protein> ;
+}
+
+<Phophorylated residue> {
+	rdf:type	MOD:00696 ;
+	bfo:part_of	@<proteolytic cleavage product> ;
+}
+
+<protein> {
+     rdf:type	obo:PR_000000001 ; # Protein = PR_000000001	 	 
+	 sio:isReferredToBy @<uniprotID> ;	 
+}
+
+<uniprotID> {
+	rdf:type	sio:identifier;    
+    sio:000628	^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$ ; # Regular expression of a Uniprot ID 
+}
