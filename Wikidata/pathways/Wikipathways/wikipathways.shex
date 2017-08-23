@@ -20,7 +20,7 @@ start = @<wikidata-wp_pathway>
 
 	# Statements 
     p:P31 @<pathway_ontology_term> ;
-    p:P527 @<has_part> ;
+    p:P527 @<has_part>* ;
     p:P2860 @<wikicite>* ;
 
     # Identifiers
