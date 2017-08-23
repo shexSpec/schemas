@@ -1,0 +1,18 @@
+#Shape Expression for trusted users of the Wikidata for Digital Preservation portal who have accounts on Wikidata
+
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+<wikidata-trusted_user> {
+  #statements
+  p:P553 @<P553_website_account_on> ;
+  
+<P533_website_account_on> {
+  ps:P533 [wd:Q2013] ;     
+  pq:P554 
