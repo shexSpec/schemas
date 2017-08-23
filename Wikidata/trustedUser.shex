@@ -11,8 +11,10 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 <wikidata-trusted_user> {
   #statements
-  p:P553 @<P553_website_account_on> ;
-  
+  ps:P553 @<P553_website_account_on> ;
+ }
+
 <P533_website_account_on> {
   ps:P533 [wd:Q2013] ;     
-  pq:P554 
+  pq:P554 LITERAL ;
+}
