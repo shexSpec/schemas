@@ -9,7 +9,7 @@ PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
 PREFIX pr:  <http://www.wikidata.org/prop/reference/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX schema: <http://schema.org/> .
+PREFIX schema: <http://schema.org/> 
 
 start = @<wikidata-wp_pathway>
 
