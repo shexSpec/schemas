@@ -1,0 +1,34 @@
+# Shape Expression for Human genes in Wikidata 
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+start = @<wikidata-wp_pathway>
+
+<wikidata-wp_pathway> {
+	# Descriptors
+	rdfs:label LITERAL+ ;
+	schema:description LITERAL+ ;
+
+	# Statements 
+    p:P31 @<pathway_ontology_term> ;
+    p:P527 @<has_part> ;
+    p:P2860 @<wikicite> ;
+
+    # Identifiers
+    p:P2410 @<wikipathway-identifier> ;
+}
+
+<pathway_ontology_term> .
+<wikipathway-identifier> .
+<has_part> .
+<wikicite> .
+
+
+
