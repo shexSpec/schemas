@@ -7,6 +7,12 @@ PREFIX wd: <https://www.wikidata.org/wiki/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
 
 # Shape expression for Wikidata statements related to file formats
 
@@ -68,7 +74,10 @@ start = @<wikidata-file_format>
 	ps:P279 [wd:Q79719];
 }
 
-<developer> [
-	wd:Q5482740 
-	]
-	
+<developer> {
+	ps:P178	[wd:Q5482740] 
+	}
+
+
+<file_format_types> {  }
+# no idea what needs to go in those curly braces
