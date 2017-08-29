@@ -111,7 +111,7 @@ start = @<wikidata-disease>
 <do-reference> {
 	pr:P248   @<version-disease-ontology> ;
 	pr:P813   xsd:dateTime ;
-	pr:P699   @<P699_disease_ontology_id> ;
+	pr:P699   LITERAL  /^DOID:[0-9]+$/; 
 } 
 
 <version-disease-ontology> {
