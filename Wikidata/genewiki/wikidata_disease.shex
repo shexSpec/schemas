@@ -39,10 +39,7 @@ start = @<wikidata-disease>
 
 ## Statements 
 
-<P31_disease-class> {
-	ps:P31 [wd:Q12136] ;
-	prov:wasDerivedFrom @<do-reference> ;
-} 
+<P31_disease-class> .
 
 <P279_disease-parent-class> {
 	ps:P279  @<wikidata-disease> ;
