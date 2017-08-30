@@ -41,7 +41,11 @@ start = @<wikidata-disease>
 	prov:wasDerivedFrom @<do-reference> ;
 } 
 
-<P279_disease-parent-class> .
+<P279_disease-parent-class> {
+	ps:P279  @<wikidata-disease> ;
+	prov:wasDerivedFrom @<do-reference> ;
+}
+
 <P2888_disease-ontology-iri> .
 <P2888_identifiers-org-iri> .
 
