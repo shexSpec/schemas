@@ -111,7 +111,7 @@ start = @<wikidata-disease>
 } 
 
 <version-disease-ontology> {
-    # p:P629 { ps:P629	[ wd:Q5282129 ] } ; # edition or translation of (P629) Disease Ontology (Q5282129)
+    p:P629 { ps:P629	[ wd:Q5282129 ] } ; # edition or translation of (P629) Disease Ontology (Q5282129)
 } 
 
 <miriam-reference> {
