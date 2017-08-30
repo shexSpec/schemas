@@ -36,7 +36,10 @@ start = @<wikidata-disease>
 
 ## Statements 
 
-<P31_disease-class> .
+<P31_disease-class> {
+	ps:P31 [wd:Q12136] ;
+	prov:wasDerivedFrom @<do-reference> ;
+} 
 
 <P279_disease-parent-class> .
 <P2888_disease-ontology-iri> .
@@ -62,6 +65,15 @@ start = @<wikidata-disease>
 <P2892_umls-cui> .
 
 
+<do-reference> {
+	pr:P248   @<version-disease-ontology> ;
+	pr:P813   xsd:dateTime ;
+	pr:P699   LITERAL  /^DOID:[0-9]+$/; 
+} 
+
+<version-disease-ontology> {
+    # p:P629 { ps:P629	[ wd:Q5282129 ] } ; # edition or translation of (P629) Disease Ontology (Q5282129)
+} 
 
 
 
