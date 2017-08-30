@@ -22,7 +22,7 @@ start = @<wikidata-disease>
 	p:P31	@<P31_disease-class> ;
 	p:P279  @<P279_disease-parent-class>* ;
 	p:P2888 @<P2888_disease-ontology-iri> ;
-	p:P2888         @<P2888_identifiers-org-iri> ;
+	p:P2888 @<P2888_identifiers-org-iri> ;
 
 	## IDENTIFIERS
     p:P699 @<P699_disease_ontology_id> ;
@@ -39,75 +39,75 @@ start = @<wikidata-disease>
 
 <P31_disease-class> {
 	ps:P31 [wd:Q12136] ;
-	# prov:wasDerivedFrom @<do-reference> ;
+	prov:wasDerivedFrom @<do-reference> ;
 } 
 
 <P279_disease-parent-class> {
 	ps:P279  @<wikidata-disease> ;
-	# prov:wasDerivedFrom @<do-reference> ;
+	prov:wasDerivedFrom @<do-reference> ;
 }
 
 <P2888_disease-ontology-iri> {
     ps:P2888  [do:~] ;
-    # prov:wasDerivedFrom @<do-reference>
+    prov:wasDerivedFrom @<do-reference>
 }
 
 <P2888_identifiers-org-iri> {
     ps:P2888  [doio:~] ;
-    # prov:wasDerivedFrom @<miriam-reference>
+    prov:wasDerivedFrom @<miriam-reference>
 }
 
 ## Identifiers
 <P699_disease_ontology_id> { 
         ps:P699 LITERAL  /^DOID:[0-9]+$/;
-        # prov:wasDerivedFrom @<do-reference> ;
+        prov:wasDerivedFrom @<do-reference> ;
 } 
 
 <P486_mesh_id> { 
 	    ps:P486 LITERAL ;
-        # prov:wasDerivedFrom @<do-reference> ;
+        prov:wasDerivedFrom @<do-reference> ;
 } 
 
 <P492_omim_id> { 
        ps:P492 LITERAL ;
-       # prov:wasDerivedFrom @<do-reference> ;
+       prov:wasDerivedFrom @<do-reference> ;
 } 
 
 <P493_icd_9> { 
        ps:P493 LITERAL ;
-       # prov:wasDerivedFrom @<do-reference> ;
+       prov:wasDerivedFrom @<do-reference> ;
 } 
 	   
 <P494_icd_10> { 
        ps:P494 LITERAL ;
-       # prov:wasDerivedFrom @<do-reference> ;
+       prov:wasDerivedFrom @<do-reference> ;
 } 
 	
 <P1550_orphanet_id> {
        ps:P1550 LITERAL ;
-       # prov:wasDerivedFrom @<do-reference> ;
+       prov:wasDerivedFrom @<do-reference> ;
 } 
 	   
-<P1748_nci_thesaurus> {
+<P1748_nci_thesaurus>* {
 	  ps:P1748 LITERAL ;
-	  # prov:wasDerivedFrom @<do-reference> ;
+	  prov:wasDerivedFrom @<do-reference> ;
 } 
 
 <P2888_exact_match> {
 		ps:P2888 IRI ;
-		# prov:wasDerivedFrom @<miriam-reference> OR @<do-reference> ;
+		prov:wasDerivedFrom @<miriam-reference> OR @<do-reference> ;
 } 
 	   
 <P2892_umls-cui> { 
        ps:P2892 LITERAL ;
-       # prov:wasDerivedFrom @<do-reference> ;
+       prov:wasDerivedFrom @<do-reference> ;
 } 
 
 
 <do-reference> {
-	pr:P248   @<version-disease-ontology> ;
-	pr:P813   xsd:dateTime ;
-	pr:P699   LITERAL  /^DOID:[0-9]+$/; 
+	#pr:P248   @<version-disease-ontology> ;
+	#pr:P813   xsd:dateTime ;
+	#pr:P699   LITERAL  /^DOID:[0-9]+$/; 
 } 
 
 <version-disease-ontology> {
@@ -115,8 +115,8 @@ start = @<wikidata-disease>
 } 
 
 <miriam-reference> {
-	pr:P248  [ wd:Q16335166 ] ; # stated in (P248) Miriam registry (Q16335166)
-	pr:P854  [ mir:~ ] ;
+	#pr:P248  [ wd:Q16335166 ] ; # stated in (P248) Miriam registry (Q16335166)
+	#pr:P854  [ mir:~ ] ;
 } 
 
 
