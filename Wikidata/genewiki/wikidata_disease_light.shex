@@ -95,7 +95,7 @@ start = @<wikidata-disease>
 
 <P2888_exact_match> {
 		ps:P2888 IRI ;
-		prov:wasDerivedFrom @<miriam-reference> OR @<do-reference> ;
+		# prov:wasDerivedFrom @<miriam-reference> OR @<do-reference> ;
 } 
 	   
 <P2892_umls-cui> { 
@@ -110,14 +110,7 @@ start = @<wikidata-disease>
 	pr:P699   LITERAL  /^DOID:[0-9]+$/; 
 } 
 
-<version-disease-ontology> {
-   # p:P629 { ps:P629	[ wd:Q5282129 ] } ; # edition or translation of (P629) Disease Ontology (Q5282129)
-} 
 
-<miriam-reference> {
-#	pr:P248  [ wd:Q16335166 ] ; # stated in (P248) Miriam registry (Q16335166)
-#	pr:P854  [ mir:~ ] ;
-} 
 
 
 
