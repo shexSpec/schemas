@@ -18,8 +18,8 @@ start = @<wikidata-disease>
 
 <wikidata-disease> {
 	# Descriptors
-	rdfs:label LITERAL+ ;
-	schema:description LITERAL* ;
+	 ( rdfs:label LITERAL+ ;
+	   schema:description LITERAL? )+ ;
 
 	# Statements 
 	p:P31	@<P31_disease-class> ;
