@@ -114,6 +114,11 @@ start = @<wikidata-disease>
     # p:P629 { ps:P629	[ wd:Q5282129 ] } ; # edition or translation of (P629) Disease Ontology (Q5282129)
 } 
 
+<miriam-reference> {
+	pr:P248  [ wd:Q16335166 ] ; # stated in (P248) Miriam registry (Q16335166)
+	pr:P854  [ mir:~ ] ;
+} 
+
 
 
 
