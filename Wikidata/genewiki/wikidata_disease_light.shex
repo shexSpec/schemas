@@ -21,7 +21,8 @@ start = @<wikidata-disease>
 	# Statements 
 	p:P31	@<P31_disease-class> ;
 	p:P279  @<P279_disease-parent-class>* ;
-	# p:P2888 @<P2888_disease-ontology-iri> OR @<P2888_identifiers-org-iri> ;
+	p:P2888 @<P2888_disease-ontology-iri> ;
+	p:P2888         @<P2888_identifiers-org-iri> ;
 
 	## IDENTIFIERS
     p:P699 @<P699_disease_ontology_id> ;
