@@ -17,9 +17,6 @@ PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
 start = @<wikidata-disease>
 
 <wikidata-disease> {
-	# Descriptors
-	 ( rdfs:label LITERAL+ ;
-	   schema:description LITERAL? )+ ;
 
 	# Statements 
 	p:P31	@<P31_disease-class> ;
