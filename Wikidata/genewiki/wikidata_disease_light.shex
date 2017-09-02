@@ -38,8 +38,8 @@ start = @<wikidata-disease>
 ## Statements 
 
 <P31_disease-class> {
-#	ps:P31 [wd:Q12136] ;
-#	prov:wasDerivedFrom @<do-reference> ;
+	ps:P31 [wd:Q12136] ;
+	prov:wasDerivedFrom @<do-reference> ;
 } 
 
 <P279_disease-parent-class> {
@@ -105,9 +105,9 @@ start = @<wikidata-disease>
 
 
 <do-reference> {
-	#pr:P248   @<version-disease-ontology> ;
-	#pr:P813   xsd:dateTime ;
-	#pr:P699   LITERAL  /^DOID:[0-9]+$/; 
+	pr:P248   @<version-disease-ontology> ;
+	pr:P813   xsd:dateTime ;
+	pr:P699   LITERAL  /^DOID:[0-9]+$/; 
 } 
 
 <version-disease-ontology> {
