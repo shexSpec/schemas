@@ -21,8 +21,8 @@ start = @<wikidata-disease>
 	# Statements 
 	p:P31	@<P31_disease-class> ;
 	p:P279  @<P279_disease-parent-class>* ;
-	p:P2888 @<P2888_disease-ontology-iri>+ ;
-# 	p:P2888 @<P2888_identifiers-org-iri> ;
+	p:P2888 @<P2888_disease-ontology-iri> ;
+    p:P2888 @<P2888_identifiers-org-iri> ;
 
 	## IDENTIFIERS
     p:P699 @<P699_disease_ontology_id> ;
@@ -105,7 +105,7 @@ start = @<wikidata-disease>
 
 
 <do-reference> {
-	pr:P248   @<version-disease-ontology> ;
+	pr:P248   IRI ; #Needs to be fixed by downloading the addtional arcs
 	pr:P813   xsd:dateTime ;
 	pr:P699   LITERAL  /^DOID:[0-9]+$/; 
 } 
