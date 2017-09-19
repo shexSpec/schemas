@@ -10,6 +10,7 @@ PREFIX pr:  <http://www.wikidata.org/prop/reference/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/> 
+PREFIX po: <http://purl.obolibrary.org/obo/PW>
 
 start = @<wikidata-wp_pathway>
 
@@ -19,18 +20,48 @@ start = @<wikidata-wp_pathway>
 	schema:description LITERAL+ ;
 
 	# Statements 
-    p:P31 @<pathway_ontology_term> ;
-    p:P527 @<has_part>* ;
-    p:P2860 @<wikicite>* ;
+    p:P31 @<pathway_ontology_term> ; 			# instance of 
+    p:P527 @<has_part>* ;						# has part  
+    p:P2860 @<wikicite>* ;						# cites
 
     # Identifiers
-    p:P2410 @<wikipathway-identifier> ;
+    p:P2410 @<wikipathway-identifier> ;			# Wikipathways ID
 }
 
-<pathway_ontology_term> .
-<wikipathway-identifier> .
-<has_part> .
-<wikicite> .
+<pathway_ontology_term>  {					# 
+       ps:P2888	[po:~] ;
+       prov:wasDerivedFrom @<wikipathways-reference> ;
+	  
+	}
 
+<wikipathway-identifier>   {					# 
+       ps:P2410	 LITERAL /WP[0-9]+/	 ;
+       prov:wasDerivedFrom @<wikipathways-reference> ;
+	}
+
+<has_part> {
+	ps:P527  @<gene_product> or @<protein> or @<metabolite> or @<wikidata-wp_pathway> ;
+	prov:wasDerivedFrom @<wikipathways-reference> ;
+}
+<wikicite> {
+    ps:P2860	@<pubmed_entry> ;
+    prov:wasDerivedFrom	@<wikipathways-reference> ;
+}
+
+<wikipathways-reference> {						# Wikipathways item in Wikidata
+	pr:P248	wd:Q7999828 ;
+	pr:P813 xsd:dateTime ;
+	pr:P2410 LITERAL /WP[0-9]+/ ;
+}
+
+<gene_product> .
+<protein> .
+<metabolite> .
+
+<pubmed_entry> {
+	p:P698	{
+		ps:P698 LITERAL /[0-9]+/ ;
+	}
+}
 
 
