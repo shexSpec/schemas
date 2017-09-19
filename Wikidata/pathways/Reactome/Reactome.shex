@@ -1,0 +1,92 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX schema: <http://schema.org/> 
+PREFIX po: <http://purl.obolibrary.org/obo/PW>
+PREFIX go: <http://purl.obolibrary.org/obo/GO>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<wikidata-reactome_pathway>
+
+<wikidata-reactome_pathway> {
+	# Descriptors
+	rdfs:label LITERAL+ ;
+	schema:description LITERAL+ ;
+
+	# Statements
+	p:P31 @<pathway_ontology_term> or @<gene_ontology_term> ;
+	p:P361 @<part_of>*	;										# part of
+	p:P527 @<has_part>* ;										# has part 
+	p:P2860 @<wikicite>* ;										# cites
+	p:P703 @<found_in_taxon>	;										# species 
+
+	# Identifiers
+	p:P3937  @<reactome-identifier> ;
+
+}
+
+<pathway_ontology_term>  {					#
+       ps:P2888	[po:~] ;
+       prov:wasDerivedFrom @<reactome-reference> ;  
+	}
+
+<gene_ontology_term>  {					#
+       ps:P2888	[go:~] ;
+       prov:wasDerivedFrom @<reactome-reference> ;  
+	}
+
+<part_of> {
+	ps:P361  @<wikidata-reactome_pathway> ;
+	prov:wasDerivedFrom @<reactome-reference> ;
+}
+
+<has_part> {
+	ps:P527  @<wikidata-reactome_pathway> or @<protein> ;
+	prov:wasDerivedFrom @<reactome-reference> ;
+}
+
+<protein> {
+	p:P31	{
+		ps:P31	[wd:Q8054] ;
+	}
+}
+
+<wikicite> {
+    ps:P2860	@<pubmed_entry> ;
+    prov:wasDerivedFrom	@<reactome-reference> ;
+}
+
+<pubmed_entry> {
+	p:P698	{
+		ps:P698 LITERAL /[0-9]+/ ;
+	}
+}
+
+
+<found_in_taxon> {
+	ps:P703		<reactome_taxons> ;
+	prov:wasDerivedFrom	@<reactome-reference> ;
+}
+
+<reactome_taxons> [
+	wd:Q15978631 												# Homo sapiens
+]
+
+<reactome-identifier> {
+	ps:P3937	LITERAL /R-[A-Z]{3}-[0-9]+/  ;
+	prov:wasDerivedFrom	@<reactome-reference>
+}
+
+<reactome-reference> {						# Wikipathways item in Wikidata
+	pr:P248	wd:Q2134522 ;
+	pr:P813 xsd:dateTime ;
+	pr:P3937 LITERAL /R-[A-Z]{3}-[0-9]+/ ;
+}

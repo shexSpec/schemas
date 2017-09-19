@@ -23,6 +23,7 @@ start = @<wikidata-wp_pathway>
     p:P31 @<pathway_ontology_term> ; 			# instance of 
     p:P527 @<has_part>* ;						# has part  
     p:P2860 @<wikicite>* ;						# cites
+    p:P703 @<species>							# species
 
     # Identifiers
     p:P2410 @<wikipathway-identifier> ;			# Wikipathways ID
@@ -54,9 +55,29 @@ start = @<wikidata-wp_pathway>
 	pr:P2410 LITERAL /WP[0-9]+/ ;
 }
 
-<gene_product> .
-<protein> .
-<metabolite> .
+<species> {
+	ps:P703		<wp_taxons>
+}
+
+<wp_taxons> [
+	wd:Q15978631
+]
+
+<gene_product> {
+	p:P31 {
+		ps:P31 	[wd:Q7187]
+	}
+}.
+<protein> {
+	p:P31	{
+		ps:P31	[wd:Q8054]
+	}
+}
+<metabolite> {
+	p:P31. {
+		ps:P31  [wd:Q407595 wd:Q11173]
+	}
+}
 
 <pubmed_entry> {
 	p:P698	{
