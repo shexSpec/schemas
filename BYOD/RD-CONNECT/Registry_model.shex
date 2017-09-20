@@ -1,0 +1,56 @@
+PREFIX rdc-meta: <>
+PREFIX snomedct: <>
+PREFIX ro: <>
+PREFIX dcterms: <>
+PREFIX idorgRSno: <>
+PREFIX idorgBBS: <>
+
+
+start = <patient>
+
+<patient> {
+	rdf:type 	rdc-meta:patient ;
+	ero:has_diagnosis	@<Diagnosis> ;
+	foaf:birthday 	xsd:dateTime ;
+	wdt:P21			@<snomed-gender> ;
+	dcterms:alternative	LITERAL ;
+	ro:has_quality	@<quality> ;
+	geno:has_genotype	@<genotype> ;
+	ro:participate_in	@<ingestion> ;
+}
+
+<snomed-gender> [
+	snomedct:Feminine_gender
+	snomedct:Mascular_gender
+]
+
+<ingestion> .   # Do a patient at a drug both participate in an ingestion? 
+<genotype> {
+	rdf:type so:sequence_variant ;
+	sio:is_denoted_by	@<rs_number_instance> ;
+	sio:refers_to		@<BBS10_instance> ;
+	rdfs:label 	LITERAL ;
+	wd:P3331	LITERAL ;
+}
+<rs_number_instance> {
+	rdf:type   [idorgRSno:~] ;
+	dcterms:identifier LITERAL ;
+}
+
+<BBS10_instance> {
+	rdf:type 	[idorgBBS:~]
+	dcterms:identifier LITERAL ; 	
+}
+
+
+<quality> {
+	rdf:type 	[:quality]
+	rdfs:label 	LITERAL ;
+}
+
+<measurement-datum> {
+	rdf:type 	[:measurement-datum]
+	iao:is_quality_measurement_of
+}
+
+
