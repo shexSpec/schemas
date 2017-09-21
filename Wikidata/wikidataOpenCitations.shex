@@ -26,16 +26,33 @@ PREFIX prov: http://www.w3.org/ns/prov#
 PREFIX rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 PREFIX void: http://rdfs.org/ns/void#
 
+start=@<OCOExpression>
 
-<OCBibliographicReference>{
-  biro:BiblopgraphicReference ;
 
 <OCExpression>{
   fabio:Expression ;
+  }
+
+<OCORoleInTime>{
+  rdf:type[pro:RoleInTime];
+  pro:withRole IRI;
+  pro:isHeldBy @<OCOAgent>;
+  oco:hasNext @<OCORoleInTime>
+  }
+
+<OCOAgent>{
+  rdf:type[foaf:Agent];
+
+<OCOBibliographicReference>{
+  biro:BiblopgraphicReference ;
+  }
   
-<OCidentifier{
+<OCOidentifier{
   datacite:Identifier;
   
 
-<OCBibliographicReference>{
+<OCOBibliographicReference>{
   biro:references 
+
+<OCOManifestation>{
+  fabio:Manifestation
