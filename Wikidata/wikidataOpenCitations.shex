@@ -31,12 +31,13 @@ start=@<OCOExpression>
 
 <OCExpression>{
   fabio:Expression ;
+  biro:BibliographicReference {1}
   }
 
 <OCORoleInTime>{
   rdf:type[pro:RoleInTime];
   pro:withRole IRI;
-  pro:isHeldBy @<OCOAgent>;
+  pro:isHeldBy @<OCOAgent>?;
   oco:hasNext @<OCORoleInTime>
   }
 
@@ -48,7 +49,7 @@ start=@<OCOExpression>
   }
   
 <OCOidentifier{
-  datacite:Identifier;
+  datacite:Identifier {1};
   
 
 <OCOBibliographicReference>{
