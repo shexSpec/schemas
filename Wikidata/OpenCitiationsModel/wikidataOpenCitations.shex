@@ -44,8 +44,8 @@ start=@<OCOExpression>
 }
   
 <OCOidentifier{
-  datacite:Identifier {1};
-  
+  datacite:Identifier. ;
+ } 
 
 <OCOBibliographicReference>{
   biro:references. ; 
