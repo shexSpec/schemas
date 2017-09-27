@@ -1,14 +1,6 @@
 # This is a schema for the Open Citations model 
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX p: <http://www.wikidata.org/prop/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
-PREFIX pr:  <http://www.wikidata.org/prop/reference/>
-PREFIX ps: <http://www.wikidata.org/prop/statement/>
 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX biro: http://purl.org/spar/biro/
 PREFIX cito: http://purl.org/spar/cito/
 PREFIX c4o: http://purl.org/spar/c4o/
@@ -29,31 +21,35 @@ PREFIX void: http://rdfs.org/ns/void#
 start=@<OCOExpression>
 
 
-<OCExpression>{
-  fabio:Expression ;
-  biro:BibliographicReference {1}
+<OCOExpression>{
+  fabio:Expression. ;
+  biro:BibliographicReference.
   }
 
 <OCORoleInTime>{
-  rdf:type[pro:RoleInTime];
-  pro:withRole IRI;
-  pro:isHeldBy @<OCOAgent>?;
-  oco:hasNext @<OCORoleInTime>
+  rdf:type      [pro:RoleInTime];
+  pro:withRole  IRI;
+  pro:isHeldBy  @<OCOAgent>;
+  oco:hasNext   @<OCORoleInTime>?
   }
 
 <OCOAgent>{
-  rdf:type[foaf:Agent];
+  rdf:type      [foaf:Agent];
+  datacite:hasIdentifier @<OCOIdentifier>;
+  literal:hasLiteralValue LITERAL
+}
 
 <OCOBibliographicReference>{
-  biro:BiblopgraphicReference ;
-  }
+  biro:BibliographicReference. ;
+}
   
 <OCOidentifier{
   datacite:Identifier {1};
   
 
 <OCOBibliographicReference>{
-  biro:references 
-
+  biro:references. ; 
+}
 <OCOManifestation>{
-  fabio:Manifestation
+  fabio:Manifestation. ;
+}
