@@ -24,7 +24,8 @@ start=@<OCOExpression>
 
 <OCOExpression>{
   fabio:Expression. ;
-  biro:BibliographicReference.
+  biro:BibliographicReference. ;
+  frbr:part     @<OCObibliographicReference>. ;
   }
 
 <OCORoleInTime>{
@@ -38,10 +39,6 @@ start=@<OCOExpression>
   rdf:type      [foaf:Agent];
   datacite:hasIdentifier @<OCOIdentifier>;
   literal:hasLiteralValue LITERAL
-  }
-
-<OCOBibliographicReference>{
-  biro:BibliographicReference. ;
   }
   
 <OCOidentifier{
