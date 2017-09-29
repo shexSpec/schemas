@@ -38,19 +38,20 @@ start=@<OCOExpression>
   rdf:type      [foaf:Agent];
   datacite:hasIdentifier @<OCOIdentifier>;
   literal:hasLiteralValue LITERAL
-}
+  }
 
 <OCOBibliographicReference>{
   biro:BibliographicReference. ;
-}
+  }
   
 <OCOidentifier{
   datacite:Identifier. ;
- } 
+  } 
 
 <OCOBibliographicReference>{
   biro:references. ; 
-}
+  }
+  
 <OCOManifestation>{
   fabio:Manifestation. ;
-}
+  }
