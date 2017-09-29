@@ -41,13 +41,17 @@ start=@<OCOExpression>
   }
 
 <OCOAgent>{
-  rdf:type      [foaf:Agent];
-  datacite:hasIdentifier @<OCOIdentifier>;
-  literal:hasLiteralValue LITERAL
+  rdf:type                [foaf:Agent];
+  datacite:hasIdentifier  @<OCOIdentifier>;
+  literal:hasLiteralValue LITERAL ;
+  foaf:name               LITERAL? ;
+  foaf:givenName          LITERAL? ;
+  foaf:familyName         LITERAL? ;
   }
   
 <OCOidentifier{
-  datacite:Identifier. ;
+  rdf:type    [datacite:Identifier] ;
+  literal:hasLiteralValue LITERAL
   } 
 
 <OCOBibliographicReference>{
