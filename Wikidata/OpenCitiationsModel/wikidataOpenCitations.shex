@@ -34,30 +34,32 @@ start=@<OCOExpression>
   }
 
 <OCORoleInTime>{
-  rdf:type      [pro:RoleInTime];
-  pro:withRole  IRI;
-  pro:isHeldBy  @<OCOAgent>;
-  oco:hasNext   @<OCORoleInTime>?
+  rdf:type                    [pro:RoleInTime];
+  pro:withRole                IRI;
+  pro:isHeldBy                @<OCOAgent>;
+  oco:hasNext                 @<OCORoleInTime>?
   }
 
 <OCOAgent>{
-  rdf:type                [foaf:Agent];
-  datacite:hasIdentifier  @<OCOIdentifier>;
-  literal:hasLiteralValue LITERAL ;
-  foaf:name               LITERAL? ;
-  foaf:givenName          LITERAL? ;
-  foaf:familyName         LITERAL? ;
+  rdf:type                    [foaf:Agent];
+  datacite:hasIdentifier      @<OCOIdentifier>;
+  literal:hasLiteralValue     LITERAL ;
+  foaf:name                   LITERAL? ;
+  foaf:givenName              LITERAL? ;
+  foaf:familyName             LITERAL? ;
   }
   
 <OCOidentifier{
-  rdf:type    [datacite:Identifier] ;
-  literal:hasLiteralValue LITERAL
+  rdf:type                    [datacite:Identifier] ;
+  literal:hasLiteralValue     LITERAL
   } 
 
 <OCOBibliographicReference>{
-  biro:references. ; 
+  rdf:type                    [biro:references] ; 
+  c4o:hasContent              LITERAL
   }
   
 <OCOManifestation>{
-  fabio:Manifestation. ;
+  rdf:type                     [fabio:Manifestation] ;
+ 
   }
