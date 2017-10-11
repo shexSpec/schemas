@@ -26,18 +26,11 @@ start = @<wikidata-configuredSoftwareEnvironment>
 	
 	p:P527 @<P527_has_part> ;
 
+	p:P4092 @<P4092_checksum> ;
 	
 	p:178 @<P178_developer>* ; 
 	
-	p:P1163 @<P1633_media_type>* ;
-	
-	#identifiers
-	
-	p:P2748 @<P2748_pronom_id>* ;
-	
-	p:P3266 @<P3266_locfdd_id>* ;
-	
-	p:P3381 @<P3381_ffw_id>* ;
+	p:P126 @<P126_maintained_by> ;
 	
 
 <P31_instance_of_configured_Software_Environment> {
