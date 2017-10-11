@@ -22,7 +22,9 @@ start = @<wikidata-configuredSoftwareEnvironment>
 	#statements
 	p:P31 @<P31_instance_of_configured_Software_Environment> ;
 
+	p:P306 @<P306_operating_system> ;
 	
+	p:P527 @<P527_has_part> ;
 
 	
 	p:178 @<P178_developer>* ; 
