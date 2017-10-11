@@ -1,0 +1,43 @@
+#Shape Expression Schema for configured emulated environment on Wikidata
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+
+# Shape expression for Wikidata statements related to configured emulated environment on Wikidata
+
+start = @<wikidata-configuredSoftwareEnvironment>
+
+<wikidata-configuredSoftwareEnvironment> {
+	#statements
+	p:P31 @<P31_instance_of_configured_Software_Environment> ;
+
+	
+
+	
+	p:178 @<P178_developer>* ; 
+	
+	p:P1163 @<P1633_media_type>* ;
+	
+	#identifiers
+	
+	p:P2748 @<P2748_pronom_id>* ;
+	
+	p:P3266 @<P3266_locfdd_id>* ;
+	
+	p:P3381 @<P3381_ffw_id>* ;
+	
+
+<P31_instance_of_configured_Software_Environment> {
+  ps:P31 [wd:Q28812506] ;
+}
