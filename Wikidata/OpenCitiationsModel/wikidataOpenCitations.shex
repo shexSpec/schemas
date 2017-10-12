@@ -37,7 +37,7 @@ start=@<OCOExpression>
   rdf:type                    [pro:RoleInTime];
   pro:withRole                IRI;
   pro:isHeldBy                @<OCOAgent>;
-  oco:hasNext                 @<OCORoleInTime>?
+  oco:hasNext                 @<OCORoleInTime>? ;
   }
 
 <OCOAgent>{
@@ -51,12 +51,12 @@ start=@<OCOExpression>
   
 <OCOidentifier{
   rdf:type                    [datacite:Identifier] ;
-  literal:hasLiteralValue     LITERAL
+  literal:hasLiteralValue     LITERAL ;
   } 
 
 <OCOBibliographicReference>{
   rdf:type                    [biro:references] ; 
-  c4o:hasContent              LITERAL
+  c4o:hasContent              LITERAL ;
   }
   
 <OCOManifestation>{
