@@ -61,5 +61,5 @@ start=@<OCOExpression>
   
 <OCOManifestation>{
   rdf:type                     [fabio:Manifestation] ;
- 
+  frbr:emboidement             @<OCOExpression> ;
   }
