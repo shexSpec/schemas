@@ -36,7 +36,9 @@ start = @<wikidata-software>
 	#identifiers
 	p:2749 @<P2749_PRONOM_software_identifier> ;
   
-  p:4107 @<P4107_Framalibre_ID>;
+  	p:4107 @<P4107_Framalibre_ID>;
+	
+	p:1972 @<P1972_Open_Hub_ID>;
 
 }
 
@@ -87,6 +89,9 @@ start = @<wikidata-software>
 <operating_system> {
 	ps:P31 [wd:Q9135];
 }
-<Framalibre_ID> {
+<P4107_Framalibre_ID> {
   ps:P4107 LITERAL;
+}
+<P1972_Open_Hub_ID> {
+  ps:P1972 LITERAL;
 }
