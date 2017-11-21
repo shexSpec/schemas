@@ -1,0 +1,91 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX er: <https://civic.genome.wustl.edu/links/evidence/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+start = @<civic>
+
+<civic> {
+	p:P3354   @<positive_therapeutic_predictor>* ;
+	p:P3355   @<negative_therapeutic_predictor>* ;
+	p:P3356   @<positive_diagnostic_predictor>* ;
+	p:P3357   @<negative_diagnostic_predictor>* ;
+	p:P3358   @<positive_prognostic_predictor>* ;
+	p:P3359   @<negative_prognostic_predictor>* ;
+}
+
+<positive_therapeutic_predictor> {
+	ps:P3354   @<drug> ;
+	pq:P2175   @<disease> ;
+	pq:P459	   @<determination_method> ;
+	pq:P4271   @<rating> ;	
+	prov:wasDerivedFrom	@<civic_evidence_record> ;
+
+}
+<negative_therapeutic_predictor> {
+	ps:P3355   @<drug> ;
+	pq:P2175   @<disease> ;
+	pq:P459	   @<determination_method> ;
+	pq:P4271   @<rating> ;
+	prov:wasDerivedFrom	@<civic_evidence_record> ;
+}
+<positive_diagnostic_predictor> {
+	ps:P3356   @<disease> ;
+	pq:P459	   @<determination_method> ;
+	pq:P4271   @<rating> ;
+	prov:wasDerivedFrom	@<civic_evidence_record> ;
+}
+<negative_diagnostic_predictor> {
+	ps:P3357   @<disease> ;
+	pq:P459	   @<determination_method> ;
+	pq:P4271   @<rating> ;
+	prov:wasDerivedFrom	@<civic_evidence_record> ;
+}
+<positive_prognostic_predictor> {
+	ps:P3358   @<disease> ;
+	pq:P459	   @<determination_method> ;
+	pq:P4271   @<rating> ;
+	prov:wasDerivedFrom	@<civic_evidence_record> ;
+}
+<negative_prognostic_predictor> {
+	ps:P3359   @<disease> ;
+	pq:P459	   @<determination_method> ;
+	pq:P4271   @<rating> ;
+	prov:wasDerivedFrom	@<civic_evidence_record> ;
+}
+
+<civic_evidence_record> {
+	pr:P1640	[wd:Q27612411] ;
+	pr:P813		xsd:dateTime ;
+	pr:P854		[er:~] ;
+	pr:P248		@<wikicite> ;
+}
+
+<drug> . # should we keep the drugs.tsv file here
+<disease> . # TODO import Disease Ontology shape upon completion
+<wikicite> . # TODO import Wikicite record 
+<determination_method> [
+   wd:Q36805652 # CIViC evidence level A
+   wd:Q36806012 # CIViC evidence level B
+   wd:Q36799701 # CIViC evidence level C
+   wd:Q36806470 # CIViC evidence level D
+   wd:Q36811327 # CIViC evidence level E
+]
+
+<rating> [
+	wd:Q28045396 # CIViC 1-star trust rating
+	wd:Q28045397 # CIViC 2-star trust rating
+	wd:Q28045398 # CIViC 3-star trust rating
+	wd:Q28045383 # CIViC 4-star trust rating
+	wd:Q28045399 # CIViC 3-star trust rating
+]
+
