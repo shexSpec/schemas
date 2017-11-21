@@ -10,13 +10,13 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-IMPORT <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/variants/civic/variant_properties.shex>
+IMPORT <https://rawgit.com/shexSpec/schemas/master/Wikidata/variants/civic/variant_properties.shex>
 
 start = @<civic>
 
 <civic> {
-	p:P3329   @<civicid>;
-	p:P3331	  @<hgvs>+ ;
+    p:P3329   @<civicid>;
+    p:P3331      @<hgvs>+ ;
 }
 
 

@@ -23,7 +23,7 @@ start = @<wikidata-wp_pathway>
     p:P31 @<pathway_ontology_term> ; 			# instance of 
     p:P527 @<has_part>* ;						# has part  
     p:P2860 @<wikicite>* ;						# cites
-    p:P703 @<species>							# species
+    p:P703 @<species> ;							# species
 
     # Identifiers
     p:P2410 @<wikipathway-identifier> ;			# Wikipathways ID
