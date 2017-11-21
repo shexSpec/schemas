@@ -67,7 +67,7 @@ start = @<wikidata-wp_pathway>
 	p:P31 {
 		ps:P31 	[wd:Q7187]
 	}
-}.
+}
 <protein> {
 	p:P31	{
 		ps:P31	[wd:Q8054]
