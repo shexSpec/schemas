@@ -4,7 +4,7 @@
         "schema": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX pr: <http://www.wikidata.org/prop/reference/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX wdref: <http://www.wikidata.org/reference/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nstart = @<civic>\n\n<civic> {\n    p:P3329   @<civicid>;\n    p:P3331      @<hgvs>+ ;\n}\n\n<civicid> {\n         ps:P3329 LITERAL ;\n} \n\n<hgvs> {\n    ps:P3331 LITERAL ; \n}",
         "dataLabel": "get all 10 items with a CIViC ID",
         "data": "Endpoint: http://query.wikidata.org/sparql",
-        "queryMap": "SPARQL `SELECT ?item WHERE { ?item wdt:P3329 ?civicid .} LIMIT 10`@START",
+        "queryMap": "SPARQL `PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?item WHERE { ?item wdt:P3329 ?civicid .} LIMIT 10`@START",
         "status": "conformant"
     }
 ]
