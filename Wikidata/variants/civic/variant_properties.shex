@@ -1,3 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # predictors
 <positive_therapeutic_predictor> {
@@ -15,24 +26,28 @@
     pq:P4271   @<rating> ;
     prov:wasDerivedFrom    @<civic_evidence_record> ;
 }
+
 <positive_diagnostic_predictor> {
     ps:P3356   @<disease> ;
     pq:P459       @<determination_method> ;
     pq:P4271   @<rating> ;
     prov:wasDerivedFrom    @<civic_evidence_record> ;
 }
+
 <negative_diagnostic_predictor> {
     ps:P3357   @<disease> ;
     pq:P459       @<determination_method> ;
     pq:P4271   @<rating> ;
     prov:wasDerivedFrom    @<civic_evidence_record> ;
 }
+
 <positive_prognostic_predictor> {
     ps:P3358   @<disease> ;
     pq:P459       @<determination_method> ;
     pq:P4271   @<rating> ;
     prov:wasDerivedFrom    @<civic_evidence_record> ;
 }
+
 <negative_prognostic_predictor> {
     ps:P3359   @<disease> ;
     pq:P459       @<determination_method> ;
