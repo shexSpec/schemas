@@ -38,13 +38,4 @@ start = @<wikidata-disease>
     p:P1550 @<P1550_orphanet_id>* ;
 	p:P1748 @<P1748_nci_thesaurus>* ;
     p:P2892 @<P2892_umls-cui>* ;
-} 
-
-
-
-
-
-
-
-
-
+}
