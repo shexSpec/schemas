@@ -15,7 +15,6 @@ PREFIX schema: <http://schema.org/>
 PREFIX do: <http://purl.obolibrary.org/obo/DOID_>
 PREFIX doio: <http://identifiers.org/doid/>
 PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
-PREFIX < <wikidata-disease-statements.shex#>
 PREFIX do-shape: <wikidata-disease.shex#>
 IMPORT <wikidata-disease-statements.shex>
 
