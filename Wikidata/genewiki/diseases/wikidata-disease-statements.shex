@@ -13,10 +13,10 @@ PREFIX schema: <http://schema.org/>
 PREFIX do: <http://purl.obolibrary.org/obo/DOID_>
 PREFIX doio: <http://identifiers.org/doid/>
 PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
-
+PREFIX do-statements: <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/wikidata-disease-statements.shex#>
 ## Statements 
 
-<P31_disease-class> {
+do-statements:P31_disease-class {
 	ps:P31 [wd:Q12136] ;
 	prov:wasDerivedFrom @<do-reference> ;
 } 
