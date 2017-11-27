@@ -31,7 +31,7 @@ start = @<wikidata-disease>
     p:P2888 @<P2888_disease-ontology-iri> OR @<P2888_identifiers-org-iri> ;
 
     ## IDENTIFIERS
-    p:P699 @<P699_do-statements_id> ;
+    p:P699 @<P699_do_statements_id> ;
     p:P486 @<P486_mesh_id>* ;
     p:P492 @<P492_omim_id>* ;
     p:P493 @<P493_icd_9>* ;
