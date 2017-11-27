@@ -21,7 +21,7 @@ do-statements:P31_disease-class {
 	prov:wasDerivedFrom @<do-reference> ;
 } 
 
-do-statements:P279_disease-parent-class> {
+do-statements:P279_disease-parent-class {
 	ps:P279  @<wikidata-disease> ;
 	prov:wasDerivedFrom @<do-reference> ;
 }
