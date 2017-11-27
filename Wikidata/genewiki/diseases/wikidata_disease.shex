@@ -1,4 +1,6 @@
 # Shape Expression for Diseases in Wikidata 
+BASE <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/>
+
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
@@ -13,31 +15,29 @@ PREFIX schema: <http://schema.org/>
 PREFIX do: <http://purl.obolibrary.org/obo/DOID_>
 PREFIX doio: <http://identifiers.org/doid/>
 PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
-
-PREFIX do-statements: <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/wikidata-disease-statements.shex#>
-PREFIX do-shape: <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/wikidata-disease.shex#>
-
+PREFIX < <wikidata-disease-statements.shex#>
+PREFIX do-shape: <wikidata-disease.shex#>
 IMPORT <wikidata-disease-statements.shex>
 
-start = @do-shape:wikidata-disease
+start = @<wikidata-disease>
 
-<#wikidata-disease> {
+<wikidata-disease> {
     # Descriptors
     rdfs:label LITERAL+ ;
     schema:description LITERAL* ;
 
     # Statements 
-    p:P31    @do-statements:P31_disease-class ;
-    p:P279  @do-statements:P279_disease-parent-class* ;
-    p:P2888 @do-statements:P2888_disease-ontology-iri OR @do-statements:P2888_identifiers-org-iri ;
+    p:P31    @<P31_disease-class> ;
+    p:P279  @<P279_disease-parent-class>* ;
+    p:P2888 @<P2888_disease-ontology-iri> OR @<P2888_identifiers-org-iri> ;
 
     ## IDENTIFIERS
-    p:P699 @do-statements:P699_do-statements_id ;
-    p:P486 @do-statements:P486_mesh_id* ;
-    p:P492 @do-statements:P492_omim_id* ;
-    p:P493 @do-statements:P493_icd_9* ;
-    p:P494 @do-statements:P494_icd_10* ;
-    p:P1550 @do-statements:P1550_orphanet_id* ;
-    p:P1748 @do-statements:P1748_nci_thesaurus* ;
-    p:P2892 @do-statements:P2892_umls-cui* ;
+    p:P699 @<P699_do-statements_id> ;
+    p:P486 @<P486_mesh_id>* ;
+    p:P492 @<P492_omim_id>* ;
+    p:P493 @<P493_icd_9>* ;
+    p:P494 @<P494_icd_10>* ;
+    p:P1550 @<P1550_orphanet_id>* ;
+    p:P1748 @<P1748_nci_thesaurus>* ;
+    p:P2892 @<P2892_umls-cui>* ;
 }
