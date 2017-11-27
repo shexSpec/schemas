@@ -17,11 +17,11 @@ PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
 PREFIX do-statements: <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/wikidata-disease-statements.shex#>
 PREFIX do-shape: <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/wikidata-disease.shex#>
 
-IMPORT wikidata-disease-statements.shex
+IMPORT <wikidata-disease-statements.shex>
 
 start = @do-shape:wikidata-disease
 
-<wikidata-disease> {
+<#wikidata-disease> {
     # Descriptors
     rdfs:label LITERAL+ ;
     schema:description LITERAL* ;
