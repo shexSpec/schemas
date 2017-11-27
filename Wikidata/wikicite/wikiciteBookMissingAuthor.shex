@@ -16,13 +16,12 @@ start = @<wikicite>
    # STATEMENTS
    p:P31 @<P31_instance_of_book> ;
    p:P1476 @<P1476_title> ;
-   p:P1680 @<P1680_subtitle>* ;
    (p:P50 @<P50_author> | p:P2093 @<P2093_author_name_string>)+ ;
-   p:P304 @<P304_pages>? ;
-   p:P577 @<P577_publication_date> ;
+
+
    
    
-   # IDENTIFIERS
+
 
 }
 
@@ -48,12 +47,4 @@ start = @<wikicite>
 	ps:P2093	LITERAL ;
 }
 
-<P304_pages> {
-	ps:P304	LITERAL;
-	
-}
 
-<P577_publication_date> {
-	ps:P577	xsd:dateTime ;
-	
-}
