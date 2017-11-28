@@ -60,7 +60,7 @@ start = @<wikidata-wp_pathway>
 }
 
 <wp_taxons> [
-	[wd:Q15978631]
+	wd:Q15978631
 ]
 
 <gene_product> {
