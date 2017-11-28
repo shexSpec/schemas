@@ -50,7 +50,7 @@ start = @<wikidata-wp_pathway>
 }
 
 <wikipathways-reference> {						# Wikipathways item in Wikidata
-	pr:P248	wd:Q7999828 ;
+	pr:P248	[wd:Q7999828] ;
 	pr:P813 xsd:dateTime ;
 	pr:P2410 LITERAL /WP[0-9]+/ ;
 }
@@ -60,12 +60,12 @@ start = @<wikidata-wp_pathway>
 }
 
 <wp_taxons> [
-	wd:Q15978631
+	[wd:Q15978631]
 ]
 
 <gene_product> {
 	p:P31 {
-		ps:P31 	[wd:Q7187]
+		ps:P31 	[wd:Q7187 ]
 	}
 }
 
