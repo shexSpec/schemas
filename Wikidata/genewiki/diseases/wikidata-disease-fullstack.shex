@@ -15,18 +15,13 @@ PREFIX doio: <http://identifiers.org/doid/>
 PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
 PREFIX do-shape: <wikidata-disease.shex#>
 
-
 start = @<wikidata-disease>
 
 <wikidata-disease> {
-    # Descriptors
-    rdfs:label LITERAL+ ;
-    schema:description LITERAL* ;
 
     # Statements 
     p:P31    @<P31_disease-class> ;
-    p:P279  @<P279_disease-parent-class>* ;
-    p:P2888 @<P2888_disease-ontology-iri> OR @<P2888_identifiers-org-iri> ;
+    p:P2888 (@<P2888_disease-ontology-iri> OR @<P2888_identifiers-org-iri>)+ ;
 
     ## IDENTIFIERS
     p:P699 @<P699_disease_ontology_id> ;
@@ -45,11 +40,6 @@ start = @<wikidata-disease>
     ps:P31 [wd:Q12136] ;
     prov:wasDerivedFrom @<do-reference> ;
 } 
-
-<P279_disease-parent-class> {
-    ps:P279  @<wikidata-disease> ;
-    prov:wasDerivedFrom @<do-reference> ;
-}
 
 <P2888_disease-ontology-iri> {
     ps:P2888  [do:~] ;
