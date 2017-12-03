@@ -18,31 +18,23 @@ start = @<wikicite>
    p:P1476 @<P1476_title> ;
    (p:P50 @<P50_author> | p:P2093 @<P2093_author_name_string>)+ ;
 
-   # IDENTIFIERS
-   
+   # IDENTIFIERS  
    p:P243 @<P243_OCLC_number> ;
-   
-   
-
-
 }
 
 # Shape expression for Wikidata work
 <P31_instance_of_book> {
 	ps:P31 [ent:Q571];
-	
 }
 
 
 <P1476_title> {
 	ps:P1476 LITERAL ;
-	
 }
 
 
 <P50_author> {
 	ps:P50 IRI; 
-	
 }
 
 <P2093_author_name_string> {
