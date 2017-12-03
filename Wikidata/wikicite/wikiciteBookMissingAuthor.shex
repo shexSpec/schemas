@@ -18,7 +18,9 @@ start = @<wikicite>
    p:P1476 @<P1476_title> ;
    (p:P50 @<P50_author> | p:P2093 @<P2093_author_name_string>)+ ;
 
-
+   # IDENTIFIERS
+   
+   p:P243 @<P243_OCLC_number> ;
    
    
 
@@ -47,4 +49,6 @@ start = @<wikicite>
 	ps:P2093	LITERAL ;
 }
 
-
+<P243_OCLC_number> {
+	ps:P243	LITERAL ;
+}
