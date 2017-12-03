@@ -4,7 +4,7 @@
         "schema": "#Shape Expression for works on Wikidata\n\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX prov: <http://www.w3.org/ns/prov#>\nPREFIX wd: <https://www.wikidata.org/wiki/>\nPREFIX ent: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\n\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\n\nstart = @<wikicite> \n\n<wikicite> {\n   # STATEMENTS\n   p:P31 @<P31_instance_of_book> ;\n   p:P1476 @<P1476_title> ;\n   (p:P50 @<P50_author> | p:P2093 @<P2093_author_name_string>)+ ;\n\n   # IDENTIFIERS  \n   p:P243 @<P243_OCLC_number> ;\n}\n\n# Shape expression for Wikidata work\n<P31_instance_of_book> {\n    ps:P31 [ent:Q571];\n}\n\n\n<P1476_title> {\n    ps:P1476 LITERAL ;\n}\n\n\n<P50_author> {\n ps:P50 IRI; \n}\n\n<P2093_author_name_string> {\n   ps:P2093    LITERAL ;\n}\n\n<P243_OCLC_number> {\n  ps:P243 LITERAL ;\n}\n",
         "dataLabel": "get 10 Wikidata items on books",
         "data": "Endpoint: https://query.wikidata.org/sparql",
-        "queryMap": "SELECT ?item WHERE  {?item wdt:P31 wd:Q571. } LIMIT 10 @START",
+        "queryMap": "SPARQL `SELECT ?item WHERE  {?item wdt:P31 wd:Q571. } LIMIT 10 `@START",
         "status": "conformant"
     }
 ]
