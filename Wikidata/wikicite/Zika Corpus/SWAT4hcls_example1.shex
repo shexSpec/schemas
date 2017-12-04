@@ -1,0 +1,22 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+<journal-article> {
+	p:P31  @<P31_instance_of> ;
+	p:P577 @<P577_publication_date> ;
+	p:P1433 @<P1433_published_in> ;
+	p:P1476 @<P1476_title> ;
+}
+
+<P31_instance_of> .
+<P577_publication_date> .
+<P1433_published_in> .
+<P1476_title> .
