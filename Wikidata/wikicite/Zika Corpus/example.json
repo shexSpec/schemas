@@ -2,7 +2,7 @@
     {
         "schemaLabel": "Zika basic ShEx",
         "schema": "PREFIX p: <http://www.wikidata.org/prop/>\n\n<journal-article> {\n    p:P31  @<P31_instance_of> ;\n    p:P577 @<P577_publication_date> ;\n    p:P1433 @<P1433_published_in> ;\n    p:P1476 @<P1476_title> ;\n}\n\n<P31_instance_of> .\n<P577_publication_date> .\n<P1433_published_in> .\n<P1476_title> .",
-        "dataLabel": "get 10 Wikidata items on books",
+        "dataLabel": "get Wikidata items on journal articles on Zika",
         "data": "Endpoint: https://query.wikidata.org/sparql",
         "queryMap": "SPARQL `SELECT DISTINCT ?item ?title ?journal ?date WHERE {\n  ?item wdt:P31 wd:Q13442814;\n        wdt:P921 wd:Q202864 .\n  OPTIONAL{ ?item wdt:P1476 ?title . }\n  OPTIONAL{ ?item wdt:P1433 ?journal . }\n  OPTIONAL{ ?item wdt:P577 ?date . }\n}`@START",
         "status": "conformant"
