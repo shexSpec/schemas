@@ -1,0 +1,9 @@
+
+    {
+        "schemaLabel": "software shape",
+        "schema": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> \n   PREFIX prov: <http://www.w3.org/ns/prov#> \n   PREFIX p: <http://www.wikidata.org/prop/> \n   PREFIX pr: <http://www.wikidata.org/prop/reference/> \n   PREFIX ps: <http://www.wikidata.org/prop/statement/> \n   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> \n   PREFIX prov: <http://www.w3.org/ns/prov#> \n   PREFIX wd: <http://www.wikidata.org/wiki/> \n   PREFIX ent: <http://www.wikidata.org/entity/> \n   PREFIX wdt: <http://www.wikidata.org/prop/direct/> \n   PREFIX p: <http://www.wikidata.org/prop/> \n   PREFIX pq: <http://www.wikidata.org/prop/qualifier/> \n    \n   PREFIX ps: <http://www.wikidata.org/prop/statement/> \n    \n   start = @<wikidata_item> \n    \n   <wikidata_item> { \n       #statements \n           p:P31 @<P31_instance_of_software>+ ; \n   } \n   # Shape expression for Wikidata statements related to software \n   <P31_instance_of_software> { \n       ps:P31 [wd:Q9143]; \n   }",
+        "dataLabel": "get 10 items about software from Wikidata",
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": " SPARQL `SELECT ?item ?itemLabel WHERE { ?item wdt:P31 wd:Q7397.   SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } LIMIT 10`@START",
+        "status": "conformant"
+    }
