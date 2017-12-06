@@ -21,5 +21,5 @@ start = @<wikidata_item>
 }
 # Shape expression for Wikidata statements related to software
 <P31_instance_of_software> {
-    ps:P31 [wd:Q9143];
+    ps:P31 [wd:Q7397];
 }
