@@ -20,20 +20,20 @@ start = @<wikidata-file_format>
 
 <wikidata-file_format> {
 	#statements
-	p:P31 @<P31_instance_of_file_format> ;
+	p:P31 @<P31_instance_of_file_format>;
 	
-	p:P1163 @<P1633_media_type> ;
+	p:P1163 @<P1633_media_type>;
 	
 	#identifiers
 	
-	p:P2748 @<P2748_pronom_id> ;
+	p:P2748 @<P2748_pronom_id>;
 	
-	p:P3266 @<P3266_locfdd_id> ;
+	p:P3266 @<P3266_locfdd_id>;
 	
 }	
 
 <P31_instance_of_file_format> {
-  ps:P31 [wd:Q235557] ;
+  ps:P31 [wd:Q235557];
 }
 
 <P2748_pronom_id> {
