@@ -17,3 +17,8 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 start = @<wikidata-mayor>
 
 <wikidata-mayor> {
+      
+      P39          #position held
+         pq:P582           #can't have end time qualifier
+      P21          # sex or gender    https://www.wikidata.org/wiki/Q6581072 #female
+      P6            # head of government
