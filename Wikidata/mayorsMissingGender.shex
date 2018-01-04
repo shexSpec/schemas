@@ -22,3 +22,9 @@ start = @<wikidata-mayor>
          pq:P582           #can't have end time qualifier
       P21          # sex or gender    https://www.wikidata.org/wiki/Q6581072 #female
       P6            # head of government
+
+
+<wikidata-city> {
+
+      wdt:P31/wdt:P279*    Q515                 #instance of or subclass of city
+      P6                                        #head of government
