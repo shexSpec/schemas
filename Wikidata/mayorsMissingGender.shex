@@ -14,10 +14,26 @@ PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 
-start = @<wikidata-mayor>
+start = @<wikidata-city> {
+ #STATEMENTS
+ p:P31 {ps:P31 [wd:Q515]; # Q515 = city 
+      } ;
+ 
+ p:P279 {ps:P279 @<wikidata-city> ;
+      } ;
+
+
+
+
 
 <wikidata-mayor> {
-      
+ #STATEMENTS
+ p:P39 @<P39_position_held> ;
+ p:P21 @<P21_sex_or_gender> ;
+ 
+ 
+ #Shape expressions for Wikidata statements
+ <P39_position_held>
       P39          #position held
          pq:P582           #can't have end time qualifier
       P21          # sex or gender    https://www.wikidata.org/wiki/Q6581072 #female
