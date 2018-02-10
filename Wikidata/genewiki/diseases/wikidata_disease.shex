@@ -18,9 +18,9 @@ PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
 PREFIX do-shape: <wikidata-disease.shex#>
 IMPORT <wikidata-disease-statements.shex>
 
-start = @<wikidata-disease>
+start = @gw:disease
 
-<wikidata-disease> {
+gw:disease {
     # Descriptors
     rdfs:label LITERAL+ ;
     schema:description LITERAL* ;
