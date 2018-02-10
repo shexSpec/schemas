@@ -4,6 +4,7 @@
         "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/wikidata_disease.shex",
         "dataLabel": "get 10 items with a Disease Ontology ID",
         "data": "Endpoint: https://query.wikidata.org/sparql",
-        "queryMapURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/diseasesByDO.qmap"        "status": "conformant"
+        "queryMapURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/genewiki/diseases/diseasesByDO.qmap",
+        "status": "conformant"
     }
 ]
