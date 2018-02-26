@@ -1,0 +1,6 @@
+[submodule "Wikidata/genewiki/Genewiki-ShEx"]
+	path = Wikidata/genewiki/Genewiki-ShEx
+	url = https://github.com/SuLab/Genewiki-ShEx.git
+[submodule "Wikidata/Genewiki-ShEx"]
+	path = Wikidata/Genewiki-ShEx
+	url = https://github.com/SuLab/Genewiki-ShEx.git
