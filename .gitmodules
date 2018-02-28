@@ -4,3 +4,6 @@
 [submodule "Wikidata/Genewiki-ShEx"]
 	path = Wikidata/Genewiki-ShEx
 	url = https://github.com/SuLab/Genewiki-ShEx.git
+[submodule "FAIR/metadata-schema"]
+	path = FAIR/metadata-schema
+	url = https://github.com/DTL-FAIRData/metadata-schema
