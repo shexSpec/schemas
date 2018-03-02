@@ -43,9 +43,17 @@ start = @<wikidata-reactome_pathway>
         ]
 
 <gene_ontology_term>  {					#
-       ps:P2888	[go:~] ;
+       ps:P31  <go-term> ;
        prov:wasDerivedFrom @<reactome-reference> ;  
 	}
+
+<go_term> {
+	p:P31 {
+		ps:P31 [
+		    wd:Q2996394   # biological process
+		    ]
+	}
+}
 
 <part_of> {
 	ps:P361  @<wikidata-reactome_pathway> ;
