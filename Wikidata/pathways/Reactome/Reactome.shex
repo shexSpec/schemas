@@ -90,7 +90,7 @@ start = @<wikidata-reactome_pathway>
 }
 
 <reactome-reference> {						                   # Reference to Reactome item in Wikidata
-	pr:P248	wd:Q2134522 ;
+	pr:P248	[ wd:Q2134522 ] ;
 	pr:P813 xsd:dateTime ;
 	pr:P3937 LITERAL /R-[A-Z]{3}-[0-9]+/ ;
 }
