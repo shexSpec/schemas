@@ -17,26 +17,30 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 start = @<wikidata-reactome_pathway>
 
 <wikidata-reactome_pathway> {
-	# Descriptors
-	rdfs:label LITERAL+ ;
-	schema:description LITERAL+ ;
 
 	# Statements
-	p:P31 @<pathway_ontology_term> or @<gene_ontology_term> ;
-	p:P361 @<part_of>*	;										# part of
-	p:P527 @<has_part>* ;										# has part 
-	p:P2860 @<wikicite>* ;										# cites
-	p:P703 @<found_in_taxon>	;										# species 
+	p:P31 @<pathway_term> OR                                                                      # biological pathway
+	           @<gene_ontology_term>{0,1} ;                         # go term if present
+	#p:P361 @<part_of>*	;										# part of
+	#p:P527 @<has_part>* ;										# has part 
+	#p:P2860 @<wikicite>* ;										# cites
+	#p:P703 @<found_in_taxon> ;  								# species 
 
 	# Identifiers
 	p:P3937  @<reactome-identifier> ;
 
 }
 
-<pathway_ontology_term>  {					#
-       ps:P2888	[po:~] ;
+<pathway_term>  {					# always uses this pathway ontology term
+       ps:P31	<pathway> ;
        prov:wasDerivedFrom @<reactome-reference> ;  
 	}
+
+
+<pathway> 
+	[ 
+             wd:Q4915012                      # biological pathway
+        ]
 
 <gene_ontology_term>  {					#
        ps:P2888	[go:~] ;
@@ -49,7 +53,7 @@ start = @<wikidata-reactome_pathway>
 }
 
 <has_part> {
-	ps:P527  @<wikidata-reactome_pathway> or @<protein> ;
+	ps:P527  @<wikidata-reactome_pathway> ;   # need to add or reaction
 	prov:wasDerivedFrom @<reactome-reference> ;
 }
 
@@ -82,10 +86,10 @@ start = @<wikidata-reactome_pathway>
 
 <reactome-identifier> {
 	ps:P3937	LITERAL /R-[A-Z]{3}-[0-9]+/  ;
-	prov:wasDerivedFrom	@<reactome-reference>
+	# prov:wasDerivedFrom	@<reactome-reference>
 }
 
-<reactome-reference> {						# Wikipathways item in Wikidata
+<reactome-reference> {						                   # Reference to Reactome item in Wikidata
 	pr:P248	wd:Q2134522 ;
 	pr:P813 xsd:dateTime ;
 	pr:P3937 LITERAL /R-[A-Z]{3}-[0-9]+/ ;
