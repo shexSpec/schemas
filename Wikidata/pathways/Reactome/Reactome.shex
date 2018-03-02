@@ -42,7 +42,7 @@ react:pathway
              wd:Q4915012                      # biological pathway
     ]
 
-react:gene_ontology_term  {					#
+react:P31-gene-ontology-term  {					#
        ps:P31  @react:go-term ;
        prov:wasDerivedFrom @react:reactome-reference ;  
 	}
