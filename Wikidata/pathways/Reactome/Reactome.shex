@@ -65,7 +65,7 @@ react:P527-has-part {
 	prov:wasDerivedFrom @react:reactome-reference ;
 }
 
-react:protein> {
+react:protein {
 	p:P31	{
 		ps:P31	[wd:Q8054] ;
 	}
