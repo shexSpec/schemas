@@ -16,11 +16,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 start = @<wikidata-reactome_pathway>
 
-<wikidata-reactome_pathway> {
+<wikidata-reactome_pathway> EXTRA p:P31 {
 
 	# Statements
-	p:P31 @<pathway_term> OR                                                                      # biological pathway
-	           @<gene_ontology_term> ;                         # go term if present
+	p:P31 (@<pathway_term> OR                                                                      # biological pathway
+	           @<gene_ontology_term>)+ ;                         # go term if present
 	#p:P361 @<part_of>*	;										# part of
 	#p:P527 @<has_part>* ;										# has part 
 	#p:P2860 @<wikicite>* ;										# cites
@@ -40,7 +40,7 @@ start = @<wikidata-reactome_pathway>
 <pathway> 
 	[ 
              wd:Q4915012                      # biological pathway
-        ]
+    ]
 
 <gene_ontology_term>  {					#
        ps:P31  <go-term> ;
