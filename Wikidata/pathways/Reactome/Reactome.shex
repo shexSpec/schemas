@@ -14,7 +14,7 @@ PREFIX go: <http://purl.obolibrary.org/obo/GO>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX react: <http://micel.io/reactome/>
-start = @<wikidata-reactome-pathway>
+start = @react:wikidata-reactome-pathway
 
 react:wikidata-reactome-pathway EXTRA p:P31 {
 
@@ -56,8 +56,8 @@ react:go-term {
 }
 
 react:P361-part-of {
-	ps:P361  @<wikidata-reactome-pathway> ;
-	prov:wasDerivedFrom @<reactome-reference> ;
+	ps:P361  @react:wikidata-reactome-pathway ;
+	prov:wasDerivedFrom @react:reactome-reference ;
 }
 
 react:P527-has-part {
