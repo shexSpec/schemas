@@ -13,41 +13,41 @@ PREFIX po: <http://purl.obolibrary.org/obo/PW>
 PREFIX go: <http://purl.obolibrary.org/obo/GO>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
+PREFIX react: <http://micel.io/reactome/>
 start = @<wikidata-reactome-pathway>
 
-<wikidata-reactome-pathway> EXTRA p:P31 {
+react:wikidata-reactome-pathway EXTRA p:P31 {
 
 	# Statements
-	p:P31 (@<pathway_term> OR                                                                      # biological pathway
-	           @<gene_ontology_term>)+ ;                         # go term if present
-	p:P361 @<part_of>*	;										# part of
-	p:P527 @<P527_has_part>* ;										# has part 
-	#p:P2860 @<wikicite>* ;										# cites
-	#p:P703 @<found_in_taxon> ;  								# species 
+	p:P31 (@react:P31-pathway-term OR                                                                      # biological pathway
+	           @react:P31-gene-ontology-term)+ ;                         # go term if present
+	p:P361 @react:P361-part-of*	;										# part of
+	p:P527 @react:P527-has-part* ;										# has part 
+	p:P2860 @react:P2860wikicite* ;										# cites
+	p:P703 @react:found-in-taxon ;  								# species 
 
 	# Identifiers
-	p:P3937  @<reactome-identifier> ;
+	p:P3937  @react:P3937-reactome-identifier> ;
 
 }
 
-<pathway_term>  {					# always uses this pathway ontology term
-       ps:P31	@<pathway> ;
-       prov:wasDerivedFrom @<reactome-reference> ;  
+react:P31-pathway-term  {					# always uses this pathway ontology term
+       ps:P31	@react:pathway ;
+       prov:wasDerivedFrom @react:reactome-reference ;  
 	}
 
 
-<pathway> 
+react:pathway 
 	[ 
              wd:Q4915012                      # biological pathway
     ]
 
-<gene_ontology_term>  {					#
-       ps:P31  @<go-term> ;
-       prov:wasDerivedFrom @<reactome-reference> ;  
+react:gene_ontology_term  {					#
+       ps:P31  @react:go-term ;
+       prov:wasDerivedFrom @react:reactome-reference ;  
 	}
 
-<go-term> {
+react:go-term {
 	p:P31 {
 		ps:P31 [
 		    wd:Q2996394   # biological process
@@ -55,49 +55,49 @@ start = @<wikidata-reactome-pathway>
 	}
 }
 
-<part_of> {
+react:P361-part-of {
 	ps:P361  @<wikidata-reactome-pathway> ;
 	prov:wasDerivedFrom @<reactome-reference> ;
 }
 
-<P527_has_part> {
-	ps:P527  @<wikidata-reactome-pathway> ;   # need to add or reaction
-	prov:wasDerivedFrom @<reactome-reference> ;
+react:P527-has-part {
+	ps:P527  @react:wikidata-reactome-pathway ;   # need to add or reaction
+	prov:wasDerivedFrom @react:reactome-reference ;
 }
 
-<protein> {
+react:protein> {
 	p:P31	{
 		ps:P31	[wd:Q8054] ;
 	}
 }
 
-<wikicite> {
+react:P2860-wikicite {
     ps:P2860	@<pubmed_entry> ;
     prov:wasDerivedFrom	@<reactome-reference> ;
 }
 
-<pubmed_entry> {
+react:pubmed_entry {
 	p:P698	{
 		ps:P698 LITERAL /[0-9]+/ ;
 	}
 }
 
 
-<found_in_taxon> {
-	ps:P703		<reactome_taxons> ;
-	prov:wasDerivedFrom	@<reactome-reference> ;
+react:P703-found-in-taxon {
+	ps:P703		@react:reactome-taxons ;
+	prov:wasDerivedFrom	@react:reactome-reference ;
 }
 
-<reactome_taxons> [
+react:reactome-taxons [
 	wd:Q15978631 												# Homo sapiens
 ]
 
-<reactome-identifier> {
+react:P3937-reactome-identifier {
 	ps:P3937	LITERAL /R-[A-Z]{3}-[0-9]+/  ;
 	# prov:wasDerivedFrom	@<reactome-reference>
 }
 
-<reactome-reference> {						                   # Reference to Reactome item in Wikidata
+react:reactome-reference {						                   # Reference to Reactome item in Wikidata
 	pr:P248	[ wd:Q2134522 ] ;
 	pr:P813 xsd:dateTime ;
 	pr:P3937 LITERAL /R-[A-Z]{3}-[0-9]+/ ;
