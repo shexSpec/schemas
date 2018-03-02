@@ -23,7 +23,7 @@ react:wikidata-reactome-pathway EXTRA p:P31 {
 	           @react:P31-gene-ontology-term)+ ;                         # go term if present
 	p:P361 @react:P361-part-of*	;										# part of
 	p:P527 @react:P527-has-part* ;										# has part 
-	p:P2860 @react:P2860wikicite* ;										# cites
+	p:P2860 @react:P2860-wikicite* ;										# cites
 	p:P703 @react:found-in-taxon ;  								# species 
 
 	# Identifiers
@@ -72,11 +72,11 @@ react:protein {
 }
 
 react:P2860-wikicite {
-    ps:P2860	@<pubmed_entry> ;
-    prov:wasDerivedFrom	@<reactome-reference> ;
+    ps:P2860	@react:pubmed-entry ;
+    prov:wasDerivedFrom	@react:reactome-reference ;
 }
 
-react:pubmed_entry {
+react:pubmed-entry {
 	p:P698	{
 		ps:P698 LITERAL /[0-9]+/ ;
 	}
