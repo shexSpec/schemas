@@ -20,7 +20,7 @@ start = @<wikidata-reactome_pathway>
 
 	# Statements
 	p:P31 @<pathway_term> OR                                                                      # biological pathway
-	           @<gene_ontology_term>{0,1} ;                         # go term if present
+	           @<gene_ontology_term> ;                         # go term if present
 	#p:P361 @<part_of>*	;										# part of
 	#p:P527 @<has_part>* ;										# has part 
 	#p:P2860 @<wikicite>* ;										# cites
