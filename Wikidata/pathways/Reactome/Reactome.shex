@@ -32,7 +32,7 @@ start = @<wikidata-reactome_pathway>
 }
 
 <pathway_term>  {					# always uses this pathway ontology term
-       ps:P31	<pathway> ;
+       ps:P31	@<pathway> ;
        prov:wasDerivedFrom @<reactome-reference> ;  
 	}
 
@@ -43,7 +43,7 @@ start = @<wikidata-reactome_pathway>
     ]
 
 <gene_ontology_term>  {					#
-       ps:P31  <go-term> ;
+       ps:P31  @<go-term> ;
        prov:wasDerivedFrom @<reactome-reference> ;  
 	}
 
