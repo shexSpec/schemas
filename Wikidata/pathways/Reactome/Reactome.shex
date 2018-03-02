@@ -27,7 +27,7 @@ react:wikidata-reactome-pathway EXTRA p:P31 {
 	p:P703 @react:found-in-taxon ;  								# species 
 
 	# Identifiers
-	p:P3937  @react:P3937-reactome-identifier> ;
+	p:P3937  @react:P3937-reactome-identifier ;
 
 }
 
