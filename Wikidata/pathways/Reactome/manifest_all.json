@@ -1,0 +1,10 @@
+[
+    {
+        "schemaLabel": "reactome",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/pathways/Reactome/Reactome.shex",
+        "dataLabel": "Get 1 reactome pathway from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?item WHERE { ?item wdt:P3937 ?geneid ; wdt:P31 wd:Q4915012 .}'''@START",
+        "status": "conformant"
+    }
+]
