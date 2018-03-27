@@ -75,6 +75,8 @@ start = @<wikidata-file_format>
 	ps:P279 [wd:Q79719];
 }
 
+<file_format_types> .
+
 
 
 
