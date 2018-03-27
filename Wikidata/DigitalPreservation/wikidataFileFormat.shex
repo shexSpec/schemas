@@ -57,6 +57,8 @@ start = @<wikidata-file_format>
   ps:P2748 LITERAL;
 }
 
+<P1633_media_type> .
+
 <P3266_locfdd_id> {
   ps:P3266 LITERAL;
 }
