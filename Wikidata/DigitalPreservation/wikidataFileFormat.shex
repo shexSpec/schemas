@@ -24,7 +24,7 @@ start = @<wikidata-file_format>
 	
 	p:P279 @<P279_subclass_of_file_format> ;
 	
-	p:P275 @<P275_license>  
+	p:P275 @<P275_license> ; 
 	
 	p:P1163 @<P1633_media_type> ;
 	
