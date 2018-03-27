@@ -46,11 +46,11 @@ start = @<wikidata-file_format>
 }
 
 <P275_license> {
- ps:P275 IRI@<license>;
+ ps:P275 @<license>;
 }
 
 <P178_developer> {
-  ps:P178 IRI@<developer>;
+  ps:P178 @<developer>;
 }
 
 <P2748_pronom_id> {
