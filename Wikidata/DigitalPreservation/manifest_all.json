@@ -1,6 +1,6 @@
 [
     {
-        "schemaLabel": "Fileformats in wikidata-cancer-variant",
+        "schemaLabel": "Fileformats in Wikidata",
         "schemaURL": "https://github.com/shexSpec/schemas/blob/master/Wikidata/DigitalPreservation/wikidataFileFormat.shex",
         "dataLabel": "Get 10 file formats from Wikidata" ,
         "data": "Endpoint: https://query.wikidata.org/sparql",
