@@ -4,7 +4,7 @@
         "schemaURL": "https://github.com/shexSpec/schemas/blob/master/Wikidata/DigitalPreservation/wikidataFileFormat.shex",
         "dataLabel": "Get 10 file formats from Wikidata" ,
         "data": "Endpoint: https://query.wikidata.org/sparql",
-        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/\nSELECT ?item WHERE { ?item wdt:P31 wd:Q235557 .}'''@START",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/\n\nSELECT ?item WHERE { ?item wdt:P31 wd:Q235557 .}'''@START",
         "status": "conformant"
     }
 ]
