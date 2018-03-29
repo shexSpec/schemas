@@ -1,0 +1,30 @@
+#Shape Expression for file formats on Wikidata
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+
+
+Do papers on Zika have
+Title 
+Publication data
+Published in
+DOI
+PMID
+PMC
+Authors (P50 vs P2093)
+No identical series ordinal on P50  statements
+Subjects other than https://www.wikidata.org/wiki/Q202864 
+
+
+Do authors have an ORCID?

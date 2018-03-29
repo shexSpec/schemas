@@ -1,0 +1,26 @@
+[
+    {
+        "schemaLabel": "zika corpus",
+        "schemaURL": "https://raw.githubusercontent.com/SuLab/Genewiki-ShEx/master/genes/wikidata-human-genes.shex",
+        "dataLabel": "Get 10  Items from the zika corpus" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT * WHERE {?item wdt:P921 wd:Q202864 ;} LIMIT 10'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "zika corpus",
+        "schemaURL": "https://raw.githubusercontent.com/SuLab/Genewiki-ShEx/master/genes/wikidata-human-genes.shex",
+        "dataLabel": "Get 100 Items from the zika corpus" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT * WHERE {?item wdt:P921 wd:Q202864 ;} LIMIT 100'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "zika corpus",
+        "schemaURL": "https://raw.githubusercontent.com/SuLab/Genewiki-ShEx/master/genes/wikidata-human-genes.shex",
+        "dataLabel": "Get all Items from the zika corpus" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT * WHERE {?item wdt:P921 wd:Q202864 ;}'''@START",
+        "status": "conformant"
+    }
+]
