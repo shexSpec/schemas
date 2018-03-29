@@ -33,7 +33,7 @@ wc:P50_author {
 }
 
 wc:author_item {
-	p:P496 @wc:P496_ORCID_ID
+	p:P496 @wc:P496_ORCID_ID ;
 	prov:wasDerivedFrom @wc:reference ;
 }
 
