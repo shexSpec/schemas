@@ -34,7 +34,7 @@ start = @<wikidata-software>
  	p:P306 @<P306_operating_system>* ;
 	
 	#identifiers
-	p:P2749 @<P2749_PRONOM_software_identifier> ;
+	p:P2749 @<P2749_PRONOM_software_identifier>* ;
 
 }
 
