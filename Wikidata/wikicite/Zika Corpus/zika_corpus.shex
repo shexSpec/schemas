@@ -21,8 +21,6 @@ wc:ZWikidataPaper {
 	p:P577 @wc:P577_publication_date ;
 	p:P1433 @wc:P1430_published_in ;
 
-	(p:P356 p:P698 p:P932)
-
 	( p:P356 @wc:P356_DOI # Should have at least one of the following three ID's
 	 |p:P698 @wc:P698_pmid
 	 |p:P932 @wc:P932_pmc )+;
