@@ -13,65 +13,81 @@ PREFIX pr:  <http://www.wikidata.org/prop/reference/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/> 
-PREFIX wc: <http://micel.io/wikicite/>
+PREFIX wc: <http://wikicite.org/ShEx/zika-corpus/>
 
-start = @wc:zika_wikidata_item
-
-wc:zika_wikidata_item {
+start = @wc:ZWikidataPaper
+wc:ZWikidataPaper {
+	p:P1476 @wc:P1476_title ;
 	p:P577 @wc:P577_publication_date ;
 	p:P1433 @wc:P1430_published_in ;
-	p:P356 @wc:P356_DOI ;
-	p:P698 @wc:P698_pmid ;
-	p:P932 @wc:P932_pmc ;
-	p:P50 @wc:P50_author ;
-	p:P2093 @wc:P2093_author_string ;
-}
+
+	(p:P356 p:P698 p:P932)
+
+	( p:P356 @wc:P356_DOI # Should have at least one of the following three ID's
+	 |p:P698 @wc:P698_pmid
+	 |p:P932 @wc:P932_pmc )+;
+	p:P50 @wc:P50_author* ;
+	p:P2093 @wc:P2093_author_string* ;
+} AND {p:P356 .? ; p:P698 .? ; p:P932 .?} # Prevents multiple statements alloed by the shape above
+
+
 
 wc:P50_author {
 	ps:P50 @wc:author_item ;
-	prov:wasDerivedFrom @wc:reference ;
+	pq:P1545 xsd:integer ;
 }
 
 wc:author_item {
 	p:P496 @wc:P496_ORCID_ID ;
-	prov:wasDerivedFrom @wc:reference ;
 }
 
 wc:P496_ORCID_ID {
-	ps:P496 LITERAL ;  # TODO: add ORCID regex.
-	prov:wasDerivedFrom @wc:reference ;
+	ps:P496 LITERAL ; 
+	
 }
 
 wc:P356_DOI {
-	ps:P356 LITERAL ; # TODO: add DOI regex.
-	prov:wasDerivedFrom @wc:reference ;
+	ps:P356 LITERAL ; 
 }
 
 wc:P577_publication_date {
-	ps:P577 xsd:dateTime ; # is this correct?
-	prov:wasDerivedFrom @wc:reference ;
+	ps:P577 xsd:dateTime ; 
 }
 
 wc:P698_pmid {
-	ps:P698 LITERAL ; # TODO: add DOI regex.
-	prov:wasDerivedFrom @wc:reference ;
+	ps:P698 LITERAL /^[0-9]+$/ ; 
 }
 
 wc:P932_pmc {
 	ps:P932 LITERAL ; # TODO; add PMC regex
-	prov:wasDerivedFrom @wc:reference ;
 }
 
 wc:P1430_published_in {
 	ps:P1433 @wc:venue ;
-	prov:wasDerivedFrom @wc:reference ;
+}
+
+wc:P1476_title {
+	ps:P1476 LITERAL+ ;
 }
 
 wc:venue .
 
 wc:P2093_author_string {
-	ps:P2093_author_string LITERAL ;
-	prov:wasDerivedFrom @wc:reference ;
+	ps:P2093 LITERAL ;
+	pq:P1545 xsd:integer ;        
+	
 }
 
 wc:reference .
+
+
+
+## YET to implement
+
+#PREFIX : <http://an.example/>
+#:Only { :topic ["Zika"] }
+#:Allow { :topic ["Zika"]; :topic .* }
+#:Two { :topic ["Zika"]; :topic .+ }
+
+
+
