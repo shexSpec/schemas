@@ -56,7 +56,7 @@ start = @<wikidata-software>
 }
 
 <P178_developer> {
-	ps:P178 IRI;
+	ps:P178 @<developer>;
 }
 
 <P1072_readable_file_format> {
@@ -84,3 +84,4 @@ start = @<wikidata-software>
 <operating_system> {
 	ps:P31 [wd:Q9135];
 }
+<developer> .
