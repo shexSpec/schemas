@@ -1,0 +1,26 @@
+[
+    {
+        "schemaLabel": "Software items in Wikidata",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/wikidataSoftware.shex",
+        "dataLabel": "Get 10 software items from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?item WHERE { ?item (wdt:P31/wdt:P279*) wd:Q15548076.} LIMIT 10'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "Software items in Wikidata",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/wikidataSoftware.shex",
+        "dataLabel": "Get 100 software items from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?item WHERE { ?item (wdt:P31/wdt:P279*) wd:Q15548076.} LIMIT 100'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "Software items in Wikidata",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/wikidataSoftware.shex",
+        "dataLabel": "Get all software items from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?item WHERE { ?item (wdt:P31/wdt:P279*) wd:Q15548076.}'''@START",
+        "status": "conformant"
+    }
+]
