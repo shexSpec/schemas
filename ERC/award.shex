@@ -1,4 +1,4 @@
-# Shape Expression for ERC awards in Wikidata 
+# Shape Expression for ERC on awards in Wikidata 
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
@@ -38,9 +38,7 @@ wc:award {
 }
 
 wc:award_resource {
-	p:P31_instance_of_database @wc:database ;
-}
-
-wc:database {
-	ps:P31  [wd:Q8513]
+	p:P31_instance_of_database {
+	     ps:P31  [wd:Q8513] ;   # Q8513 = Biological database
+    }
 }
