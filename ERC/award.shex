@@ -13,7 +13,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX do: <http://purl.obolibrary.org/obo/DOID_>
 PREFIX doio: <http://identifiers.org/doid/>
 PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
-PREFIX wc: <http://micel.io/wikicite/> # Suggestion for a better prefix are welcome
+PREFIX wc: <http://wikicite.org/> # Suggestion for a better prefix are welcome
 
 wd:person {
 	p:P31  wc:P31_instsance_of_person ;
