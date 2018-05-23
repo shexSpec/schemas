@@ -49,9 +49,6 @@ start = @<wikidata-file_format>
  ps:P275 @<license> ;
 }
 
-<P178_developer> {
-  ps:P178 @<developer> ;
-}
 
 <P2748_pronom_id> {
   ps:P2748 LITERAL ;
@@ -79,7 +76,7 @@ start = @<wikidata-file_format>
 	ps:P279 [wd:Q235557];
 }
 
-<developer> .
+
 
 
 
