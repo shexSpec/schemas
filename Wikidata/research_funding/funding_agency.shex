@@ -1,0 +1,51 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+start = @<funding_agency>
+
+<funding_agency> {
+	p:P31 @<P31_instance_of> ;
+	p:P856 @<P856_official_website> ;
+	p:P159 @<P159_headquarters_location> ;
+	p:P571 @<P571_inception> ;
+	p:P17 @<P17_country> ; # What to do with funders that span multiple countries?
+	p:P131 @<P131_located_in_the_administrative_territorial_entity>+ ;
+	p:P355 @<P355_subsidiary>* ;
+
+	# IDENTIFIERS 
+	p:P3153 @<P3153_Crossref_funder_id> ;
+	p:P3534 @<P3534_Australian_Government_Organisations_Register_ID>? # To specific?
+}
+
+<P17_country> .
+
+<P31_instance_of> {
+	ps:P31 [wd:Q372353] ; # Q372353 = research funding
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P131_located_in_the_administrative_territorial_entity> .
+
+<P159_headquarters_location> .
+
+<P355_subsidiary> .
+
+<P571_inception> .
+
+<P856_official_website> .
+
+<P3153_Crossref_funder_id> .
+
+
+
+
+
+<reference> .

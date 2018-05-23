@@ -1,1 +1,0 @@
-SPARQL `PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT ?item WHERE { ?item wdt:P699 ?doid .} LIMIT 10`@START
