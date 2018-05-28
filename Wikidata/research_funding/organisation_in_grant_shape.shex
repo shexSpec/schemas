@@ -1,0 +1,53 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX berlin_wikibase: <>
+
+import <project_with_grant_shape.shex>
+
+start = @<organisation_in_grant>
+
+<organisation_in_grant> {
+	p:P31 @<P31_instance_of> ;
+	p:P1344	@<P1344_participant_of> ; # Project with grant.
+	p:P2868 @<P2868_subject_has_role> ; # Role in the project with grant.
+	p:580 @<P580_start_time>? ; # Start time of project participation.
+	p:582 @<P582_end_time>? ; # End time of project participation.
+	p:P1448 @<P1448_official_name> ;
+	p:P17 @<P17_country> ;
+	p:P159 @<P159_headquarters_location> ;
+	
+}
+
+<P31_instance_of> {
+	ps:P31 [wd:Q4830453 wd:Q622439 wd:Q31855] ; # Q4830453 = business enterprise, Q622439 = small and medium enterprises, Q31855 = research institute.
+
+}
+
+<P1344_participant_of> {
+	p:P1344 @<project_with_grant_shape> ; # Check how to import my other shape.
+}
+
+<P2868_subject_has_role> .
+
+<P580_start_time> .
+
+<P582_end_time> .
+
+<P1448_official_name> {
+	ps:P10448 @<organisation_official_name> ;
+}
+
+<organisation_official_name> LITERAL AND xsd:string 
+
+<P17_country> .
+
+<P159_headquarters_location> .
