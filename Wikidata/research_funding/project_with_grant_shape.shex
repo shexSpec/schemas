@@ -1,0 +1,65 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX berlin_wikibase: <>
+
+import <grant_shape.shex>
+
+start = @<project_with_grant>
+
+<project_with_grant> {
+	p:P31 @<P31_instance_of> ;
+	p:P710	@<P710_participant>+ ; # Participant person(s) and/or organisation(s).
+	p:580 @<P580_start_time>? ; # Start time of project execution.
+	p:582 @<P582_end_time>? ; # End time of project execution.
+	p:P571 @<P571_inception> ; # Submission time of project.
+	p:P1476 @<P1476_title> ; 
+	p:P921 @<P921_main_topic> ; # How to indicate the scientific area?
+	p:P3712 @<P3712_objective_of_project_or_mission> ;
+	p:P1056 @<P1056_product_or_material_produced> ;
+	p:P527 @<P527_has_part> ; # Is there anything more indicated for abstract/summary? And for keywords?
+	p:P2283 @<P2283_uses> ; # Or should we use P2770=source of income "source of income of an organization or person" even if project is not an organisation?
+}
+
+<P31_instance_of> {
+	ps:P31 [wd:Q1298668] ; # Q1298668 = research project.
+
+}
+
+<P1476_title> {
+	ps:P1476 LITERAL AND xsd:string
+}
+
+<P710_participant> {
+	
+}
+
+<P3712_objective_of_project_or_mission> .
+
+<P580_start_time> .
+
+<P582_end_time> .
+
+<P571_inception> .
+
+<P1056_product_or_material_produced> .
+
+<P921_main_topic> {
+	ps:P101 [wd:Q1047113 wd:Q2465832 wd:Q11862829] ; # Q1047113 = specialty, Q11862829 = academic discipline, Q2465832 = branch of science.
+}
+
+<P527_has_part> {
+	ps:P527 [wd:Q333291 wd:Q776754 Q1128340] ; # Q333291 = abstract, Q776754 = summary Q1128340 = index term.
+}
+
+<P2283_uses> {
+	ps:P2283 @<grant> ;
+}

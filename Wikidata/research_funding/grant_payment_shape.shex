@@ -1,0 +1,31 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX berlin_wikibase: <>
+
+start = @<grant_payment>
+
+<grant_payment> {
+	p:P31 @<P31_instance_of> ;
+	p:P585 @<P585_point_in_time> ;
+	p:1552 @<P1552_has_quality>? ;
+}
+
+<P31_instance_of> {
+	ps:P31 [wd:Q1148747] ; # Q1148747 = payment.
+}
+
+<P585_point_in_time> .
+
+<P1552_has_quality> {
+	p:1552 [wd:Q41762787 wd:Q30242023] ; # Q41762787 = value "any determination of or method of determination of the worth, not necessarily monetary, of an item or a facet of it", Q30242023 = money amount.
+	                        # Or should it be Q868257 = economic value "measure of the benefit provided by a good or service to an economic agent"?
+	
+}
