@@ -20,6 +20,9 @@ start = @<grant>
 	p:582 @<P582_end_time>? ;
 	p:1552 @<P1552_has_quality>? ;
 	p:P1535 @<P1535_used_by> ;
+	
+	# IDENTIFIERS 
+	p:P3400 @<P3400_CORDIS_Project_ID>?
 }
 
 <P31_instance_of> {
@@ -39,3 +42,5 @@ start = @<grant>
 <P1535_used_by> {
 	p:P1535 @<project_with_grant> ;
 }
+
+<P3400_CORDIS_Project_ID> .
