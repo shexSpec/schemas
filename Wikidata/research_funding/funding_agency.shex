@@ -8,6 +8,7 @@ PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
 start = @<funding_agency>
@@ -26,27 +27,49 @@ start = @<funding_agency>
 	p:P3534 @<P3534_Australian_Government_Organisations_Register_ID>? # To specific?
 }
 
-<P17_country> .
+<P17_country> {
+	prov:wasDerivedFrom @<reference> ;
+}
 
 <P31_instance_of> {
 	ps:P31 [wd:Q372353] ; # Q372353 = research funding
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P131_located_in_the_administrative_territorial_entity> .
+<P131_located_in_the_administrative_territorial_entity> {
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P159_headquarters_location> .
+<P159_headquarters_location> {
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P355_subsidiary> .
+<P355_subsidiary> {
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P571_inception> .
+<P571_inception> {
+	ps:P571 xsd:dateTime ;
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P856_official_website> .
+<P856_official_website> {
+	ps:P856  IRI ;
+}
 
-<P3153_Crossref_funder_id> .
+<P3153_Crossref_funder_id> {
+	ps:P3153 xsd:int ;
+	prov:wasDerivedFrom @<crossrefReference> ;
+}
 
+<reference> {
+	pr:P248  IRI ;
+	pr:P813  xsd:dateTime ;
+	pr:P1640 @<curator> ;
+	pr:P854  IRI ;   
+}
 
-
-
-
-<reference> .
+<crossrefReference> {
+	pr:P143  [wd:Q19822542] ;
+	pr:P813  xsd:dateTime ;
+}
