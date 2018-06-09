@@ -28,6 +28,7 @@ start = @<funding_agency>
 }
 
 <P17_country> {
+	ps:P17 @<country> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -37,10 +38,12 @@ start = @<funding_agency>
 }
 
 <P131_located_in_the_administrative_territorial_entity> {
+	ps:P131  @<administrative_territorial_entity> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
 <P159_headquarters_location> {
+	ps:P159  [] ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -63,6 +66,16 @@ start = @<funding_agency>
 	prov:wasDerivedFrom @<crossrefReference> ;
 }
 
+<P3534_Australian_Government_Organisations_Register_ID> {
+	ps:P3534 xsd:int ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<country> {
+	p:P31 {
+		ps:P31 [wd:Q6256]
+	}
+}
 <organisation> .
 
 <reference> {
