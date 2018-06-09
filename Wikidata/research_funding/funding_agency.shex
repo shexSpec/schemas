@@ -45,6 +45,7 @@ start = @<funding_agency>
 }
 
 <P355_subsidiary> {
+	ps:P355  @<organisation> ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -61,6 +62,8 @@ start = @<funding_agency>
 	ps:P3153 xsd:int ;
 	prov:wasDerivedFrom @<crossrefReference> ;
 }
+
+<organisation> .
 
 <reference> {
 	pr:P248  IRI ;
