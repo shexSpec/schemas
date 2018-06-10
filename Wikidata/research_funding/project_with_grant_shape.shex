@@ -18,9 +18,9 @@ start = @<project_with_grant>
 
 <project_with_grant> {
 	p:P31 @<P31_instance_of> ;
-	p:P710	@<P710_participant>+ ; # Participant person(s) and/or organisation(s).
-	p:580 @<P580_start_time>? ; # Start time of project execution.
-	p:582 @<P582_end_time>? ; # End time of project execution.
+	p:P710 @<P710_participant>+ ; # Participant person(s) and/or organisation(s).
+	p:P580 @<P580_start_time>? ; # Start time of project execution.
+	p:P582 @<P582_end_time>? ; # End time of project execution.
 	p:P571 @<P571_inception> ; # Submission time of project.
 	p:P1476 @<P1476_title> ; 
 	p:P921 @<P921_main_topic> ; # How to indicate the scientific area?
@@ -28,39 +28,67 @@ start = @<project_with_grant>
 	p:P1056 @<P1056_product_or_material_produced> ;
 	p:P527 @<P527_has_part> ; # Is there anything more indicated for abstract/summary? And for keywords?
 	p:P2283 @<P2283_uses> ; # Or should we use P2770=source of income "source of income of an organization or person" even if project is not an organisation?
+    p:P2769 @<P2768_budget>* ;
 }
 
 <P31_instance_of> {
-	ps:P31 [wd:Q1298668] ; # Q1298668 = research project.
+	ps:P31 [wd:Q1298668 wd:Q8513 wd:Q170584] ; # Q1298668 = research project 
+	prov:wasDerivedFrom @<reference> ;
 
 }
 
 <P1476_title> {
-	ps:P1476 LITERAL AND xsd:string
+	ps:P1476 LITERAL AND xsd:string ;
+	prov:wasDerivedFrom @<reference> ;
 }
 
 <P710_participant> {
-	
+	ps:P710  [wd:~];
+	prov:wasDerivedFrom @<reference> ;
 }
 
 <P3712_objective_of_project_or_mission> .
 
-<P580_start_time> .
+<P580_start_time> {
+	ps:P580  xsd:dateTime ;
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P582_end_time> .
+<P582_end_time> {
+	ps:P580  xsd:dateTime ;
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P571_inception> .
+<P571_inception> {
+	ps:P571  xsd:dateTime ;
+	prov:wasDerivedFrom @<reference> ;
+}
 
-<P1056_product_or_material_produced> .
+<P1056_product_or_material_produced> {
+	prov:wasDerivedFrom @<reference> ;
+}
 
 <P921_main_topic> {
 	ps:P101 [wd:Q1047113 wd:Q2465832 wd:Q11862829] ; # Q1047113 = specialty, Q11862829 = academic discipline, Q2465832 = branch of science.
+    prov:wasDerivedFrom @<reference> ;
 }
 
 <P527_has_part> {
-	ps:P527 [wd:Q333291 wd:Q776754 Q1128340] ; # Q333291 = abstract, Q776754 = summary Q1128340 = index term.
+	ps:P527 [wd:Q333291 wd:Q776754 wd:Q1128340] ; # Q333291 = abstract, Q776754 = summary Q1128340 = index term.
+	prov:wasDerivedFrom @<reference> ;
 }
 
 <P2283_uses> {
 	ps:P2283 @<grant> ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<P2769_budget> {
+	ps:P2769 xsd:decimal ;
+	pq:P859 [wd:~]? ;
+	prov:wasDerivedFrom @<reference> ;
+}
+
+<reference> {
+	pr:P854 IRI ;
 }
