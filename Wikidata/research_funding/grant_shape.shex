@@ -21,7 +21,7 @@ start = @<grant>
 	p:P31 @<P31_instance_of> ;
 	p:580 @<P580_start_time>? ;
 	p:582 @<P582_end_time>? ;
-	p:1552 @<P1552_has_quality>? ;
+	p:1552 @<P1552_has_quality>? ; # Or P2769 = budget.
 	p:P1535 @<P1535_used_by> ;
 	berlin_wb:PXX @<PXX_conforms_to>
 }
