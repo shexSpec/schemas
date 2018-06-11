@@ -32,7 +32,7 @@ start = @<project_with_grant>
 }
 
 <P31_instance_of> {
-	ps:P31 [wd:Q1298668 wd:Q8513 wd:Q170584] ; # Q1298668 = research project 
+	ps:P31 [wd:Q1298668 wd:Q170584] ; # Q1298668 = research project 
 	prov:wasDerivedFrom @<reference> ;
 
 }
@@ -88,7 +88,6 @@ start = @<project_with_grant>
 
 <P2769_budget> {
 	ps:P2769 xsd:decimal ;
-	pq:P859 [wd:~]? ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
