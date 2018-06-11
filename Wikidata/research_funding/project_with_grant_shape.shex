@@ -79,6 +79,9 @@ start = @<project_with_grant>
 }
 
 <P2283_uses> {
+	ps:P2283 @<grant> + ;
+}
+
 	ps:P2283 @<grant> ;
 	prov:wasDerivedFrom @<reference> ;
 }
