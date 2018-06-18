@@ -23,7 +23,11 @@ start = @<grant>
 	p:582 @<P582_end_time>? ;
 	p:1552 @<P1552_has_quality>? ; # Or P2769 = budget.
 	p:P1535 @<P1535_used_by> ;
-	berlin_wb:PXX @<PXX_conforms_to>
+
+	berlin_wb:PXX @<PXX_conforms_to> ;
+
+	# IDENTIFIERS 
+	p:P3400 @<P3400_CORDIS_Project_ID>?
 }
 
 <P31_instance_of> {
@@ -60,3 +64,5 @@ start = @<grant>
 <reference> {
 	pr:P854 IRI ;
 }
+
+<P3400_CORDIS_Project_ID> .
