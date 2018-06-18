@@ -13,21 +13,21 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wb: <>
 
 import <project_with_grant_shape.shex>
-import <funding_scheme>
+import <funding_scheme_shape>
 
 start = @<grant>
 
-<grant> {
+<grant> EXTRA p:P31 {
 	p:P31 @<P31_instance_of> ;
 	p:580 @<P580_start_time>? ;
 	p:582 @<P582_end_time>? ;
 	p:1552 @<P1552_has_quality>? ; # Or P2769 = budget.
-	p:P1535 @<P1535_used_by> ;
-	berlin_wb:PXX @<PXX_conforms_to>
+	p:P1535 @<P1535_used_by>+ ;
+#	berlin_wb:PXX @<PXX_conforms_to>
 }
 
 <P31_instance_of> {
-	p:P31 [wd:Q230788] ; # Q230788 = grant, "non-repayable funds disbursed by one party to a recipient".
+	ps:P31 [wd:Q230788] ; # Q230788 = grant, "non-repayable funds disbursed by one party to a recipient".
 	prov:wasDerivedFrom @<reference> ;
 }
 
@@ -48,8 +48,8 @@ start = @<grant>
 }
 
 <P1535_used_by> {
-	p:P1535 @<project_with_grant> ;
-	prov:wasDerivedFrom @<reference> ;
+#	p:P1535 @<project_with_grant> ;
+#	prov:wasDerivedFrom @<reference> ;
 }
 
 <PXX_conforms_to> {

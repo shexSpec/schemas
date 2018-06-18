@@ -28,7 +28,7 @@ start = @<person_in_grant>
 }
 
 <P1344_participant_of> {
-	p:P1344 @<project_with_grant_shape> ; # Check how to import other shape.
+	p:P1344 @<project_with_grant> ; # Check how to import other shape.
 }
 
 <P2868_subject_has_role> .

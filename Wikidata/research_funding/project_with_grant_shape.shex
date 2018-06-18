@@ -28,7 +28,7 @@ start = @<project_with_grant>
 	p:P1056 @<P1056_product_or_material_produced> ;
 	p:P527 @<P527_has_part> ; # Is there anything more indicated for abstract/summary? And for keywords?
 	p:P2283 @<P2283_uses> ; # Or should we use P2770=source of income "source of income of an organization or person" even if project is not an organisation?
-    p:P2769 @<P2768_budget>* ;
+	p:P2769 @<P2769_budget>* ;
 }
 
 <P31_instance_of> {
@@ -82,9 +82,9 @@ start = @<project_with_grant>
 	ps:P2283 @<grant> + ;
 }
 
-	ps:P2283 @<grant> ;
-	prov:wasDerivedFrom @<reference> ;
-}
+# 	ps:P2283 @<grant> ;
+# 	prov:wasDerivedFrom @<reference> ;
+# }
 
 <P2769_budget> {
 	ps:P2769 xsd:decimal ;

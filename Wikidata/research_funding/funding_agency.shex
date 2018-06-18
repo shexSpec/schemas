@@ -76,6 +76,9 @@ start = @<funding_agency>
 		ps:P31 [wd:Q6256]
 	}
 }
+
+<administrative_territorial_entity> .
+
 <organisation> .
 
 <reference> {

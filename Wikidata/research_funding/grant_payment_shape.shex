@@ -19,10 +19,6 @@ start = @<grant_payment>
 	p:1552 @<P1552_has_quality>? ;
 }
 
-<P31_instance_of> {
-	ps:P31 [wd:Q1148747] ; # Q1148747 = payment.
-}
-
 <P585_point_in_time> .
 
 <P1552_has_quality> {
