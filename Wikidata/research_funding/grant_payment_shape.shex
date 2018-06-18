@@ -11,17 +11,26 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
 
-start = @<grant_payment>
+start = @<#grant_payment>
 
-<grant_payment> {
-	p:P31 @<P31_instance_of> ;
-	p:P585 @<P585_point_in_time> ;
-	p:1552 @<P1552_has_quality>? ;
+<#grant_payment> {
+	p:P31 @<#P31_instance_of> ;
+	p:P585 @<#P585_point_in_time> ;
+	p:1552 @<#P1552_has_quality>? ;
 }
 
-<P585_point_in_time> .
+<#P31_instance_of> {
+	ps:P31 [wd:Q1148747] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
 
-<P1552_has_quality> {
+<#reference> {
+	pr:P854 IRI ;
+}
+
+<#P585_point_in_time> .
+
+<#P1552_has_quality> {
 	p:1552 [wd:Q41762787 wd:Q30242023] ; # Q41762787 = value "any determination of or method of determination of the worth, not necessarily monetary, of an item or a facet of it", Q30242023 = money amount.
 	                        # Or should it be Q868257 = economic value "measure of the benefit provided by a good or service to an economic agent"?
 	

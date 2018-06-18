@@ -11,40 +11,40 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
 
-import <project_with_grant_shape.shex>
+import <project_with_grant_shape>
 
-start = @<person_in_grant>
+start = @<#person_in_grant>
 
-<person_in_grant> {
-	p:P1344	@<P1344_participant_of> ; # Project with grant.
-	p:P2868 @<P2868_subject_has_role> ; # Role in the project with grant.
-	p:P39 @<P39_position_held> ; # Or P106 occupation?
-	p:P512 @<P512_academic_degree> ; 
-	p:580 @<P580_start_time>? ; # Start time of project participation.
-	p:582 @<P582_end_time>? ; # End time of project participation.
+<#person_in_grant> {
+	p:P1344	@<#P1344_participant_of> ; # Project with grant.
+	p:P2868 @<#P2868_subject_has_role> ; # Role in the project with grant.
+	p:P39 @<#P39_position_held> ; # Or P106 occupation?
+	p:P512 @<#P512_academic_degree> ; 
+	p:580 @<#P580_start_time>? ; # Start time of project participation.
+	p:582 @<#P582_end_time>? ; # End time of project participation.
 	# P1416 affiliation? or P108 employer? For the host institution.
-	p:P101 @<P101_field_of_work_specialty> ;
+	p:P101 @<#P101_field_of_work_specialty> ;
 	
 }
 
-<P1344_participant_of> {
-	p:P1344 @<project_with_grant> ; # Check how to import other shape.
+<#P1344_participant_of> {
+	p:P1344 @<project_with_grant_shape#project_with_grant> ; # Check how to import other shape.
 }
 
-<P2868_subject_has_role> .
+<#P2868_subject_has_role> .
 
-<P39_position_held> {
+<#P39_position_held> {
 	ps:P39 [wd:Q486983] ; # Q486983 = academic rank.
 }
 
-<P512_academic_degree> {
+<#P512_academic_degree> {
 	ps:P512 [wd:Q3529618 wd:Q189533] ; # Q3529618 = academic title, Or Q189533 = academic degree?
 }
 
-<P580_start_time> .
+<#P580_start_time> .
 
-<P582_end_time> .
+<#P582_end_time> .
 
-<P101_field_of_work_specialty> {
+<#P101_field_of_work_specialty> {
 	ps:P101 [wd:Q1047113 wd:Q2465832 wd:Q11862829] ; # Q1047113 = specialty, Q11862829 = academic discipline, Q2465832 = branch of science.
 }
