@@ -9,6 +9,7 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
 
 start = @<funding_scheme>
@@ -25,19 +26,21 @@ start = @<funding_scheme>
 
 <P31_instance_of> {
 	ps:P31 [wd:Q372353] ; # Q372353 = research funding.
-
+	prov:wasDerivedFrom @<reference> ;
 }
 
 <P582_end_time> .
 
-<P571_inception> .
-
-<P17_country> .
+<P571_inception> {
+	prov:wasDerivedFrom @<reference> ;
+}
 
 <P1013_criterion_used> {
 	ps:P1013 @<target_criterion> ;
-
+	prov:wasDerivedFrom @<reference> ;
 }
+
+<reference> .
 
 <target_criterion> LITERAL AND xsd:string 
 

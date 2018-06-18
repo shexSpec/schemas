@@ -9,6 +9,7 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
 
 import <project_with_grant_shape.shex>
@@ -19,8 +20,8 @@ start = @<organisation_in_grant>
 	p:P31 @<P31_instance_of> ;
 	p:P1344	@<P1344_participant_of> ; # Project with grant.
 	p:P2868 @<P2868_subject_has_role> ; # Role in the project with grant.
-	p:580 @<P580_start_time>? ; # Start time of project participation.
-	p:582 @<P582_end_time>? ; # End time of project participation.
+	p:P580 @<P580_start_time>? ; # Start time of project participation.
+	p:P582 @<P582_end_time>? ; # End time of project participation.
 	p:P1448 @<P1448_official_name> ;
 	p:P17 @<P17_country> ;
 	p:P159 @<P159_headquarters_location> ;
