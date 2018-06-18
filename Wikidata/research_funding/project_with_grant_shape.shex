@@ -11,6 +11,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
+PREFIX x: <http://x.example/>
 
 import <grant_shape>
 
@@ -18,7 +19,8 @@ start = @<#project_with_grant>
 
 <#project_with_grant> {
 	p:P31 @<#P31_instance_of> ;
-	p:P710 @<#P710_participant>+ ; # Participant person(s) and/or organisation(s).
+#	p:P710 @<#P710_participant>+ ; # Participant person(s) and/or organisation(s).
+       ^x:in { x:as IRI ; x:by @<#P710_participant> }+ ;
 	p:P580 @<#P580_start_time>? ; # Start time of project execution.
 	p:P582 @<#P582_end_time>? ; # End time of project execution.
 	p:P571 @<#P571_inception> ; # Submission time of project.

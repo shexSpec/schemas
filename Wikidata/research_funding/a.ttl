@@ -28,6 +28,7 @@
 @prefix prv: <http://www.wikidata.org/prop/reference/value/> .
 @prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/> .
 @prefix wdno: <http://www.wikidata.org/prop/novalue/> .
+PREFIX x: <http://x.example/>
 
 wdata:Q54875058 a schema:Dataset ;
 	schema:about wd:Q54875058 ;
@@ -52,8 +53,8 @@ wd:Q54875058 a wikibase:Item ;
 		wd:Q1154615,
 		wd:Q8513,
 		wd:Q1295754 ;
-	wdt:P710 wd:Q4747830,
-		wd:Q503473 ;
+#	wdt:P710 wd:Q4747830,
+#		wd:Q503473 ;
 	wdt:P1535 wd:Q2629752,
 		wd:Q899676 ;
 	wdt:P101 wd:Q7094,
@@ -65,6 +66,9 @@ wd:Q54875058 a wikibase:Item ;
 	wdt:P1476 "PROSITE and SWISS-PROT: identification of protein function from primary sequence through the development of computational methodsand associated databases"@en ;
 	wdt:P2283 wd:Q54912929 ;
 	p:P31 wds:Q54875058-c7f29c31-4c04-8f51-100c-56d99013c7fd .
+
+[ x:in wd:Q54875058 ; x:as x:person ; x:by wd:Q4747830 ] .
+[ x:in wd:Q54875058 ; x:as x:institution ; x:by wd:Q503473 ] .
 
 wds:Q54875058-c7f29c31-4c04-8f51-100c-56d99013c7fd a wikibase:Statement,
 		wikibase:BestRank ;
