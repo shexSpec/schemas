@@ -32,6 +32,8 @@ start = @<wikidata-configuredSoftwareEnvironment>
 	
 	p:P126 @<P126_maintained_by> ;
 	
+	#add language
+	#default file format
 
 <P31_instance_of_configured_Software_Environment> {
   ps:P31 [wd:Q28812506] ;
