@@ -40,7 +40,7 @@ start = @<wikidata-rfc>
 }
 
 <P356_P356_doi> {
-  ps:P3266 LITERAL;
+  ps:P356 LITERAL;
 }
 
 
