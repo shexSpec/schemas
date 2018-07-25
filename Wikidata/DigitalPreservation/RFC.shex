@@ -20,27 +20,27 @@ start = @<wikidata-rfc>
 
 <wikidata-rfc> {
 	#statements
-	p:P31 @<P31_instance_of_rfc>;
+	p:P31 @<P31_instance_of_rfc> ;
 	
 	
 	#identifiers
 	
-	p:P2388 @<P2388_rfc_id>;
+	p:P2388 @<P2388_rfc_id> ;
 	
-	p:P356 @<P356_doi>;
+	p:P356 @<P356_doi>* ;
 	
 }	
 
 <P31_instance_of_rfc> {
-  ps:P31 [wd:Q212971];
+  ps:P31 [wd:Q212971] ;
 }
 
 <P2388_rfc_id> {
-  ps:P2388 LITERAL;
+  ps:P2388 LITERAL ;
 }
 
 <P356_P356_doi> {
-  ps:P356 LITERAL;
+  ps:P356 LITERAL ;
 }
 
 
