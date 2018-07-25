@@ -22,28 +22,25 @@ start = @<wikidata-rfc>
 	#statements
 	p:P31 @<P31_instance_of_rfc>;
 	
-	p:P1163 @<P1633_media_type>;
 	
 	#identifiers
 	
-	p:P2748 @<P2748_pronom_id>;
+	p:P2388 @<P2388_rfc_id>;
 	
-	p:P3266 @<P3266_locfdd_id>;
+	p:P356 @<P356_doi>;
 	
 }	
 
 <P31_instance_of_rfc> {
-  ps:P31 [wd:Q47469323];
+  ps:P31 [wd:Q212971];
 }
 
-<P2748_pronom_id> {
-  ps:P2748 LITERAL;
+<P2388_rfc_id> {
+  ps:P2388 LITERAL;
 }
 
-<P3266_locfdd_id> {
+<P356_P356_doi> {
   ps:P3266 LITERAL;
 }
 
-<P1163_media_type> {
-  ps:P1163 LITERAL;
-}
+
