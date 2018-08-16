@@ -1,0 +1,37 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology-beta#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+
+wd:Q212971 { # & wd:Q290378
+  wdt:P1104 xsd:decimal;
+  wdt:P123 .;
+  wdt:P1365 .?;
+  wdt:P1476 rdf:langString;
+  wdt:P2093 xsd:string+;
+  wdt:P2567 .?;
+  wdt:P2701 .;
+  wdt:P407 .;
+  wdt:P50 @wd:Q5?;
+  wdt:P577 xsd:dateTime;
+  wdt:P953 .+
+}
+
+wd:Q5 { # & wd:Q215627
+  wdt:P101 .;
+  wdt:P106 .;
+  wdt:P166 .+;
+  wdt:P18 .;
+  wdt:P19 .;
+  wdt:P21 .;
+  wdt:P27 .;
+  wdt:P373 xsd:string;
+  wdt:P569 xsd:dateTime;
+  wdt:P69 .;
+  wdt:P735 .
+}
