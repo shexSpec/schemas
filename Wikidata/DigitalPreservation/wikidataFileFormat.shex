@@ -30,6 +30,10 @@ start = @<#wikidata-file_format>
 	
 	p:P144 @<#P144_based_on>* ;
 	
+	p:P4152 @<#P4152_file_format_identification_pattern>* ;
+	
+	p:P973 @<973_described_at_URL>* ;
+	
 	
 	
 	#identifiers
