@@ -71,9 +71,22 @@ start = @<#wikidata-file_format>
   ps:P3381 LITERAL ;
 }
 
-<#P1195_> {
-  ps:P3381 LITERAL ;
+<#P1195_file_extension> {
+  ps:P1195 LITERAL ;
 }
+
+<#P178_developer> .
+
+<#P144_based_on> .
+
+<#P4152_file_format_identification_pattern> {
+  ps:P3381 LITERAL ;
+  pq:P3294 IRI;
+  pq:P4153 LITERAL;
+  pq:P2210 [wd:Q35436009| wd:Q1148480]
+}
+
+
 
 
 
