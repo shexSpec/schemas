@@ -38,6 +38,7 @@ start = @<#wikidata-file_format>
 	
 	p:P348 @<#P348_software_version>* ;
 	
+	p:P577 @<#P577_publication_date>* ;
 	
 	#identifiers
 	
@@ -86,11 +87,15 @@ start = @<#wikidata-file_format>
   pq:P2210 [wd:Q35436009| wd:Q1148480]
 }
 
+<#P973_described_at_URL> .
 
+<#P348_software_version> {
+  ps:P348 LITERAL ;
+}
 
+<#P1343_described_by_source> .
 
-
-
+<#P577_publication_date> .
 
 
 
