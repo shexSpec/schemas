@@ -22,7 +22,7 @@ start = @<#wikidata-file_format>
 	#statements
 	p:P31 @<#P31_instance_of_file_format>* ;
 	
-	p:P1195 @#P1195_file_extension>* ;
+	p:P1195 @<#P1195_file_extension>* ;
 	
 	p:P1163 @<#P1633_media_type>* ;
 	
@@ -71,6 +71,9 @@ start = @<#wikidata-file_format>
   ps:P3381 LITERAL ;
 }
 
+<#P1195_> {
+  ps:P3381 LITERAL ;
+}
 
 
 
