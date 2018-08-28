@@ -32,8 +32,11 @@ start = @<#wikidata-file_format>
 	
 	p:P4152 @<#P4152_file_format_identification_pattern>* ;
 	
-	p:P973 @<973_described_at_URL>* ;
+	p:P973 @<#P973_described_at_URL>* ;
 	
+	p:P1343 @<#P1343_described_by_source>* ;
+	
+	p:P348 @<#P348_software_version>* ;
 	
 	
 	#identifiers
