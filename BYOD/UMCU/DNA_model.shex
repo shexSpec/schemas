@@ -49,3 +49,7 @@ umcu:chromosome {
 }
 
 umcu:gene .
+
+sio:001050 {
+	rdfs:label "some label" .
+}

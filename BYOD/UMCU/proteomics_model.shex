@@ -9,42 +9,43 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX wdp: <http://www.wikidata.org/prop/direct/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
-<protein_identification> {
+# start = @umcu:
+umcu:protein_identification {
    rdf:type		EDAM:operation_3767 ;
-   prov:used	@<biosample> OR @<orbitrap> OR @<proteomics_experiment> OR @<peptide_database_search> ;
-   sio:refersTo	@<measurement> ;
+   prov:used	@umcu:biosample OR @umcu:orbitrap OR @umcu:proteomics_experiment OR @umcu:peptide_database_search ;
+   sio:refersTo	@umcu:measurement ;
 }
 
-<biosample> []   # From the diagram it is not clear what a biosample would be.
+umcu:biosample []   # From the diagram it is not clear what a biosample would be.
 
-<measurement> {
+umcu:measurement {
      rdf:type	efo:EFO_0001444 OR obo:PATO_00000049 ;
 	 sio:has value	sio:SIO_000300 ;
-	 sio:refersTo	@<protein> ;
+	 sio:refersTo	@umcu:protein ;
 }
 
-<orbitrap> {
+umcu:orbitrap {
 	rdf:type    obo:MS_1000484 ;
 	rdf:type	EFO:EFO_0000001 ;
 }
 
-<proteomics_experiment> {
+umcu:proteomics_experiment {
 	rdf:type	edam:topic_3520 ;
 	rdf:type	EFO:EFO_0000001 ;
 }
 
-<peptide_database_search> {
+umcu:peptide_database_search {
 	rdf:type	edam:operation_3646 ;
 	rdf:type	EFO:EFO_0000001 ;
 }
 
-<protein> {
+umcu:protein {
      rdf:type	obo:PR_000000001 ; # Protein = PR_000000001
 	 	 
-	 sio:isReferredToBy @<uniprotID> ;	 
+	 sio:isReferredToBy @up:uniprotID ;	 
 }
 
-<uniprotID> {
+up:uniprotID {
 	rdf:type	sio:identifier;    
     sio:000628	^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\.\d+)?$ ; # Regular expression of a Uniprot ID 
 }

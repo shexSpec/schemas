@@ -8,36 +8,40 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX wdp: <http://www.wikidata.org/prop/direct/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX umcu: <>
 
-<sample> {
+start = @umcu:sample
+
+umcu:sample {
    rdf:type	SIO:001050 ;
-   obo:GENO_0000222 <measurement> ;   
+   obo:GENO_0000222 @umcu:measurement ;   
 }
 
-<analysis> {
+umcu:analysis {
 			   rdf:type		edam:operation_3680 ;
-			   SIO:000628	<measurement> ; 
-			   prov:used	<RNA> OR <reference> OR <factor> ;
+			   SIO:000628	@umcu:measurement ; 
+			   prov:used	@umcu:RNA OR @umcu:reference OR @umcu:factor ;
 }
 
-<measurement> {
+@umcu:measurement {
 		rdf:type		efo:EFO_0001444 ;
-		SIO:000628	<gene> ;
+		SIO:000628	@umcu:gene ;
 		SIO:hasValue LITERAL ;
 }
 
-<factor> {
-	rdf:type [<http://www.ebi.ac.uk/efo/>~]* OR <sequence_allignment> ;
+umcu:factor {
+	rdf:type [<http://www.ebi.ac.uk/efo/>~]* OR @umcu:sequence_allignment ;
 }
 
-<RNA> .
+umcu:RNA .
 
-<Gene> .
+umcu:Gene .
 
-<reference> {
-   rdf:type	<reference sequence> ;
+umcu:reference {
+   rdf:type	@umcu:reference_sequence ;
    rdf:type [<http://www.ebi.ac.uk/efo/>~]*
 }
 
+umcu:reference_sequence .
 
 
