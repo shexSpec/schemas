@@ -1,0 +1,73 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX edam: <http://edamontology.org/>
+PREFIX byod: <>
+PREFIX efo: <>
+PREFIX so: <http://purl.obolibrary.org/obo/SO_>
+PREFIX xsd: 
+
+<sequence_analysis> {
+	rdf:type [wd:Q47185139] ; #Q47185139 = sequence analysis
+	wdt:P366 @byod:sample, @byod:WGS, @byod:byodgenetics ;
+	rdf:object @byod:measurement ;
+}
+
+byod:sample {
+	rdf:type wd:Q485146 ; # Q485146 = sample
+	wdt:P2888 [sio:001050] ;
+	rdf:object @byod:measurement ;
+}
+
+byod:WGS {
+	rdf:type  wd:Q2068526 ;
+	wdt:P2888 [edam:topic_3673] ;
+}
+
+byod:genetics {
+	wdt:P361 [<https://zenodo.org/badge/latestdoi/19342535>] ;
+}
+
+byod:measurement {
+	rdf:type @wd:Q12453 ;
+	rdf:value ["0" "1"] ;
+	rdf:object @byod:sequence_variant ;
+}
+
+wd:Q12543 {
+	wdt:P2888 [efo:EFO_0001444] ;
+}
+
+byod:sequence_variant {
+	rdf:type @byod:wd_sequence_variant ;
+	wdt:P644 @byod:genomic_position ;
+	wdt:P645 @byod:genomic_position ;
+	wdt:P1057 @byod:chromosome ;
+	wdt:P3433 @byod:biological_variant ;
+	wdt:P3331 xsd:string ;
+}
+
+byod:wd_sequence_variant {
+	wdt:P279 [wd:Q15304597] ;
+	wdt:P2888 [so:-]
+}
+
+byod:genomic_position {
+	rdf:value xsd:integer ;
+	wdt:P659 @wd:genomic_assembly ;
+}
+
+wd:genomic_assembly {
+	wdt:P629 [wd:Q720988] ;
+}
+
+byod:chromosome {
+	wdt:P31  [wd:Q37748] ;
+	wdt:P703 [wd:Q15978631] ;
+}
+
+byod:biological_variant{
+	wdt:P31 [wd:Q7187] ;
+	wdt:P703 [wd:Q15978631] ;
+}
+
