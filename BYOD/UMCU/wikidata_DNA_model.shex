@@ -3,13 +3,13 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX edam: <http://edamontology.org/>
 PREFIX byod: <>
-PREFIX efo: <>
+PREFIX efo: <http://www.ebi.ac.uk/efo/>
 PREFIX so: <http://purl.obolibrary.org/obo/SO_>
-PREFIX xsd: 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<sequence_analysis> {
+byod:sequence_analysis {
 	rdf:type [wd:Q47185139] ; #Q47185139 = sequence analysis
-	wdt:P366 @byod:sample, @byod:WGS, @byod:byodgenetics ;
+	wdt:P366 @byod:sample OR @byod:WGS OR @byod:byodgenetics ;
 	rdf:object @byod:measurement ;
 }
 
