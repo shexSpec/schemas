@@ -6,6 +6,10 @@ PREFIX byod: <>
 PREFIX efo: <http://www.ebi.ac.uk/efo/>
 PREFIX so: <http://purl.obolibrary.org/obo/SO_>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
 
 byod:sequence_analysis {
 	rdf:type [wd:Q47185139] ; #Q47185139 = sequence analysis
@@ -49,7 +53,7 @@ byod:sequence_variant {
 
 byod:wd_sequence_variant {
 	wdt:P279 [wd:Q15304597] ;
-	wdt:P2888 [so:-]
+	wdt:P2888 [so:~]
 }
 
 byod:genomic_position {
