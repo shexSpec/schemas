@@ -84,7 +84,7 @@ start = @<#wikidata-file_format>
   ps:P3381 LITERAL ;
   pq:P3294 IRI;
   pq:P4153 LITERAL;
-  pq:P2210 [wd:Q35436009| wd:Q1148480]
+  pq:P2210 [wd:Q35436009 wd:Q1148480]
 }
 
 <#P973_described_at_URL> .
