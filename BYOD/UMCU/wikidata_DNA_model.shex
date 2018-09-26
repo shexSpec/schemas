@@ -43,8 +43,10 @@ byod:measurement {
 	rdf:object @byod:sequence_variant ;
 }
 
-shex:measurement wd:Q12543 {
+shex:measurement {
+  wd:Q12543 {
 	wdt:P2888 [efo:EFO_0001444] ;
+  }
 }
 
 shex:sequence_variant {
