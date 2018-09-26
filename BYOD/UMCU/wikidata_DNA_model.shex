@@ -1,15 +1,20 @@
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX sio: <http://semanticscience.org/resource/>
-PREFIX edam: <http://edamontology.org/>
-PREFIX byod: <>
-PREFIX efo: <http://www.ebi.ac.uk/efo/>
-PREFIX so: <http://purl.obolibrary.org/obo/SO_>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Wikidata 
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+# Ontologies
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX edam: <http://edamontology.org/>
+PREFIX efo: <http://www.ebi.ac.uk/efo/>
+PREFIX so: <http://purl.obolibrary.org/obo/SO_>
+# Ontologies
+PREFIX byod: <http://micel.io/ShEx/BYOD/>
+PREFIX shex: <http://www.micel.io/ShEx/Wikidata/>
 
+start = byod:sample 
 
 byod:sequence_analysis {
 	rdf:type [wd:Q47185139] ; #Q47185139 = sequence analysis
@@ -33,16 +38,16 @@ byod:genetics {
 }
 
 byod:measurement {
-	rdf:type @wd:Q12453 ;
+	rdf:type @shex:measurement ;
 	rdf:value ["0" "1"] ;
 	rdf:object @byod:sequence_variant ;
 }
 
-wd:Q12543 {
+shex:measurement wd:Q12543 {
 	wdt:P2888 [efo:EFO_0001444] ;
 }
 
-byod:sequence_variant {
+shex:sequence_variant {
 	rdf:type @byod:wd_sequence_variant ;
 	wdt:P644 @byod:genomic_position ;
 	wdt:P645 @byod:genomic_position ;
@@ -51,26 +56,26 @@ byod:sequence_variant {
 	wdt:P3331 xsd:string ;
 }
 
-byod:wd_sequence_variant {
+shex:wd_sequence_variant {
 	wdt:P279 [wd:Q15304597] ;
 	wdt:P2888 [so:~]
 }
 
-byod:genomic_position {
+shex:genomic_position {
 	rdf:value xsd:integer ;
 	wdt:P659 @wd:genomic_assembly ;
 }
 
-wd:genomic_assembly {
+shex:genomic_assembly {
 	wdt:P629 [wd:Q720988] ;
 }
 
-byod:chromosome {
+shex:chromosome {
 	wdt:P31  [wd:Q37748] ;
 	wdt:P703 [wd:Q15978631] ;
 }
 
-byod:biological_variant{
+shex:biological_variant {
 	wdt:P31 [wd:Q7187] ;
 	wdt:P703 [wd:Q15978631] ;
 }
