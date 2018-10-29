@@ -1,3 +1,4 @@
+BASE <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/ballet/Royal_ballet_flanders_ballet_production.shex>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX pr: <http://www.wikidata.org/prop/reference/>
