@@ -11,7 +11,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-start = <#ballet>
+start = <#ballet_production>
 
 <#ballet_production> {
 	p:P31 @<#P31_instance_of> ;
