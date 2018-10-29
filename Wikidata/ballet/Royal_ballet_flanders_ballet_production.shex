@@ -11,30 +11,30 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-start = <#ballet_production>
+start = @<#ballet_production>
 
 <#ballet_production> {
 	p:P31 @<#P31_instance_of> ;
-	p:P272 @<#P272_production_company> ;
-	p:P136 @<#P136_genre> ;
-	p:P407 @<#P407_language_of_work> ;
-	p:P1809 @<#P1809_choreographer> ;
-	p:P767 @<#P767_contributors_to_the_creative_work> ;
-	p:P86 @<#P86_composer> ;
-	p:P144 @<#P144_based_on> ;
-	p:P58 @<#P58_screenwriter> ;
-	p:P4608 @<#P4608_scenographer> ;
-	p:P2515 @<#P2514_custom_designer> ;
-	p:P5026 @<#P5026_lighting_designer> ;
-	p:P1191 @<#P1191_date_of_first_performance> ;
-	p:P4647 @<#P4647_location_of_first_performance> ;
-	p:P161 @<#P161_cast_member> ;
-	p:P2047 @<#P2047_duration> ;
-	p:P5027 @<#P5027_number_of_representations> ;
+	#p:P272 @<#P272_production_company> ;
+	#p:P136 @<#P136_genre> ;
+	#p:P407 @<#P407_language_of_work> ;
+	#p:P1809 @<#P1809_choreographer> ;
+	#p:P767 @<#P767_contributors_to_the_creative_work> ;
+	#p:P86 @<#P86_composer> ;
+	#p:P144 @<#P144_based_on> ;
+	#p:P58 @<#P58_screenwriter> ;
+	#p:P4608 @<#P4608_scenographer> ;
+	#p:P2515 @<#P2514_custom_designer> ;
+	#p:P5026 @<#P5026_lighting_designer> ;
+	#p:P1191 @<#P1191_date_of_first_performance> ;
+	#p:P4647 @<#P4647_location_of_first_performance> ;
+	#p:P161 @<#P161_cast_member> ;
+	#p:P2047 @<#P2047_duration> ;
+	#p:P5027 @<#P5027_number_of_representations> ;
 }
 
 <#P31_instance_of> {
-	ps:P31 wd:Q15079786 ;
+	ps:P31 [wd:Q15079786] ;
 	prov:wasDerivedFrom @<#reference> ;
 }
 
