@@ -75,7 +75,7 @@ start = @<#ballet_production>
 }
 
 <#P4608_scenographer> {
-	ps:P4608 @<#human>
+	ps:P4608 @<#human> ;
 	prov:wasDerivedFrom @<#reference> ;
 }
 
