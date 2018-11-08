@@ -4,12 +4,14 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX pr: <http://www.wikidata.org/prop/reference/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
 PREFIX wdref: <http://www.wikidata.org/reference/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 start = @<#ballet_production>
 
@@ -135,25 +137,27 @@ start = @<#ballet_production>
 #### ROLES
 <#human> {
 	p:P31 {
-			ps:P31 [wd:Q5] # Human
+			ps:P31 [wd:Q5] ; # Q5 = Human
 		}
 }
 
 <#composer> {
 	p:P31 {
-		ps:P31 [wd:Q5] # Human
-	}
+		ps:P31 [wd:Q5] ; # Q5 = Human
+		} ; 
 	p:P106 {
 		ps:P106 [wd:Q36834] ;
 		prov:wasDerivedFrom @<#reference> ;
+    }
 }
 
 <#choreographer> {
 	p:P31 {
-		ps:P31 [wd:Q5] ; # Human 
-	}
+		ps:P31 [wd:Q5] ; # Q5 = Human 
+	} ;
 	p:P106 {
 		ps:P106 [wd:Q2490358] ;
 		prov:wasDerivedFrom @<#reference>
+    }
 }
 
