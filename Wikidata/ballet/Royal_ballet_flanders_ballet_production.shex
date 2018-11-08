@@ -26,7 +26,7 @@ start = @<#ballet_production>
 	p:P144 @<#P144_based_on>+ ;
 	p:P58 @<#P58_screenwriter> ;
 	p:P4608 @<#P4608_scenographer> ;
-	p:P2515 @<#P2514_costume_designer> ;
+	p:P2515 @<#P2515_costume_designer> ; P2515
 	p:P5026 @<#P5026_lighting_designer> ;
 	p:P1191 @<#P1191_date_of_first_performance> ;
 	p:P4647 @<#P4647_location_of_first_performance> ;
@@ -82,7 +82,7 @@ start = @<#ballet_production>
 }
 
 
-<#P2512_costume_designer> {
+<#P2515_costume_designer> {
 	ps:P2515 @<#human> ;
 	prov:wasDerivedFrom @<#reference> ;	
 }
