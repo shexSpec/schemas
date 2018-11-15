@@ -8,8 +8,6 @@ PREFIX efo: <http://www.ebi.ac.uk/efo/>
 PREFIX xref: <http://www.geneontology.org/formats/oboInOwl#>
 start = <#disease>
 
-start = @<#disease>
-
 <#disease> {
     w3:label LITERAL ;
     efo:alternative_term LITERAL* ;
