@@ -1,0 +1,18 @@
+[
+    {
+        "schemaLabel": "orphanet",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/biology/Disease/Orphanet/orphanet-core.shex",
+        "dataLabel": "Get 1 rare diseases from Orphanet" ,
+        "data": "Endpoint: https://www.orpha.net/sparql",
+        "queryMap": "SPARQL '''PREFIX ordo: <http://www.orpha.net/ORDO/> select distinct ?disease where {?disease rdfs:subClassOf*  ordo:Orphanet_377788} LIMIT 1'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "orphanet",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/biology/Disease/Orphanet/orphanet-core.shex",
+        "dataLabel": "Get 100 rare diseases from Orphanet" ,
+        "data": "Endpoint: https://www.orpha.net/sparql",
+        "queryMap": "SPARQL '''PREFIX ordo: <http://www.orpha.net/ORDO/> select distinct ?disease where {?disease rdfs:subClassOf*  ordo:Orphanet_377788} LIMIT 100'''@START",
+        "status": "conformant"
+    }
+]
