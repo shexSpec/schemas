@@ -1,4 +1,4 @@
-BASE <>
+BASE <https://raw.githubusercontent.com/shexSpec/schemas/master/biology/Disease/Orphanet/orphanet-core.shex>
 # common prefix
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ordo: <http://www.orpha.net/ORDO/>
@@ -7,6 +7,8 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX efo: <http://www.ebi.ac.uk/efo/>
 PREFIX xref: <http://www.geneontology.org/formats/oboInOwl#>
 start = <#disease>
+
+start = @<#disease>
 
 <#disease> {
     w3:label LITERAL ;
@@ -26,9 +28,7 @@ start = <#disease>
 	rdfs:subClassOf @<#relation-type> ;
 }
 
-<#relation-type> {
 
-}
 
 
 
