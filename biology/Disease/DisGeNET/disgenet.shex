@@ -1,0 +1,163 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dctypes: <http://purl.org/dc/dcmitype/>
+PREFIX wi: <http://http://purl.org/ontology/wi/core#>
+PREFIX eco: <http://http://purl.obolibrary.org/obo/eco.owl#>
+PREFIX prov: <http://http://http://www.w3.org/ns/prov#>
+PREFIX pav: <http://http://http://purl.org/pav/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+<#GeneDiseaseAssociation> {
+	sio:SIO_000628 @<#disease> ; # sio:SIO_000628 = refers to
+	sio:SIO_000628 @<#gene> ; # sio:SIO_000628 = refers to
+	sio:SIO_000628 @<#article> ; # sio:SIO_000628 = refers to
+	sio:SIO_000253 @<#source> ; # sio:SIO_000253 = has source
+	sio:SIO_000216 @<#score> ; #sio:SIO_000216 = has measurement value
+	dcterms:date xsd:gYear ;
+	dcterms:description xsd:string 
+}
+
+<#VariantDiseaseAssociation> {
+	sio:SIO_000628 @<#disease> ; # sio:SIO_000628 = refers to
+	sio:SIO_000628 @<#variant> ; # sio:SIO_000628 = refers to
+	sio:SIO_000628 @<#article> ; # sio:SIO_000628 = refers to
+	sio:SIO_000253 @<#source> ; # sio:SIO_000253 = has source
+	sio:SIO_000216 @<#score> ; #sio:SIO_000216 = has measurement value
+	dcterms:date xsd:gYear ;
+	dcterms:description xsd:string 
+}
+
+<#gene> {
+	sio:SIO010078 @<#protein> ;
+	rdfs:seeAlso @<#geneURL> ;
+	sio:SIO000205 @<#gene_symbol> ;
+	sio:SIO_000216 @<#mv> ;
+}
+
+<#mv> {
+	sio:SIO000300 xsd:double ;
+}
+<#gene_symbol> {
+	rdfs:label LITERAL ; 
+}
+
+<#geneURL> [
+  Monarch:~ 
+  Decipher:~
+  Cosmic:~
+  ensembl:~
+  biogps:~
+  DGA:~
+  gogene:~
+  ct:~
+]
+
+<#variant> {
+	sio:SIO_000216  @<#mv> ; # SIO_000216 has measurement value
+	sio:SIO_000016 @<#chromosome> ; # SIO_000016  is located in
+	sio:SIO_000791 @<#ChromosomePosition> ; # SIO_000781 Sequence start position
+	sio:SIO_000223 @<#referenceAllele> ; # SIO_000223 has property
+	sio:SIO_000223 @<#alternativeAllele> ; # SIO_000223 has property
+	sio:SIO_000900 @<#1000Gfrequence> ; # SIO_000900 has frequency
+}
+
+<#mv> {
+	sio:SIO_000300 xsd:string ;
+}
+
+<#chromosome> {
+	sio:SIO_000300 xsd:string ;
+}
+
+<#ChromosomePosition> {
+	sio:SIO_000300 xsd:string ;
+}
+
+<#referenceAllele> {
+	sio:SIO_000300 xsd:string ;
+}
+
+<#alternativeAllele>{
+	sio:SIO_000300 xsd:string ;
+}
+
+<#1000Gfrequence> {
+	sio:SIO_000300 xsd:string ;
+}
+
+<#protein> {
+	skos:exactMatch [up:~] ;
+}
+
+<#disease> {
+	rdf:type @<#disgenet_types> ;
+	skos:exactMatch @<#exactMatch>+ ;
+	sio:SIO_000008 @<#UMLS_Semantic_Type> ;
+	sio:SIO_000095 @<#MeSHDiseaseClass> ;
+	sio:SIO_000628 @<#PhenoTypeDiseaseAnnotation>
+}
+
+<#MeSHDiseaseClass> {
+	rdfs:subClassOf [sio:SIO_000133] ;
+	rdfs:isDefinedBy [ncit:C82845] ;
+}
+
+<#PhenoTypeDiseaseAnnotation> {
+	sio:SIO_000628 @<#phenotype> ;
+	sio:SIO_000253 [dctypes:Dataset dcat:Distribution] ;
+}
+
+<#phenotype> {
+	foaf:homepage IRI ;
+	skos:exactMatch [umls:~]
+}
+
+<#disgenet_types> [
+	sio:010299 
+	sio:010056
+	ncit:C43359
+]
+
+<#UMLS_Semantic_Type> {
+	rdfs:isDefinedBy [ncit:C43817];
+	rdfs:subClassOf [sio:SIO_000326];
+	foaf:homepage  IRI ;
+	skos:exactMatch IRI ;
+}
+
+<#exactMatch> {
+  [
+	   MeSh:~
+	   CTD:~
+	   DBPedia:~
+	   SIDER:~
+	   LinkedCT:~
+	   HDO:~
+	   OMIM:~
+	   ordo:~
+	   NCI:~
+	   ICD-9CM:~
+	   HDO:~
+	   EFO:~
+	] ;
+}
+
+<#article> {
+	dcterms:issued  xsd:gYear ;
+	skos:exactMatch [pubmed:~ pubchem:~]
+}
+<#source> [
+   dctypes:Dataset dcat:Distribution
+]
+
+<#score> .
