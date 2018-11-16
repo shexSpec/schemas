@@ -15,8 +15,7 @@ start = @<#wikidata-software>
 
 <#wikidata-software> {
 	#statements
-	p:P31 @<#P31_instance_of_software> ;
-	p:P279 @<#P279_subclass_of_software>+ ;
+	p:P31 @<#P31_instance_of_software>* ;
 	
 	p:275 @<#P275_license>* ;
 	
@@ -30,15 +29,15 @@ start = @<#wikidata-software>
  
  	p:1073 @<#P1073_writable_file_format>* ;
  
- 	P306 = operating system
+ 
  	p:306 @<#P306_operating_system>* ;
 	
 	#identifiers
-	p:2749 @<#P2749_PRONOM_software_identifier> ;
+	p:2749 @<#P2749_PRONOM_software_identifier>* ;
   
-  	p:4107 @<#P4107_Framalibre_ID>;
+  	p:4107 @<#P4107_Framalibre_ID>* ;
 	
-	p:1972 @<#P1972_Open_Hub_ID>;
+	p:1972 @<#P1972_Open_Hub_ID>* ;
 
 }
 
@@ -73,7 +72,7 @@ start = @<#wikidata-software>
 }
 
 <#P306_operating_system>{
-	ps:P306 IRI@<operating_system>;
+	ps:P306 IRI;
 }
 
 <#P2749_PRONOM_software_id> {
@@ -86,9 +85,7 @@ start = @<#wikidata-software>
 <#file_format> {
 	ps:P31 [wd:Q235557];
 }
-<#operating_system> {
-	ps:P31 [wd:Q9135];
-}
+
 <#P4107_Framalibre_ID> {
   ps:P4107 LITERAL;
 }
