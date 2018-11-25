@@ -20,7 +20,7 @@ start = @<#wikidata-software>
 
 <#wikidata-software> {
 	#statements
-	p:P178 @<#P178_developer>+;
+	p:P178 @<#P178_developer>*;
 	
 	p:P306 @<#P306_operating_system>*;
 
