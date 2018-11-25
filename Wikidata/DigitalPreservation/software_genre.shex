@@ -20,27 +20,27 @@ start = @<#wikidata-software>
 
 <#wikidata-software> {
 	#statements
-	p:P178 @<#P178_developer>*;
+	p:P178 @<#P178_developer>;
 	
-	p:P306 @<#P306_operating_system>*;
+	p:P306 @<#P306_operating_system>;
 
-	p:P577 @<#P577_publication_date>*;
+	p:P577 @<#P577_publication_date>;
 
-	p:P1072 @<#P1072_readable_file_format>*;
+	p:P1072 @<#P1072_readable_file_format>;
 
-	p:P1073 @<#P1073_writable_file_format>*;
+	p:P1073 @<#P1073_writable_file_format>;
 
-	p:P144 @<#P144_based_on>*;
+	p:P144 @<#P144_based_on>;
 	
-	p:P277 @<#P277_programming_language>*;
+	p:P277 @<#P277_programming_language>;
 
-	p:P973 @<#P973_described_at_URL>*;
+	p:P973 @<#P973_described_at_URL>;
 
-	p:P1343 @<#P1343_described_by_source>*;
+	p:P1343 @<#P1343_described_by_source>;
  
-	p:P348 @<#P348_software_version>*;
+	p:P348 @<#P348_software_version>;
   
-  	p:P136 @<#P136_genre>*;
+  	p:P136 @<#P136_genre>;
 }	
 
 <#P178_developer> {
