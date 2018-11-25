@@ -40,7 +40,7 @@ start = @<#wikidata-software>
  
 	p:P348 @<#P348_software_version>*;
   
-  p:P136 @<#P136_genre>*;
+  	p:P136 @<#P136_genre>*;
 }	
 
 <#P178_developer> {
