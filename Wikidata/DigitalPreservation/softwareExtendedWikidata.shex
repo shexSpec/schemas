@@ -15,22 +15,22 @@ start = @<#wikidata-software>
 
 <#wikidata-software> {
 	#statements
-	p:P31 @<#P31_instance_of_software>* ;
 	
-	p:275 @<#P275_license>* ;
 	
-	p:348 @<#P348_software_version>* ;
+	p:275 @<#P275_license> ;
+	
+	p:348 @<#P348_software_version> ;
 	
 	P:856 @<#P856_official_website>* ;
 	
-	p:178 @<#P178_developer>* ; 
+	p:178 @<#P178_developer> ; 
  
- 	p:1072 @<#P1072_readable_file_format>* ;
+ 	p:1072 @<#P1072_readable_file_format> ;
  
- 	p:1073 @<#P1073_writable_file_format>* ;
+ 	p:1073 @<#P1073_writable_file_format> ;
  
  
- 	p:306 @<#P306_operating_system>* ;
+ 	p:306 @<#P306_operating_system> ;
 	
 	#identifiers
 	p:2749 @<#P2749_PRONOM_software_identifier>* ;
