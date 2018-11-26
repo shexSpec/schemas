@@ -6,6 +6,8 @@ PREFIX w3: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX efo: <http://www.ebi.ac.uk/efo/>
 PREFIX xref: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
 start = <#disease>
 
 <#disease> {
@@ -13,7 +15,7 @@ start = <#disease>
     efo:alternative_term LITERAL* ;
     xref:hasDbXref xsd:string* ;
     efo:definition LITERAL? ;
-    efo:definition_citation ["orphanet"^^xsd:string>]
+    efo:definition_citation ["orphanet"^^xsd:string] ;
     rdfs:subClassOf <#disease> OR [ordo:Orphanet_377788] ;
 }
 
@@ -22,7 +24,7 @@ start = <#disease>
 	efo:alternative_term LITERAL* ;
 	xref:hasDbXref xsd:string* ;
 	rdfs:subClassOf [ordo:Orphanet_377788] ;
-	ordo:Orphanet_#symbol xsd:string ;
+	ordo:Orphanet_symbol xsd:string ;
 	rdfs:subClassOf @<#relation-type> ;
 }
 
