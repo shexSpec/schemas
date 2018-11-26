@@ -1,1 +1,26 @@
+BASE <https://raw.githubusercontent.com/shexSpec/schemas/master/SWIB18/mail_in_transition/letter.shex>
 
+PREFIX swib:  <http://www.swib.de/shex>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<>
+
+<#letter> {
+	rdf:type   swib:Letter ; # TODO: we need to come up with better prefixes. 
+	swib:sender @<#Agent>* ;
+	swib:addressee  @<#Agent>* ;
+	swib:hasTransaction @<#Transaction>+ ;
+	swib:hasTransaction @<#Transaction> ;
+}
+
+<#Agent> {
+	rdf:type [swib:Person swib:Institute]
+}
+<#Transaction> {
+	swib:haAgent @<#Agent> ;
+	swib:dateOfTransaction xsd:DateTime ;
+	swib:hasLocation @<#Location> ;
+}
+
+<#Location> .
