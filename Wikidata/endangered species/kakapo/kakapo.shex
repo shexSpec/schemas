@@ -1,0 +1,56 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+start = <#individual>
+
+<#individual> {
+	p:P31   @<#P31_instance_of> ;
+	p:P18	@<#P18_image>+ ;
+	p:P21   @<#P21_sex_or_gender> ;
+	p:P746  @<#P746_date_of_disapearence>? ;
+	p:P570  @<#P570_date_of_death>? ;
+	p:P22   @<#P22_father> ;
+	p:P25	@<#P25_mother> ;
+	p:P19   @<#P19_place_of_birth> ;
+	p:P2974 @<#P2974_habitat> ;
+}
+
+<#P31_instance_of> {
+   ps:P31 	[wd:Q7530532] ;
+   prov:wasDerivedFrom   @<#reference> ;
+}
+
+<#P18_image> .
+
+<#P21_sex_or_gender> {
+	ps:P21  @<#sex_or_gender> ;
+	prov:wasDerivedFrom   @<#reference> ;
+}
+
+<#P746_date_of_disapearence> {
+	ps:P746 	xsd:dateTime ;
+	prov:wasDerivedFrom   @<#reference> ;
+}
+<#P570_date_of_death> {
+	ps:P570 	xsd:dateTime ;
+	prov:wasDerivedFrom   @<#reference> ;
+}
+<#P22_father> {
+	wdt:P31   [wd:Q7530532] ;
+	prov:wasDerivedFrom   @<#reference> ;
+}
+<#P25_mother> {
+	wdt:P31   [wd:Q7530532] ;
+	prov:wasDerivedFrom   @<#reference> ;
+}
+<#P19_place_of_birth> {
+	prov:wasDerivedFrom   @<#reference> ;
+}
+<#P2974_habitat> {
+	prov:wasDerivedFrom   @<#reference> ;
+}
