@@ -21,13 +21,19 @@ start = @<#wikidata-software>
 	
 	p:348 @<#P348_software_version> ;
 	
-	P:856 @<#P856_official_website>* ;
+	P:856 @<#P856_official_website> ;
 	
 	p:178 @<#P178_developer> ; 
  
  	p:1072 @<#P1072_readable_file_format> ;
  
  	p:1073 @<#P1073_writable_file_format> ;
+	
+	p:144  @<#P144_based_on> ;
+	
+	p:1547 @<#P1547_depends_on_software> ;
+	
+	
  
  
  	p:306 @<#P306_operating_system> ;
@@ -38,6 +44,9 @@ start = @<#wikidata-software>
   	p:4107 @<#P4107_Framalibre_ID>* ;
 	
 	p:1972 @<#P1972_Open_Hub_ID>* ;
+	
+	p:3112 @<#P3112_DistroWatch_id>* ;
+	
 
 }
 
