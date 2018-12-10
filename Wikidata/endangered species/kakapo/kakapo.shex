@@ -34,6 +34,11 @@ start = <#individual>
 	prov:wasDerivedFrom   @<#reference> ;
 }
 
+<#sex_or_gender> [
+  wd:Q43445 # female organism
+  wd:Q44148 # male organism
+]
+
 <#P746_date_of_disapearence> {
 	ps:P746 	xsd:dateTime ;
 	prov:wasDerivedFrom   @<#reference> ;
@@ -56,3 +61,7 @@ start = <#individual>
 <#P2974_habitat> {
 	prov:wasDerivedFrom   @<#reference> ;
 }
+
+<#reference> .
+
+
