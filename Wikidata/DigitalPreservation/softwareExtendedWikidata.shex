@@ -59,7 +59,7 @@ start = @<#wikidata-software>
 	
 	p:2537 @<#P2537_Free_Software_Directory_entry>* ;
 	
-
+	p:356 @<#P356_DOI>* ;
 }
 
 # Shape expression for Wikidata statements related to software
