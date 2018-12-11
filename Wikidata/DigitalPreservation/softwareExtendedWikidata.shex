@@ -41,7 +41,9 @@ start = @<#wikidata-software>
 	
 	p:577 @<#P577_publication_date>* ;
  
- 
+ 	p:1324 @<#P1324_source_code_repository>* ;
+	
+	p:2078 @<#P2078_user_manual_link>* ;
  	
 	
 	#identifiers
