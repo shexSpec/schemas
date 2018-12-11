@@ -24,19 +24,25 @@ start = @<#wikidata-software>
 	P:856 @<#P856_official_website> ;
 	
 	p:178 @<#P178_developer> ; 
+	
+	p:306 @<#P306_operating_system> ;
  
  	p:1072 @<#P1072_readable_file_format> ;
  
  	p:1073 @<#P1073_writable_file_format> ;
 	
-	p:144  @<#P144_based_on> ;
+	p:144  @<#P144_based_on>* ;
 	
-	p:1547 @<#P1547_depends_on_software> ;
+	p:1547 @<#P1547_depends_on_software>* ;
 	
+	p:571 @<#P571_inception>* ;
 	
+	p:277 @<#P277_programming_language> ;
+	
+	p:577 @<#P577_publication_date>* ;
  
  
- 	p:306 @<#P306_operating_system> ;
+ 	
 	
 	#identifiers
 	p:2749 @<#P2749_PRONOM_software_identifier>* ;
@@ -46,6 +52,10 @@ start = @<#wikidata-software>
 	p:1972 @<#P1972_Open_Hub_ID>* ;
 	
 	p:3112 @<#P3112_DistroWatch_id>* ;
+	
+	p:3597 @<#P3597_F-Droid_package>* ;
+	
+	p:2537 @<#P2537_Free_Software_Directory_entry>* ;
 	
 
 }
