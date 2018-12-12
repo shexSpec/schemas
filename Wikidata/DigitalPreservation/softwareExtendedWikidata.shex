@@ -63,13 +63,10 @@ start = @<#wikidata-software>
 }
 
 # Shape expression for Wikidata statements related to software
-<#P31_instance_of_software> {
-	ps:P31 [wd:Q7397];
-}
 
 
 <#P275_license> {
-	ps:P275 IRI@<license>;
+	ps:P275 IRI;
 }
 
 <#P348_software_version> {
@@ -85,14 +82,14 @@ start = @<#wikidata-software>
 }
 
 <#P1072_readable_file_format> {
-	ps:P1072 IRI@<file_format>;
+	ps:P1072 IRI;
 }
 
 <#P1073_writable_file_format> {
-	ps:1073 IRI@<file_format>;
+	ps:1073 IRI;
 }
 
-<#P306_operating_system>{
+<#P306_operating_system> {
 	ps:P306 IRI;
 }
 
@@ -100,16 +97,40 @@ start = @<#wikidata-software>
 	ps:P2749 LITERAL;
 }
 
-<#license> {
-	ps:P279 [wd:Q79719];
-}
-<#file_format> {
-	ps:P31 [wd:Q235557];
-}
-
 <#P4107_Framalibre_ID> {
   ps:P4107 LITERAL;
 }
+
 <#P1972_Open_Hub_ID> {
   ps:P1972 LITERAL;
 }
+
+<#P144_based_on> {
+  ps:P144 IRI;
+}
+
+<#P1547_depends_on_software> {
+  ps:P1547 IRI;
+}
+
+<#P571_inception> {
+  ps:P571 IRI;
+}
+	
+<#P277_programming_language> {
+  ps:P277 IRI;
+}		
+
+<#P577_publication_date> {
+  ps:P577 LITERAL;
+}
+
+<#P1324_source_code_repository> {
+  ps:P1324 LITERAL;
+}
+
+<#P2078_user_manual_link> {
+  ps:P2078 LITERAL;
+}
+
+	
