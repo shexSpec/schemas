@@ -1,0 +1,64 @@
+
+<#award> {
+	p:P2144 @<#P2144_frequence> ;
+	p:P138 @<#P138_named_after> ;
+	p:P571 @<#P571_inception> ;
+	p:P582 @<#P582_end_time> ;
+	p:P580 @<#P580_start_time> ;
+	p:P1686 @<#P1686_for_work> ;
+	p:P6208 @<#P6208_award_rationale> ;
+	p:P2121 @<#P2121_prize_money>?
+	p:P276 @<#P276_location> ;
+	p:P3342 @<#P3342_significant_person> ;
+	p:P1346 @<#P1346_winner> ;
+	
+}
+
+<#P2144_frequence> {
+	ps:P2144 xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P138_named_after> {
+	ps:P138 [wd:-]
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+
+<#P571_inception> {
+	ps:P571 xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P580_inception> {
+	ps:P580 xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P582_inception> {
+	ps:P582 xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1686_for_work> {
+	ps:P1686 [wd:-]
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P6208_award_rationale> {
+	ps:P6208 LITERAL ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2121_prize_money> {
+	ps:P2121 xsd:decimal ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#nominee> {
+	p:P1411 @<#P1411_nominated_for> ;
+}
+
+<#P1411_nominated_for> {
+	ps:P1411 @<#award>
+}
