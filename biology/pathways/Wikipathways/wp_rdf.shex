@@ -43,13 +43,13 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 	dcterms:identifier xsd:string ;
 	dc:source	xsd:string ;
 	dc:title	LITERAL ;
-	dcterms:reference	[pubmedio:~]+ ;
+	dcterms:reference	[pubmedio:~]* ;
 	wp:isAbout wp:Pathway ;
-	wp:ontologyTag [obo:~] ;
-	wp:ontologyTag [curationTag:~] ;
+	wp:ontologyTag [obo:~]* ;
+	wp:ontologyTag [curationTag:~]+ ;
 	wp:organism [obo:~] ;
 	wp:organismName xsd:string ;
-	wp:pathwayOntologyTag [obo:~] ;
+	wp:pathwayOntologyTag [obo:~]* ;
 	foaf:page [wpInstance:~] ;
 }
 
@@ -104,9 +104,9 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 	rdf:type    @<#interactiontypes>* ;
 	dcterms:isPartOf	@<#pathwayversion> ;
 	wp:participants     @<#datanode> ;
-	wp:participants     @<#datanode>+ ;
-	wp:source 			[wp:datanode]+ ;
-	wp:target 			[wp:datanode]+ ;
+	wp:participants     @<#datanode>* ;
+	wp:source 			[wp:datanode]* ;
+	wp:target 			[wp:datanode]* ;
 }
 
 <#interactiontypes> [
@@ -118,6 +118,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 	wp:Stimulation
 	wp:TranscriptionTranslation
 	wp:Conversion
+	wp:Translocation
 ]
 
 <#reference> {
