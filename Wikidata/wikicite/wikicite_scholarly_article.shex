@@ -25,12 +25,16 @@ start = @<wikicite>
 <wikicite> {
    # STATEMENTS
    p:P31 @<P31_instance_of_scientific_article> ; # Item describes a scientific article
-   p:P1476 @<P1476_title> ; # Title of the article
-   p:P1680 @<P1680_subtitle> ; # Subtitle of the article
-   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ; # 
-   p:P577 @<P577_publication_date> ;
-   p:P364 @<P364_original_language_of_work> ;
-   p:P1433 @<P1433_published_in> ;
+   p:P1476 @<P1476_title> ; 	# Title of the article
+   p:P1680 @<P1680_subtitle> ; 	# Subtitle of the article
+   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ; 
+   	# This is a special shape that presents alternatives.
+	# If the author already has an item in Wikidata, use P50, if not, use P2093 to enter the name and save as a string.
+	# The * after the brackets indicates the 0 or more carinality. The + after the braces indicates that one of the two
+	# options must be used to indicate author.
+   p:P577 @<P577_publication_date> ; 	#The date the article was published
+   p:P364 @<P364_original_language_of_work> ;	#The human language of the work
+   p:P1433 @<P1433_published_in> ;	#The publication in which the article was published
    p:P2860 @<P2860_cites> ;
    p:P98 @<P98_editor> ;
    p:P478 @<P478_volume> ;
