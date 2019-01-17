@@ -1,4 +1,4 @@
-#Shape Expression for journal articles on Wikidata
+	#Shape Expression for journal articles on Wikidata
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
@@ -65,7 +65,7 @@ start = <wikicite>
 <P50_author> {
 	ps:P50 IRI; 
 	prov:wasDerivedFrom @<reference> ;
-	pq:P1545 LITERAL;
+	pq:P1545 xsd:string? ;
 }
 
 <P98_editor> {
@@ -206,7 +206,7 @@ start = <wikicite>
 <P2093_author_name_string> {
 	ps:P2093	LITERAL ;
 	prov:wasDerivedFrom @<reference> ;
-	pq:P1545 LITERAL;
+	pq:P1545 xsd:string? ;
 }
 
 <P2322_article_ID> {
