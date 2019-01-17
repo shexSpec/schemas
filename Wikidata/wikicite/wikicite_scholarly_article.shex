@@ -33,17 +33,17 @@ start = @<wikicite>
 	# The * after the brackets indicates the 0 or more carinality. The + after the braces indicates that one of the two
 	# options must be used to indicate author.
    p:P577 @<P577_publication_date> ; 	#The date the article was published
-   p:P364 @<P364_original_language_of_work> ;	#The human language of the work
+   p:P364 @<P364_original_language_of_work> ;	#The human language in which the work was originally
    p:P1433 @<P1433_published_in> ;	#The publication in which the article was published
-   p:P2860 @<P2860_cites> ;
-   p:P98 @<P98_editor> ;
-   p:P478 @<P478_volume> ;
-   p:P433 @<P433_issue> ;
-   p:P304 @<P304_pages> ;
-   p:P1104 @<P1104_number_of_pages> ;
-   p:P275 @<P275_license> ;
-   p:P953 @<P953_full_work_available_at> ;
-   p:P407 @<P407_language_of_work_or_name> ;
+   p:P2860 @<P2860_cites> ;	# Items that describe the articles this one cites
+   p:P98 @<P98_editor> ;	# Item for the person who edited the volume
+   p:P478 @<P478_volume> ;	# Number of the volume in which this was published
+   p:P433 @<P433_issue> ;	# Number of the issue number in which this was published
+   p:P304 @<P304_pages> ;	# Page range of this article
+   p:P1104 @<P1104_number_of_pages> ;	# Number of pages of this article
+   p:P275 @<P275_license> ;	# License under which this was published
+   p:P953 @<P953_full_work_available_at> ;	# URL where this article can be found
+   p:P407 @<P407_language_of_work_or_name> ;	# H
    p:P364 @<P364_original_language_of_work> ;
    p:P921 @<P921_main_subject> ;                  
    p:P373 @<P373_commons_category> ;
