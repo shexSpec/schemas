@@ -9,11 +9,22 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX pr: <http://www.wikidata.org/prop/reference/>
 
-start = <wikicite> 
+start = @<wikicite> 
+
+# The start statement indicates which shape to use to start iterating over the graph if none is provided.
+
+# wikidata-human gene is the main shape for a human gene data model in Wikidata. Each line between the brackets
+# represents the structure than can be enforced to validate human gene annotations in Wikidata
+#
+# We distinguish between value statements, identifier statements, and erronuous statements.
+# Value statements contain either actual values, or pointers to other Wikidata items. Identifier statements capture
+# external identifiers, erronuous statements are those that are errors.
+#
+
 
 <wikicite> {
    # STATEMENTS
-   p:P31 @<P31_instance_of_scientific_article> ;
+   p:P31 @<P31_instance_of_scientific_article> ; # Item describes a scientific article
    p:P1476 @<P1476_title> ;
    p:P1680 @<P1680_subtitle> ;
    (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
@@ -55,6 +66,19 @@ start = <wikicite>
       
    #SITELINKS 
 }
+
+
+# Detailed ShExs for Wikidata statements
+# Wikidata captures a statement in the following graph pattern:
+####################
+# wd:Pxx wikibase:directClaim wdt:Pxx ;
+#        wikibase:claim p:Pxx .
+# <item> wdt:Pxx "value" or <other_item> .
+# <item> p:Pxx <node> .
+# <node> ps:Pxx "value" or <other_item> ;
+#        pq:Pxx "qualifier value" or <qualifier_item> ;
+#        pr:Pxx "reference value" or <reference_item> .
+####################
 
 # Shape expression for Wikidata journal article
 <P31_instance_of_scientific_article> {
