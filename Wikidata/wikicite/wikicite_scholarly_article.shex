@@ -43,13 +43,12 @@ start = @<wikicite>
    p:P1104 @<P1104_number_of_pages> ;	# Number of pages of this article
    p:P275 @<P275_license> ;	# License under which this was published
    p:P953 @<P953_full_work_available_at> ;	# URL where this article can be found
-   p:P407 @<P407_language_of_work_or_name> ;	# H
-   p:P364 @<P364_original_language_of_work> ;
-   p:P921 @<P921_main_subject> ;                  
-   p:P373 @<P373_commons_category> ;
-   p:P859 @<P859_sponsor> ;
-   p:P1352 @<P1352_data_available_at> ;
-   p:P2507 @<P2507_corrigendum_erratum> ;
+   p:P407 @<P407_language_of_work_or_name> ;	# Human language of this article
+   p:P921 @<P921_main_subject> ;	# Topics of this article                  
+   p:P373 @<P373_commons_category> ;	# Category in Wikimedia Commons related to this article
+   p:P859 @<P859_sponsor> ;	# Financial supporter of this article
+   p:P1352 @<P1352_data_available_at> ;		# URL where data related to this article can be found
+   p:P2507 @<P2507_corrigendum_erratum> ;	# Item for the published corrections to this article
    p:P854 	@<P854_reference_URL> ; # Shouldn't this be a reference property?  
    # IDENTIFIERS
    p:P365 @<P365_DOI>* ;
