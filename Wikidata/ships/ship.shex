@@ -1,0 +1,60 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX commons: <http://commons.wikimedia.org/wiki/Special:FilePath/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<#ship>
+
+<#ship> {
+	p:P31  @<#P31_instance_of> ; 
+	p:P17  @<#P17_country> ;	
+	p:P2317 @<#P2317_call_sign> ;
+	
+	p:P1093 @<#P1093_gross_tonnage>;
+	p:P2043 @<#P2043_length> ;
+	p:P2049 @<#P2049_width> ; 
+}
+
+<#P31_instance_of> {
+	ps:P31  [
+		wd:Q11446 #ship
+	]
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P17_country> {
+	ps:P17 	@<#country> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#country>{
+	wdt:P31  [wd:Q6256] ;
+}
+
+<#P1093_gross_tonnage> {
+	ps:P1093  xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2043_length> {
+	ps:P2043  xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2049_width> {
+	ps:P2049  xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#reference> {
+
+}
