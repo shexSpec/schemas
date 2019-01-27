@@ -14,11 +14,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 start = @<#ship>
 
+# This is a draft schema for a ship expressed as a Shape Expression (ShEx)
+# status: first draft
+# Authors: Andrawaag
+
 <#ship> {
-	p:P31  @<#P31_instance_of> ; 
+	# Essential ship class properties
+	p:P31  @<#P31_instance_of> ;
+
+	# Mandatory ship class properties
 	p:P17  @<#P17_country> ;	
-	p:P2317 @<#P2317_call_sign> ;
+	p:P2317 @<#P2317_call_sign> ; # A ship has one call sing
+	p:P137 @<P137_operator>+ ; # A ship has one or more operators during the course of its existance
+	p:P138 @<P138_named_after>? ; 
+	p:P18 @<P18_image>* ; # A ship can have zero or more image stored in wiki commons
+	p:P729 @<P729_service_entry> ; 
 	
+	# Recommended ship class properties
+	p:P176 @<P176_manufacturer> ;
+	p:P730 @<P730_service_retirement> ;
+
+	# numerical properties
 	p:P1093 @<#P1093_gross_tonnage>;
 	p:P2043 @<#P2043_length> ;
 	p:P2049 @<#P2049_width> ; 
@@ -27,9 +43,11 @@ start = @<#ship>
 <#P31_instance_of> {
 	ps:P31  [
 		wd:Q11446 #ship
-	]
+	] ;
 	prov:wasDerivedFrom @<#reference> ;
 }
+
+
 
 <#P17_country> {
 	ps:P17 	@<#country> ;
