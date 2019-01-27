@@ -1,10 +1,10 @@
 [
     {
         "schemaLabel": "Ship",
-        "schemaURL": "https://raw.githubusercontent.com/IC-FOODS/FoodShapes/master/beverages/coffee/species_IUCN_status.shex",
-        "dataLabel": "Get all coffea species from Wikidata" ,
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/ships/ship.shex",
+        "dataLabel": "Get all ships from Wikidata" ,
         "data": "Endpoint: https://query.wikidata.org/sparql",
-        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?coffee   WHERE {   ?coffee wdt:P171* wd:Q156354}'''@START",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT ?coffee   WHERE {?ship wdt:P458 ?imo .}'''@START",
         "status": "conformant"
     }
 ]
