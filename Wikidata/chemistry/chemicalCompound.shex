@@ -1,0 +1,13 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX elw: <http://egonw.github.io/wikidata/>
+
+start = @elw:wikidata-chemical-compound
+
+elw:wikidata-chemical-compound {
+  wdt:P31 [wd:Q11173] ;
+  wdt:P31 IRI* ;
+  ( wdt:P233 LITERAL | wdt:P2017 LITERAL ) ;
+  wdt:P274 LITERAL ;
+  wdt:P2067 LITERAL
+}
