@@ -1,0 +1,26 @@
+[
+    {
+        "schemaLabel": "chemical compound",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/chemicalCompound.shex",
+        "dataLabel": "Get 1 chemicals from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q11173 ;} LIMIT 1'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "chemical compound",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/chemicalCompound.shex",
+        "dataLabel": "Get 10 chemicals from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q11173 ;} LIMIT 10'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "chemical compound",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/chemicalCompound.shex",
+        "dataLabel": "Get 100 chemicals from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q11173 ;} LIMIT 100'''@START",
+        "status": "conformant"
+    }
+]
