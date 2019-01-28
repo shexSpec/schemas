@@ -41,3 +41,7 @@ start = @<#wikidata-chemical-compound>
 	prov:wasDerivedFrom @<reference> ;
 }
 
+<reference> {
+	
+}
+
