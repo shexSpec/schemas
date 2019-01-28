@@ -16,7 +16,6 @@ start = @<#ship>
 
 # This is a draft schema for a ship expressed as a Shape Expression (ShEx)
 # status: first draft
-# Authors: Andrawaag
 
 <#ship> {
 	# Essential ship class properties
@@ -45,8 +44,6 @@ start = @<#ship>
 	] ;
 	prov:wasDerivedFrom @<#reference> ;
 }
-
-
 
 <#P17_country> {
 	ps:P17 	@<#country> ;
