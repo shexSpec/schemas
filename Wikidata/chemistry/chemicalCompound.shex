@@ -8,35 +8,35 @@ PREFIX p: <http://www.wikidata.org/prop/>
 start = @<#wikidata-chemical-compound>
 
 <#wikidata-chemical-compound> EXTRA p:P31{
-  p:P31 @<P31_instance_of> ;
+  p:P31 @<#P31_instance_of> ;
   ( 
-  	p:P233 @<P233_canonical_SMILES> | p:P2017 @<P2017_isomeric_SMILES> 
+  	p:P233 @<#P233_canonical_SMILES> | p:P2017 @<#P2017_isomeric_SMILES> 
   ) ;
-  p:P274 @<P274_chemical_formula> ;
-  p:P2067 @<P2067_mass> ;
+  p:P274 @<#P274_chemical_formula> ;
+  p:P2067 @<#P2067_mass> ;
 }
 
-<P31_instance_of> {
+<#P31_instance_of> {
 	ps:P31 [wd:Q11173] ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P233_canonical_SMILES> {
+<#P233_canonical_SMILES> {
 	ps:P233 xsd:string ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P274_chemical_formula> {
+<#P274_chemical_formula> {
 	ps:P274 xsd:string ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P2017_isomeric_SMILES> {
+<#P2017_isomeric_SMILES> {
 	ps:P2017 xsd:string ;
 	prov:wasDerivedFrom @<reference> ;
 }
 
-<P2067_mass>{
+<#P2067_mass>{
 	ps:P2067 xsd:string ;
 	prov:wasDerivedFrom @<reference> ;
 }
