@@ -14,6 +14,15 @@ start = @<#wikidata-chemical-compound>
   ) + ;
   p:P274 @<#P274_chemical_formula> ;
   p:P2067 @<#P2067_mass> + ;
+  (
+    p:P662 @<#P662_PubChem_CID> |
+    p:P661 @<#P661_ChemSpider> |
+    p:P592 @<#P592_ChEMBL> |
+    p:P715 @<#P715_DrugBank> |
+    p:P683 @<#P683_ChEBI> |
+    p:P3117 @<#P3117_EPACompTox> |
+    p:P213 @<#P213_CAS>
+  ) + ;
 }
 
 <#P31_instance_of> {
@@ -36,6 +45,33 @@ start = @<#wikidata-chemical-compound>
         ps:P2067 xsd:decimal ;
 }
 
-<#reference> {
+<#P662_PubChem_CID>{
+        ps:P662 xsd:string ;
+}
 
+<#P661_ChemSpider>{
+        ps:P661 xsd:string ;
+}
+
+<#P592_ChEMBL>{
+        ps:P592 xsd:string ;
+}
+
+<#P715_DrugBank>{
+        ps:P715 xsd:string ;
+}
+ 
+<#P683_ChEBI>{
+        ps:P683 xsd:string ;
+}
+ 
+<#P3117_EPACompTox>{ 
+        ps:P3117 xsd:string ;
+}
+ 
+<#P213_CAS>{ 
+        ps:P213 xsd:string ;
+}
+
+<#reference> {
 }
