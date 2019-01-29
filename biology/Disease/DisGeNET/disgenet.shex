@@ -42,6 +42,7 @@ PREFIX gogene: <>
 PREFIX ct: <>
 PREFIX umls: <>
 PREFIX pubmed: <>
+PREFIX pubchem: <>
 
 <#GeneDiseaseAssociation> {
 	sio:SIO_000628 @<#disease> ; # sio:SIO_000628 = refers to

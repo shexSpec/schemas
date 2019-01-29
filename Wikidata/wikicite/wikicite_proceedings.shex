@@ -5,18 +5,24 @@ PREFIX wd: <https://www.wikidata.org/wiki/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+start = @<#wikicite_proceedings> 
 
-start = <wikicite_proceedings> 
-
-<wikicite_proceedings>  {
+<#wikicite_proceedings>  {
    # STATEMENTS
-   p:P31 @<P31_instance_of_proceedings> ;
+   p:P31 @<#P31_instance_of_proceedings> ;
   
    # IDENTIFIERS
    
    #SITELINKS 
 }
 
+# STATEMENTS 
+<#P31_instance_of_proceedings> {
+	ps:P31  [] ;
+	prov:wasDerivedFrom  <#reference> ;
+}
+
 ## REFERENCES
 
-<reference> {}
+<#reference> {}
