@@ -11,9 +11,9 @@ start = @<#wikidata-chemical-compound>
   p:P31 @<#P31_instance_of> ;
   ( 
     p:P233 @<#P233_canonical_SMILES> | p:P2017 @<#P2017_isomeric_SMILES> 
-  ) ;
+  ) + ;
   p:P274 @<#P274_chemical_formula> ;
-  p:P2067 @<#P2067_mass> ;
+  p:P2067 @<#P2067_mass> + ;
 }
 
 <#P31_instance_of> {
