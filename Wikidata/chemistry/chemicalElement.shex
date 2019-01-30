@@ -1,0 +1,19 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX schema: <http://schema.org/>
+
+start = @<#wikidata-element>
+
+<#wikidata-element> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of> ;
+}
+
+<#P31_instance_of> {
+  ps:P31 [wd:Q11344] ;
+}
+
+<#reference> {
+}
