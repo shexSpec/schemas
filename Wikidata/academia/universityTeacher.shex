@@ -8,7 +8,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 start = @<#wikidata-scholar>
 
-<#wikidata-scholar> {
+<#wikidata-scholar> EXTRA p:P108 {
   p:P735 @<#P735_given_name> ? ; # optional given name
   wdt:P734 IRI ? ;               # optional family name
   p:P108 @<#P108_employer> +     # minimally one employer defined
@@ -26,10 +26,14 @@ start = @<#wikidata-scholar>
   wdt:P31 @<#some_university_teacher> ;
 }
 
-<#employer> EXTRA wdt:P31 {
-  wdt:P31 [wd:Q3918] ;
+<#employer> {
+  wdt:P31 @<#some_university> ;
   pq:P580 [ ps:P580 xsd:date ] ?  # an optional start date
 }
+
+<#some_university> [
+  wd:Q3918     # university
+]
 
 <#some_university_teacher> [
   wd:Q202444
