@@ -9,10 +9,20 @@ start = @<#wikidata-element>
 
 <#wikidata-element> EXTRA p:P31 {
   p:P31 @<#P31_instance_of> ;
+  p:P246 @<#P246_chemical_symbol> ;
+  p:P1086 @<#P1086_atomic_number> ;
 }
 
 <#P31_instance_of> {
   ps:P31 [wd:Q11344] ;
+}
+
+<#P246_chemical_symbol> {
+  ps:P246 xsd:string ;
+}
+
+<#P1086_atomic_number> {
+  ps:P1086 xsd:decimal ;
 }
 
 <#reference> {
