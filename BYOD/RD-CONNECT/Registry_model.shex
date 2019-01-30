@@ -1,12 +1,23 @@
+PREFIX rdf: <>
+PREFIX rdfs: <>
 PREFIX rdc-meta: <>
 PREFIX snomedct: <>
 PREFIX ro: <>
 PREFIX dcterms: <>
 PREFIX idorgRSno: <>
 PREFIX idorgBBS: <>
+PREFIX ero: <>
+PREFIX foaf: <>
+PREFIX wdt: <>
+PREFIX wd: <>
+PREFIX dcterms: <>
+PREFIX geno: <>
+PREFIX xsd: <>
+PREFIX so: <>
+PREFIX sio: <>
+PREFIX iao: <>
 
-
-start = <patient>
+start = @<patient>
 
 <patient> {
 	rdf:type 	rdc-meta:patient ;
@@ -38,19 +49,19 @@ start = <patient>
 }
 
 <BBS10_instance> {
-	rdf:type 	[idorgBBS:~]
+	rdf:type 	[idorgBBS:~] ;
 	dcterms:identifier LITERAL ; 	
 }
 
 
 <quality> {
-	rdf:type 	[:quality]
+	rdf:type 	IRI ;
 	rdfs:label 	LITERAL ;
 }
 
 <measurement-datum> {
-	rdf:type 	[:measurement-datum]
-	iao:is_quality_measurement_of
+	rdf:type 	IRI ;
+	iao:is_quality_measurement_of IRI ;
 }
 
 
