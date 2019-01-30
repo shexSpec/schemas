@@ -9,4 +9,6 @@ These shape expression are developed to test conformance to [these guidelines](h
 
 ## Elements
 
+* **chemical element** is tested for the required properties by [chemicalElement.shex](chemicalElement.shex) and [manifest_chemElement.json](manifest_chemElement.json) ([run](https://rawgit.com/shexSpec/shex.js/wikidata/doc/shex-simple.html?manifestURL=https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/manifest_chemElement.json))
+
 ## Isotopes
