@@ -1,55 +1,49 @@
 #Shape Expression the data model drafted by the DNA model team of the BYOD UMCU
-
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX xsd: <>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+#ontologies
 PREFIX edam: <http://purl.bioontology.org/ontology/EDAM/>
 PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX efo: <http://www.ebi.ac.uk/efo/>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX wdp: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX umcu: <>
 
+start = @<#sample>
 
-start = umcu:sample
-
-umcu:sample {
-   rdf:type	sio:001050 ;
-   obo:GENO_0000222 umcu:measurement ;   
+<#sample> {
+   rdf:type	[sio:001050] ;
+   obo:GENO_0000222 <#measurement> ;   
 }
 
-umcu:analysis {
+<#analysis> {
    rdf:type		edam:operation_2478 ;
-   prov:used	umcu:sample ;
-   prov:used	[<https://zenodo.org/record/495587#.WZQ_qKNh2u4>] ;
-   prov:used	edam:topic_3673 ;
-   sio:000628	umcu:measurement ;   
+   prov:used	@<#sample> OR 
+   				[<https://zenodo.org/record/495587#.WZQ_qKNh2u4>] OR
+   				[edam:topic_3673] ;
+   sio:000628	@<#measurement> ;   
 }
 
-umcu:measurement {
-   rdf:type		efo:efo_0001444 ;
-   sio:000628	umcu:variant ; 
+<#measurement> {
+   rdf:type		[efo:efo_0001444] ;
+   sio:000628	@<#variant> ; 
 }
 
-umcu:variant {
-	rdf:type	obo:SO_0001060 ;  # SO_0001060 = sequence variant in the sequence ontology
-	dcterms:isPartOf	umcu:chromosome ;
+<#variant> {
+	rdf:type	[obo:SO_0001060] ;  # SO_0001060 = sequence variant in the sequence ontology
+	dcterms:isPartOf	@<#chromosome> ;
 	wdp:P644	xsd:int ; 
 	wdp:P645	xsd:int ;
 	wdp:P2576	LITERAL ; # P2576 = UCSC Genome Browser assembly ID, future adaptations of this shape should contain a list of possible values
 	wdp:P3331	LITERAL ; # P3331 = HGVS nomenclature 
-	wdp:P3343	umcu:gene ; # P3343 = Biological variant of
+	wdp:P3343	@<#gene> ; # P3343 = Biological variant of
 }
 
-umcu:chromosome {
+<#chromosome> {
 	rdf:type	[wd:Q37748] ;
 	dcterms:identifier LITERAL ;
 }
 
-umcu:gene .
-
-sio:001050 {
-	rdfs:label "some label" .
-}
+<#gene> .

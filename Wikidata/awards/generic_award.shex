@@ -36,7 +36,6 @@ PREFIX prov: <http://prefix.cc/prov>
 	prov:wasDerivedFrom @<#reference> ;
 }
 
-
 <#P571_inception> {
 	ps:P571 xsd:dateTime ;
 	prov:wasDerivedFrom @<#reference> ;
