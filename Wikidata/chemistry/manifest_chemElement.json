@@ -18,9 +18,9 @@
     {
         "schemaLabel": "chemical element",
         "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/chemicalElement.shex",
-        "dataLabel": "Get 100 chemical elements from Wikidata" ,
+        "dataLabel": "Get all chemical elements from Wikidata" ,
         "data": "Endpoint: https://query.wikidata.org/sparql",
-        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q11344 ;} LIMIT 100'''@START",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q11344 ;}'''@START",
         "status": "conformant"
     }
 ]
