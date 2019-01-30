@@ -9,7 +9,7 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 start = @<#wikidata-scholar>
 
 <#wikidata-scholar> EXTRA p:P108 {
-  p:P735 @<#P735_given_name> ? ; # optional given name
+  p:P735 @<#P735_given_name> * ; # optional given name (zero, one, or more)
   wdt:P734 IRI ? ;               # optional family name
   p:P108 @<#P108_employer> +     # minimally one employer defined
 }
@@ -23,7 +23,7 @@ start = @<#wikidata-scholar>
 }
 
 <#given_name_type> {
-  wdt:P31 @<#some_university_teacher> ;
+  wdt:P31 @<#some_given_name_type> ;
 }
 
 <#employer> {
@@ -35,10 +35,11 @@ start = @<#wikidata-scholar>
   wd:Q3918     # university
 ]
 
-<#some_university_teacher> [
+<#some_given_name_type> [
   wd:Q202444
   wd:Q12308941
   wd:Q11879590
+  wd:Q3409032
 ]
 
 <#reference> {
