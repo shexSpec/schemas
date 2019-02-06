@@ -28,93 +28,108 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
 
 <#wikidata-file_format> {
 	#statements
-	p:P31 @<#P31_instance_of_file_format>* ; 
+	(p:P31 @<#P31_instance_of_file_format>* |p:P279 @<#P279_subclass_of_file_format>*)+ ;
+	# This shape presents two options.
+	# If this is a file format use P31. If this is a class of file format use P279.
+	# The * after the brackets indicates the 0 or more carinality. The + after the braces indicates that one of the two
+	# options must be used.
+	 
 	
-	p:P1195 @<#P1195_file_extension>* ;
+	p:P1195 @<#P1195_file_extension>* ;		# File extensions used by this file format
 	
-	p:P1163 @<#P1633_media_type>* ;
+	p:P1163 @<#P1633_media_type>* ;			# Media type for this file format			
 	
-	p:P178 @<#P178_developer>* ;
+	p:P178 @<#P178_developer>* ;			# Developer of this file format
 	
-	p:P144 @<#P144_based_on>* ;
+	p:P144 @<#P144_based_on>* ;			# Items on which this file format is based
+	       
+	p:P4152 @<#P4152_file_format_identification_pattern>* ;	# Magic number for this file format
 	
-	p:P4152 @<#P4152_file_format_identification_pattern>* ;
+	p:P973 @<#P973_described_at_URL>* ;		# URL of a resource that describes this file format		
 	
-	p:P973 @<#P973_described_at_URL>* ;
+	p:P1343 @<#P1343_described_by_source>* ;	# Item that describes this file format	
 	
-	p:P1343 @<#P1343_described_by_source>* ;
+	p:P348 @<#P348_software_version>* ;		# Version of this file format
 	
-	p:P348 @<#P348_software_version>* ;
-	
-	p:P577 @<#P577_publication_date>* ;
+	p:P577 @<#P577_publication_date>* ;		# The date the file format was published
 	
 	#identifiers
 	
-	p:P2748 @<#P2748_pronom_id>* ;
+	p:P2748 @<#P2748_pronom_id>* ;			# PUID for this file format from The National Archives
 	
-	p:P3266 @<#P3266_locfdd_id>* ;
+	p:P3266 @<#P3266_locfdd_id>* ;			# Library of Congress File Format Discription Document for this file format
 	
-	p:P3381 @<#P3381_ffw_id>* ;
+	p:P3381 @<#P3381_ffw_id>* ;			# Zero or more page(s) for this file format in the Just Solve the File Format Problem wiki	
 }	
+# Detailed ShExs for Wikidata statements
+# Wikidata captures a statement in the following graph pattern:
+####################
+# wd:Pxx wikibase:directClaim wdt:Pxx ;
+#        wikibase:claim p:Pxx .
+# <item> wdt:Pxx "value" or <other_item> .
+# <item> p:Pxx <node> .
+# <node> ps:Pxx "value" or <other_item> ;
+#        pq:Pxx "qualifier value" or <qualifier_item> ;
+#        pr:Pxx "reference value" or <reference_item> .
+####################
 
-<#P31_instance_of_file_format> {
+
+<#P31_instance_of_file_format> {	# Instance of [P31] file format
   ps:P31 [wd:Q235557] ;
 }
 
+<#P279_subclass_of_file_format> {	# Subclass of [P279] file format
+  ps:P279 IRI ;
+}
 
-
-<#P2748_pronom_id> {
+<#P2748_pronom_id> {			# Zero or more PUID for this file format from The National Archives
   ps:P2748 LITERAL ;
 }
 
 
-<#P3266_locfdd_id> {
+<#P3266_locfdd_id> {			# Zero or more Library of Congress File Format Discription Document for this file format
   ps:P3266 LITERAL ;
 }
 
-<#P1163_media_type> {
+<#P1163_media_type> {			# Zero or more media types for this file format
   ps:P1163 LITERAL ;
 }
 
-<#P3381_ffw_id> {
+<#P3381_ffw_id> {			# Zero or more page(s) for this file format in the Just Solve the File Format Problem wiki
   ps:P3381 LITERAL ;
 }
 
-<#P1195_file_extension> {
+<#P1195_file_extension> {		# Zero or more file extensions for this file format
   ps:P1195 LITERAL ;
 }
 
-<#P178_developer> {
+<#P178_developer> {			# Zero or more developers for this file format
   ps:P178 IRI ;
 } 
 
-<#P144_based_on> {
+<#P144_based_on> {			# Zero or more items that this file format was based on
   ps:P144 IRI ;
 }
 
-<#P4152_file_format_identification_pattern> {
-  ps:P3381 LITERAL ;
-  pq:P3294 IRI;
-  pq:P4153 LITERAL;
-  pq:P2210 [wd:Q35436009 wd:Q1148480]
+<#P4152_file_format_identification_pattern> {	# Zero or more magic number identification patterns 
+  ps:P4152 LITERAL;			    	
+  pq:P3294 IRI;					# Qualifier used to indicate encoding according to which magic number is to be interpreted 
+  pq:P4153 LITERAL;				# Qualifier used to indicate that the offset is relative to a position
+  pq:P2210 [wd:Q35436009 wd:Q1148480]		# Qualifier used to indicate that position as  BOF or EOF
 }
 
-<#P973_described_at_URL> {
+<#P973_described_at_URL> {		# Zero or more URL(s) of a resource that describes this file format
   ps:P973 LITERAL ;
 }
 
-<#P348_software_version> {
+<#P348_software_version> {		# Zero or more version(s) of this file format
   ps:P348 LITERAL ;
 }
 
-<#P1343_described_by_source> {
+<#P1343_described_by_source> {		# Zero or more Items that describe this file format
   ps:P1343 IRI ;
 }
 
-<#P577_publication_date> {
+<#P577_publication_date> {		# Zero or more date(s) on which this file format was published
   ps:P577 LITERAL ;
 }
-
-
-
-
