@@ -1,0 +1,1180 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix pav:   <http://purl.org/pav/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix freq:  <http://purl.org/cld/freq/> .
+@prefix biopax: <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix gpml:  <http://vocabularies.wikipathways.org/gpml#> .
+@prefix wp:    <http://vocabularies.wikipathways.org/wp#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix wprdf: <http://rdf.wikipathways.org/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://identifiers.org/pubmed/12806616>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/12806616> .
+
+<http://identifiers.org/hmdb/HMDB0003154>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "Canthaxanthin"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0003154> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0003154"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c574e> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:3362> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4444639> , <http://identifiers.org/chemspider/4447582> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0003154> , <http://identifiers.org/hmdb/HMDB03154> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5281227> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q385657> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/df783> .
+
+<http://identifiers.org/ncbigene/9249>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Dhrs3"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/9249> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "9249"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9b7f> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000162496> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/9249> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/DHRS3> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q5SUY4> , <http://identifiers.org/uniprot/A0A087WTY3> , <http://identifiers.org/uniprot/O75911> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/aa8f9> .
+
+<http://identifiers.org/hmdb/HMDB0003000>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "Lycopene"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0003000> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0003000"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a05d3> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:15948> , <http://identifiers.org/chebi/CHEBI:43789> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/394156> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB03000> , <http://identifiers.org/hmdb/HMDB0003000> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID446925> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q208130> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/bc1f4> .
+
+<http://identifiers.org/hmdb/HMDB0000561>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "Betacarotene"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0000561> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0000561"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/fa1ce> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/cecd6> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/e4360> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a152d> , <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/b6471> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9e96> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a259a> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:17579> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4444129> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0000561> , <http://identifiers.org/hmdb/HMDB00561> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280489> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q306135> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ba983> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a0009> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/fc14f> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f8808> .
+
+<http://identifiers.org/pubmed/1416048>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/1416048> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f5d42>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/f5d42> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000305> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000305> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000305> .
+
+<http://identifiers.org/hmdb/HMDB0003233>
+        a                              wp:DataNode , wp:Metabolite ;
+        rdfs:label                     "Lutein"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/hmdb/HMDB0003233> ;
+        dc:source                      "HMDB"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/1595584> , <http://identifiers.org/pubmed/3372162> , <http://identifiers.org/pubmed/1416048> ;
+        dcterms:identifier             "HMDB0003233"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI                    <http://identifiers.org/chebi/CHEBI:28838> ;
+        wp:bdbChemspider               <http://identifiers.org/chemspider/4938343> , <http://identifiers.org/chemspider/4519703> ;
+        wp:bdbHmdb                     <http://identifiers.org/hmdb/HMDB03233> , <http://identifiers.org/hmdb/HMDB0003233> ;
+        wp:bdbPubChem                  <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5368396> , <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID6433159> ;
+        wp:bdbWikidata                 <http://www.wikidata.org/entity/Q422067> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b8e2b> .
+
+<http://identifiers.org/ncbigene/6258>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "RXRg"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6258> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6258"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000143171> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6258> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RXRG> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A087WZ88> , <http://identifiers.org/uniprot/F1D8Q7> , <http://identifiers.org/uniprot/P48443> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ef3c3> .
+
+<http://identifiers.org/hmdb/HMDB0003993>
+        a                              wp:DataNode , wp:Metabolite ;
+        rdfs:label                     "Alpha-Carotene"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/hmdb/HMDB0003993> ;
+        dc:source                      "HMDB"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/8878137> , <http://identifiers.org/pubmed/9453379> , <http://identifiers.org/pubmed/12937841> , <http://identifiers.org/pubmed/8017322> , <http://identifiers.org/pubmed/8948389> , <http://identifiers.org/pubmed/12806616> ;
+        dcterms:identifier             "HMDB0003993"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI                    <http://identifiers.org/chebi/CHEBI:28425> , <http://identifiers.org/chebi/CHEBI:35147> ;
+        wp:bdbChemspider               <http://identifiers.org/chemspider/4925358> , <http://identifiers.org/chemspider/3571861> ;
+        wp:bdbHmdb                     <http://identifiers.org/hmdb/HMDB0003993> , <http://identifiers.org/hmdb/HMDB03993> ;
+        wp:bdbPubChem                  <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID4369188> , <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID6419725> ;
+        wp:bdbWikidata                 <http://www.wikidata.org/entity/Q142871> , <http://www.wikidata.org/entity/Q47459177> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f5db8> .
+
+<http://identifiers.org/ncbigene/50700>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rdh8"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/50700> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "50700"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000080511> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/50700> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RDH8> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/K7ELF7> , <http://identifiers.org/uniprot/K7EKT5> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/eae89> .
+
+<http://identifiers.org/ncbigene/5916>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "RARg"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5916> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5916"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000172819> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5916> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RARG> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/H3BMY6> , <http://identifiers.org/uniprot/F1D8P1> , <http://identifiers.org/uniprot/A8K3H3> , <http://identifiers.org/uniprot/H3BMH6> , <http://identifiers.org/uniprot/P13631> , <http://identifiers.org/uniprot/H3BMK1> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/dd52d> .
+
+<http://identifiers.org/hmdb/HMDB0000305>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "Retinol Vitamin A"^^xsd:string , "all-trans Retinol Vitamin A"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0000305> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0000305"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/fa6b6> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9b7f> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/d368b> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/eaefe> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ccbcf> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/bdca5> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c91f7> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f5d42> , <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f5a20> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:17336> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/393012> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/hmdb/HMDB00305> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID445354> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q424976> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f698d> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b100e> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a6725> .
+
+<http://identifiers.org/hmdb/HMDB0006216>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "11-cis-Retinol"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0006216> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0006216"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/e1a3d> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a3ca7> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:16302> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4444073> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB06216> , <http://identifiers.org/hmdb/HMDB0006216> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280382> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b07e7> .
+
+<http://identifiers.org/hmdb/HMDB0006285>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "4-oxo-Retinoic acid"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0006285> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0006285"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:80656> , <http://identifiers.org/chebi/CHEBI:269971> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4941652> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB06285> , <http://identifiers.org/hmdb/HMDB0006285> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID6437063> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q27074387> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b29bb> .
+
+<http://identifiers.org/ncbigene/64240>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Abcg5"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/64240> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "64240"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000138075> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/64240> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ABCG5> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q9H222> , <http://identifiers.org/uniprot/E7EX35> , <http://identifiers.org/uniprot/E5RHB7> , <http://identifiers.org/uniprot/E5RFY8> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/af7a1> .
+
+<http://identifiers.org/pubmed/12401878>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/12401878> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ccbcf>
+        a                 wp:Interaction , wp:DirectedInteraction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/id425e272c> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/ccbcf> ;
+        wp:participants   <http://identifiers.org/ensembl/ENSG00000121207> , <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/hmdb/HMDB0003598> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/ensembl/ENSG00000121207> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0003598> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a152d>
+        a                 wp:Interaction , wp:DirectedInteraction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/a152d> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/iddc6f9d6e> ;
+        wp:participants   <http://identifiers.org/ncbigene/949> , <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:source         <http://identifiers.org/ncbigene/949> , <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000561> .
+
+<http://identifiers.org/ncbigene/6017>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rlbp1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6017> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6017"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000140522> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6017> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RLBP1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P12271> , <http://identifiers.org/uniprot/H3BN92> , <http://identifiers.org/uniprot/H3BTN3> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f5020> .
+
+<http://identifiers.org/pubmed/18289917>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/18289917> .
+
+<http://identifiers.org/pubmed/8017322>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/8017322> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9b7f>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/id6dcdecc6> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/f9b7f> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0001358> , <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/ncbigene/9249> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/ncbigene/9249> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0001358> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/e1a3d>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/e1a3d> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/idbdb125c7> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0006216> , <http://identifiers.org/ncbigene/6121> , <http://identifiers.org/hmdb/HMDB0003598> ;
+        wp:source         <http://identifiers.org/ncbigene/6121> , <http://identifiers.org/hmdb/HMDB0003598> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0006216> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/eaefe>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/eaefe> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0003598> , <http://identifiers.org/hmdb/HMDB0000305> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000305> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0003598> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a05d3>
+        a                 wp:Inhibition , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/a05d3> ;
+        wp:participants   <http://identifiers.org/ncbigene/53630> , <http://identifiers.org/hmdb/HMDB0003000> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0003000> ;
+        wp:target         <http://identifiers.org/ncbigene/53630> .
+
+<http://identifiers.org/ncbigene/116362>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rbp7"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/116362> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "116362"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000162444> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/116362> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RBP7> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/B1AQ60> , <http://identifiers.org/uniprot/Q96R05> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a2c14> .
+
+<http://identifiers.org/ncbigene/6257>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "RXRb"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6257> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6257"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000204231> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6257> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RXRB> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P28702> , <http://identifiers.org/uniprot/E9PK75> , <http://identifiers.org/uniprot/A0A0S2Z570> , <http://identifiers.org/uniprot/Q5STP9> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/c3ba7> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/fa1ce>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/fa1ce> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000561> .
+
+<http://identifiers.org/ncbigene/5915>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "RARb"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5915> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5915"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000077092> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5915> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RARB> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P10826> , <http://identifiers.org/uniprot/D6RBI3> , <http://identifiers.org/uniprot/Q5QHG3> , <http://identifiers.org/uniprot/F1D8S6> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/fc7ce> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/e4360>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/e4360> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000561> .
+
+<http://identifiers.org/ncbigene/29881>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Npc1l1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/29881> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "29881"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000015520> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/29881> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/NPC1L1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A0C4DFX6> , <http://identifiers.org/uniprot/Q9UHC9> , <http://identifiers.org/uniprot/A0A0C4DGG6> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ac273> .
+
+<http://identifiers.org/ncbigene/1382>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Crabp2"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/1382> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "1382"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000143320> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/1382> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/CRABP2> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P29373> , <http://identifiers.org/uniprot/Q5SYZ4> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f2b81> .
+
+<http://identifiers.org/ncbigene/54884>
+        a                              wp:GeneProduct , wp:DataNode ;
+        rdfs:label                     "Retsat"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/54884> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/18289917> ;
+        dcterms:identifier             "54884"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/fa6b6> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000042445> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/54884> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/RETSAT> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/H7C3J0> , <http://identifiers.org/uniprot/H0YGU3> , <http://identifiers.org/uniprot/H7BZ81> , <http://identifiers.org/uniprot/Q6NUM9> , <http://identifiers.org/uniprot/H7BZ16> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ca165> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a01bf>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/a01bf> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0006217> , <http://identifiers.org/hmdb/HMDB0006218> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0006218> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0006217> .
+
+<http://identifiers.org/pubmed/3372162>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/3372162> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c8c65>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/idc14c753a> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/c8c65> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0001358> , <http://identifiers.org/ncbigene/53630> ;
+        wp:source         <http://identifiers.org/ncbigene/53630> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0001358> .
+
+<http://identifiers.org/hmdb/HMDB0001852>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "all-trans Retinoic acid Vitamin A acid"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0001852> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0001852"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ff915> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:15367> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/392618> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB01852> , <http://identifiers.org/hmdb/HMDB0001852> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID444795> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q29417> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/d2c11> .
+
+<http://identifiers.org/ncbigene/5950>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rbp4"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5950> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5950"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000138207> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5950> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RBP4> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q5VY30> , <http://identifiers.org/uniprot/P02753> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/fa5bd> .
+
+<http://identifiers.org/ncbigene/8854>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Aldh1a2"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/8854> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "8854"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000128918> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/8854> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ALDH1A2> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/H0YMT5> , <http://identifiers.org/uniprot/H0YMG7> , <http://identifiers.org/uniprot/A0A0G2JL97> , <http://identifiers.org/uniprot/E9PF31> , <http://identifiers.org/uniprot/Q9UED3> , <http://identifiers.org/uniprot/H0YKL3> , <http://identifiers.org/uniprot/O94788> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a5ee0> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/dd561> .
+
+<http://identifiers.org/hmdb/HMDB0002204>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "Astaxanthin"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0002204> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0002204"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:40963> , <http://identifiers.org/chebi/CHEBI:40968> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4444636> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0002204> , <http://identifiers.org/hmdb/HMDB02204> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5281224> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q413740> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/e58bb> .
+
+<http://identifiers.org/hmdb/HMDB0003598>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "Retinyl ester"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0003598> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0003598"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ccbcf> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c91f7> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/e1a3d> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/eaefe> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:545914> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/10607936> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB03598> , <http://identifiers.org/hmdb/HMDB0003598> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5460164> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q47459174> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f9a58> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/bc239> .
+
+<http://identifiers.org/ncbigene/127>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Adh4"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/127> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "127"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000198099> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/127> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ADH4> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A0D9SFB5> , <http://identifiers.org/uniprot/P08319> , <http://identifiers.org/uniprot/D6RIB1> , <http://identifiers.org/uniprot/D6R9K8> , <http://identifiers.org/uniprot/H0Y9N0> , <http://identifiers.org/uniprot/D6RF43> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/caa5e> .
+
+<http://identifiers.org/pubmed/8878137>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/8878137> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a49f5>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/a49f5> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0006218> , <http://identifiers.org/hmdb/HMDB0006217> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0006217> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0006218> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a259a>
+        a                 wp:Interaction , wp:DirectedInteraction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/id815aa511> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/a259a> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000561> , <http://identifiers.org/ncbigene/53630> , <http://identifiers.org/hmdb/HMDB0001358> ;
+        wp:source         <http://identifiers.org/ncbigene/53630> , <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0001358> .
+
+<http://identifiers.org/ncbigene/5948>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Rbp2"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5948> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5948"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000114113> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5948> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RBP2> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/D6RGE6> , <http://identifiers.org/uniprot/D6RB89> , <http://identifiers.org/uniprot/P50120> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f933c> .
+
+<http://identifiers.org/pubmed/2656356>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/2656356> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/b6471>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/b6471> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000561> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f5a20>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/f5a20> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0006217> , <http://identifiers.org/hmdb/HMDB0000305> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000305> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0006217> .
+
+<http://identifiers.org/ncbigene/6256>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "RXRa"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6256> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6256"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000186350> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6256> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RXRA> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/F1D8Q5> , <http://identifiers.org/uniprot/P19793> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ca8ba> .
+
+<http://identifiers.org/pubmed/3019190>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/3019190> .
+
+<http://identifiers.org/ncbigene/53630>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Bcmo1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/53630> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "53630"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a259a> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9e96> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a05d3> , <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c574e> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c8c65> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000135697> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/53630> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/BCO1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/H3BPA2> , <http://identifiers.org/uniprot/H3BV18> , <http://identifiers.org/uniprot/Q9HAY6> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a0454> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/d7d44> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/fa279> .
+
+<http://identifiers.org/ncbigene/5914>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "RARa"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5914> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5914"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000131759> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5914> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RARA> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A8MUP8> , <http://identifiers.org/uniprot/Q6I9R7> , <http://identifiers.org/uniprot/F1D8N9> , <http://identifiers.org/uniprot/J3KSJ4> , <http://identifiers.org/uniprot/J3QRM2> , <http://identifiers.org/uniprot/P10276> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a4628> .
+
+<http://identifiers.org/hmdb/HMDB0001358>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "all-trans Retinal"^^xsd:string , "Retinal Vitamin A aldehyde"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0001358> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0001358"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ff915> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9e96> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c8c65> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/bdca5> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/d368b> , <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a259a> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9b7f> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:15035> , <http://identifiers.org/chebi/CHEBI:17898> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/553582> , <http://identifiers.org/chemspider/1041> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0001358> , <http://identifiers.org/hmdb/HMDB01358> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID1070> , <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID638015> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q422001> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/be432> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/fa6ab> .
+
+<http://identifiers.org/ncbigene/1381>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Crabp1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/1381> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "1381"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000166426> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/1381> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/CRABP1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P29762> , <http://identifiers.org/uniprot/F1T0F7> , <http://identifiers.org/uniprot/B5MCB5> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f3fcd> .
+
+<http://identifiers.org/hmdb/HMDB0002152>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "11-cis-Retinal"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0002152> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0002152"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a3ca7> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:16066> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4444130> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0002152> , <http://identifiers.org/hmdb/HMDB02152> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280490> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q27070755> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b92cb> .
+
+<http://identifiers.org/ncbigene/158835>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Awat"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/158835> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "158835"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000147160> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/158835> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/AWAT2> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q6E213> , <http://identifiers.org/uniprot/H0YAL0> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/d3f08> .
+
+<http://identifiers.org/ncbigene/145226>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rdh12"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/145226> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "145226"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000139988> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/145226> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RDH12> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q96NR8> , <http://identifiers.org/uniprot/A0A0S2Z613> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a6e8e> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ca572> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/d368b>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/d368b> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/hmdb/HMDB0001358> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0001358> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000305> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ff915>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/id629aa9b> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/ff915> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0001852> , <http://identifiers.org/hmdb/HMDB0001358> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0001358> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0001852> .
+
+<http://identifiers.org/pubmed/12937841>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/12937841> .
+
+<http://identifiers.org/ncbigene/220>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Aldh1a3"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/220> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "220"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000184254> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/220> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ALDH1A3> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/H0YKF9> , <http://identifiers.org/uniprot/P47895> , <http://identifiers.org/uniprot/H0YLT1> , <http://identifiers.org/uniprot/H0YNQ3> , <http://identifiers.org/uniprot/A0A024RC95> , <http://identifiers.org/uniprot/H0Y2X5> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/aeaa5> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ad473> .
+
+<http://identifiers.org/ncbigene/5947>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rbp1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5947> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5947"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000114115> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5947> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RBP1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P09455> , <http://identifiers.org/uniprot/A0A0A0MQT0> , <http://identifiers.org/uniprot/H0YAK8> , <http://identifiers.org/uniprot/A0A0A0MTB9> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/ca197> .
+
+<http://identifiers.org/hmdb/HMDB0000876>
+        a                              wp:DataNode , wp:Metabolite ;
+        rdfs:label                     "Vitamin D3"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/hmdb/HMDB0000876> ;
+        dc:source                      "HMDB"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/3019190> , <http://identifiers.org/pubmed/11585356> , <http://identifiers.org/pubmed/10227052> , <http://identifiers.org/pubmed/9627692> ;
+        dcterms:identifier             "HMDB0000876"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI                    <http://identifiers.org/chebi/CHEBI:28940> ;
+        wp:bdbChemspider               <http://identifiers.org/chemspider/4444353> ;
+        wp:bdbHmdb                     <http://identifiers.org/hmdb/HMDB0000876> , <http://identifiers.org/hmdb/HMDB00876> ;
+        wp:bdbPubChem                  <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280795> ;
+        wp:bdbWikidata                 <http://www.wikidata.org/entity/Q139347> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/cae4c> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f9e96>
+        a                 wp:Interaction , wp:DirectedInteraction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/idbd512c36> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/f9e96> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0001358> , <http://identifiers.org/hmdb/HMDB0000561> , <http://identifiers.org/ncbigene/53630> ;
+        wp:source         <http://identifiers.org/ncbigene/53630> , <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0001358> .
+
+<http://identifiers.org/ncbigene/8694>
+        a                   wp:DataNode , wp:Protein ;
+        rdfs:label          "ARAT"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/8694> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "8694"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000185000> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/8694> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/DGAT1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A0A0MR74> , <http://identifiers.org/uniprot/O75907> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a29e9> .
+
+<http://identifiers.org/ncbigene/4023>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Lpl"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/4023> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "4023"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000175445> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/4023> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/LPL> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A1B1RVA9> , <http://identifiers.org/uniprot/E5RJZ4> , <http://identifiers.org/uniprot/E7EW14> , <http://identifiers.org/uniprot/E5RJI0> , <http://identifiers.org/uniprot/E5RHN7> , <http://identifiers.org/uniprot/P06858> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b0eea> .
+
+<http://identifiers.org/ncbigene/6820>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Sult2b1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6820> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6820"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000088002> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6820> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/SULT2B1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/O00204> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/bcaf2> .
+
+<http://identifiers.org/hmdb/HMDB0002789>
+        a                              wp:Metabolite , wp:DataNode ;
+        rdfs:label                     "Zeaxanthin"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/hmdb/HMDB0002789> ;
+        dc:source                      "HMDB"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/1444060> , <http://identifiers.org/pubmed/3372162> ;
+        dcterms:identifier             "HMDB0002789"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI                    <http://identifiers.org/chebi/CHEBI:27547> , <http://identifiers.org/chebi/CHEBI:10108> ;
+        wp:bdbChemspider               <http://identifiers.org/chemspider/4444421> ;
+        wp:bdbHmdb                     <http://identifiers.org/hmdb/HMDB02789> , <http://identifiers.org/hmdb/HMDB0002789> ;
+        wp:bdbPubChem                  <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280899> ;
+        wp:bdbWikidata                 <http://www.wikidata.org/entity/Q169337> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b8047> .
+
+<http://identifiers.org/ncbigene/83875>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Bcdo2"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/83875> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "83875"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000197580> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/83875> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/BCO2> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/V9GYA9> , <http://identifiers.org/uniprot/H0YCL7> , <http://identifiers.org/uniprot/H0YCN8> , <http://identifiers.org/uniprot/E9PS89> , <http://identifiers.org/uniprot/Q9BYV7> , <http://identifiers.org/uniprot/E9PPP9> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b60c6> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/bdca5>
+        a                 wp:Interaction , wp:DirectedInteraction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/idfcddae72> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/bdca5> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/hmdb/HMDB0001358> , <http://identifiers.org/ncbigene/195814> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0001358> , <http://identifiers.org/ncbigene/195814> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000305> .
+
+<http://identifiers.org/pubmed/19715393>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/19715393> .
+
+<http://identifiers.org/ncbigene/6121>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "RPE65"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6121> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6121"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/e1a3d> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000116745> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6121> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RPE65> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q16518> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b5d6e> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c574e>
+        a                 wp:Inhibition , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/c574e> ;
+        wp:participants   <http://identifiers.org/ncbigene/53630> , <http://identifiers.org/hmdb/HMDB0003154> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0003154> ;
+        wp:target         <http://identifiers.org/ncbigene/53630> .
+
+<http://identifiers.org/hmdb/HMDB0002369>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "9-cis-Retinoic acid"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0002369> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0002369"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/b4096> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:50648> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/395778> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0002369> , <http://identifiers.org/hmdb/HMDB02369> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID449171> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q3611854> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/e50bb> .
+
+<http://identifiers.org/pubmed/10227052>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/10227052> .
+
+<http://identifiers.org/pubmed/1444060>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/1444060> .
+
+<http://identifiers.org/hmdb/HMDB0006218>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "9-cis-Retinal"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0006218> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0006218"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/b4096> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a49f5> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a01bf> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:78273> , <http://identifiers.org/chebi/CHEBI:527124> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/4940758> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB06218> , <http://identifiers.org/hmdb/HMDB0006218> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID6436082> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q27074046> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/c8b7e> .
+
+<http://identifiers.org/ncbigene/5959>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Rdh5"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5959> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5959"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000135437> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5959> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RDH5> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A024RB18> , <http://identifiers.org/uniprot/Q92781> , <http://identifiers.org/uniprot/F8VUB9> , <http://identifiers.org/uniprot/F8VVC7> , <http://identifiers.org/uniprot/H0YHP7> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/aa7cc> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/e944a> .
+
+<http://identifiers.org/ncbigene/1592>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Cyp26a1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/1592> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "1592"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000095596> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/1592> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/CYP26A1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A0A096LNN2> , <http://identifiers.org/uniprot/O43174> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/d1a73> .
+
+<http://identifiers.org/pubmed/9627692>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/9627692> .
+
+<http://identifiers.org/hmdb/HMDB0003101>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "Violaxanthin"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0003101> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0003101"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:35288> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/395237> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB03101> , <http://identifiers.org/hmdb/HMDB0003101> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID53477762> , <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID448438> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q607883> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/dcbc5> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/fa6b6>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/fa6b6> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/id8a53db5f> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0011618> , <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/ncbigene/54884> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/ncbigene/54884> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0011618> .
+
+<http://identifiers.org/pubmed/9453379>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/9453379> .
+
+<http://identifiers.org/ncbigene/949>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Scarb1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/949> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "949"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a152d> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000073060> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/949> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/SCARB1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/B7ZKQ9> , <http://identifiers.org/uniprot/F5H4X0> , <http://identifiers.org/uniprot/A0A024RBS4> , <http://identifiers.org/uniprot/F5H5E8> , <http://identifiers.org/uniprot/Q8WTV0> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/bb02c> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/df9cb> .
+
+<http://identifiers.org/wikipathways/WP716>
+        pav:hasVersion  <http://identifiers.org/wikipathways/WP716_r97560> .
+
+<http://identifiers.org/ncbigene/6817>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Sult1a1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/6817> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "6817"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000196502> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/6817> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/SULT1A1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P50225> , <http://identifiers.org/uniprot/H3BRY5> , <http://identifiers.org/uniprot/H3BMH9> , <http://identifiers.org/uniprot/H3BT96> , <http://identifiers.org/uniprot/H3BQX5> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/d104f> .
+
+<http://identifiers.org/ncbigene/1571>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Cyp2e1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/1571> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "1571"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000130649> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/1571> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/CYP2E1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P05181> , <http://identifiers.org/uniprot/H0YGV5> , <http://identifiers.org/uniprot/H0Y593> , <http://identifiers.org/uniprot/F5H694> , <http://identifiers.org/uniprot/H0Y7H4> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b3750> .
+
+<http://identifiers.org/pubmed/11585356>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/11585356> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/cecd6>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/cecd6> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0000561> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000561> .
+
+<http://identifiers.org/ncbigene/124>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Adh1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/124> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "124"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000187758> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/124> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ADH1A> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P07327> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/edcfc> .
+
+<http://identifiers.org/ncbigene/157506>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Rdh10"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/157506> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "157506"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000121039> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/157506> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/RDH10> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/E5RK48> , <http://identifiers.org/uniprot/Q8IZV5> , <http://identifiers.org/uniprot/A0A024R7X6> , <http://identifiers.org/uniprot/E5RHJ9> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/c937f> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a3ca7>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/ida019a6f> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/a3ca7> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0002152> , <http://identifiers.org/hmdb/HMDB0006216> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0006216> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0002152> .
+
+<http://identifiers.org/pubmed/8948389>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/8948389> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/c91f7>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/id3d5c0c0e> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/c91f7> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0000305> , <http://identifiers.org/hmdb/HMDB0003598> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0003598> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0000305> .
+
+<http://identifiers.org/hmdb/HMDB0006217>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "9-cis-Retinol"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0006217> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0006217"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a01bf> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/a49f5> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/f5a20> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:78272> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/8123435> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB06217> , <http://identifiers.org/hmdb/HMDB0006217> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID9947823> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q27147725> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/f2294> .
+
+<http://identifiers.org/ensembl/ENSG00000121207>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Lrat"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ensembl/ENSG00000121207> ;
+        dc:source           "Ensembl"^^xsd:string ;
+        dcterms:identifier  "ENSG00000121207"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/ccbcf> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000121207> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/9227> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/LRAT> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/D6RC94> , <http://identifiers.org/uniprot/O95237> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/c1e29> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/e5e97> .
+
+<http://identifiers.org/hmdb/HMDB0002268>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "Beta-Cryptoxanthin"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0002268> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0002268"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:10223> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/28533805> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB02268> , <http://identifiers.org/hmdb/HMDB0002268> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID23724629> , <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID70678559> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q27108604> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b3b6b> .
+
+<http://identifiers.org/ncbigene/64241>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Abcg8"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/64241> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "64241"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000143921> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/64241> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ABCG8> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q9H221> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a631d> .
+
+<http://identifiers.org/wikipathways/WP716_r97560>
+        a                      wp:Pathway , skos:Collection ;
+        dc:identifier          <http://identifiers.org/wikipathways/WP716> ;
+        dc:source              "WikiPathways"^^xsd:string ;
+        dc:title               "Vitamin A and Carotenoid Metabolism"@en ;
+        dcterms:description    "This pathway is about carotenoid and vitamin A metabolism. The initial version was created by the NuGO focusteam on Carotenoid metabolism. It was used to test a text mining workflow which added some additional entities (see Waagmeester et al. 2009)." ;
+        dcterms:identifier     "WP716"^^xsd:string ;
+        dcterms:references     <http://identifiers.org/pubmed/19715393> , <http://identifiers.org/pubmed/2656356> , <http://identifiers.org/pubmed/12401878> ;
+        wp:isAbout             <http://rdf.wikipathways.org/Pathway/WP716_r97560> ;
+        wp:ontologyTag         <http://vocabularies.wikipathways.org/wp#:AnalysisCollection> , <http://purl.obolibrary.org/obo/PW_0000135> , <http://purl.obolibrary.org/obo/PW_0001116> ;
+        wp:organism            <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+        wp:organismName        "Homo sapiens"^^xsd:string ;
+        wp:pathwayOntologyTag  <http://purl.obolibrary.org/obo/PW_0001116> , <http://purl.obolibrary.org/obo/PW_0000135> ;
+        foaf:page              <http://www.wikipathways.org/instance/WP716_r97560> .
+
+<http://identifiers.org/ncbigene/56603>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Cyp26b1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/56603> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "56603"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000003137> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/56603> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/CYP26B1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/E5RHN4> , <http://identifiers.org/uniprot/E7ER08> , <http://identifiers.org/uniprot/Q9NR63> , <http://identifiers.org/uniprot/E5RHM2> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/abd14> .
+
+<http://identifiers.org/pubmed/1595584>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/1595584> .
+
+<http://identifiers.org/ncbigene/216>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "Aldh1a1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/216> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "216"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000165092> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/216> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/ALDH1A1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q5SYQ8> , <http://identifiers.org/uniprot/Q5SYQ9> , <http://identifiers.org/uniprot/Q5SYQ7> , <http://identifiers.org/uniprot/V9HW83> , <http://identifiers.org/uniprot/P00352> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/a44fb> , <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/e5fb8> .
+
+<http://identifiers.org/ncbigene/195814>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Retinol dehydrogenases"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/195814> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "195814"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/bdca5> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000170786> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/195814> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/SDR16C5> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q8N3Y7> , <http://identifiers.org/uniprot/G3V145> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/fe9c7> .
+
+<http://identifiers.org/ncbigene/5594>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "MAPK"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5594> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5594"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000100030> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5594> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/MAPK1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/P28482> , <http://identifiers.org/uniprot/Q1HBJ4> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/b67a1> .
+
+<http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/b4096>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP716_r97560/Interaction/b4096> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB0002369> , <http://identifiers.org/hmdb/HMDB0006218> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB0006218> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB0002369> .
+
+<http://identifiers.org/hmdb/HMDB0011618>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "All-trans-13,14-dihydroretinol"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB0011618> ;
+        dc:source           "HMDB"^^xsd:string ;
+        dcterms:identifier  "HMDB0011618"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP716_r97560/WP/Interaction/fa6b6> , <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbChEBI         <http://identifiers.org/chebi/CHEBI:52075> ;
+        wp:bdbChemspider    <http://identifiers.org/chemspider/394057> ;
+        wp:bdbHmdb          <http://identifiers.org/hmdb/HMDB0011618> , <http://identifiers.org/hmdb/HMDB11618> ;
+        wp:bdbPubChem       <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID446798> ;
+        wp:bdbWikidata      <http://www.wikidata.org/entity/Q27123154> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/c25bf> .
+
+<http://identifiers.org/ncbigene/948>
+        a                   wp:DataNode , wp:GeneProduct ;
+        rdfs:label          "Cd36"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/948> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "948"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP716_r97560> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000135218> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/948> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/CD36> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/A4D1B1> , <http://identifiers.org/uniprot/E7EVU1> , <http://identifiers.org/uniprot/E9PJX8> , <http://identifiers.org/uniprot/E7EU05> , <http://identifiers.org/uniprot/E9PLT1> , <http://identifiers.org/uniprot/E9PC45> , <http://identifiers.org/uniprot/P16671> , <http://identifiers.org/uniprot/E7EX47> , <http://identifiers.org/uniprot/E7EWI4> , <http://identifiers.org/uniprot/E7ERZ9> , <http://identifiers.org/uniprot/H0YEE7> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP716_r97560/DataNode/d8d94> .

@@ -32,6 +32,8 @@ PREFIX pubchemio: <http://identifiers.org/pubchem/>
 # Wikidata
 PREFIX wd: <http://www.wikidata.org/entity/> 
 
+start = @<#Pathway>
+
 <#Pathway> {
 	pav:hasVersion @<PathwayVersion> ;
 }

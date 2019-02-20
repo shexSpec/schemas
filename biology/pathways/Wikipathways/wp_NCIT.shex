@@ -1,0 +1,35 @@
+
+wp:Pathway {
+	rdf:type obo:NCIT_C54214 ; 
+}
+
+wp:Gene {
+	rdf:type obo:NCIT_C16612 ;
+	obo:NCIT_R130 @wp:Pathway ;
+	obo:NCIT_P96  wp:Gene_Product ; # Gene_Encodes_Product
+	obo:NCIT_P321 xsd:string ; # EntrezGene
+	obo:NCIT_P369 xsd:string ; # HGNC ID
+}
+
+wp:Gene_Product {
+	rdf:type obo:NCIT_C26548  ;
+	obo:NCIT_R52 @wp:Gene ;
+	obo:NCIT_R131 @wpPathway ;
+}
+
+wp:Protein {
+	rdf:type obo:NCIT_C17021 ;
+}
+
+wp:Metabolite {
+	rdf:type obo:NCIT_C54214 ;
+}
+
+wp:SmallMolecule {
+	rdf:type obo:NCIT_C48809 ;
+}
+
+wp:pmid {
+	rdf:type obo:NCIT_C127797 ;
+}
+

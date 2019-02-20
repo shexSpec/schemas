@@ -1,0 +1,283 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#> 
+
+<#smallMoleculeReference> {
+    rdf:type [bp:SmallMoleculeReference] ;
+    bp:xref  @<#unificationXref> ;
+}
+
+<#unificationXref> {
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    a bp:UnificationXref .
+}
+
+<#chebi> {
+    bp:comment xsd:string+ ;
+    bp:displayName xsd:string ;
+    bp:name xsd:string* ;
+}
+
+<ec-code> { # TODO regex for http://identifiers.org/ec-code/1.1.1.1
+    rdf:type [
+       bp:ProteinReference
+       bp:DnaReference
+       ] ;
+    bp:xref IRI ;
+}
+
+<ensemblg> {
+    rdf:type [
+       bp:DnaReference
+       bp:RnaReference
+       ] ;
+    bp:xref @<hgnc_symbol> ;
+}
+
+<hgnc_symbol_relationship> {
+    rdf:type [bp:RelationshipXref] ;
+    bp:db ["hgnc symbol"^^xsd:string] ;
+    bp:id xsd:string ;
+    bp:relationshipType [
+                <http://identifiers.org/psimi/MI:0361> # Additional information
+           ]
+}
+
+
+<hgnc.symbol> {
+    bp:xref @<uniprotref>, @<hgnc> ;
+    rdf:type [bp:DnaReference] ;
+}
+
+<kegg.genes> {
+    bp:xref @<uniprotref>, @<hgnc> ;
+    rdf:type [bp:DnaReference] ;
+}
+
+<mirbase> {
+    bp:xref @<#UnificationXrefMirbase> ;
+    rdf:type [bp:DnaReference] ;
+}
+
+<#UnificationXrefMirbase> {
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    rdf:type [bp:UnificationXref] ;
+}
+
+<ncbigene> {
+    bp:xref @<hgnc_symbolXref>, @<uniprotXref>, @<ncbiXref>  ;
+    rdf:type [bp:RelationshipXref] ;
+}
+
+<hgnc_symbolXref> {
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    bp:relationshipType <http://identifiers.org/psimi/MI:0361> ;
+    rdf:type [bp:RelationshipXref]
+}
+
+<uniprotXref> {
+    bp:comment xsd:string ;
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    bp:relationshipType [<http://identifiers.org/psimi/MI:0361>] ;
+    rdf:type [bp:RelationshipXref] ;
+}
+
+<ncbiXref> {
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    rdf:type [bp:UnificationXref] ;
+}
+
+<ncbi_rna> {
+    bp:xref @<hgnc_symbolXref>, @<uniprot>, @<ncbiXref> ;
+    rdf:type [bp:RnaReference] ;
+}
+
+
+<http://identifiers.org/psimi/MI:0356>
+    bp:term "identity"^^xsd:string ;
+    bp:xref <http://pathwaycommons.org/pc11/#UnificationXref_molecular_interactions_ontology_MI_0356> ;
+    a bp:RelationshipTypeVocabulary .
+
+<http://identifiers.org/psimi/MI:0360>
+    bp:term "secondary-ac"^^xsd:string ;
+    bp:xref <http://pathwaycommons.org/pc11/#UnificationXref_molecular_interactions_ontology_MI_0360> ;
+    a bp:RelationshipTypeVocabulary .
+
+<http://identifiers.org/psimi/MI:0361>
+    bp:term "see-also"^^xsd:string ;
+    bp:xref <http://pathwaycommons.org/pc11/#UnificationXref_molecular_interactions_ontology_MI_0361> ;
+    a bp:RelationshipTypeVocabulary .
+
+<http://identifiers.org/psimi/MI:0829>
+    bp:term "multiple parent reference"^^xsd:string ;
+    bp:xref <http://pathwaycommons.org/pc11/#UnificationXref_molecular_interactions_ontology_MI_0829> ;
+    a bp:RelationshipTypeVocabulary .
+
+
+<refseq> {
+    bp:xref @<hgnc_symbolXref>, @<uniprotXref> , @<refseqXref> ;
+    rdf:type [bp:DnaReference] ;
+}
+
+<taxonomy> {
+    bp:displayName xsd:string ;
+    bp:name xsd:string ;
+    bp:standardName xsd:string ;
+    bp:xref @<taxonomyXref> ;
+    rdf:type [bp:BioSource] ;
+}
+
+<unigene> {
+    bp:xref @<unigene_xref> ;
+    rdf:type [bp:DnaReference] ;
+}
+
+<unigene_xref> {
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    rdf:type [bp:UnificationXref] ;
+}
+
+<uniprot> {
+    bp:comment xsd:string+ ;
+    bp:displayName xsd:string? ;
+    bp:name xsd:string? ;
+    bp:organism @<taxonomy>? ;
+    bp:standardName xsd:string? ;
+    bp:xref @<hgnc_symbolXref>, @<uniprot_xref> ;
+    rdf:type [bp:ProteinReference] ;
+
+}
+
+<wppathway> {
+    bp:dataSource @<wpProvenance> ;
+    bp:displayName xsd:string ;
+    bp:pathwayComponent @<pathwayComponent>? ; 
+    rdf:type [bp:Pathway] ;
+}
+
+<wpProvenance> {
+    bp:comment xsd:string ;
+    bp:displayName xsd:string;
+    bp:standardName xsd:string ;
+    rdf:type [bp:Provenance] ;
+}
+
+<pathwayComponent> {
+    bp:dataSource @<wpProvenance> ;
+    bp:displayName xsd:string? ;
+    bp:entityReference @<#entityReference>? ;
+    rdf:type @<#pathwayComponentType> ;
+}
+
+<interaction> {
+    <pathwayComponent> {
+    bp:dataSource @<wpProvenance> ;
+    bp:displayName xsd:string? ;
+    bp:participant @<pathwayComponent> ;
+    rdf:type @<#pathwayComponentType> ;
+}
+}
+
+<#entityReference> 
+    @<#chebi> 
+
+<pathwayComponentType> [
+   bp:Dna 
+   bp:SmallMolecule
+   bp:Interaction
+   bp:PhysicalEntity 
+   bp:Protein
+   bp:Gene
+]
+
+<complex> {
+    bp:datasource @<wpProvenance> ;
+    rdf:type [bp:Complex] ; 
+}
+
+<conversion> {
+    bp:conversionDirection xsd:string ;
+    bp:dataSource  @<wpProvenance> ;
+    bp:left @<pathwayComponent> ;
+    bp:right @<pathwayComponent> ;
+    rdf:type [bp:Conversion] ;
+}
+
+<catalysis> {
+    bp:controlled @<pathwayComponent>+ ;
+    bp:dataSource  @<wpProvenance> ;
+    rdf:type [bp:Catalysis] ;
+}
+
+<Protein> {
+    bp:dataSource @<wpProvenance> ;
+    bp:displayName xsd:string ;
+    bp:entityReference @<uniprot>
+}
+
+<degredation> {
+    bp:conversionDirection xsd:string ;
+    bp:dataSource @<wpProvenance> ;
+    bp:left @<pathwayComponent> ;
+    bp:right @<pathwayComponent> ;
+    rdf:type [bp:Degradation] ;
+}
+
+<DnaReference> {
+    bp:comment xsd:string ;
+    bp:displayName xsd:string ;
+    rdf:type [bp:DnaReference] ;
+}
+
+
+<modificationFeature> {
+    bp:comment xsd:string ;
+    bp:featureLocation @<sequenceSite> ;
+    bp:modificationType @<SequenceModificationVocabulary> ;
+    rdf:type [bp:ModficationFeature] ;
+}
+
+<sequenceSite> {
+    bp:positionStatus xsd:string ;
+    bp:sequencePosition xsd:int ;
+    rdf:type [bp:SequenceSite] ;
+}
+
+<SequenceModificationVocabulary> {
+    bp:term xsd:string+ ;
+    rdf:type [bp:SequenceModificationVocabulary];
+}
+
+<ProteinReference> {
+    bp:comment xsd:string ;
+    bp:displayName xsd:string ;
+    rdf:type [bp:ProteinReference] ;
+}
+
+<RelationShipXref> {
+    bp:comment xsd:string ;
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    bp:relationshipType [<http://identifiers.org/psimi/MI:0356>]?
+    rdf:type [bp:RelationshipXref]
+}
+
+<RnaReference> {
+    bp:comment xsd:string ;
+    bp:displayName xsd:string ;
+    rdf:type [bp:RnaReference] ;
+}
+
+<UnificationXref> {
+    bp:comment xsd:string?
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    rdf:type [bp:UnificationXref]
+}

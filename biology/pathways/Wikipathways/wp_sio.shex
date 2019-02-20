@@ -1,0 +1,6 @@
+PREFIX sio: <http://purl.bioontology.org/ontology/SIO>
+
+<pathway> {
+	rdf:type.  SIO:SIO_001107 ;
+	
+}
