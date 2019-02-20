@@ -1,0 +1,183 @@
+#Shape Expression for software on Wikidata with reference statements required
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+
+start = @<#wikidata-software>
+
+<#wikidata-software> {
+	# STATEMENTS
+	
+	
+	p:275 @<#P275_license>* ;			# License under which this was published
+	
+	p:348 @<#P348_software_version>* ;		# Version of this software title	
+	
+	P:856 @<#P856_official_website>* ;		# Website for this software
+	
+	p:178 @<#P178_developer>* ;			# Developer of this software
+	
+	p:306 @<#P306_operating_system>* ;		# Operating system this software will run on
+ 
+ 	p:1072 @<#P1072_readable_file_format>* ;	# File formats this software can read		
+ 
+ 	p:1073 @<#P1073_writable_file_format>* ;	# File formats this software can write
+	
+	p:144  @<#P144_based_on>* ;			# Other works on which this was based
+	
+	p:1547 @<#P1547_depends_on_software>* ;		# Software dependencies
+	
+	p:571 @<#P571_inception>* ;			# The time this software was created
+	
+	p:277 @<#P277_programming_language> ;		# Programming language in which this software is written
+	
+	p:577 @<#P577_publication_date>* ;		# Date this software was published or released
+ 
+ 	p:1324 @<#P1324_source_code_repository>* ;	# Repository where the source code for this software is archived
+	
+	p:2078 @<#P2078_user_manual_link>* ;		# URL for user manual
+ 	
+	
+	# IDENTIFIERS
+	p:2749 @<#P2749_PRONOM_software_identifier>* ;	# Zero or more PRONOM software ids
+  
+  	p:4107 @<#P4107_Framalibre_ID>* ;		# Zero or more Framalibre ids	
+	
+	p:1972 @<#P1972_Open_Hub_ID>* ;			# Zero or more Open Hub ids
+	
+	p:3112 @<#P3112_DistroWatch_id>* ;		# Zero or more DistroWatch ids
+	
+	p:3597 @<#P3597_F-Droid_package>* ;		# Zero or more F-Droid package ids
+	
+	p:2537 @<#P2537_Free_Software_Directory_entry>* ;  # Zero or more FSF Directory ids
+	
+	p:356 @<#P356_DOI>* ;				# Zero or more DOIs
+}
+
+# Shape expression for Wikidata statements related to software
+
+# Wikidata captures a statement in the following graph pattern:
+####################
+# wd:Pxx wikibase:directClaim wdt:Pxx ;
+#        wikibase:claim p:Pxx .
+# <item> wdt:Pxx "value" or <other_item> .
+# <item> p:Pxx <node> .
+# <node> ps:Pxx "value" or <other_item> ;
+#        pq:Pxx "qualifier value" or <qualifier_item> ;
+#        pr:Pxx "reference value" or <reference_item> .
+####################
+
+
+<#P275_license> {
+	ps:P275 IRI;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P348_software_version> {
+	ps:P348 LITERAL;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P856_official_website> {
+	ps:P856 LITERAL;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P178_developer> {
+	ps:P178 IRI;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P1072_readable_file_format> {
+	ps:P1072 IRI;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P1073_writable_file_format> {
+	ps:1073 IRI;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P306_operating_system> {
+	ps:P306 IRI;
+	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P144_based_on> {
+  	ps:P144 IRI;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P1547_depends_on_software> {
+  	ps:P1547 IRI;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P571_inception> {
+  	ps:P571 IRI;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+	
+<#P277_programming_language> {
+  	ps:P277 IRI;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}		
+
+<#P577_publication_date> {
+  	ps:P577 LITERAL;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P1324_source_code_repository> {
+  	ps:P1324 LITERAL;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference 
+}
+
+<#P2078_user_manual_link> {
+  	ps:P2078 LITERAL;
+  	prov:wasDerivedFrom @<reference> ; # Must have a reference
+}
+
+#EXTERNAL IDs
+#External IDs are considered self-referencing since they link out to the source itself.
+
+<#P2749_PRONOM_software_id> {
+	ps:P2749 LITERAL;
+	
+}
+
+<#P4107_Framalibre_ID> {
+  	ps:P4107 LITERAL;
+  
+}
+
+<#P1972_Open_Hub_ID> {
+  	ps:P1972 LITERAL;
+}
+
+<#P3112_DistroWatch_id> {
+  	ps:P3122 LITERAL;
+}
+	
+<#P3597_F-Droid_package> {
+  	ps:P3597 LITERAL;
+}
+	
+<#P2537_Free_Software_Directory_entry> {
+  	ps:P2537 LITERAL;
+}
+
+<#P356_DOI> {
+  	ps:P356  LITERAL;
+}
+
+# REFERENCES
+<reference> {
+   pr:P854	LITERAL ;				
+}
