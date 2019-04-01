@@ -1,0 +1,93 @@
+#Software_Report_WDI
+#BASE <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/softwareWikiDP.shex>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+
+# Shape expression for Wikidata statements related to software
+
+start = @<#wikidata-software>
+
+<#wikidata-software> {
+	#statements
+  
+  (p:P31 @<#P31_instance_of_software>* |p:P279 @<#P279_subclass_of_software>*)+ ;
+  
+	p:P178 @<#P178_developer>*;
+	
+	p:P306 @<#P306_operating_system>*;
+
+	p:P577 @<#P577_publication_date>*;
+
+	p:P1072 @<#P1072_readable_file_format>*;
+
+	p:P1073 @<#P1073_writable_file_format>*;
+
+	p:P144 @<#P144_based_on>*;
+	
+	p:P277 @<#P277_programming_language>*;
+
+	p:P973 @<#P973_described_at_URL>*;
+
+	p:P1343 @<#P1343_described_by_source>*;
+ 
+	p:P348 @<#P348_software_version>*;
+}	
+
+<#P31_instance_of_software> {
+  ps:P31 IRI ;
+}
+
+<#P279_subclass_of_software> {
+  ps:P279 IRI ;
+}
+
+<#P178_developer> {
+  ps:P178 IRI ;
+}
+
+<#P306_operating_system> {
+  ps:P306 IRI;
+}
+
+<#P577_publication_date> {
+  ps:P577 LITERAL;
+}
+
+<#P1072_readable_file_format> {
+  ps:P1072 IRI;
+}
+
+
+<#P1073_writable_file_format> {
+  ps:P1073 IRI;
+}
+
+<#P144_based_on> {
+  ps:P144 IRI;
+}
+
+<#P277_programming_language> {
+  ps:P277 IRI;
+}
+
+<#P973_described_at_URL> {
+  ps:P973 LITERAL;
+}
+
+<#P1343_described_by_source> {
+  ps:P1343 IRI;
+}
+
+<#P348_software_version> {
+  ps:P348 LITERAL;
+}
