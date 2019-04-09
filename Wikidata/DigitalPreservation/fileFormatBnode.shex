@@ -104,7 +104,7 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
 }
 
 <#P178_developer> {			# Zero or more developers for this file format
-  ps:P178 [IRI BLANK_NODE_LABEL] ;
+  ps:P178 [IRI OR BNODE] ;
 } 
 
 <#P144_based_on> {			# Zero or more items that this file format was based on
@@ -113,8 +113,8 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
 
 <#P4152_file_format_identification_pattern> {	# Zero or more magic number identification patterns 
   ps:P4152 LITERAL;			    	
-  pq:P3294 [IRI BLANK_NODE_LABEL];		# Qualifier used to indicate encoding according to which magic number is to be interpreted 
-  pq:P4153 [LITERAL BLANK_NODE_LABEL];		# Qualifier used to indicate that the offset is relative to a position
+  pq:P3294 [IRI OR BNODE];			# Qualifier used to indicate encoding according to which magic number is to be interpreted 
+  pq:P4153 [LITERAL OR BNODE];			# Qualifier used to indicate that the offset is relative to a position
   pq:P2210 [wd:Q35436009 wd:Q1148480]		# Qualifier used to indicate that position as  BOF or EOF
 }
 
