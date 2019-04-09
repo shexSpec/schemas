@@ -52,7 +52,7 @@ start = @<#wikidata-software>
 }
 
 <#P178_developer> {
-  ps:P178 IRI ;
+  ps:P178 IRI OR BNODE ;
 }
 
 <#P306_operating_system> {
