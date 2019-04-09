@@ -77,7 +77,7 @@ start = @<#wikidata-software>
 }
 
 <#P277_programming_language> {
-  ps:P277 IRI;
+  ps:P277 IRI OR BNODE;
 }
 
 <#P973_described_at_URL> {
