@@ -115,7 +115,7 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
   ps:P4152 LITERAL;			    	
   pq:P3294 IRI OR BNODE;			# Qualifier used to indicate encoding according to which magic number is to be interpreted 
   pq:P4153 LITERAL OR BNODE;			# Qualifier used to indicate that the offset is relative to a position
-  pq:P2210 wd:Q35436009 wd:Q1148480		# Qualifier used to indicate that position as  BOF or EOF
+  pq:P2210 [wd:Q35436009 wd:Q1148480] ;		# Qualifier used to indicate that position as  BOF or EOF
 }
 
 <#P973_described_at_URL> {		# Zero or more URL(s) of a resource that describes this file format
