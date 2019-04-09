@@ -18,7 +18,7 @@ PREFIX schema: <http://schema.org/>
 
 start = @<#wikidata-file_format> # Indicates which shape to use to start iterating over the graph if none is provided.
 
-# wikidata-file_format> is the shape for a file format data model in Wikidata. Each line between the brackets
+# <#wikidata-file_format> is the shape for a file format data model in Wikidata. Each line between the brackets
 # represents the structure that can be enforced to validate data from file format items.
 #
 # We distinguish between value statements, and identifier statements.
