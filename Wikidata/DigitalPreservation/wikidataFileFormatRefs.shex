@@ -31,7 +31,7 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
 	(p:P31 @<#P31_instance_of_file_format>* |p:P279 @<#P279_subclass_of_file_format>*)+ ;
 	# This shape presents two options.
 	# If this is a file format use P31. If this is a class of file format use P279.
-	# The * after the brackets indicates the 0 or more carinality. The + after the braces indicates that one of the two
+	# The * after the brackets indicates the 0 or more cardinality. The + after the braces indicates that one of the two
 	# options must be used.
 	 
 	
