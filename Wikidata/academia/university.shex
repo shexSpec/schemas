@@ -24,7 +24,7 @@ start = @<#university>
 }
 
 <#P856_official_website> {
-  ps:P856 LITERAL ;
+  ps:P856 IRI ;
 }
 
 <#P571_inception> {
