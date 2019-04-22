@@ -1,0 +1,32 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX schema: <http://schema.org/>
+
+start = @<#university>
+
+<#university> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of_academic_institute> ;
+  p:P17 @<#P17_country> ;
+  p:P856 @<#P856_official_website> ;
+  p:P571 @<#P571_inception> ;
+}
+
+<#P31_instance_of_academic_institute> {
+  ps:P31 [wd:Q4671277] ;
+}
+
+<#P17_country> {
+  ps:P17 IRI ;
+}
+
+<#P856_official_website> {
+  ps:P1748 LITERAL ;
+}
+
+<#P571_inception> {
+  ps:P571 LITERAL ;
+}
