@@ -34,31 +34,75 @@ start=@<wikidata_item>
 }
 
 <#wikimedia_project> [
+      <https://aa.wikipedia.org/>
+      <https://ab.wikipedia.org/>
+      <https://ace.wikipedia.org/>
+      <https://ady.wikipedia.org/>
       <https://af.wikipedia.org/>
+      <https://ak.wikipedia.org/>
+      <https://als.wikipedia.org/>
+      <https://am.wikipedia.org/>
+      <https://ang.wikipedia.org/>
+      <https://an.wikipedia.org/>
+      <https://arc.wikipedia.org/>
       <https://ar.wikipedia.org/>
       <https://ar.wikiquote.org/>
       <https://arz.wikipedia.org/>
       <https://ast.wikipedia.org/>
+      <https://as.wikipedia.org/>
+      <https://atj.wikipedia.org/>
+      <https://av.wikipedia.org/>
+      <https://ay.wikipedia.org/>
+      <https://azb.wikipedia.org/>
       <https://az.wikipedia.org/>
       <https://az.wikiquote.org/>
-      <https://azb.wikipedia.org/>
       <https://bar.wikipedia.org/>
+      <https://bat-smg.wikipedia.org/>
+      <https://ba.wikipedia.org/>
+      <https://bcl.wikipedia.org/>
       <https://be-tarask.wikipedia.org/>
       <https://be.wikipedia.org/>
       <https://bg.wikipedia.org/>
       <https://bg.wikiquote.org/>
+      <https://bh.wikipedia.org/>
+      <https://bi.wikipedia.org/>
+      <https://bjn.wikipedia.org/>
+      <https://bm.wikipedia.org/>
       <https://bn.wikipedia.org/>
+      <https://bo.wikipedia.org/>
+      <https://bpy.wikipedia.org/>
+      <https://br.wikipedia.org/>
       <https://bs.wikipedia.org/>
       <https://bs.wikiquote.org/>
+      <https://bug.wikipedia.org/>
+      <https://bxr.wikipedia.org/>
       <https://ca.wikipedia.org/>
+      <https://cbk-zam.wikipedia.org/>
+      <https://cdo.wikipedia.org/>
+      <https://ceb.wikipedia.org/>
+      <https://ce.wikipedia.org/>
+      <https://chr.wikipedia.org/>
+      <https://ch.wikipedia.org/>
+      <https://chy.wikipedia.org/>
+      <https://ckb.wikipedia.org/>
+      <https://co.wikipedia.org/>
+      <https://crh.wikipedia.org/>
+      <https://csb.wikipedia.org/>
       <https://cs.wikipedia.org/>
       <https://cs.wikiquote.org/>
+      <https://cu.wikipedia.org/>
+      <https://cv.wikipedia.org/>
       <https://cy.wikipedia.org/>
       <https://da.wikipedia.org/>
       <https://de.wikipedia.org/>
       <https://de.wikiquote.org/>
+      <https://diq.wikipedia.org/>
+      <https://dsb.wikipedia.org/>
+      <https://dty.wikipedia.org/>
+      <https://dv.wikipedia.org/>
       <https://el.wikipedia.org/>
       <https://el.wikiquote.org/>
+      <https://eml.wikipedia.org/>
       <https://en.wikipedia.org/>
       <https://en.wikiquote.org/>
       <https://eo.wikipedia.org/>
@@ -68,85 +112,240 @@ start=@<wikidata_item>
       <https://et.wikipedia.org/>
       <https://et.wikiquote.org/>
       <https://eu.wikipedia.org/>
+      <https://ext.wikipedia.org/>
       <https://fa.wikipedia.org/>
       <https://fa.wikiquote.org/>
+      <https://ff.wikipedia.org/>
+      <https://fiu-vro.wikipedia.org/>
       <https://fi.wikipedia.org/>
       <https://fi.wikiquote.org/>
+      <https://fo.wikipedia.org/>
+      <https://frp.wikipedia.org/>
+      <https://frr.wikipedia.org/>
       <https://fr.wikipedia.org/>
       <https://fr.wikiquote.org/>
+      <https://fur.wikipedia.org/>
+      <https://fy.wikipedia.org/>
+      <https://gag.wikipedia.org/>
+      <https://gan.wikipedia.org/>
       <https://ga.wikipedia.org/>
+      <https://gd.wikipedia.org/>
+      <https://glk.wikipedia.org/>
       <https://gl.wikipedia.org/>
       <https://gl.wikiquote.org/>
+      <https://gn.wikipedia.org/>
+      <https://gom.wikipedia.org/>
+      <https://gor.wikipedia.org/>
+      <https://got.wikipedia.org/>
+      <https://gu.wikipedia.org/>
+      <https://gv.wikipedia.org/>
+      <https://hak.wikipedia.org/>
+      <https://ha.wikipedia.org/>
+      <https://haw.wikipedia.org/>
       <https://he.wikipedia.org/>
       <https://he.wikiquote.org/>
+      <https://hi.wikipedia.org/>
       <https://hr.wikipedia.org/>
+      <https://hsb.wikipedia.org/>
+      <https://ht.wikipedia.org/>
       <https://hu.wikipedia.org/>
       <https://hu.wikiquote.org/>
       <https://hy.wikipedia.org/>
       <https://hy.wikiquote.org/>
+      <https://hyw.wikipedia.org/>
       <https://ia.wikipedia.org/>
       <https://id.wikipedia.org/>
+      <https://ie.wikipedia.org/>
+      <https://ig.wikipedia.org/>
+      <https://ik.wikipedia.org/>
+      <https://ilo.wikipedia.org/>
+      <https://inh.wikipedia.org/>
       <https://io.wikipedia.org/>
       <https://is.wikipedia.org/>
       <https://it.wikipedia.org/>
       <https://it.wikiquote.org/>
+      <https://iu.wikipedia.org/>
+      <https://jam.wikipedia.org/>
       <https://ja.wikipedia.org/>
+      <https://jbo.wikipedia.org/>
       <https://jv.wikipedia.org/>
+      <https://kaa.wikipedia.org/>
+      <https://kab.wikipedia.org/>
       <https://ka.wikipedia.org/>
+      <https://kbp.wikipedia.org/>
+      <https://ki.wikipedia.org/>
+      <https://kk.wikipedia.org/>
+      <https://kl.wikipedia.org/>
+      <https://km.wikipedia.org/>
+      <https://kn.wikipedia.org/>
+      <https://koi.wikipedia.org/>
       <https://ko.wikipedia.org/>
+      <https://krc.wikipedia.org/>
+      <https://ksh.wikipedia.org/>
+      <https://ks.wikipedia.org/>
+      <https://ku.wikipedia.org/>
+      <https://kw.wikipedia.org/>
       <https://ky.wikipedia.org/>
+      <https://lad.wikipedia.org/>
       <https://la.wikipedia.org/>
+      <https://lbe.wikipedia.org/>
+      <https://lb.wikipedia.org/>
+      <https://lez.wikipedia.org/>
       <https://lfn.wikipedia.org/>
+      <https://lg.wikipedia.org/>
+      <https://lij.wikipedia.org/>
+      <https://li.wikipedia.org/>
       <https://li.wikiquote.org/>
+      <https://lmo.wikipedia.org/>
+      <https://ln.wikipedia.org/>
+      <https://lo.wikipedia.org/>
+      <https://lrc.wikipedia.org/>
+      <https://ltg.wikipedia.org/>
       <https://lt.wikipedia.org/>
       <https://lt.wikiquote.org/>
       <https://lv.wikipedia.org/>
+      <https://mai.wikipedia.org/>
+      <https://map-bms.wikipedia.org/>
+      <https://mdf.wikipedia.org/>
       <https://mg.wikipedia.org/>
+      <https://mhr.wikipedia.org/>
+      <https://min.wikipedia.org/>
+      <https://mi.wikipedia.org/>
       <https://mk.wikipedia.org/>
       <https://ml.wikipedia.org/>
-      <https://mr.wikipedia.org/>
+      <https://mn.wikipedia.org/>
       <https://mrj.wikipedia.org/>
+      <https://mr.wikipedia.org/>
+      <https://ms.wikipedia.org/>
+      <https://mt.wikipedia.org/>
+      <https://mwl.wikipedia.org/>
+      <https://myv.wikipedia.org/>
+      <https://my.wikipedia.org/>
+      <https://mzn.wikipedia.org/>
+      <https://nah.wikipedia.org/>
+      <https://nap.wikipedia.org/>
+      <https://na.wikipedia.org/>
+      <https://nds-nl.wikipedia.org/>
+      <https://nds.wikipedia.org/>
+      <https://ne.wikipedia.org/>
+      <https://new.wikipedia.org/>
+      <https://ng.wikipedia.org/>
       <https://nl.wikipedia.org/>
       <https://nl.wikiquote.org/>
       <https://nn.wikipedia.org/>
+      <https://nov.wikipedia.org/>
       <https://no.wikipedia.org/>
+      <https://nrm.wikipedia.org/>
+      <https://nso.wikipedia.org/>
+      <https://ny.wikipedia.org/>
       <https://oc.wikipedia.org/>
+      <https://olo.wikipedia.org/>
+      <https://or.wikipedia.org/>
+      <https://os.wikipedia.org/>
+      <https://pag.wikipedia.org/>
+      <https://pam.wikipedia.org/>
+      <https://pap.wikipedia.org/>
       <https://pa.wikipedia.org/>
+      <https://pcd.wikipedia.org/>
+      <https://pdc.wikipedia.org/>
+      <https://pfl.wikipedia.org/>
+      <https://pih.wikipedia.org/>
+      <https://pi.wikipedia.org/>
       <https://pl.wikipedia.org/>
       <https://pl.wikiquote.org/>
+      <https://pms.wikipedia.org/>
       <https://pnb.wikipedia.org/>
+      <https://pnt.wikipedia.org/>
+      <https://ps.wikipedia.org/>
       <https://pt.wikipedia.org/>
       <https://pt.wikiquote.org/>
+      <https://qu.wikipedia.org/>
+      <https://rm.wikipedia.org/>
+      <https://rmy.wikipedia.org/>
+      <https://roa-rup.wikipedia.org/>
+      <https://roa-tara.wikipedia.org/>
       <https://ro.wikipedia.org/>
+      <https://rue.wikipedia.org/>
       <https://ru.wikipedia.org/>
       <https://ru.wikiquote.org/>
-      <https://sc.wikipedia.org/>
+      <https://sah.wikipedia.org/>
+      <https://sat.wikipedia.org/>
+      <https://sa.wikipedia.org/>
+      <https://scn.wikipedia.org/>
       <https://sco.wikipedia.org/>
+      <https://sc.wikipedia.org/>
+      <https://sd.wikipedia.org/>
+      <https://se.wikipedia.org/>
+      <https://sg.wikipedia.org/>
+      <https://shn.wikipedia.org/>
       <https://sh.wikipedia.org/>
       <https://simple.wikipedia.org/>
       <https://simple.wikiquote.org/>
+      <https://si.wikipedia.org/>
       <https://sk.wikipedia.org/>
       <https://sk.wikiquote.org/>
       <https://sl.wikipedia.org/>
+      <https://sm.wikipedia.org/>
+      <https://sn.wikipedia.org/>
+      <https://so.wikipedia.org/>
       <https://sq.wikipedia.org/>
+      <https://srn.wikipedia.org/>
       <https://sr.wikipedia.org/>
+      <https://ss.wikipedia.org/>
+      <https://stq.wikipedia.org/>
+      <https://su.wikipedia.org/>
       <https://sv.wikipedia.org/>
       <https://sv.wikiquote.org/>
+      <https://sw.wikipedia.org/>
+      <https://szl.wikipedia.org/>
       <https://ta.wikipedia.org/>
+      <https://tcy.wikipedia.org/>
+      <https://tet.wikipedia.org/>
+      <https://te.wikipedia.org/>
+      <https://tg.wikipedia.org/>
+      <https://th.wikipedia.org/>
       <https://th.wikiquote.org/>
+      <https://ti.wikipedia.org/>
+      <https://tk.wikipedia.org/>
+      <https://tl.wikipedia.org/>
+      <https://tn.wikipedia.org/>
+      <https://tpi.wikipedia.org/>
       <https://tr.wikipedia.org/>
       <https://tr.wikiquote.org/>
+      <https://ts.wikipedia.org/>
+      <https://tt.wikipedia.org/>
+      <https://tw.wikipedia.org/>
+      <https://tyv.wikipedia.org/>
+      <https://ty.wikipedia.org/>
+      <https://udm.wikipedia.org/>
+      <https://ug.wikipedia.org/>
       <https://uk.wikipedia.org/>
       <https://uk.wikiquote.org/>
       <https://ur.wikipedia.org/>
+      <https://uz.wikipedia.org/>
+      <https://vec.wikipedia.org/>
       <https://vep.wikipedia.org/>
+      <https://ve.wikipedia.org/>
       <https://vi.wikipedia.org/>
+      <https://vls.wikipedia.org/>
+      <https://vo.wikipedia.org/>
       <https://war.wikipedia.org/>
+      <https://wa.wikipedia.org/>
+      <https://wo.wikipedia.org/>
       <https://wuu.wikipedia.org/>
+      <https://xal.wikipedia.org/>
+      <https://xh.wikipedia.org/>
+      <https://xmf.wikipedia.org/>
+      <https://yi.wikipedia.org/>
+      <https://yo.wikipedia.org/>
+      <https://za.wikipedia.org/>
+      <https://zea.wikipedia.org/>
+      <https://zh-classical.wikipedia.org/>
       <https://zh-min-nan.wikipedia.org/>
-      <https://zh-yue.wikipedia.org/>
       <https://zh.wikipedia.org/>
       <https://zh.wikiquote.org/>
+      <https://zh-yue.wikipedia.org/>
+      <https://zu.wikipedia.org/>
 ]
 
 #Languages obtained with queries:
