@@ -1,3 +1,9 @@
+# Define the schema
+## Schema for So for example on a class like ceremonial county of England (Q180673) 
+## one might identify a shape expression to say that instances of the class should 
+## have located in the administrative territorial entity (P131) with a value that is
+## instance of (P31) region of England (Q48091)
+
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX wd: <http://www.wikidata.org/entity/>
