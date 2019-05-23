@@ -1,0 +1,20 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+<#ceremonial_county_of_England> {
+	p:P31 @<P31_instance_of_ceremonial_county_of_England> ;
+	p:P131 @<P131_located_in_the_administrative_territorial_entity> ;
+}
+
+<P31_instance_of> {
+	ps:P31 [wd:Q48091] ; # Q48091 ceremonial county of England
+}
+
+<P131_located_in_the_administrative_territorial_entity> {
+	ps:P131 { 
+		p:P31 {
+			ps:P31 wd:Q48091 ;
+		}
+	} ;	
+}
