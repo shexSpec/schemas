@@ -45,6 +45,8 @@ start=@<wikidata_item>
       <https://ang.wikipedia.org/>
       <https://an.wikipedia.org/>
       <https://arc.wikipedia.org/>
+      <https://ar.wikibooks.org/>
+      <https://ar.wikinews.org/>
       <https://ar.wikipedia.org/>
       <https://ar.wikiquote.org/>
       <https://arz.wikipedia.org/>
@@ -54,6 +56,7 @@ start=@<wikidata_item>
       <https://av.wikipedia.org/>
       <https://ay.wikipedia.org/>
       <https://azb.wikipedia.org/>
+      <https://az.wikibooks.org/>
       <https://az.wikipedia.org/>
       <https://az.wikiquote.org/>
       <https://bar.wikipedia.org/>
@@ -62,6 +65,7 @@ start=@<wikidata_item>
       <https://bcl.wikipedia.org/>
       <https://be-tarask.wikipedia.org/>
       <https://be.wikipedia.org/>
+      <https://be.wikiquote.org/>
       <https://bg.wikipedia.org/>
       <https://bg.wikiquote.org/>
       <https://bh.wikipedia.org/>
@@ -69,14 +73,19 @@ start=@<wikidata_item>
       <https://bjn.wikipedia.org/>
       <https://bm.wikipedia.org/>
       <https://bn.wikipedia.org/>
+      <https://bn.wikivoyage.org/>
       <https://bo.wikipedia.org/>
       <https://bpy.wikipedia.org/>
       <https://br.wikipedia.org/>
+      <https://bs.wikinews.org/>
       <https://bs.wikipedia.org/>
       <https://bs.wikiquote.org/>
       <https://bug.wikipedia.org/>
       <https://bxr.wikipedia.org/>
+      <https://ca.wikibooks.org/>
+      <https://ca.wikinews.org/>
       <https://ca.wikipedia.org/>
+      <https://ca.wikiquote.org/>
       <https://cbk-zam.wikipedia.org/>
       <https://cdo.wikipedia.org/>
       <https://ceb.wikipedia.org/>
@@ -88,42 +97,65 @@ start=@<wikidata_item>
       <https://co.wikipedia.org/>
       <https://crh.wikipedia.org/>
       <https://csb.wikipedia.org/>
+      <https://cs.wikinews.org/>
       <https://cs.wikipedia.org/>
       <https://cs.wikiquote.org/>
       <https://cu.wikipedia.org/>
       <https://cv.wikipedia.org/>
       <https://cy.wikipedia.org/>
+      <https://da.wikibooks.org/>
       <https://da.wikipedia.org/>
+      <https://da.wikiquote.org/>
+      <https://de.wikinews.org/>
       <https://de.wikipedia.org/>
       <https://de.wikiquote.org/>
+      <https://de.wikiversity.org/>
+      <https://de.wikivoyage.org/>
       <https://diq.wikipedia.org/>
       <https://dsb.wikipedia.org/>
       <https://dty.wikipedia.org/>
       <https://dv.wikipedia.org/>
+      <https://ee.wikipedia.org/>
+      <https://el.wikinews.org/>
       <https://el.wikipedia.org/>
       <https://el.wikiquote.org/>
+      <https://el.wikivoyage.org/>
       <https://eml.wikipedia.org/>
+      <https://en.wikibooks.org/>
+      <https://en.wikinews.org/>
       <https://en.wikipedia.org/>
       <https://en.wikiquote.org/>
+      <https://en.wikiversity.org/>
+      <https://en.wikivoyage.org/>
+      <https://eo.wikinews.org/>
       <https://eo.wikipedia.org/>
       <https://eo.wikiquote.org/>
+      <https://es.wikinews.org/>
       <https://es.wikipedia.org/>
       <https://es.wikiquote.org/>
+      <https://es.wikivoyage.org/>
       <https://et.wikipedia.org/>
       <https://et.wikiquote.org/>
       <https://eu.wikipedia.org/>
       <https://ext.wikipedia.org/>
+      <https://fa.wikinews.org/>
       <https://fa.wikipedia.org/>
       <https://fa.wikiquote.org/>
+      <https://fa.wikivoyage.org/>
       <https://ff.wikipedia.org/>
       <https://fiu-vro.wikipedia.org/>
       <https://fi.wikipedia.org/>
       <https://fi.wikiquote.org/>
+      <https://fi.wikivoyage.org/>
       <https://fo.wikipedia.org/>
       <https://frp.wikipedia.org/>
       <https://frr.wikipedia.org/>
+      <https://fr.wikibooks.org/>
+      <https://fr.wikinews.org/>
       <https://fr.wikipedia.org/>
       <https://fr.wikiquote.org/>
+      <https://fr.wikiversity.org/>
+      <https://fr.wikivoyage.org/>
       <https://fur.wikipedia.org/>
       <https://fy.wikipedia.org/>
       <https://gag.wikipedia.org/>
@@ -144,7 +176,12 @@ start=@<wikidata_item>
       <https://haw.wikipedia.org/>
       <https://he.wikipedia.org/>
       <https://he.wikiquote.org/>
+      <https://he.wikivoyage.org/>
+      <https://hif.wikipedia.org/>
+      <https://hi.wikibooks.org/>
       <https://hi.wikipedia.org/>
+      <https://hi.wikiquote.org/>
+      <https://hi.wikivoyage.org/>
       <https://hr.wikipedia.org/>
       <https://hsb.wikipedia.org/>
       <https://ht.wikipedia.org/>
@@ -162,17 +199,22 @@ start=@<wikidata_item>
       <https://inh.wikipedia.org/>
       <https://io.wikipedia.org/>
       <https://is.wikipedia.org/>
+      <https://it.wikinews.org/>
       <https://it.wikipedia.org/>
       <https://it.wikiquote.org/>
+      <https://it.wikivoyage.org/>
       <https://iu.wikipedia.org/>
       <https://jam.wikipedia.org/>
+      <https://ja.wikibooks.org/>
       <https://ja.wikipedia.org/>
       <https://jbo.wikipedia.org/>
       <https://jv.wikipedia.org/>
       <https://kaa.wikipedia.org/>
       <https://kab.wikipedia.org/>
       <https://ka.wikipedia.org/>
+      <https://kbd.wikipedia.org/>
       <https://kbp.wikipedia.org/>
+      <https://kg.wikipedia.org/>
       <https://ki.wikipedia.org/>
       <https://kk.wikipedia.org/>
       <https://kl.wikipedia.org/>
@@ -184,6 +226,7 @@ start=@<wikidata_item>
       <https://ksh.wikipedia.org/>
       <https://ks.wikipedia.org/>
       <https://ku.wikipedia.org/>
+      <https://kv.wikipedia.org/>
       <https://kw.wikipedia.org/>
       <https://ky.wikipedia.org/>
       <https://lad.wikipedia.org/>
@@ -230,16 +273,20 @@ start=@<wikidata_item>
       <https://ne.wikipedia.org/>
       <https://new.wikipedia.org/>
       <https://ng.wikipedia.org/>
+      <https://nl.wikinews.org/>
       <https://nl.wikipedia.org/>
       <https://nl.wikiquote.org/>
+      <https://nl.wikivoyage.org/>
       <https://nn.wikipedia.org/>
       <https://nov.wikipedia.org/>
+      <https://no.wikinews.org/>
       <https://no.wikipedia.org/>
       <https://nrm.wikipedia.org/>
       <https://nso.wikipedia.org/>
       <https://ny.wikipedia.org/>
       <https://oc.wikipedia.org/>
       <https://olo.wikipedia.org/>
+      <https://om.wikipedia.org/>
       <https://or.wikipedia.org/>
       <https://os.wikipedia.org/>
       <https://pag.wikipedia.org/>
@@ -251,23 +298,34 @@ start=@<wikidata_item>
       <https://pfl.wikipedia.org/>
       <https://pih.wikipedia.org/>
       <https://pi.wikipedia.org/>
+      <https://pl.wikinews.org/>
       <https://pl.wikipedia.org/>
       <https://pl.wikiquote.org/>
+      <https://pl.wikivoyage.org/>
       <https://pms.wikipedia.org/>
       <https://pnb.wikipedia.org/>
       <https://pnt.wikipedia.org/>
       <https://ps.wikipedia.org/>
+      <https://pt.wikinews.org/>
       <https://pt.wikipedia.org/>
       <https://pt.wikiquote.org/>
+      <https://pt.wikivoyage.org/>
       <https://qu.wikipedia.org/>
       <https://rm.wikipedia.org/>
       <https://rmy.wikipedia.org/>
+      <https://rn.wikipedia.org/>
       <https://roa-rup.wikipedia.org/>
       <https://roa-tara.wikipedia.org/>
+      <https://ro.wikinews.org/>
       <https://ro.wikipedia.org/>
+      <https://ro.wikiquote.org/>
+      <https://ro.wikivoyage.org/>
       <https://rue.wikipedia.org/>
+      <https://ru.wikinews.org/>
       <https://ru.wikipedia.org/>
       <https://ru.wikiquote.org/>
+      <https://ru.wikivoyage.org/>
+      <https://rw.wikipedia.org/>
       <https://sah.wikipedia.org/>
       <https://sat.wikipedia.org/>
       <https://sa.wikipedia.org/>
@@ -288,17 +346,25 @@ start=@<wikidata_item>
       <https://sm.wikipedia.org/>
       <https://sn.wikipedia.org/>
       <https://so.wikipedia.org/>
+      <https://sq.wikibooks.org/>
+      <https://sq.wikinews.org/>
       <https://sq.wikipedia.org/>
       <https://srn.wikipedia.org/>
+      <https://sr.wikinews.org/>
       <https://sr.wikipedia.org/>
       <https://ss.wikipedia.org/>
       <https://stq.wikipedia.org/>
+      <https://st.wikipedia.org/>
       <https://su.wikipedia.org/>
+      <https://sv.wikinews.org/>
       <https://sv.wikipedia.org/>
       <https://sv.wikiquote.org/>
+      <https://sv.wikivoyage.org/>
       <https://sw.wikipedia.org/>
       <https://szl.wikipedia.org/>
+      <https://ta.wikinews.org/>
       <https://ta.wikipedia.org/>
+      <https://ta.wikiquote.org/>
       <https://tcy.wikipedia.org/>
       <https://tet.wikipedia.org/>
       <https://te.wikipedia.org/>
@@ -310,6 +376,7 @@ start=@<wikidata_item>
       <https://tl.wikipedia.org/>
       <https://tn.wikipedia.org/>
       <https://tpi.wikipedia.org/>
+      <https://tr.wikinews.org/>
       <https://tr.wikipedia.org/>
       <https://tr.wikiquote.org/>
       <https://ts.wikipedia.org/>
@@ -319,14 +386,19 @@ start=@<wikidata_item>
       <https://ty.wikipedia.org/>
       <https://udm.wikipedia.org/>
       <https://ug.wikipedia.org/>
+      <https://uk.wikinews.org/>
       <https://uk.wikipedia.org/>
       <https://uk.wikiquote.org/>
+      <https://uk.wikivoyage.org/>
       <https://ur.wikipedia.org/>
       <https://uz.wikipedia.org/>
       <https://vec.wikipedia.org/>
       <https://vep.wikipedia.org/>
       <https://ve.wikipedia.org/>
+      <https://vi.wikibooks.org/>
       <https://vi.wikipedia.org/>
+      <https://vi.wikiquote.org/>
+      <https://vi.wikivoyage.org/>
       <https://vls.wikipedia.org/>
       <https://vo.wikipedia.org/>
       <https://war.wikipedia.org/>
@@ -342,8 +414,10 @@ start=@<wikidata_item>
       <https://zea.wikipedia.org/>
       <https://zh-classical.wikipedia.org/>
       <https://zh-min-nan.wikipedia.org/>
+      <https://zh.wikibooks.org/>
       <https://zh.wikipedia.org/>
       <https://zh.wikiquote.org/>
+      <https://zh.wikivoyage.org/>
       <https://zh-yue.wikipedia.org/>
       <https://zu.wikipedia.org/>
 ]
