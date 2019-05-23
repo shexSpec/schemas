@@ -23,7 +23,7 @@ start=@<#ceremonial_county_of_England>
 	ps:P131  @<#region_of_england> ; 
 } 	
 
-<#region_of_england> { 
+<#region_of_england> EXTRA p:P31 { 
 	p:P31 @<#P31_instance_of_roE> ;
 }
 
