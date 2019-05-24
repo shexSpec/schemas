@@ -1,16 +1,10 @@
-# Define the schema
-## Schema for So for example on a class like ceremonial county of England (Q180673) 
-## one might identify a shape expression to say that instances of the class should 
-## have located in the administrative territorial entity (P131) with a value that is
-## instance of (P31) region of England (Q48091)
-
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 
 start=@<#ceremonial_county_of_England>
 
-<#ceremonial_county_of_England> EXTRA p:P31 { # EXTRA : Except other Qids as values for p:P31 
+<#ceremonial_county_of_England> EXTRA p:P31 EXTRA p:P131 { # EXTRA : Except other Qids as values for p:P31 
 	p:P31 @<#P31_instance_of_ccoE>+ ; # There are 1 or more P31 statements
 	p:P131 @<#P131_located_in_the_administrative_territorial_entity> ; # There is exactly 1 P131 statement
 }
