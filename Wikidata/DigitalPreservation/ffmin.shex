@@ -30,7 +30,7 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
 	#statements
 	
 	
-	p:P1195 @<#P1195_file_extension> ;		# File extensions used by this file format
+	p:P1195 @<#P1195_file_extension>+ ;		# File extensions used by this file format
 	
 	p:P1163 @<#P1163_media_type>* ;			# Media type for this file format			
 	
