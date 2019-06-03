@@ -40,10 +40,6 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
 	       
 	p:P4152 @<#P4152_file_format_identification_pattern>* ;	# Magic number for this file format
 	
-	p:P973 @<#P973_described_at_URL>* ;		# URL of a resource that describes this file format		
-	
-	p:P1343 @<#P1343_described_by_source>* ;	# Item that describes this file format	
-	
 	p:P348 @<#P348_software_version>* ;		# Version of this file format
 	
 	p:P577 @<#P577_publication_date>* ;		# The date the file format was published
@@ -106,17 +102,10 @@ start = @<#wikidata-file_format> # Indicates which shape to use to start iterati
   pq:P2210 [wd:Q35436009 wd:Q1148480]		# Qualifier used to indicate that position as  BOF or EOF
 }
 
-<#P973_described_at_URL> {		# Zero or more URL(s) of a resource that describes this file format
-  ps:P973 LITERAL ;
-}
-
 <#P348_software_version> {		# Zero or more version(s) of this file format
   ps:P348 LITERAL ;
 }
 
-<#P1343_described_by_source> {		# Zero or more Items that describe this file format
-  ps:P1343 IRI ;
-}
 
 <#P577_publication_date> {		# Zero or more date(s) on which this file format was published
   ps:P577 LITERAL ;
