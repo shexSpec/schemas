@@ -13,24 +13,28 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 
-start = @<wikidata_item>
+start = @<programminglanguage>
 
-<wikidata_item> {
-    #statements
-        (p:P31 @<#P31_instance_of_programminglanguage> |p:P279 @<#P31_instance_of_programminglanguage>)+ ;
-	p:P178 @<#P178_developer>*;
-	p:P3966 @<#P3966_paradigm>*;
-	p:P577 @<#P577_publication_date>*;
-        p:P856 @<#P856_website>*;
+<programminglanguage> EXTRA p:P31 {
+  (p:P31 @<#P31_instance_of_programminglanguage>|p:P31 @<#P279_subclass_of_programminglanguage>)+;
+  p:P178 @<#P178_developer>*;
+  p:P3966 @<#P3966_paradigm>+;
+  p:P577 @<#P577_publication_date>*;
+  p:P856 @<#P856_website>*;
 }
-# Shape expression for Wikidata statements related to programming languages
+
 <#P31_instance_of_programminglanguage> {
-    ps:P31 IRI;
+    ps:P31 @<#wd_programming_language> ;
 }
 
 <#P279_subclass_of_programminglanguage> {
-  ps:P279 IRI ;
+    (ps:P279 @<#wd_programming_language> ; ps:P279 IRI *) |
+    (ps:P279 @<#P279_subclass_of_programminglanguage>; ps:P279 IRI *)
 }
+
+<#wd_programming_language> [
+  ent:Q9143  # Q9143 = programming language
+]
 
 <#P178_developer> {
   ps:P178 IRI;
