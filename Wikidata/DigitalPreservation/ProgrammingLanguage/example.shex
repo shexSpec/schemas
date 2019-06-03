@@ -17,9 +17,33 @@ start = @<wikidata_item>
 
 <wikidata_item> {
     #statements
-        p:P31 @<P31_instance_of_programminglanguage>+ ;
+        (p:P31 @<#P31_instance_of_programminglanguage> |p:P279 @<#P31_instance_of_programminglanguage>)+ ;
+	p:P178 @<#P178_developer>*;
+	p:P3966 @<#P3966_paradigm>*;
+	p:P577 @<#P577_publication_date>*;
+        p:P856 @<#P856_website>*;
 }
 # Shape expression for Wikidata statements related to programming languages
-<P31_instance_of_programminglanguage> {
-    ps:P31 [wd:Q9143];
+<#P31_instance_of_programminglanguage> {
+    ps:P31 IRI;
+}
+
+<#P279_subclass_of_programminglanguage> {
+  ps:P279 IRI ;
+}
+
+<#P178_developer> {
+  ps:P178 IRI;
+}
+
+<#P3966_paradigm> {
+  ps:P3966 IRI;
+}
+
+<#P577_publication_date> {
+  ps:P577 LITERAL;
+}
+
+<#P856_website> {
+  ps:P856 IRI;
 }
