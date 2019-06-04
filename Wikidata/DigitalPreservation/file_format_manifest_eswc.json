@@ -1,0 +1,26 @@
+[
+    {
+        "schemaLabel": "Fileformats in Wikidata",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/ffmin.shex",
+        "dataLabel": "Get 10 file formats from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?item WHERE { ?item wdt:P31 wd:Q235557 .} LIMIT 10'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "Fileformats in Wikidata",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/ffmin.shex",
+        "dataLabel": "Get 100 file formats from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?item WHERE { ?item wdt:P31 wd:Q235557 .} LIMIT 100'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "Fileformats in Wikidata",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/DigitalPreservation/ffmin.shex",
+        "dataLabel": "Get all file formats from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?item WHERE { ?item wdt:P31 wd:Q235557 .}'''@START",
+        "status": "conformant"
+    }
+]
