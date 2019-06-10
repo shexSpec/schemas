@@ -91,7 +91,7 @@ start = @<#Pathway>
         dc:identifier       [hmdbio:~ chebiio:~ wdio:~] ;
         dc:source 			xsd:string ;
         dcterms:identifier  xsd:string ;
-        dcterms:isPartOf    @<#pathwayversion> ;
+        dcterms:isPartOf    @<#PathwayVersion> ;
         dcterms:isPartOf    @<#interaction>  ;
         wp:bdbChEBI         [chebiio:~]* ;
         wp:bdbChemspider    [chemspiderio:~]* ;
@@ -104,7 +104,7 @@ start = @<#Pathway>
 <#interaction> {
 	rdf:type 	[wp:Interaction];
 	rdf:type    @<#interactiontypes>* ;
-	dcterms:isPartOf	@<#pathwayversion> ;
+	dcterms:isPartOf	@<#PathwayVersion> ;
 	wp:participants     @<#datanode> ;
 	wp:participants     @<#datanode>* ;
 	wp:source 			[wp:datanode]* ;
@@ -125,7 +125,7 @@ start = @<#Pathway>
 
 <#reference> {
 	rdf:type               	wp:PublicationReference ;
-	dcterms:isPartOf	    @<#pathwayversion> ;
+	dcterms:isPartOf	    @<#PathwayVersion> ;
 	foaf:page 			    [pubmed:~] ;
 }
 
