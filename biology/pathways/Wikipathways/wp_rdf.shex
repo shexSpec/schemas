@@ -35,7 +35,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 start = @<#Pathway>
 
 <#Pathway> {
-	pav:hasVersion @<PathwayVersion> ;
+	pav:hasVersion @<#PathwayVersion> ;
 }
 
 <#PathwayVersion> {
