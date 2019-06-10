@@ -107,8 +107,8 @@ start = @<#Pathway>
 	dcterms:isPartOf	@<#PathwayVersion> ;
 	wp:participants     @<#datanode> ;
 	wp:participants     @<#datanode>* ;
-	wp:source 			[wp:datanode]* ;
-	wp:target 			[wp:datanode]* ;
+	wp:source 			[wp:DataNode]* ;
+	wp:target 			[wp:DataNode]* ;
 }
 
 <#interactiontypes> [
