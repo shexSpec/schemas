@@ -1,0 +1,10 @@
+[
+    {
+        "schemaLabel": "university teacher",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/academia/universityTeacher.shex",
+        "dataLabel": "Get 1 Dutch university teacher from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item (wdt:P106/wdt:P279*) wd:Q1622272 ; wdt:P108/wdt:P463 wd:Q3212092 } LIMIT 1'''@START",
+        "status": "conformant"
+    }
+]

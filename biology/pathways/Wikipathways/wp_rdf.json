@@ -1,0 +1,18 @@
+[
+    {
+        "schemaLabel": "pathway",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/biology/pathways/Wikipathways/wp_rdf.shex",
+        "dataLabel": "Get 1 pathway from WikiPathways" ,
+        "data": "Endpoint: https://sparql.wikipathways.org/",
+        "queryMap": "SPARQL '''PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>\n\nSELECT * WHERE { ?pw a wp:Pathway } LIMIT 1'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "metabolite",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/biology/pathways/Wikipathways/wp_rdf.shex",
+        "dataLabel": "Get 1 Metabolite from WikiPathways" ,
+        "data": "Endpoint: https://sparql.wikipathways.org/",
+        "queryMap": "SPARQL '''PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>\n\nSELECT * WHERE { ?pw a wp:Metabolite } LIMIT 1'''@START",
+        "status": "conformant"
+    }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "schemaLabel": "all of 'em",
+    "schema": "IMPORT <funding_agency.shex>\nIMPORT <funding_scheme_shape.shex>\nIMPORT <grant_payment_shape.shex>\nIMPORT <grant_shape.shex>\nIMPORT <organisation_in_grant_shape.shex>\nIMPORT <person_in_grant_shape.shex>\nIMPORT <project_with_grant_shape.shex>\n",
+    "dataLabel": "a",
+    "dataURL": "a.ttl",
+    "queryMap": "<a>@START",
+    "status": "conformant"
+  }
+]
+

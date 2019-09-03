@@ -1,0 +1,176 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology-beta#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+
+wd:Q12136 {
+  wdt:P1343 .?;
+  wdt:P1424 .?;
+  wdt:P1461 xsd:string;
+  wdt:P1692 xsd:string+;
+  wdt:P1748 xsd:string+;
+  wdt:P18 .;
+  wdt:P1995 .+;
+  wdt:P2176 .+;
+  wdt:P2293 @wd:Q7187?;
+  wdt:P2854 xsd:decimal?;
+  wdt:P2888 .+;
+  wdt:P373 xsd:string;
+  wdt:P460 .;
+  wdt:P667 xsd:string;
+  wdt:P910 .
+}
+
+wd:Q14860489 {
+  wdt:P2888 .;
+  wdt:P361 @wd:Q2996394?;
+  wdt:P591 xsd:string?
+}
+
+wd:Q16521 {
+  wdt:P105 .;
+  wdt:P141 .;
+  wdt:P1672 .;
+  wdt:P171 .;
+  wdt:P18 .;
+  wdt:P181 .;
+  wdt:P1843 rdf:langString+;
+  wdt:P225 xsd:string;
+  wdt:P2839 .;
+  wdt:P2888 .+;
+  wdt:P3063 xsd:decimal;
+  wdt:P3387 xsd:decimal+;
+  wdt:P3395 xsd:decimal;
+  wdt:P3465 xsd:decimal+;
+  wdt:P3512 .;
+  wdt:P373 xsd:string;
+  wdt:P4214 xsd:decimal;
+  wdt:P427 .;
+  wdt:P460 .;
+  wdt:P523 .;
+  wdt:P5230 xsd:decimal;
+  wdt:P580 xsd:dateTime;
+  wdt:P618 .+;
+  wdt:P627 xsd:string;
+  wdt:P910 .;
+  wdt:P935 xsd:string
+}
+
+wd:Q17339814 {
+  wdt:P1424 .+;
+  wdt:P1687 .;
+  wdt:P1709 .+;
+  wdt:P18 .;
+  wdt:P1963 .+;
+  wdt:P2888 .;
+  wdt:P373 xsd:string;
+  wdt:P5008 .;
+  wdt:P527 .+;
+  wdt:P828 .;
+  wdt:P910 .;
+  wdt:P989 .
+}
+
+wd:Q24017414 {
+  wdt:P1424 .+;
+  wdt:P1687 .;
+  wdt:P1709 .+;
+  wdt:P18 .;
+  wdt:P1963 .+;
+  wdt:P2888 .;
+  wdt:P373 xsd:string;
+  wdt:P5008 .;
+  wdt:P527 .+;
+  wdt:P828 .;
+  wdt:P910 .;
+  wdt:P989 .
+}
+
+wd:Q2996394 {
+  wdt:P128 @wd:Q2996394?;
+  wdt:P2888 .?;
+  wdt:P361 @wd:Q2996394?;
+  wdt:P373 xsd:string?;
+  (
+    wdt:P527 @wd:Q14860489? |
+    wdt:P527 @wd:Q2996394?
+  )
+}
+
+wd:Q417841 {
+}
+
+wd:Q5058355 {
+  wdt:P1343 .?;
+  wdt:P1402 xsd:string?;
+  wdt:P1705 rdf:langString?;
+  wdt:P1748 xsd:string?;
+  wdt:P18 .?;
+  wdt:P2888 .;
+  wdt:P361 @wd:Q5058355?;
+  wdt:P373 xsd:string?;
+  wdt:P527 .+;
+  wdt:P910 .?;
+  wdt:P935 xsd:string?
+}
+
+wd:Q7187 {
+  wdt:P1057 .;
+  wdt:P18 .;
+  wdt:P2293 @wd:Q12136;
+  wdt:P2548 .;
+  wdt:P2888 .;
+  wdt:P373 xsd:string;
+  wdt:P4196 xsd:string;
+  wdt:P593 xsd:string;
+  wdt:P644 xsd:string+;
+  wdt:P645 xsd:string+;
+  wdt:P684 .+;
+  wdt:P688 @wd:Q8054;
+  wdt:P692 .;
+  wdt:P703 @wd:Q16521
+}
+
+wd:Q7251477 {
+}
+
+wd:Q7644128 {
+  wdt:P361 @wd:Q898273
+}
+
+wd:Q8054 {
+  wdt:P117 .?;
+  wdt:P128 @wd:Q2996394?;
+  wdt:P129 @wd:Q8054*;
+  wdt:P18 .?;
+  wdt:P1910 @wd:Q12136*;
+  wdt:P2888 .?;
+  (
+    wdt:P361 @wd:Q417841? |
+    wdt:P361 @wd:Q7251477*
+  );
+  wdt:P373 xsd:string?;
+  (
+    wdt:P527 @wd:Q7644128? |
+    wdt:P527 @wd:Q898273*
+  );
+  wdt:P591 xsd:string?;
+  (
+    wdt:P680 @wd:Q14860489* |
+    wdt:P680 @wd:Q2996394*
+  );
+  wdt:P681 @wd:Q5058355+;
+  wdt:P682 @wd:Q2996394+;
+  wdt:P692 .?;
+  wdt:P702 @wd:Q7187?;
+  wdt:P703 @wd:Q16521
+}
+
+wd:Q898273 {
+  wdt:P527 @wd:Q7644128?
+}

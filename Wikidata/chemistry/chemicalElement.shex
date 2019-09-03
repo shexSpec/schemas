@@ -1,0 +1,29 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+start = @<#wikidata-element>
+
+<#wikidata-element> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of> ;
+  p:P246 @<#P246_chemical_symbol> ;
+  p:P1086 @<#P1086_atomic_number> ;
+}
+
+<#P31_instance_of> {
+  ps:P31 [wd:Q11344] ;
+}
+
+<#P246_chemical_symbol> {
+  ps:P246 xsd:string ;
+}
+
+<#P1086_atomic_number> {
+  ps:P1086 xsd:decimal ;
+}
+
+<#reference> {
+}

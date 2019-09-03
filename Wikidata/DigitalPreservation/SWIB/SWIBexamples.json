@@ -1,0 +1,254 @@
+[
+  {
+    "presentationURL": "",
+    "schemaLabel": "20 - software",
+    "schemaURL": "software.shex",
+    "dataLabel": "simple fixed map",
+    "dataURL": "mainfest_software.json",
+        
+  },
+  {
+    "schemaLabel": "8 - First example",
+    "schemaURL": "8.shex",
+    "dataLabel": "query map",
+    "dataURL": "8-passing.ttl",
+    "queryMap": "{FOCUS schema:name _}@<User>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "8 - First example",
+    "schemaURL": "8.shex",
+    "dataLabel": "bad objects",
+    "dataURL": "8-failing.ttl",
+    "queryMap": "{FOCUS schema:name _}@<User>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "8 - First example",
+    "schemaURL": "8.shex",
+    "dataLabel": "slide examples",
+    "dataURL": "8-slide.ttl",
+    "queryMap": ":alice@<User>,\n:bob@<User>,\n:carol@<User>,\n:dave@<User>,\n:emily@<User>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "8 - First example",
+    "schemaURL": "8.shex",
+    "dataLabel": "slide query map",
+    "dataURL": "8-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@<User>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "8 - First example",
+    "schemaURL": "8.shex",
+    "dataLabel": "slide query map 2",
+    "dataURL": "8-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@<User>,\n{FOCUS foaf:name _}@<User>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "10 - ShExJ",
+    "schemaURL": "8.shex"
+  },
+  {
+    "schemaLabel": "15 - grouping",
+    "schemaURL": "15.shex",
+    "dataLabel": "slide",
+    "dataURL": "15-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "17 - cardinalities",
+    "schemaURL": "17.shex",
+    "dataLabel": "slide",
+    "dataURL": "17-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "17 - cardinalities",
+    "schemaURL": "17.shex",
+    "dataLabel": "extended query map",
+    "dataURL": "17-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User,\n{FOCUS foaf:name _}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "18 - choices",
+    "schemaURL": "18.shex",
+    "dataLabel": "slide fixed map",
+    "dataURL": "18-slide.ttl",
+    "queryMap": ":alice@:User,:bob@:User,\n:carol@:User,:emily@:User,",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "18 - choices",
+    "schemaURL": "18.shex",
+    "dataLabel": "slide query map",
+    "dataURL": "18-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User,\n{FOCUS schema:givenName _}@:User,\n{FOCUS foaf:name _}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "20 - No constraint",
+    "schemaURL": "20.shex",
+    "dataLabel": "slide",
+    "dataURL": "20-slide.ttl",
+    "queryMap": ":alice@:User,",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "21 - Datatypes",
+    "schemaURL": "21.shex",
+    "dataLabel": "slide",
+    "dataURL": "21-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User,",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "23 - Facets on Datatypes",
+    "schemaURL": "23.shex",
+    "dataLabel": "slide",
+    "dataURL": "23-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User,",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "25 - node kinds",
+    "schemaURL": "25.shex",
+    "dataLabel": "slide",
+    "dataURL": "25-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User,",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "26 - value sets",
+    "schemaURL": "26.shex",
+    "dataLabel": "slide",
+    "dataURL": "26-slide.ttl",
+    "queryMap": "{FOCUS schema:color _}@:Product,",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "27 - single value sets",
+    "schemaURL": "27.shex",
+    "dataLabel": "Spanish product",
+    "dataURL": "27-slide.ttl",
+    "queryMap": "{FOCUS schema:country _}@<SpanishProduct>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "27 - single value sets",
+    "schemaURL": "27.shex",
+    "dataLabel": "French product",
+    "dataURL": "27-slide.ttl",
+    "queryMap": "{FOCUS schema:country _}@<FrenchProduct>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "27 - single value sets",
+    "schemaURL": "27.shex",
+    "dataLabel": "Video game",
+    "dataURL": "27-slide.ttl",
+    "queryMap": ":product1@<VideoGame>,\n:product2@<VideoGame>,\n:product3@<VideoGame>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "28 - shape references",
+    "schemaURL": "28.shex",
+    "dataLabel": "slide",
+    "dataURL": "28-slide.ttl",
+    "queryMap": "{FOCUS a :User}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "29 - recursion/cycles",
+    "schemaURL": "29.shex",
+    "dataLabel": "slide",
+    "dataURL": "29-slide.ttl",
+    "queryMap": "{FOCUS a :User}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "30 - composed shapes",
+    "schemaURL": "30.shex",
+    "dataLabel": "slide",
+    "dataURL": "30-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "31 - IRI ranges",
+    "schemaURL": "31.shex",
+    "dataLabel": "slide",
+    "dataURL": "31-slide.ttl",
+    "queryMap": "{FOCUS :status _}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "32 - IRI range exclusions",
+    "schemaURL": "32.shex",
+    "dataLabel": "slide",
+    "dataURL": "32-slide.ttl",
+    "queryMap": "{FOCUS :status _}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "34 - Nested shapes",
+    "schemaURL": "34.shex",
+    "dataLabel": "slide",
+    "dataURL": "34-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "36 - Labeled constraints",
+    "schemaURL": "36.shex",
+    "dataLabel": "slide",
+    "dataURL": "36-slide.ttl",
+    "queryMap": "<Alice>@<User>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "37 - Inverse triple constraints",
+    "schemaURL": "37.shex",
+    "dataLabel": "slide",
+    "dataURL": "37-slide.ttl",
+    "queryMap": ":alice@:User",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "38 - Negated property declarations",
+    "schemaURL": "38.shex",
+    "dataLabel": "slide",
+    "dataURL": "38-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@:User",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "39 - Repeated properties",
+    "schemaURL": "39.shex",
+    "dataLabel": "slide",
+    "dataURL": "39-slide.ttl",
+    "queryMap": "{FOCUS schema:name _}@<User>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "40 - Negated property declarations",
+    "schemaURL": "40.shex",
+    "dataLabel": "slide",
+    "dataURL": "40-slide.ttl",
+    "queryMap": "{FOCUS a _}@<Company>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "41 - Negated property declarations",
+    "schemaURL": "41.shex",
+    "dataLabel": "slide",
+    "dataURL": "40-slide.ttl",
+    "queryMap": "{FOCUS a _}@<Company>",
+    "status": "conformant"
+  }
+]

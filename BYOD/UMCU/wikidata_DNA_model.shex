@@ -1,0 +1,96 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Wikidata 
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+# Ontologies
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX edam: <http://edamontology.org/>
+PREFIX efo: <http://www.ebi.ac.uk/efo/>
+PREFIX so: <http://purl.obolibrary.org/obo/SO_>
+# Ontologies
+PREFIX byod: <http://micel.io/ShEx/BYOD/>
+PREFIX shex: <http://www.micel.io/ShEx/Wikidata/>
+
+start = byod:sample 
+
+byod:sequence_analysis {
+	rdf:type [wd:Q47185139] ; #Q47185139 = sequence analysis
+	wdt:P366 @byod:sample OR @byod:WGS OR @byod:byodgenetics ; # P366 = use
+	rdf:object @byod:measurement ;
+}
+
+byod:sample {
+	rdf:type @shex:sample ;  
+	rdf:object @byod:measurement ;
+}
+
+shex:sample {
+	wd:Q485146 { # Q485146 = sample
+	wdt:P2888 [sio:001050] ; # P2888 = exact match & sio:001050 = sample
+	}
+}
+
+byod:WGS {
+	rdf:type  @shex:WGS ; 
+}
+
+shex:WGS {
+	wd:Q2068526 { # Q2068526 = whole genome sequencing
+		wdt:P2888 [edam:topic_3673] ; # P2888 = exact match & edam:topic_3673 = Whole genome sequencing
+	}
+}
+
+byod:genetics {
+	wdt:P361 [<https://zenodo.org/badge/latestdoi/19342535>] ; # P361 = part of
+}
+
+byod:measurement {
+	rdf:type @shex:measurement ;
+	rdf:value ["0" "1"] ;
+	rdf:object @byod:sequence_variant ;
+}
+
+shex:measurement {
+  wd:Q12453 { # Q12453 = measurement
+	wdt:P2888 [efo:EFO_0001444] ; #P2888 = exact match & efo:EFO_0001444 =measurement
+  }
+}
+
+shex:sequence_variant {
+	rdf:type @byod:wd_sequence_variant ;
+	wdt:P644 @byod:genomic_position ; # P644
+	wdt:P645 @byod:genomic_position ; # P645
+	wdt:P1057 @byod:chromosome ; # P1057
+	wdt:P3433 @byod:biological_variant ; # P3433
+	wdt:P3331 xsd:string ; # P3331
+}
+
+shex:wd_sequence_variant {
+	wdt:P279 [wd:Q15304597] ; # P279 = subclass of & Q15304597 = sequence variant
+	wdt:P2888 [so:~] ; # P2888 = exact match
+}
+
+shex:genomic_position {
+	rdf:value xsd:integer ;
+	wdt:P659 @wd:genomic_assembly ; # P659 = genomic assembly
+}
+
+shex:genomic_assembly {
+	wdt:P629 [wd:Q720988] ; # P629 = edition or translation of & Q720988 = human genome
+}
+
+shex:chromosome {
+	wdt:P31  [wd:Q37748] ; # P31 = instance of & Q37748 = chromosome
+	wdt:P703 [wd:Q15978631] ; # P703 = found in taxon &  Q15978631 = homo sapiens
+}
+
+shex:biological_variant {
+	wdt:P31 [wd:Q7187] ; # P31 = instance of & Q7187 = gene 
+	wdt:P703 [wd:Q15978631] ; # P703 = found in taxon &  Q15978631 = homo sapiens
+}
+
+
+

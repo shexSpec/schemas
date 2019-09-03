@@ -1,0 +1,77 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+start = @<#wikidata-chemical-compound>
+
+<#wikidata-chemical-compound> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of> ;
+  ( 
+    p:P233 @<#P233_canonical_SMILES> | p:P2017 @<#P2017_isomeric_SMILES> 
+  ) + ;
+  p:P274 @<#P274_chemical_formula> ;
+  p:P2067 @<#P2067_mass> + ;
+  (
+    p:P662 @<#P662_PubChem_CID> |
+    p:P661 @<#P661_ChemSpider> |
+    p:P592 @<#P592_ChEMBL> |
+    p:P715 @<#P715_DrugBank> |
+    p:P683 @<#P683_ChEBI> |
+    p:P3117 @<#P3117_EPACompTox> |
+    p:P213 @<#P213_CAS>
+  ) + ;
+}
+
+<#P31_instance_of> {
+        ps:P31 [wd:Q11173] ;
+}
+
+<#P233_canonical_SMILES> {
+        ps:P233 xsd:string ;
+}
+
+<#P274_chemical_formula> {
+        ps:P274 xsd:string ;
+}
+
+<#P2017_isomeric_SMILES> {
+        ps:P2017 xsd:string ;
+}
+
+<#P2067_mass>{
+        ps:P2067 xsd:decimal ;
+}
+
+<#P662_PubChem_CID>{
+        ps:P662 xsd:string ;
+}
+
+<#P661_ChemSpider>{
+        ps:P661 xsd:string ;
+}
+
+<#P592_ChEMBL>{
+        ps:P592 xsd:string ;
+}
+
+<#P715_DrugBank>{
+        ps:P715 xsd:string ;
+}
+ 
+<#P683_ChEBI>{
+        ps:P683 xsd:string ;
+}
+ 
+<#P3117_EPACompTox>{ 
+        ps:P3117 xsd:string ;
+}
+ 
+<#P213_CAS>{ 
+        ps:P213 xsd:string ;
+}
+
+<#reference> {
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "schemaLabel": "racemic mixture",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/racemicMixture.shex",
+        "dataLabel": "Get 1 racemic mixture from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q467717 ;} LIMIT 1'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "racemic mixture",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/racemicMixture.shex",
+        "dataLabel": "Get 10 racemic mixtures from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q467717 ;} LIMIT 10'''@START",
+        "status": "conformant"
+    },
+    {
+        "schemaLabel": "racemic mixture",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/chemistry/racemicMixture.shex",
+        "dataLabel": "Get 100 racemic mixtures from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q467717 ;} LIMIT 100'''@START",
+        "status": "conformant"
+    }
+]

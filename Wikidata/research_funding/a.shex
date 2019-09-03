@@ -1,0 +1,7 @@
+IMPORT <funding_agency.shex>
+IMPORT <funding_scheme_shape.shex>
+IMPORT <grant_payment_shape.shex>
+IMPORT <grant_shape.shex>
+IMPORT <organisation_in_grant_shape.shex>
+IMPORT <person_in_grant_shape.shex>
+IMPORT <project_with_grant_shape.shex>

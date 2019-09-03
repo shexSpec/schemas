@@ -9,255 +9,272 @@ PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX pr: <http://www.wikidata.org/prop/reference/>
 
-start = <wikicite> 
+start = @<wikicite> 
+
+# The start statement indicates which shape to use to start iterating over the graph if none is provided.
+
+# wikidata-human gene is the main shape for a human gene data model in Wikidata. Each line between the brackets
+# represents the structure than can be enforced to validate human gene annotations in Wikidata
+#
+# We distinguish between value statements, identifier statements, and erronuous statements.
+# Value statements contain either actual values, or pointers to other Wikidata items. Identifier statements capture
+# external identifiers, erronuous statements are those that are errors.
+#
+
 
 <wikicite> {
    # STATEMENTS
-   p:P31 @<P31_instance_of_scientific_article> ;
-   p:P1476 @<P1476_title> ;
-   p:P1680 @<P1680_subtitle> ;
-   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ;
-   p:P577 @<P577_publication_date> ;
-   p:P364 @<P364_original_language_of_work> ;
-   p:P1433 @<P1433_published_in> ;
-   p:P2860 @<P2860_cites> ;
-   p:P98 @<P98_editor> ;
-   p:P478 @<P478_volume> ;
-   p:P433 @<P433_issue> ;
-   p:P304 @<P304_pages> ;
-   p:P1104 @<P1104_number_of_pages> ;
-   p:P275 @<P275_license> ;
-   p:P953 @<P953_full_work_available_at> ;
-   p:P407 @<P407_language_of_work_or_name> ;
-   p:P364 @<P364_original_language_of_work> ;
-   p:P921 @<P921_main_subject> ;                  
-   p:P373 @<P373_commons_category> ;
-   p:P859 @<P859_sponsor> ;
-   p:P1352 @<P1352_data_available_at> ;
-   p:P2507 @<P2507_corrigendum_erratum> ;
-   p:P854 	@<P854_reference_URL> ; # Shouldn't this be a reference property?  
+   p:P31 @<P31_instance_of_scientific_article> ;	# Item describes a scientific article
+   p:P1476 @<P1476_title> ; 		       		# Title of the article
+   p:P1680 @<P1680_subtitle>* ; 			# Zero or more subtitle of the article
+   (p:P50 @<P50_author>* | p:P2093 @<P2093_author_name_string>*)+ ; 
+   	# This is a special shape that presents alternatives.
+	# If the author already has an item in Wikidata, use P50, if not, use P2093 to enter the name and save as a string.
+	# The * after the brackets indicates the 0 or more carinality. The + after the braces indicates that one of the two
+	# options must be used to indicate author.
+   p:P577 @<P577_publication_date> ;			# The date the article was published
+   p:P364 @<P364_original_language_of_work>* ;		# The human language in which the work was originally published
+   p:P1433 @<P1433_published_in> ;	    		# The publication in which the article was published
+   p:P2860 @<P2860_cites>* ;	 			# Items that describe the articles this one cites
+   p:P98 @<P98_editor>* ;				# Item for the person who edited the volume
+   p:P478 @<P478_volume>* ;				# Number of the volume in which this was published
+   p:P433 @<P433_issue>* ;				# Number of the issue number in which this was published
+   p:P304 @<P304_pages>* ;				# Page range of this article
+   p:P1104 @<P1104_number_of_pages>* ;			# Number of pages of this article
+   p:P275 @<P275_license>* ;	    			# License under which this was published
+   p:P953 @<P953_full_work_available_at>* ;		# URL where this article can be found
+   p:P407 @<P407_language_of_work_or_name>* ;		# Human language of this article
+   p:P921 @<P921_main_subject>* ;	   		# Topics of this article                  
+   p:P373 @<P373_commons_category>* ;			# Category in Wikimedia Commons related to this article
+   p:P859 @<P859_sponsor>* ;	   			# Financial supporter of this article
+   p:P1352 @<P1352_data_available_at>* ;		# URL where data related to this article can be found
+   p:P2507 @<P2507_corrigendum_erratum>* ;		# Item for the published corrections to this article
+   		 
    # IDENTIFIERS
-   p:P365 @<P365_DOI>* ;
-   p:P698 @<P698_Pubmed_ID>{0,1} ;
-   p:P932 @<P932_PMCID>{0,1} ; 
-   
-   p:P2322	@<P2322_article_ID> ;
-   p:P818	@<P818_arXiv_ID> ;
-   p:P819	@<P819_bibcode> ;
-   p:P2007	@<P2007_ZooBank_publication_ID> ;
-   p:P888	@<P888_JSTOR_article_ID> ;
-   p:P893	@<P893_Social_Science_Research_Network_ID> ;
-   p:P2880	@<P2880_NIOSHTIC-2_ID> ;
-   p:P1610	@<P1610_Dialnet_article> ;
-   p:P3181	@<P3181_OpenCitations_bibliographic_resource_ID> ;
-   p:P3332	@<P3332_ACM_Digital_Library_citation_ID> ;
-   p:P3431	@<P3431_Publons_Publication_ID> ;
+   p:P365 @<P365_DOI>* ;				# Zero or more DOI
+   p:P698 @<P698_Pubmed_ID>* ;				# Zero or more Pubmed ID  
+   p:P932 @<P932_PMCID>* ;   				# Zero or more PMCID  
+   p:P2322@<P2322_article_ID>* ;			# Zero or more article ID
+   p:P818 @<P818_arXiv_ID>* ;				# Zero or more arXive ID
+   p:P819 @<P819_bibcode>* ;				# Zero or more bibcode
+   p:P2007@<P2007_ZooBank_publication_ID>* ;		# Zero or more ZooBank publication ID
+   p:P888 @<P888_JSTOR_article_ID>* ;	   		# Zero or more JSTOR article ID
+   p:P893 @<P893_Social_Science_Research_Network_ID>* ; # Zero or more Social Science Research Network ID
+   p:P2880@<P2880_NIOSHTIC-2_ID>* ;		        # Zero or more NIOSHTIC-2 ID
+   p:P1610@<P1610_Dialnet_article>* ;			# Zero or more Dialnet article
+   p:P3181@<P3181_OpenCitations_bibliographic_resource_ID>* ;# Zero or more OpenCitations bibliographic resource ID
+   p:P3332@<P3332_ACM_Digital_Library_citation_ID>* ;   # Zero or more ACM Digital Library citation ID
+   p:P3431@<P3431_Publons_Publication_ID>* ;	        # Zero or more Publons Publication ID
       
    #SITELINKS 
 }
 
+
+# Detailed ShExs for Wikidata statements
+# Wikidata captures a statement in the following graph pattern:
+####################
+# wd:Pxx wikibase:directClaim wdt:Pxx ;
+#        wikibase:claim p:Pxx .
+# <item> wdt:Pxx "value" or <other_item> .
+# <item> p:Pxx <node> .
+# <node> ps:Pxx "value" or <other_item> ;
+#        pq:Pxx "qualifier value" or <qualifier_item> ;
+#        pr:Pxx "reference value" or <reference_item> .
+####################
+
 # Shape expression for Wikidata journal article
-<P31_instance_of_scientific_article> {
+<P31_instance_of_scientific_article> {		# Instance of [P31] scientific article
 	ps:P31 [wd:Q13442814];
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference 
 }
 
 <P50_author> {
-	ps:P50 IRI; 
-	prov:wasDerivedFrom @<reference> ;
-	pq:P1545 LITERAL;
+	ps:P50 IRI; 				# Item for author of article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
+	pq:P1545 xsd:string? ;			# Must have a string that indicates author series order
 }
 
 <P98_editor> {
-	ps:P98	IRI;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P98	IRI;				# Editor of publication
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P275_license> {
-	ps:P275	@<license> ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P275	@<license> ;			# License under which this was published
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P304_pages> {
-	ps:P304	LITERAL;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P304	LITERAL;			# Page range of this article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P364_original_language_of_work> {
-	ps:P364	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P364	LITERAL ;			#The human language in which the work was originally published
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P365_DOI> {
-	ps:P365 /^doi:\)?[0-9]{2}\.[0-9]{4}.*$/ ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P365 /^doi:\)?[0-9]{2}\.[0-9]{4}.*$/ ;# Must have a DOI, and the regex for the DOI
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P373_commons_category> {
-	ps:P373	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P373	LITERAL ;			# Category in Wikimedia Commons related to this article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P407_language_of_work_or_name>  {
-	ps:P407	IRI ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P407	IRI ;				# Human language of this article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P433_issue> {
-	ps:433	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:433	LITERAL ;			# Number of the issue number in which this was published
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P478_volume> {
-	ps:P478	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P478	LITERAL ;			# Number of the volume in which this was published
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P577_publication_date> {
-	ps:P577	xsd:datetime ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P577	xsd:datetime ;			# The date the article was published
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P698_Pubmed_ID> {
-	ps:P698 /^[0-9]+$/ ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P698 /^[0-9]+$/ ;			# Zero or more Pubmed ID 
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P819_bibcode> {
-	ps:P819	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P819	LITERAL ;			# Zero or more bibcode
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
-<P854_reference_URL> {
-	ps:P854	IRI ;
-	prov:wasDerivedFrom @<reference> ;
-}
 
 <P859_sponsor> {
-	ps:P859	IRI ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P859	IRI ;				# Financial supporter of this article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P818_arXiv_ID> {
-	ps:P818	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P818	LITERAL ;			# Zero or more arXive ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P888_JSTOR_article_ID> {
-	ps:P888	/^[0-9]+$/ ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P888	/^[0-9]+$/ ;			# Zero or more JSTOR article ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P893_Social_Science_Research_Network_ID> {
-	ps:P893	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P893	LITERAL ;			# Zero or more Social Science Research Network ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P921_main_subject> {
-	ps:P921	IRI+ ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P921	IRI* ;				# Zero or more Topics of this article  
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P932_PMCID> {
-	ps:P932	/PMC[0-9]+/ ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P932	/PMC[0-9]+/ ;			# Zero or more PMCID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P953_full_work_available_at> {
-	ps:P953	IRI ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P953	LITERAL ;			# URL where this article can be found					
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P1104_number_of_pages> {
-	ps:P1104	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P1104	LITERAL ;		# Number of pages of this article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P1352_data_available_at> {
-	ps:P1352	IRI ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P1352	IRI ;			# URL where data related to this article can be found
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P1433_published_in> {
-	ps:P1433	IRI ;
-	prov:wasDerivedFrom @<reference> ;
-}
+	ps:P1433	IRI ;			# The publication in which the article was published
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
+}	
 
 <P1476_title> {
-	ps:P1476 LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P1476 LITERAL ;			# Exactly one title of the article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P1610_Dialnet_article> {
-	ps:P1610	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P1610	LITERAL ;		# Zero or more Dialnet article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P1680_subtitle> {
-	ps:P1680 LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P1680 LITERAL ;			# Zero or more subtitle of the article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P2007_ZooBank_publication_ID> {
-	ps:P2007	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P2007	LITERAL ;		# Zero or more ZooBank publication ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P2093_author_name_string> {
-	ps:P2093	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
-	pq:P1545 LITERAL;
+	ps:P2093	LITERAL ;		# If the author does not have a Wikidata item, then it must have at least one author name string values
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
+	pq:P1545 xsd:string? ;
 }
 
 <P2322_article_ID> {
-	ps:P2322	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P2322	LITERAL ;		# Zero or more article ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P2507_corrigendum_erratum> {
-	ps:P2507	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P2507	LITERAL ;		# Zero or more links for the published corrections to this article
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P2860_cites> {
-	ps:P2860	@<wikicite> ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P2860	@<wikicite> ;		# Items that describe the articles this one cites
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P2880_NIOSHTIC-2_ID> {
-	ps:P2880	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P2880	LITERAL ;		# Zero or more NIOSHTIC-2 ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P3181_OpenCitations_bibliographic_resource_ID> {
-	ps:P3181	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P3181	LITERAL ;		# Zero or more OpenCitations bibliographic resource ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P3332_ACM_Digital_Library_citation_ID> {
-	ps:P3332	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P3332	LITERAL ;		# Zero or more ACM Digital Library citation ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <P3431_Publons_Publication_ID> {
-	ps:P3431	LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
+	ps:P3431	LITERAL ;		# Zero or more Publons Publication ID
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
 
 <license> {
 	ps:P31	[
-		wd:Q79719 # License
+		wd:Q79719 # License		# A license must be an instance of license in Wikidata
 		] ;
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<reference> ;	# Must have a reference
 }
-
-<P1545_series_ordinal> {
-	pq:P1545  LITERAL ;
-	prov:wasDerivedFrom @<reference> ;
 
 ## REFERENCES
 
 <reference> {
-   pr:P248	IRI ;
+   pr:P248	IRI ;				
 }
-

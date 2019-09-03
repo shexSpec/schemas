@@ -12,43 +12,43 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
 
-import <project_with_grant_shape.shex>
+import <project_with_grant_shape>
 
-start = @<organisation_in_grant>
+start = @<#organisation_in_grant>
 
-<organisation_in_grant> {
-	p:P31 @<P31_instance_of> ;
-	p:P1344	@<P1344_participant_of> ; # Project with grant.
-	p:P2868 @<P2868_subject_has_role> ; # Role in the project with grant.
-	p:P580 @<P580_start_time>? ; # Start time of project participation.
-	p:P582 @<P582_end_time>? ; # End time of project participation.
-	p:P1448 @<P1448_official_name> ;
-	p:P17 @<P17_country> ;
-	p:P159 @<P159_headquarters_location> ;
+<#organisation_in_grant> {
+	p:P31 @<#P31_instance_of> ;
+	p:P1344	@<#P1344_participant_of> ; # Project with grant.
+	p:P2868 @<#P2868_subject_has_role> ; # Role in the project with grant.
+	p:P580 @<#P580_start_time>? ; # Start time of project participation.
+	p:P582 @<#P582_end_time>? ; # End time of project participation.
+	p:P1448 @<#P1448_official_name> ;
+	p:P17 @<#P17_country> ;
+	p:P159 @<#P159_headquarters_location> ;
 	
 }
 
-<P31_instance_of> {
+<#P31_instance_of> {
 	ps:P31 [wd:Q4830453 wd:Q622439 wd:Q31855] ; # Q4830453 = business enterprise, Q622439 = small and medium enterprises, Q31855 = research institute.
 
 }
 
-<P1344_participant_of> {
-	p:P1344 @<project_with_grant_shape> ; # Check how to import my other shape.
+<#P1344_participant_of> {
+	p:P1344 @<project_with_grant_shape#project_with_grant> ; # Check how to import my other shape.
 }
 
-<P2868_subject_has_role> .
+<#P2868_subject_has_role> .
 
-<P580_start_time> .
+<#P580_start_time> .
 
-<P582_end_time> .
+<#P582_end_time> .
 
-<P1448_official_name> {
-	ps:P10448 @<organisation_official_name> ;
+<#P1448_official_name> {
+	ps:P10448 @<#organisation_official_name> ;
 }
 
-<organisation_official_name> LITERAL AND xsd:string 
+<#organisation_official_name> LITERAL AND xsd:string 
 
-<P17_country> .
+<#P17_country> .
 
-<P159_headquarters_location> .
+<#P159_headquarters_location> .

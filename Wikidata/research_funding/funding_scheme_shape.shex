@@ -12,38 +12,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wikibase: <>
 
-start = @<funding_scheme>
+start = @<#funding_scheme>
 
-<funding_scheme> {
-	p:P31 @<P31_instance_of> ;
-	p:P361 @<funding_scheme>? ;
-	p:P571 @<P571_inception> ;
-	p:582 @<P582_end_time>? ;
-	p:P17 @<P17_country> ; # What to do with funders that span multiple countries?
-	p:P1013 @<P1013_criterion_used> ;
+<#funding_scheme> {
+	p:P31 @<#P31_instance_of> ;
+	p:P361 @<#funding_scheme>? ;
+	p:P571 @<#P571_inception> ;
+	p:582 @<#P582_end_time>? ;
+	p:P17 @<#P17_country> ; # What to do with funders that span multiple countries?
+	p:P1013 @<#P1013_criterion_used> ;
 
 }
 
-<P31_instance_of> {
+<#P31_instance_of> {
 	ps:P31 [wd:Q372353] ; # Q372353 = research funding.
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P582_end_time> .
+<#P582_end_time> .
 
-<P571_inception> {
-	prov:wasDerivedFrom @<reference> ;
+<#P571_inception> {
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P1013_criterion_used> {
-	ps:P1013 @<target_criterion> ;
-	prov:wasDerivedFrom @<reference> ;
+<#P1013_criterion_used> {
+	ps:P1013 @<#target_criterion> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<reference> .
+<#reference> .
 
-<target_criterion> LITERAL AND xsd:string 
+<#target_criterion> LITERAL AND xsd:string 
 
-
-
+<#P17_country> .
 

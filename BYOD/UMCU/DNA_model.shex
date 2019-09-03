@@ -1,45 +1,49 @@
-						#Shape Expression the data model drafted by the DNA model team of the BYOD UMCU
+#Shape Expression the data model drafted by the DNA model team of the BYOD UMCU
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+#ontologies
+PREFIX edam: <http://purl.bioontology.org/ontology/EDAM/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX efo: <http://www.ebi.ac.uk/efo/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX wdp: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
 
-                        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-						PREFIX edam: <http://purl.bioontology.org/ontology/EDAM/>
-						PREFIX SIO: <http://semanticscience.org/resource/>
-						PREFIX EFO: <http://www.ebi.ac.uk/efo/>
-						PREFIX obo: <http://purl.obolibrary.org/obo/>
-						PREFIX prov: <http://www.w3.org/ns/prov#>
-						PREFIX wdp: <http://www.wikidata.org/prop/direct/>
-						PREFIX dcterms: <http://purl.org/dc/terms/>
+start = @<#sample>
 
-                        start = <sample>
-						
-						<sample> {
-						   rdf:type	SIO:001050 ;
-						   obo:GENO_0000222 <measurement> ;   
-						}
+<#sample> {
+   rdf:type	[sio:001050] ;
+   obo:GENO_0000222 <#measurement> ;   
+}
 
-						<analysis> {
-						   rdf:type		edam:operation_2478 ;
-						   prov:used	<sample> ;
-						   prov:used	[<https://zenodo.org/record/495587#.WZQ_qKNh2u4>] ;
-						   prov:used	edam:topic_3673 ;
-						   SIO:000628	<measurement> ;   
-						}
-						
-						<measurement> {
-						   rdf:type		efo:EFO_0001444 ;
-						   SIO:000628	<variant> ; 
-						}
-						
-						<variant> {
-							rdf:type	obo:SO_0001060 ;  # SO_0001060 = sequence variant in the sequence ontology
-							dcterms:isPartOf	<chromosome> ;
-							wdp:P644	INT ; 
-							wdp:P645	INT ;
-							wdp:P2576	LITERAL ; # P2576 = UCSC Genome Browser assembly ID, future adaptations of this shape should contain a list of possible values
-							wdp:P3331	LITERAL ; # P3331 = HGVS nomenclature 
-							wdp:P3343	<gene> ; # P3343 = Biological variant of
-						}
-						
-						<chromosome> {
-							rdf:type	[wd:Q37748] ;
-							dcterms:identifier LITERAL ;
-						}
+<#analysis> {
+   rdf:type		edam:operation_2478 ;
+   prov:used	@<#sample> OR 
+   				[<https://zenodo.org/record/495587#.WZQ_qKNh2u4>] OR
+   				[edam:topic_3673] ;
+   sio:000628	@<#measurement> ;   
+}
+
+<#measurement> {
+   rdf:type		[efo:efo_0001444] ;
+   sio:000628	@<#variant> ; 
+}
+
+<#variant> {
+	rdf:type	[obo:SO_0001060] ;  # SO_0001060 = sequence variant in the sequence ontology
+	dcterms:isPartOf	@<#chromosome> ;
+	wdp:P644	xsd:int ; 
+	wdp:P645	xsd:int ;
+	wdp:P2576	LITERAL ; # P2576 = UCSC Genome Browser assembly ID, future adaptations of this shape should contain a list of possible values
+	wdp:P3331	LITERAL ; # P3331 = HGVS nomenclature 
+	wdp:P3343	@<#gene> ; # P3343 = Biological variant of
+}
+
+<#chromosome> {
+	rdf:type	[wd:Q37748] ;
+	dcterms:identifier LITERAL ;
+}
+
+<#gene> .

@@ -1,0 +1,104 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX commons: <http://commons.wikimedia.org/wiki/Special:FilePath/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<#ship>
+
+# This is a draft schema for a ship expressed as a Shape Expression (ShEx)
+# status: first draft
+
+<#ship> {
+	# Essential ship class properties
+	p:P31  @<#P31_instance_of> ;
+
+	# Mandatory ship class properties
+	p:P17  @<#P17_country> ;	
+	p:P2317 @<#P2317_call_sign> ; # A ship has one call sing
+	p:P137 @<#P137_operator>+ ; # A ship has one or more operators during the course of its existance
+	p:P138 @<#P138_named_after>? ; 
+	p:P729 @<#P729_service_entry> ; 
+	
+	# Recommended ship class properties
+	p:P176 @<#P176_manufacturer> ;
+	p:P730 @<#P730_service_retirement>? ;
+
+	# numerical properties
+	p:P1093 @<#P1093_gross_tonnage>;
+	p:P2043 @<#P2043_length> ;
+	p:P2049 @<#P2049_width> ; 
+}
+
+<#P31_instance_of> {
+	ps:P31  [
+		wd:Q11446 #ship
+	] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P17_country> {
+	ps:P17 	@<#country> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#country>{
+	wdt:P31  [wd:Q6256] ;
+}
+
+<#P137_operator> {
+	ps:P137   [wd:~] ; # Currently accepts all wikidata items, should be changed to a designated shape
+	prov:wasDerivedFrom @<#reference> ;
+}
+   
+<#P138_named_after> {
+	ps:P138   [wd:~] ; # Currently accepts all wikidata items, should be changed to a designated shape
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P176_manufacturer> {
+	ps:P176   [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+ 
+<#P729_service_entry> {
+	ps:P729  xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P730_service_retirement> {
+	ps:P730  xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1093_gross_tonnage> {
+	ps:P1093  xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2043_length> {
+	ps:P2043  xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2049_width> {
+	ps:P2049  xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2317_call_sign> {
+	ps:P2317  xsd:string ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#reference> {
+
+}

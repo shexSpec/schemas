@@ -1,0 +1,10 @@
+[
+    {
+        "schemaLabel": "university",
+        "schemaURL": "https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/academia/university.shex",
+        "dataLabel": "Get 1 university from Wikidata" ,
+        "data": "Endpoint: https://query.wikidata.org/sparql",
+        "queryMap": "SPARQL '''PREFIX wdt: <http://www.wikidata.org/prop/direct/>\n\nSELECT * WHERE { ?item wdt:P31 wd:Q4671277 } LIMIT 1'''@START",
+        "status": "conformant"
+    }
+]

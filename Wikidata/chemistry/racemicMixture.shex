@@ -1,0 +1,34 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX schema: <http://schema.org/>
+
+start = @<#wikidata-racemic-mixture>
+
+<#wikidata-racemic-mixture> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of> ;
+  p:P527 @<#P527_has_part> ;
+  p:P527 @<#P527_has_part> + ;
+}
+
+<#P31_instance_of> {
+  ps:P31 [wd:Q467717] ;
+}
+
+<#P527_has_part> {
+  ps:P527 @<#chemical_compound> ;
+}
+
+<#chemical_compound> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of_chemical_compound> ;
+}
+
+<#P31_instance_of_chemical_compound> {
+  ps:P31 [wd:Q11173] ;
+}
+
+<#reference> {
+}

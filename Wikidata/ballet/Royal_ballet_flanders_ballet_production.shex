@@ -1,0 +1,163 @@
+BASE <https://raw.githubusercontent.com/shexSpec/schemas/master/Wikidata/ballet/Royal_ballet_flanders_ballet_production.shex>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<#ballet_production>
+
+<#ballet_production> {
+	p:P31 @<#P31_instance_of> ;
+	# p:P272 @<#P272_production_company> ; 
+	# p:P136 @<#P136_genre> ;
+	# p:P407 @<#P407_language_of_work>+ ;
+	# p:P1809 @<#P1809_choreographer> ;
+	# p:P767 @<#P767_contributors_to_the_creative_work>+ ;
+	# p:P86 @<#P86_composer> ;
+	# p:P144 @<#P144_based_on>+ ;
+	# p:P58 @<#P58_screenwriter> ;
+	# p:P4608 @<#P4608_scenographer> ;
+	# p:P2515 @<#P2515_costume_designer> ; 
+	# p:P5026 @<#P5026_lighting_designer> ;
+	# p:P1191 @<#P1191_date_of_first_performance> ;
+	# p:P4647 @<#P4647_location_of_first_performance> ;
+	# p:P161 @<#P161_cast_member> ;
+	# p:P2047 @<#P2047_duration> ;
+	# p:P5027 @<#P5027_number_of_representations> ;
+}
+
+<#P31_instance_of> {
+	ps:P31 [wd:Q15079786] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P272_production_company> {
+	ps:P272 [wd:Q2881259] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P136_genre> {
+	ps:P136 [wd:Q41425] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+<#P407_language_of_work> {
+	ps:P407 @<#supported_languages> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1809_choreographer> {
+	ps:P1809 @<#choreographer> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P767_contributors_to_the_creative_work> . # Need domain expert input
+
+<#P86_composer> {
+	ps:P86 @<#composer> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P144_based_on> {
+	# Need to clarify with domain experts
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P58_screenwriter> {
+	ps:P58 @<#human> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P4608_scenographer> {
+	ps:P4608 @<#human> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+
+<#P2515_costume_designer> {
+	ps:P2515 @<#human> ;
+	prov:wasDerivedFrom @<#reference> ;	
+}
+
+<#P5026_lighting_designer> {
+	ps:P5026 @<#human> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+<#P1191_date_of_first_performance> {
+	ps:P1191 xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+<#P4647_location_of_first_performance> {
+	# Need to clarify with domain experts
+	prov:wasDerivedFrom @<#reference> ; 
+}
+<#P161_cast_member> {
+	ps:P161 @<#human> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2047_duration> {
+	ps:P2047 xsd:decimal ;
+	prov:wasDerivedFrom @<#reference> ;
+	psv:P2047 {
+		wikibase:quantityAmount xsd:decimal ;
+		wikibase:quantityUnit [
+			wd:Q7727 # minute
+			# add other units 
+		]
+	}
+}
+
+<#P5027_number_of_representations> {
+	ps:P5027 xsd:int ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#reference> . # Discuss we need to be more specific on references used
+
+#### Supported languages
+<#supported_languages> [
+  wd:Q7411 # Dutch
+  wd:Q1860 # English
+  wd:Q150 # French
+  wd:Q150 # German
+  wd:Q652 # Italian
+  wd:Q397 # Latin
+  # TODO Include more languages if supported
+]
+
+#### ROLES
+<#human> {
+	p:P31 {
+			ps:P31 [wd:Q5] ; # Q5 = Human
+		}
+}
+
+<#composer> {
+	p:P31 {
+		ps:P31 [wd:Q5] ; # Q5 = Human
+		} ; 
+	p:P106 {
+		ps:P106 [wd:Q36834] ;
+		prov:wasDerivedFrom @<#reference> ;
+    }
+}
+
+<#choreographer> {
+	p:P31 {
+		ps:P31 [wd:Q5] ; # Q5 = Human 
+	} ;
+	p:P106 {
+		ps:P106 [wd:Q2490358] ;
+		prov:wasDerivedFrom @<#reference>
+    }
+}
+

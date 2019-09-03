@@ -13,50 +13,50 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX berlin_wb: <>
 
 import <project_with_grant_shape.shex>
-import <funding_scheme>
+import <funding_scheme_shape>
 
-start = @<grant>
+start = @<#grant>
 
-<grant> {
-	p:P31 @<P31_instance_of> ;
-	p:580 @<P580_start_time>? ;
-	p:582 @<P582_end_time>? ;
-	p:1552 @<P1552_has_quality>? ; # Or P2769 = budget.
-	p:P1535 @<P1535_used_by> ;
-	berlin_wb:PXX @<PXX_conforms_to>
+<#grant> EXTRA p:P31 {
+	p:P31 @<#P31_instance_of> ;
+	p:580 @<#P580_start_time>? ;
+	p:582 @<#P582_end_time>? ;
+	p:1552 @<#P1552_has_quality>? ; # Or P2769 = budget.
+	p:P1535 @<#P1535_used_by>+ ;
+#	berlin_wb:PXX @<#PXX_conforms_to>
 }
 
-<P31_instance_of> {
-	p:P31 [wd:Q230788] ; # Q230788 = grant, "non-repayable funds disbursed by one party to a recipient".
-	prov:wasDerivedFrom @<reference> ;
+<#P31_instance_of> {
+	ps:P31 [wd:Q230788] ; # Q230788 = grant, "non-repayable funds disbursed by one party to a recipient".
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P580_start_time> {
+<#P580_start_time> {
 	ps:P580  xsd:dateTime ;
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P582_end_time> {
+<#P582_end_time> {
 	ps:P582  xsd:dateTime ;
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P1552_has_quality> {
+<#P1552_has_quality> {
 	p:1552 [wd:Q41762787 wd:Q30242023] ; # Q41762787 = value "any determination of or method of determination of the worth, not necessarily monetary, of an item or a facet of it", Q30242023 = money amount.
 	                        # Or should it be Q868257 = eocnomic value "measure of the benefit provided by a good or service to an economic agent"?
 	
 }
 
-<P1535_used_by> {
-	p:P1535 @<project_with_grant> ;
-	prov:wasDerivedFrom @<reference> ;
+<#P1535_used_by> {
+#	p:P1535 @<#project_with_grant> ;
+#	prov:wasDerivedFrom @<#reference> ;
 }
 
-<PXX_conforms_to> {
-    berlin_wb:PXX @<funding_scheme> ;
-    prov:wasDerivedFrom @<reference> ;
+<#PXX_conforms_to> {
+    berlin_wb:PXX @<funding_scheme_shape#funding_scheme> ;
+    prov:wasDerivedFrom @<#reference> ;
 }
 
-<reference> {
+<#reference> {
 	pr:P854 IRI ;
 }

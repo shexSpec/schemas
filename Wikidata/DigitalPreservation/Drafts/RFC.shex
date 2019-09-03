@@ -1,4 +1,4 @@
-#Shape Expression Schema for configured emulated environment on Wikidata
+#Shape Expression for RFC item on Wikidata
 
 #BASE <http://base.example/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -14,25 +14,33 @@ PREFIX ps: <http://www.wikidata.org/prop/statement/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/> 
 
-# Shape expression for Wikidata statements related to configured emulated environment on Wikidata
+# Shape expression for Wikidata statements related to RFC items
 
-start = @<wikidata-configuredSoftwareEnvironment>
+start = @<wikidata-rfc>
 
-<wikidata-configuredSoftwareEnvironment> {
+<wikidata-rfc> {
 	#statements
-	p:P31 @<P31_instance_of_configured_Software_Environment> ;
+	p:P31 @<P31_instance_of_rfc> ;
+	
+	
+	#identifiers
+	
+	p:P2388 @<P2388_rfc_id> ;
+	
+	p:P356 @<P356_doi>* ;
+	
+}	
 
-	p:P306 @<P306_operating_system> ;
-	
-	p:P527 @<P527_has_part> ;
-
-	p:P4092 @<P4092_checksum> ;
-	
-	p:178 @<P178_developer>* ; 
-	
-	p:P126 @<P126_maintained_by> ;
-	
-
-<P31_instance_of_configured_Software_Environment> {
-  ps:P31 [wd:Q28812506] ;
+<P31_instance_of_rfc> {
+  ps:P31 [wd:Q212971] ;
 }
+
+<P2388_rfc_id> {
+  ps:P2388 LITERAL ;
+}
+
+<P356_P356_doi> {
+  ps:P356 LITERAL ;
+}
+
+

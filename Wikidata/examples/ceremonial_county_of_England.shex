@@ -1,0 +1,26 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start=@<#ceremonial_county_of_England>
+
+<#ceremonial_county_of_England> EXTRA p:P31 EXTRA p:P131 { # EXTRA : Except other Qids as values for p:P31 
+	p:P31 @<#P31_instance_of_ccoE>+ ; # There are 1 or more P31 statements
+	p:P131 @<#P131_located_in_the_administrative_territorial_entity> ; # There is exactly 1 P131 statement
+}
+
+<#P31_instance_of_ccoE> {
+	ps:P31 [wd:Q180673] ; # Q180673 ceremonial county of England
+}
+
+<#P131_located_in_the_administrative_territorial_entity>  {
+	ps:P131  @<#region_of_england> ; 
+} 	
+
+<#region_of_england> EXTRA p:P31 { 
+	p:P31 @<#P31_instance_of_roE> ;
+}
+
+<#P31_instance_of_roE> {
+	  ps:P31 [wd:Q48091] ; #region of England Q48091
+    }

@@ -1,0 +1,135 @@
+#Shape Expression for file formats on Wikidata
+
+#BASE <http://base.example/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+
+# Shape expression for Wikidata statements related to file formats
+
+start = @<#wikidata-file_format> # Indicates which shape to use to start iterating over the graph if none is provided.
+
+# <#wikidata-file_format> is the shape for a file format data model in Wikidata. Each line between the brackets
+# represents the structure that can be enforced to validate data from file format items.
+#
+# We distinguish between value statements, and identifier statements.
+# Value statements contain either actual values, or pointers to other Wikidata items. Identifier statements capture
+# external identifiers.
+#
+
+<#wikidata-file_format> {
+	#statements
+	(p:P31 @<#P31_instance_of_file_format>* |p:P279 @<#P279_subclass_of_file_format>*)+ ;
+	# This shape presents two options.
+	# If this is a file format use P31. If this is a class of file format use P279.
+	# The * after the brackets indicates the 0 or more carinality. The + after the braces indicates that one of the two
+	# options must be used.
+	 
+	
+	p:P1195 @<#P1195_file_extension>* ;		# File extensions used by this file format
+	
+	p:P1163 @<#P1163_media_type>* ;			# Media type for this file format			
+	
+	p:P178 @<#P178_developer>* ;			# Developer of this file format
+	
+	p:P144 @<#P144_based_on>* ;			# Items on which this file format is based
+	       
+	p:P4152 @<#P4152_file_format_identification_pattern>* ;	# Magic number for this file format
+	
+	p:P973 @<#P973_described_at_URL>* ;		# URL of a resource that describes this file format		
+	
+	p:P1343 @<#P1343_described_by_source>* ;	# Item that describes this file format	
+	
+	p:P348 @<#P348_software_version>* ;		# Version of this file format
+	
+	p:P577 @<#P577_publication_date>* ;		# The date the file format was published
+	
+	#identifiers
+	
+	p:P2748 @<#P2748_pronom_id>* ;			# PUID for this file format from The National Archives
+	
+	p:P3266 @<#P3266_locfdd_id>* ;			# Library of Congress File Format Discription Document for this file format
+	
+	p:P3381 @<#P3381_ffw_id>* ;			# Zero or more page(s) for this file format in the Just Solve the File Format Problem wiki	
+}	
+# Detailed ShExs for Wikidata statements
+# Wikidata captures a statement in the following graph pattern:
+####################
+# wd:Pxx wikibase:directClaim wdt:Pxx ;
+#        wikibase:claim p:Pxx .
+# <item> wdt:Pxx "value" or <other_item> .
+# <item> p:Pxx <node> .
+# <node> ps:Pxx "value" or <other_item> ;
+#        pq:Pxx "qualifier value" or <qualifier_item> ;
+#        pr:Pxx "reference value" or <reference_item> .
+####################
+
+
+<#P31_instance_of_file_format> {	# Instance of [P31] file format
+  ps:P31 [wd:Q235557] ;
+}
+
+<#P279_subclass_of_file_format> {	# Subclass of [P279] file format
+  ps:P279 IRI ;
+}
+
+<#P2748_pronom_id> {			# Zero or more PUID for this file format from The National Archives
+  ps:P2748 LITERAL ;
+}
+
+
+<#P3266_locfdd_id> {			# Zero or more Library of Congress File Format Discription Document for this file format
+  ps:P3266 LITERAL ;
+}
+
+<#P1163_media_type> {			# Zero or more media types for this file format
+  ps:P1163 LITERAL ;
+}
+
+<#P3381_ffw_id> {			# Zero or more page(s) for this file format in the Just Solve the File Format Problem wiki
+  ps:P3381 LITERAL ;
+}
+
+<#P1195_file_extension> {		# Zero or more file extensions for this file format
+  ps:P1195 LITERAL ;
+}
+
+<#P178_developer> {			# Zero or more developers for this file format
+  ps:P178 IRI OR BNODE ;
+} 
+
+<#P144_based_on> {			# Zero or more items that this file format was based on
+  ps:P144 IRI ;
+}
+
+<#P4152_file_format_identification_pattern> {	# Zero or more magic number identification patterns 
+  ps:P4152 LITERAL;			    	
+  pq:P3294 IRI OR BNODE;			# Qualifier used to indicate encoding according to which magic number is to be interpreted 
+  pq:P4153 LITERAL OR BNODE;			# Qualifier used to indicate that the offset is relative to a position
+  pq:P2210 [wd:Q35436009 wd:Q1148480] ;		# Qualifier used to indicate that position as  BOF or EOF
+}
+
+<#P973_described_at_URL> {		# Zero or more URL(s) of a resource that describes this file format
+  ps:P973 LITERAL ;
+}
+
+<#P348_software_version> {		# Zero or more version(s) of this file format
+  ps:P348 LITERAL ;
+}
+
+<#P1343_described_by_source> {		# Zero or more Items that describe this file format
+  ps:P1343 IRI ;
+}
+
+<#P577_publication_date> {		# Zero or more date(s) on which this file format was published
+  ps:P577 LITERAL ;
+}

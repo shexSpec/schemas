@@ -11,81 +11,86 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
-start = @<funding_agency>
+start = @<#funding_agency>
 
-<funding_agency> {
-	p:P31 @<P31_instance_of> ;
-	p:P856 @<P856_official_website> ;
-	p:P159 @<P159_headquarters_location> ;
-	p:P571 @<P571_inception> ;
-	p:P17 @<P17_country> ; # What to do with funders that span multiple countries?
-	p:P131 @<P131_located_in_the_administrative_territorial_entity>+ ;
-	p:P355 @<P355_subsidiary>* ;
+<#funding_agency> {
+	p:P31 @<#P31_instance_of> ;
+	p:P856 @<#P856_official_website> ;
+	p:P159 @<#P159_headquarters_location> ;
+	p:P571 @<#P571_inception> ;
+	p:P17 @<#P17_country> ; # What to do with funders that span multiple countries?
+	p:P131 @<#P131_located_in_the_administrative_territorial_entity>+ ;
+	p:P355 @<#P355_subsidiary>* ;
 
 	# IDENTIFIERS 
-	p:P3153 @<P3153_Crossref_funder_id> ;
-	p:P3534 @<P3534_Australian_Government_Organisations_Register_ID>? # To specific?
+	p:P3153 @<#P3153_Crossref_funder_id> ;
+	p:P3534 @<#P3534_Australian_Government_Organisations_Register_ID>? # To specific?
 }
 
-<P17_country> {
-	ps:P17 @<country> ;
-	prov:wasDerivedFrom @<reference> ;
+<#P17_country> {
+	ps:P17 @<#country> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P31_instance_of> {
+<#P31_instance_of> {
 	ps:P31 [wd:Q372353] ; # Q372353 = research funding
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P131_located_in_the_administrative_territorial_entity> {
-	ps:P131  @<administrative_territorial_entity> ;
-	prov:wasDerivedFrom @<reference> ;
+<#P131_located_in_the_administrative_territorial_entity> {
+	ps:P131  @<#administrative_territorial_entity> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P159_headquarters_location> {
+<#P159_headquarters_location> {
 	ps:P159  [] ;
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P355_subsidiary> {
-	ps:P355  @<organisation> ;
-	prov:wasDerivedFrom @<reference> ;
+<#P355_subsidiary> {
+	ps:P355  @<#organisation> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P571_inception> {
+<#P571_inception> {
 	ps:P571 xsd:dateTime ;
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<P856_official_website> {
+<#P856_official_website> {
 	ps:P856  IRI ;
 }
 
-<P3153_Crossref_funder_id> {
+<#P3153_Crossref_funder_id> {
 	ps:P3153 xsd:int ;
-	prov:wasDerivedFrom @<crossrefReference> ;
+	prov:wasDerivedFrom @<#crossrefReference> ;
 }
 
-<P3534_Australian_Government_Organisations_Register_ID> {
+<#P3534_Australian_Government_Organisations_Register_ID> {
 	ps:P3534 xsd:int ;
-	prov:wasDerivedFrom @<reference> ;
+	prov:wasDerivedFrom @<#reference> ;
 }
 
-<country> {
+<#country> {
 	p:P31 {
 		ps:P31 [wd:Q6256]
 	}
 }
-<organisation> .
 
-<reference> {
+<#administrative_territorial_entity> .
+
+<#organisation> .
+
+<#reference> {
 	pr:P248  IRI ;
 	pr:P813  xsd:dateTime ;
-	pr:P1640 @<curator> ;
+	pr:P1640 @<#curator> ;
 	pr:P854  IRI ;   
 }
 
-<crossrefReference> {
+<#crossrefReference> {
 	pr:P143  [wd:Q19822542] ;
 	pr:P813  xsd:dateTime ;
 }
+
+<#curator> .
