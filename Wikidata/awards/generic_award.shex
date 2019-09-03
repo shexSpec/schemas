@@ -1,0 +1,146 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://prefix.cc/prov>
+
+<#award> {
+	p:P138 @<#P138_named_after> ;
+	p:P2257 @<#P2257_time_period_of_periodically_occurring_event> ? ;
+	p:P571 @<#P571_inception> ;
+	p:P582 @<#P582_end_time> ? ;
+	p:P580 @<#P580_start_time> ? ;
+	p:P585 @<#P585_point_in_time> ? ;
+	p:P276 @<#P276_location> ? ;
+	p:P2121 @<#P2121_prize_money>? ;
+	p:P4622 @<#P4622_trophy_awarded> ? ;
+	p:P276 @<#P276_location> ;
+	p:P1346 @<#P1346_winner> + ;
+	p:P2453 @<#P2453_nominee> + ;
+	p:P3342 @<#P3342_significant_person> * ;
+	p:P859 @<#P859_sponsor> * ; 
+	p:P1027 @<#P1027_conferred_by> * ; 
+	p:P1686 @<#P1686_for_work> ;
+	p:P6208 @<#P6208_award_rationale> ? ;
+	
+	p:P112 @<#P112_founded_by> ; # Not exactly matching semantic from Wikidata property description.
+	
+}
+
+<#recurring_award> {
+	&<#award> ;
+	p:P179 @<#P179_part_of_the_series> ; # This property is defined in Wikidata with the restricted semantic of part of a creative work series, but it has been used with generic semantic, 
+	                                     # see the example at https://www.wikidata.org/wiki/Q16422 .	
+	p:P393 @<#P393_edition_number> ;
+
+}
+
+<#winner> {
+	p:P166 @<#P166_award_received> ;
+}
+
+<#nominee> {
+	p:P1411 @<#P1411_nominated_for> ;
+}
+
+<#P2257_time_period_of_periodically_occurring_event> {
+	ps:P2257 xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P138_named_after> {
+	ps:P138 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P571_inception> {
+	ps:P571 xsd:date OR xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P580_start_time> {
+	ps:P580 xsd:date OR xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P582_end_time> {
+	ps:P582 xsd:date OR xsd:dateTime ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1686_for_work> {
+	ps:P1686 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2121_prize_money> {
+	ps:P2121 xsd:decimal ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P4622_trophy_awarded> {
+	ps:P4622 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P276_location> {
+	ps:P276 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1346_winner> {
+	ps:P1346 @<#winner> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P2453_nominee> {
+	ps:P2453 @<#nominee> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P3342_significant_person> {
+	ps:P3342 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P859_sponsor> {
+	ps:P859 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1027_conferred_by> {
+	ps:P1027 [wd:~] ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P6208_award_rationale> {
+	ps:P6208 LITERAL ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P179_part_of_the_series> {
+	ps:P859 @<#award> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P393_edition_number> {
+	ps:P2257 xsd:integer ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P166_award_received> {
+	ps:P166 @<#award> OR @<#recurring_award> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
+
+<#P1411_nominated_for> {
+	ps:P1411 @<#award> OR @<#recurring_award> ;
+	prov:wasDerivedFrom @<#reference> ;
+}
