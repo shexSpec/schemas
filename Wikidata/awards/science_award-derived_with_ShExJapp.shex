@@ -1,0 +1,122 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+# Result for pattern { wdt:~ __;} and query SELECT ?science_award WHERE { VALUES ?science_award {wd:Q188184 wd:Q999734 wd:Q628457 wd:Q6085042 wd:Q6085042 wd:Q25324637 wd:Q1314470 wd:Q5019489 wd:Q17278380 wd:Q1957671 wd:Q583069 wd:Q1158951 wd:Q1253930 wd:Q23055114 wd:Q2204509 wd:Q52498782 wd:Q28835 wd:Q1031994 wd:Q703205 wd:Q1605690 wd:Q1624297 wd:Q22117474 wd:Q20049851 wd:Q908745 wd:Q738091 wd:Q18889778 wd:Q18889779 wd:Q18889781 wd:Q30868915 wd:Q30120085 wd:Q1776592 wd:Q6452191 wd:Q6452192 wd:Q18344281 wd:Q136696 wd:Q1786381 wd:Q14324534 wd:Q1853663 wd:Q45310290 wd:Q1982621 wd:Q44585 wd:Q38104 wd:Q80061 wd:Q458338 wd:Q16250576 wd:Q3323371 wd:Q3320352 wd:Q7246543 wd:Q4273323 wd:Q285167 wd:Q7396837 wd:Q584250 wd:Q1131142 wd:Q47170 wd:Q18357422 wd:Q185667 wd:Q3117740 wd:Q3405365 wd:Q7941307 wd:Q2586819 wd:Q519055 wd:Q968876 wd:Q915604 wd:Q540561 wd:Q845333} }
+
+<#award> {
+    # instance of; frequency: [64/64]
+    wdt:P31 [ <http://www.wikidata.org/entity>~ ] + ; 
+    # subclass of; frequency: [4/64]
+    wdt:P279 [ <http://www.wikidata.org/entity>~ ] ? ; 
+    # inception; frequency: [57/64]
+    wdt:P571 xsd:dateTime ? ;  
+    # country; frequency: [48/64]
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # review score; frequency: [44/64]
+    wdt:P444 xsd:string * ;
+    # official website; frequency: [40/64]
+    wdt:P856 IRI ? ;
+    # Freebase ID; frequency: [37/64]
+    wdt:P646 xsd:string ? ;
+    # conferred by; frequency: [36/64]
+    wdt:P1027 [ <http://www.wikidata.org/entity>~ ] * ;
+    # category for recipients of this award; frequency: [31/64]
+    wdt:P2517 [ <http://www.wikidata.org/entity>~ ] * ;
+    # named after; frequency: [30/64]
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] * ;
+    # part of; frequency: [21/64]
+    wdt:P361 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Commons category; frequency: [19/64]
+    wdt:P373 xsd:string ? ;
+    # topic's main category; frequency: [18/64]
+    wdt:P910 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # native label; frequency: [16/64]
+    wdt:P1705 rdf:langString ? ; # This is an incorrect assumption, since P1705 should be used in qualifiers
+    # winner; frequency: [15/64]
+    wdt:P1346 [ <http://www.wikidata.org/entity>~ ] * ;
+    # image; frequency: [6/64]
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # prize money; frequency: [4/64]
+    wdt:P2121 xsd:decimal ? ;
+    # field of work; frequency: [3/64]
+    wdt:P101 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # quantity; frequency: [3/64]
+    wdt:P1114 xsd:decimal ? ;
+    # has part; frequency: [2/64]
+    wdt:P527 [ <http://www.wikidata.org/entity>~ ] * ;
+    # founded by; frequency: [2/64]
+    wdt:P112 [ <http://www.wikidata.org/entity>~ ] * ;
+    # start time; frequency: [2/64]
+    wdt:P580 xsd:dateTime ? ;
+    # coordinate location; frequency: [2/64]
+    wdt:P625 geo:wktLiteral ? ;
+    # different from; frequency: [2/64]
+    wdt:P1889 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # sponsor; frequency: [2/64]
+    wdt:P859 [ <http://www.wikidata.org/entity>~ ] * ;
+    # described at URL; frequency: [1/64]
+    wdt:P973 [ <https://en.wikipedia.org/wiki>~ ] ? ;
+    # located in the administrative territorial entity; frequency: [1/64]
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # pronunciation audio; frequency: [1/64]
+    wdt:P443 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # topic's main template; frequency: [1/64]
+    wdt:P1424 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Commons gallery; frequency: [1/64]
+    wdt:P935 xsd:string ? ;
+    # commemorates; frequency: [1/64]
+    wdt:P547 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # logo image; frequency: [1/64]
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # main subject; frequency: [1/64]
+    wdt:P921 [ <http://www.wikidata.org/entity>~ ] ?
+
+    # Identifiers
+    # Encyclopædia Britannica Online ID; frequency: [7/64]
+    wdt:P1417 xsd:string ? ;
+    # Quora topic ID; frequency: [7/64]
+    wdt:P3417 xsd:string ? ;  
+    # GND ID; frequency: [5/64]
+    wdt:P227 xsd:string ? ;
+    # Gran Enciclopèdia Catalana ID; frequency: [5/64]
+    wdt:P1296 xsd:string ? ;  
+    # Great Russian Encyclopedia Online ID; frequency: [3/64]
+    wdt:P2924 xsd:string ? ;
+    # Encyclopædia Universalis ID; frequency: [3/64]
+    wdt:P3219 xsd:string ? ; 
+    # NE.se ID; frequency: [2/64]
+    wdt:P3222 xsd:string ? ;
+    # RIA Novosti reference; frequency: [1/64]
+    wdt:P6081 xsd:string ? ;
+    # BBC Things ID; frequency: [1/64]
+    wdt:P1617 xsd:string ? ;
+    # Uppslagsverket Finland ID; frequency: [1/64]
+    wdt:P4854 xsd:string ? ;
+    # GRID ID; frequency: [1/64]
+    wdt:P2427 xsd:string ? ;
+    # Crossref funder ID; frequency: [1/64]
+    wdt:P3153 xsd:string ? ;
+    # ROR ID; frequency: [1/64]
+    wdt:P6782 xsd:string ? ;
+    # Zhihu topic ID; frequency: [1/64]
+    wdt:P3553 xsd:string ? ;
+    # WordLift ID; frequency: [1/64]
+    wdt:P6363 [ <http://data.thenextweb.com/tnw/entity>~ ] ? ;
+    # motto text; frequency: [1/64]
+    wdt:P1451 rdf:langString ? ;
+    # MathWorld identifier; frequency: [1/64]
+    wdt:P2812 xsd:string ? ;
+}
+
