@@ -81,7 +81,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
     # logo image; frequency: [1/64]
     wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
     # main subject; frequency: [1/64]
-    wdt:P921 [ <http://www.wikidata.org/entity>~ ] ?
+    wdt:P921 [ <http://www.wikidata.org/entity>~ ] ? ;
 
     # Identifiers
     # Encyclopædia Britannica Online ID; frequency: [7/64]
