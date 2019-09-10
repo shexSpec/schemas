@@ -76,7 +76,7 @@
     # PUSC author ID; frequency: [1/10]
     wdt:P5739 xsd:string ? ;
     # GND ID; frequency: [1/10]
-    wdt:P227 xsd:string ?
+    wdt:P227 xsd:string ? ;
 
-    <#reference> {}
+    <#reference> .
 }
