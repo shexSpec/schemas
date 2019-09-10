@@ -1,0 +1,80 @@
+<#conference_series> {
+    # instance of; frequency: =
+    p:P31 {
+       ps:P31 [wd:Q15900647]
+       prov:wasDerivedFrom {} .
+    }
+    # inception; 
+    p:P571 {
+        ps:P571 xsd:dateTime ;
+        prov:wasDerivedFrom {} .
+    }
+    # official website; 
+    p:P856 {
+        ps:P856 ? ;
+        prov:wasDerivedFrom {} .
+    }
+    # main subject; frequency: [4/10]
+    p:P921 {
+        ps:P921 [ wd:~ ]+ ;
+        prov:wasDerivedFrom {} .
+    }
+    # short name; frequency: [3/10]
+    p:P1813 {
+        ps:P1813 rdf:langString ? ;
+        prov:wasDerivedFrom {} .
+    }
+    # language used; frequency: [2/10]
+    p:P2936 {
+        ps:P2936 {
+            wdt:P31 [wd:Q7411] ; # is a language
+        }
+        prov:wasDerivedFrom {} .
+    }
+    # image; frequency: [2/10]
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # named after; frequency: [2/10]
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # pronunciation audio; frequency: [1/10]
+    wdt:P443 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # different from; frequency: [1/10]
+    wdt:P1889 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Twitter username; frequency: [1/10]
+    wdt:P2002 xsd:string ? ;
+    # country; frequency: [1/10]
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # located in the administrative territorial entity; frequency: [1/10]
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Commons category; frequency: [1/10]
+    wdt:P373 xsd:string ? ;
+    # has part; frequency: [1/10]
+    wdt:P527 [ <http://www.wikidata.org/entity>~ ] * ;
+    # coordinate location; frequency: [1/10]
+    wdt:P625 geo:wktLiteral ? ;
+    # organizer; frequency: [1/10]
+    wdt:P664 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # topic's main category; frequency: [1/10]
+    wdt:P910 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Commons gallery; frequency: [1/10]
+    wdt:P935 xsd:string ? ;
+    # start time; frequency: [1/10]
+    wdt:P580 xsd:dateTime ? ;
+    # time period of periodically occurring event; frequency: [1/10]
+    wdt:P2257 xsd:decimal ? ;
+
+    ## Identifiers
+    # WikiCFP conference series ID; frequency: [3/10]
+    wdt:P5127 xsd:string ? ;
+    # Library of Congress authority ID; frequency: [2/10]
+    wdt:P244 xsd:string ? ; 
+    # ISNI; frequency: [1/10]
+    wdt:P213 xsd:string ? ;   
+    # Encyclopædia Britannica Online ID; frequency: [1/10]
+    wdt:P1417 xsd:string * ;
+    # Quora topic ID; frequency: [1/10]
+    wdt:P3417 xsd:string ? ;
+    # PUSC author ID; frequency: [1/10]
+    wdt:P5739 xsd:string ? ;
+    # GND ID; frequency: [1/10]
+    wdt:P227 xsd:string ?
+}
