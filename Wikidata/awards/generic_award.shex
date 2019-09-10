@@ -36,7 +36,7 @@ PREFIX prov: <http://prefix.cc/prov>
 }
 
 <#recurring_award> {
-	&<#award> ;
+	# &<#award> ;
 	p:P179 @<#P179_part_of_the_series> ; # This property is defined in Wikidata with the restricted semantic of part of a creative work series, but it has been used with generic semantic, 
 	                                     # see the example at https://www.wikidata.org/wiki/Q16422 .	
 	p:P393 @<#P393_edition_number> ;
