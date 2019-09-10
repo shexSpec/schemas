@@ -17,7 +17,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 <#conference_series> {
     # instance of; frequency: =
     p:P31 {
-       ps:P31 [wd:Q15900647]
+       ps:P31 [wd:Q15900647] ;
        prov:wasDerivedFrom @<#reference> .
     }
     # inception; 
