@@ -2,34 +2,34 @@
     # instance of; frequency: =
     p:P31 {
        ps:P31 [wd:Q15900647]
-       prov:wasDerivedFrom {} .
+       prov:wasDerivedFrom @<#reference> .
     }
     # inception; 
     p:P571 {
         ps:P571 xsd:dateTime ;
-        prov:wasDerivedFrom {} .
+        prov:wasDerivedFrom @<#reference> .
     }
     # official website; 
     p:P856 {
         ps:P856 ? ;
-        prov:wasDerivedFrom {} .
+        prov:wasDerivedFrom @<#reference> .
     }
     # main subject; frequency: [4/10]
     p:P921 {
         ps:P921 [ wd:~ ]+ ;
-        prov:wasDerivedFrom {} .
+        prov:wasDerivedFrom @<#reference> .
     }
     # short name; frequency: [3/10]
     p:P1813 {
         ps:P1813 rdf:langString ? ;
-        prov:wasDerivedFrom {} .
+        prov:wasDerivedFrom @<#reference> .
     }
     # language used; frequency: [2/10]
     p:P2936 {
         ps:P2936 {
             wdt:P31 [wd:Q7411] ; # is a language
         }
-        prov:wasDerivedFrom {} .
+        prov:wasDerivedFrom @<#reference> .
     }
     # image; frequency: [2/10]
     wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
@@ -77,4 +77,6 @@
     wdt:P5739 xsd:string ? ;
     # GND ID; frequency: [1/10]
     wdt:P227 xsd:string ?
+
+    <#reference> {}
 }
