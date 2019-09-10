@@ -1,0 +1,62 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+<#conference_edition> 
+{
+    # instance of; 
+    p:P31 {
+    	ps:P31 [wd:Q2020153] ; # academic conference
+    	prov:wasDerivedFrom @<reference> ;
+    }
+    # country; 
+    p:P17 {
+    	ps:P17 {
+    		p:P31 {
+    			ps:P31 [wd:Q6256] # have to use p: here, because some countries e.g. Italy, as a prefered statement is not a country.
+    		}
+    	}
+    }
+    # inception; 
+    <http://www.wikidata.org/prop/direct/P571> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
+    # named after; 
+    <http://www.wikidata.org/prop/direct/P138> [ <http://www.wikidata.org/entity>~ ] ? ;
+    # location; 
+    <http://www.wikidata.org/prop/direct/P276> [ <http://www.wikidata.org/entity>~ ] ? ;
+    # official website; 
+    <http://www.wikidata.org/prop/direct/P856> IRI ? ;
+    # point in time; 
+    <http://www.wikidata.org/prop/direct/P585> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
+    # start time; 
+    <http://www.wikidata.org/prop/direct/P580> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
+    # end time; 
+    <http://www.wikidata.org/prop/direct/P582> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
+    # main subject; frequency: [2/10]
+    <http://www.wikidata.org/prop/direct/P921> [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Quora topic ID; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P3417> <http://www.w3.org/2001/XMLSchema#string> ? ;
+    # described at URL; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P973> [ <http://powerbase.info/index.php>~ ] ? ;
+    # located in the administrative territorial entity; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P131> [ <http://www.wikidata.org/entity>~ ] ? ;
+    # official name; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P1448> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> ? ;
+    # organizer; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P664> [ <http://www.wikidata.org/entity>~ ] * ;
+    # Encyclopædia Universalis ID; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P3219> <http://www.w3.org/2001/XMLSchema#string> ? ;
+    # image; frequency: [1/10]
+    <http://www.wikidata.org/prop/direct/P18> [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ?
+}
