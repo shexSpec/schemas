@@ -18,7 +18,7 @@ start=@<science_award>
 
 <#person> {
 	p:P31 {
-		ps:P31 [wd:Q5] // rdfs:label "winner is a person"
+		ps:P31 [wd:Q5] ;
 	}
 	p:P21 {
 		ps:P21 @<#gender> ;
