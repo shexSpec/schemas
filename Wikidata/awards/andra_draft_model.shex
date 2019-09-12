@@ -14,8 +14,6 @@ PREFIX pr: <http://www.wikidata.org/prop/reference/>
 PREFIX schema: <http://schema.org/>
 PREFIX wikibase: <http://wikiba.se/ontology#>
 
-start=@<science_award> 
-
 <#person> {
 	p:P31 {
 		ps:P31 [wd:Q5] ;
@@ -25,7 +23,6 @@ start=@<science_award>
 	} ;
 	p:P166 {
 		ps:P166 @<#science_award> ;
-		} ;
 	} ;
 }
 
