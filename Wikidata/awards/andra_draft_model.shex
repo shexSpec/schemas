@@ -35,13 +35,13 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 		ps:P31 [
            wd:Q11448906 # science award
 		] ;
-	} 
+	} ;
 	# review score
 	p:P444 {
 		ps:P444 xsd:string ;
-	}
+	} ;
 	# official website
 	p:P856 {
 		ps:P856 IRI ;
-	}
+	} ;
 }
