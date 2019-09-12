@@ -28,7 +28,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 
 <#gender> {
 			wdt:P31 [ wd:Q48277 ] ;
-		} ;
+		} 
 
 <#science_award> {
 	p:P31 {
