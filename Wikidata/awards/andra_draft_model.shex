@@ -19,24 +19,24 @@ start=@<science_award>
 <#person> {
 	p:P31 {
 		ps:P31 [wd:Q5] ;
-	}
+	} ;
 	p:P21 {
 		ps:P21 @<#gender> ;
-	}
+	} ;
 	p:P166 {
 		ps:P166 @<#science_award> ;
 		} ;
-	}
+	} ;
 }
 
 <#gender> {
 			wdt:P31 [ wd:Q48277 ] ;
-		}
+		} ;
 
 <#science_award> {
 	p:P31 {
 		ps:P31 [
            wd:Q11448906 # science award
-		]
-	}
+		] ;
+	} ;
 }
