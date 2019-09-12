@@ -25,7 +25,7 @@ start=@<science_award>
 	}
 	p:P166 {
 		ps:P166 @<#science_award> ;
-		}
+		} ;
 	}
 }
 
