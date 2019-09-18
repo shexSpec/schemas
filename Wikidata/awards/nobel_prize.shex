@@ -1,0 +1,84 @@
+## Sparql endpoint: http://data.nobelprize.org/snorql/
+## Status: draft - work in progress
+<#nobel_prize> {
+	rdf:type   [nobel:NobelPrize dbpedia-owl:Award]; 
+	rdfs:label xsd:string ;
+	nobel:laureate @<#nobel_laureate> ;
+	nobel:prizeFile @<#nobel_prizefile>+ ; 
+	nobel:year xsd:int ;
+	# dcterms:hasPart 
+}
+
+<#nobel_laureate> {
+    rdf:type [nobel:Laureate] ;
+    rdfs:label xsd:string ;
+	nobel:nobelPrize @<#nobel_edition> ;
+	nobel:laureateAward	 @<#laureateAward> ;
+	dbpedia-owl:affiliation <#affiliation>+ ;
+	dbpedia-owl:birthPlace
+	dbpedia-owl:deathPlace
+	dbpprop:dateOfBirth xsd:date ;
+	dbpprop:dateOfDeath xsd:date ;
+	owl:sameAs [dbpedia:~]
+	foaf:birthday 	xsd:date ;	
+	foaf:familyName xsd:string	;
+    foaf:gender 	xsd:string ;
+	foaf:givenName xsd:string ;
+    foaf:name xsd:string ;
+}
+
+<#laureateAward> {
+	rdf:type [dbpedia-owl:Award nobel:LaureateAward] ;
+	rdfs:label xsd:string ;
+	nobel:awardFile @<#awardFile>+ ;
+	nobel:category @<#category> ;
+	nobel:field rdf:langString+;
+	nobel:laureate @<#nobel_laureate> ;
+	nobel:motivation xsd:string ;
+	nobel:share  xsd:string ;
+	nobel:university @<#university> ;
+	nobel:year xsd:int ;
+	dcterms:isPartOf IRI ;
+}
+
+<#university> {
+    rdf:type [dbpedia-owl:University] ;
+    rdfs:label xsd:string ;
+	dbpedia-owl:city @<#nobel_city> ;
+	dbpedia-owl:country @<#nobel_country> ;
+}
+
+<#nobel_country> {
+	rdf:type [dbpedia-owl:Country];
+	rdfs:label xsd:string ;
+	owl:sameAs [dbpedia:~] ;
+}
+
+<#nobel_city> {
+	rdf:type [dbpedia-owl:City ];
+	rdfs:label xsd:string ;
+	owl:sameAs [dbpedia:~] ;
+}
+
+<#nobel_prizefile> {
+	rdf:type [nobel:PrizeFile] ;
+	rdfs:label xsd:string ;
+	nobel:category @<nobel_category> ;
+	nobel:fileType @<nobel_fileType> ;
+	nobel:year xsd:int ;
+	rdfs:seeAlso IRI ;
+}
+
+<#nobel_category> {
+	rdf:type [nobel:Category] ;
+	rdfs:label xsd:string ;
+	rdfs:value xsd:string ;
+	owl:sameAs [<http://umbel.org/umbel/rc/>~] ;
+	skos:altLabel rdf:langLabel ;
+	skos:prefLabel rdf:langLabel ;
+}
+
+<#nobel_fileType> {
+	rdf:type [nobel:FileType] ;
+	rdfs:label xsd:string ;
+}
