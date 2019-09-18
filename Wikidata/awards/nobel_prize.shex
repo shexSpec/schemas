@@ -33,12 +33,14 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
     rdfs:label xsd:string ;
 	nobel:nobelPrize @<#nobel_edition> ;
 	nobel:laureateAward	 @<#laureateAward> ;
-	dbpedia-owl:affiliation <#affiliation>+ ;
-	dbpedia-owl:birthPlace
-	dbpedia-owl:deathPlace
+	dbpedia-owl:affiliation @<#affiliation>+ ;
+	dbpedia-owl:birthPlace @<nobel_city> ;
+	dbpedia-owl:birthPlace @<nobel_country> ;
+	dbpedia-owl:deathPlace @<nobel_city> ;
+	dbpedia-owl:deathPlace @<nobel_country> ;
 	dbpprop:dateOfBirth xsd:date ;
 	dbpprop:dateOfDeath xsd:date ;
-	owl:sameAs [dbpedia:~]
+	owl:sameAs [dbpedia:~] ; 
 	foaf:birthday 	xsd:date ;	
 	foaf:familyName xsd:string	;
     foaf:gender 	xsd:string ;
@@ -78,6 +80,8 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 	rdfs:label xsd:string ;
 	owl:sameAs [dbpedia:~] ;
 }
+
+
 
 <#nobel_prizefile> {
 	rdf:type [nobel:PrizeFile] ;
