@@ -34,10 +34,10 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 	nobel:nobelPrize @<#nobel_prize> ;
 	nobel:laureateAward	 @<#laureateAward> ;
 	dbpedia-owl:affiliation @<#affiliation>+ ;
-	dbpedia-owl:birthPlace @<nobel_city> ;
-	dbpedia-owl:birthPlace @<nobel_country> ;
-	dbpedia-owl:deathPlace @<nobel_city> ;
-	dbpedia-owl:deathPlace @<nobel_country> ;
+	dbpedia-owl:birthPlace @<#nobel_city> ;
+	dbpedia-owl:birthPlace @<#nobel_country> ;
+	dbpedia-owl:deathPlace @<#nobel_city> ;
+	dbpedia-owl:deathPlace @<#nobel_country> ;
 	dbpprop:dateOfBirth xsd:date ;
 	dbpprop:dateOfDeath xsd:date ;
 	owl:sameAs [dbpedia:~] ; 
