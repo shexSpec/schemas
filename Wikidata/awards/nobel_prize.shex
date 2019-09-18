@@ -32,7 +32,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
     rdf:type [nobel:Laureate] ;
     rdfs:label xsd:string ;
 	nobel:nobelPrize @<#nobel_prize> ;
-	nobel:laureateAward	 @<#laureateAward> ;
+	nobel:laureateAward	 @<#laureate_award> ;
 	dbpedia-owl:affiliation @<#affiliation>+ ;
 	dbpedia-owl:birthPlace @<#nobel_city> ;
 	dbpedia-owl:birthPlace @<#nobel_country> ;
@@ -48,21 +48,21 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
     foaf:name xsd:string ;
 }
 
-<#laureateAward> {
+<#laureate_award> {
 	rdf:type [dbpedia-owl:Award nobel:LaureateAward] ;
 	rdfs:label xsd:string ;
 	nobel:awardFile @<#awardFile>+ ;
-	nobel:category @<#category> ;
+	nobel:category @<#nobel_category> ;
 	nobel:field rdf:langString+;
 	nobel:laureate @<#nobel_laureate> ;
 	nobel:motivation xsd:string ;
 	nobel:share  xsd:string ;
-	nobel:university @<#affiliation> ;
+	nobel:university @<#nobel_affiliation> ;
 	nobel:year xsd:int ;
 	dcterms:isPartOf IRI ;
 }
 
-<#affiliation> {
+<#nobel_affiliation> {
     rdf:type [dbpedia-owl:University] ;
     rdfs:label xsd:string ;
 	dbpedia-owl:city @<#nobel_city> ;
@@ -80,8 +80,6 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 	rdfs:label xsd:string ;
 	owl:sameAs [dbpedia:~] ;
 }
-
-
 
 <#nobel_prizefile> {
 	rdf:type [nobel:PrizeFile] ;
