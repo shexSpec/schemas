@@ -31,7 +31,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 <#nobel_laureate> {
     rdf:type [nobel:Laureate] ;
     rdfs:label xsd:string ;
-	nobel:nobelPrize @<#nobel_edition> ;
+	nobel:nobelPrize @<#nobel_prize> ;
 	nobel:laureateAward	 @<#laureateAward> ;
 	dbpedia-owl:affiliation @<#affiliation>+ ;
 	dbpedia-owl:birthPlace @<nobel_city> ;
@@ -57,12 +57,12 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 	nobel:laureate @<#nobel_laureate> ;
 	nobel:motivation xsd:string ;
 	nobel:share  xsd:string ;
-	nobel:university @<#university> ;
+	nobel:university @<#affiliation> ;
 	nobel:year xsd:int ;
 	dcterms:isPartOf IRI ;
 }
 
-<#university> {
+<#affiliation> {
     rdf:type [dbpedia-owl:University] ;
     rdfs:label xsd:string ;
 	dbpedia-owl:city @<#nobel_city> ;
