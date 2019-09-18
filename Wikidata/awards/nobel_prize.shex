@@ -86,8 +86,8 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 <#nobel_prizefile> {
 	rdf:type [nobel:PrizeFile] ;
 	rdfs:label xsd:string ;
-	nobel:category @<nobel_category> ;
-	nobel:fileType @<nobel_fileType> ;
+	nobel:category @<#nobel_category> ;
+	nobel:fileType @<#nobel_fileType> ;
 	nobel:year xsd:int ;
 	rdfs:seeAlso IRI ;
 }
