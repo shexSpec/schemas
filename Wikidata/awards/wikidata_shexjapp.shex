@@ -1,6 +1,7 @@
 PREFIX p: <http://www.wikidata.org/prop/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
 PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wdv: <http://www.wikidata.org/value/>
@@ -75,7 +76,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
     p:P1705 {
         ps:P1705 rdf:langString
     } ? ;
-    
+
     # Commons category; frequency: [22/100]
     p:P373 {
         ps:P373 xsd:string
