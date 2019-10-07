@@ -18,7 +18,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 {
     # instance of; 
     p:P31 {
-    	ps:P31 [wd:Q2020153] ; # academic conference
+    	ps:P31 [wd:Q2020153 wd:] ; # academic conference
     	prov:wasDerivedFrom @<reference> ;
     }
     # country; 
@@ -29,16 +29,10 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
     		}
     	}
     }
-    # inception; 
-    <http://www.wikidata.org/prop/direct/P571> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
-    # named after; 
-    <http://www.wikidata.org/prop/direct/P138> [ <http://www.wikidata.org/entity>~ ] ? ;
     # location; 
     <http://www.wikidata.org/prop/direct/P276> [ <http://www.wikidata.org/entity>~ ] ? ;
     # official website; 
     <http://www.wikidata.org/prop/direct/P856> IRI ? ;
-    # point in time; 
-    <http://www.wikidata.org/prop/direct/P585> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
     # start time; 
     <http://www.wikidata.org/prop/direct/P580> <http://www.w3.org/2001/XMLSchema#dateTime> ? ;
     # end time; 

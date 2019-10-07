@@ -3,17 +3,6 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#> 
 
-<#smallMoleculeReference> {
-    rdf:type [bp:SmallMoleculeReference] ;
-    bp:xref  @<#unificationXref> ;
-}
-
-<#unificationXref> {
-    bp:db xsd:string ;
-    bp:id xsd:string ;
-    a bp:UnificationXref .
-}
-
 <#chebi> {
     bp:comment xsd:string+ ;
     bp:displayName xsd:string ;
@@ -230,10 +219,15 @@ PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
     rdf:type [bp:Degradation] ;
 }
 
-<DnaReference> {
+<#DnaReference> {
     bp:comment xsd:string ;
     bp:displayName xsd:string ;
     rdf:type [bp:DnaReference] ;
+}
+
+<#smallMoleculeReference> {
+    rdf:type [bp:SmallMoleculeReference] ;
+    bp:xref  @<#unificationXref> ;
 }
 
 
@@ -268,6 +262,12 @@ PREFIX bp: <http://www.biopax.org/release/biopax-level3.owl#>
     bp:relationshipType [<http://identifiers.org/psimi/MI:0356>]?
     rdf:type [bp:RelationshipXref]
 }
+
+<#unificationXref> {
+    bp:db xsd:string ;
+    bp:id xsd:string ;
+    a bp:UnificationXref .
+} 
 
 <RnaReference> {
     bp:comment xsd:string ;

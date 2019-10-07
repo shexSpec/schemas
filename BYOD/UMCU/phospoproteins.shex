@@ -6,7 +6,6 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX wdp: <http://www.wikidata.org/prop/direct/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX umcu: <>
 
 
 umcu:PTM_identification {

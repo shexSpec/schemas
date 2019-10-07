@@ -86,7 +86,7 @@ start = @<#biopax_pathway>
 
 <#Catalysis> {
     bp:controlled @<#pathwayComponent> ;
-    bp:controller @<#pathwayComponent> ;
+    bp:controller @<#pathwayComponent>+ ;
     a [bp:Catalysis] ;
 }
 
@@ -98,17 +98,34 @@ start = @<#biopax_pathway>
 
 }
 
-<#Conversion> 
-    @<#ComplexAssembly> OR 
-    @<#BiochemicalReaction> OR 
-    @<#Degradation> OR 
-    @<#Transport>
+<#Conversion> {
+    bp:conversionDirection @<#conversionDirect> ;
+    bp:right @<#pathwayComponent> ;
+    bp:left @<#pathwayComponent> ;
+    bp:dataSource xsd:string ;
+}
+
+<#degradation> {
+    bp:conversionDirection @<#conversionDirect> ;
+    bp:right @<#pathwayComponent> ;
+    bp:left @<#pathwayComponent> ;
+    bp:dataSource xsd:string ;
+    rdf:type  [] ;
+}
+ 
+
+ #   @<#ComplexAssembly> OR 
+ #   @<#BiochemicalReaction> OR 
+ #   @<#Degradation> OR 
+ #  @<#Transport>
 
 <#ComplexAssembly> {
 
 }
  
 <#biochemicalReaction> {
+    bp:conversionDirection ["LEFT_TO_RIGHT"] ;
+    bp:dataSource @<#dataSource> ;
     bp:left @<#pathwayComponent> ;
     bp:right @<#pathwayComponent> ;
     rdf:type [bp:BiochemicalReaction] ;
@@ -125,4 +142,6 @@ start = @<#biopax_pathway>
 <#complex> {
     rdf:type  [bp:Complex] ;
     bp:component @<#pathwayComponent> ;
+    bp:dataSource @<#dataSource> ;
+    bp:displayName xsd:string ;
 }

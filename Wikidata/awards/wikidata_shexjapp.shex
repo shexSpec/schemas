@@ -1,0 +1,357 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# Schema extracted with ShExJapp: https://gitlab.inria.fr/jdusart/shexjapp
+
+# Result for pattern { p:P~ {ps:~ __; psn:~ __ ; a[__];  } }; and query SELECT DISTINCT ?x WHERE {?x wdt:P31 wd:Q11448906. } LIMIT 100
+<http://www.wikidata.org/EntitySchema/ScienceAward> EXTRA p:P31 {
+    # instance of; frequency: [100/100]
+    p:P31 {
+        ps:P31 [ wd:Q11448906 ] ;
+    }  ;
+
+    # subclass of; frequency: [5/100]
+    p:P279 {
+        ps:P279 [ wd:~ ]
+    } * ;
+
+    # country; frequency: [81/100]
+    p:P17 {
+        ps:P17 [ wd:~ ] ;
+    } ? ;
+
+    # conferred by; frequency: [77/100]
+    p:P1027 {
+        ps:P1027 [ wd:~ ] ;
+    } * ;
+
+    # named after; frequency: [75/100]
+    p:P138 {
+        ps:P138 [ wd:~ ] ;
+    } * ;
+
+    # inception; frequency: [70/100]
+    p:P571 {
+        psv:P571 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P571 xsd:dateTime ;
+    } * ;
+
+    # official website; frequency: [52/100]
+    p:P856 {
+        ps:P856 IRI
+    } * ;
+
+    # review score; frequency: [38/100]
+    p:P444 {
+        # review score; frequency: [60/60]
+        ps:P444 xsd:string
+    } * ;
+
+    # category for recipients of this award; frequency: [32/100]
+    p:P2517 {
+        ps:P2517 [ <http://www.wikidata.org/entity>~ ]
+    } * ;
+
+    # topic's main category; frequency: [29/100]
+    p:P910 {
+        ps:P910 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # native label; frequency: [23/100]
+    p:P1705 {
+        ps:P1705 rdf:langString
+    } ? ;
+    
+    # Commons category; frequency: [22/100]
+    p:P373 {
+        ps:P373 xsd:string
+    } ? ;
+
+    # winner; frequency: [19/100]
+    p:P1346 {
+        ps:P1346 [ <http://www.wikidata.org/entity>~ ]
+    } * ;
+
+    # part of; frequency: [13/100]
+    p:P361 {
+        ps:P361 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # image; frequency: [11/100]
+    p:P18 {
+        ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]
+    } ? ;
+
+    # start time; frequency: [5/100]
+    p:P580 {
+        psv:P580 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P580 xsd:dateTime
+    } ? ;
+
+    # has part; frequency: [4/100]
+    p:P527 {
+        ps:P527 [ <http://www.wikidata.org/entity>~ ]
+    } * ;
+
+    # field of work; frequency: [4/100]
+    p:P101 {
+        ps:P101 [ <http://www.wikidata.org/entity>~ ]
+    } * ;
+
+    # prize money; frequency: [3/100]
+    p:P2121 {
+        psv:P2121 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P2121 xsd:decimal
+    } ? ;
+
+    # different from; frequency: [2/100]
+    p:P1889 {
+        ps:P1889 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # official name; frequency: [2/100]
+    p:P1448 {
+        ps:P1448 rdf:langString ;
+    } * ;
+
+    # follows; frequency: [2/100]
+    p:P155 {
+        ps:P155 [ <http://www.wikidata.org/entity>~ ]
+    } * ;
+
+    # quantity; frequency: [2/100]
+    p:P1114 {
+        psv:P1114 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P1114 xsd:decimal
+    } ? ;
+
+    # end time; frequency: [2/100]
+    p:P582 {
+        psv:P582 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P582 xsd:dateTime
+    } ? ;
+
+    # spoken text audio; frequency: [2/100]
+    p:P989 {
+        ps:P989 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]
+    } ? ;
+
+    # service ribbon image; frequency: [1/100]
+    p:P2425 {
+        ps:P2425 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]
+    } ? ;
+
+    # described by source; frequency: [1/100]
+    p:P1343 {
+        ps:P1343 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # applies to jurisdiction; frequency: [1/100]
+    p:P1001 {
+        ps:P1001 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # creator; frequency: [1/100]
+    p:P170 {
+        ps:P170 [ <http://www.wikidata.org/entity>~ ]
+    } * ;
+
+    # dissolved, abolished or demolished; frequency: [1/100]
+    p:P576 {
+        psv:P576 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P576 xsd:dateTime
+    } ? ;
+
+    # country of origin; frequency: [1/100]
+    p:P495 {
+        ps:P495 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # genre; frequency: [1/100]
+    p:P136 {
+        ps:P136 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # described at URL; frequency: [1/100]
+    p:P973 {
+        ps:P973 [ <http://www.einstein-bern.ch>~ ]
+    } ? ;
+
+    # time period of periodically occurring event; frequency: [1/100]
+    p:P2257 {
+        psv:P2257 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P2257 xsd:decimal
+    } ? ;
+
+    # pronunciation audio; frequency: [1/100]
+    p:P443 {
+        ps:P443 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]
+    } ? ;
+
+        # topic's main template; frequency: [1/100]
+    p:P1424 {
+        ps:P1424 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # Commons gallery; frequency: [1/100]
+    p:P935 {
+        ps:P935 xsd:string
+    } ? ;
+
+    # motto text; frequency: [1/100]
+    p:P1451 {
+        ps:P1451 rdf:langString
+    } ? ;
+
+    # commemorates; frequency: [1/100]
+    p:P547 {
+        ps:P547 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+    # on focus list of Wikimedia project; frequency: [1/100]
+    p:P5008 {
+        ps:P5008 [ <http://www.wikidata.org/entity>~ ]
+    } ? ;
+
+    # name in native language; frequency: [1/100]
+    p:P1559 {
+        ps:P1559 rdf:langString
+    } ? ;
+
+    ## Identifiers
+    # Freebase ID; frequency: [73/100]
+    p:P646 {
+        psn:P646 [ <http://g.co/kg/m>~ ] ;
+        ps:P646 xsd:string
+    } ? ;
+
+    # Quora topic ID; frequency: [10/100]
+    p:P3417 {
+        ps:P3417 xsd:string
+    } ? ;
+
+    # Encyclopædia Britannica Online ID; frequency: [9/100]
+    p:P1417 {
+        ps:P1417 xsd:string
+    } ? ;
+
+    # GND ID; frequency: [7/100]
+    p:P227 {
+        psn:P227 [ <http://d-nb.info/gnd>~ ] ;
+        ps:P227 xsd:string
+    } ? ;
+
+    # Gran Enciclopèdia Catalana ID; frequency: [6/100]
+    p:P1296 {
+        ps:P1296 xsd:string
+    } ? ;
+
+    # Encyclopædia Universalis ID; frequency: [4/100]
+    p:P3219 {
+        ps:P3219 xsd:string
+    } ? ;
+
+    # Great Russian Encyclopedia Online ID; frequency: [2/100]
+    p:P2924 {
+        ps:P2924 xsd:string
+    } ? ;
+
+    # RIA Novosti reference; frequency: [2/100]
+    p:P6081 {
+        ps:P6081 xsd:string
+    } ? ;
+
+    # NKCR AUT ID; frequency: [2/100]
+    p:P691 {
+        ps:P691 xsd:string
+    } ? ;
+  
+    # Dictionary of Sydney ID; frequency: [1/100]
+    p:P3794 {
+        ps:P3794 xsd:string
+    } ? ;
+    
+    # MathWorld identifier; frequency: [1/100]
+    p:P2812 {
+        ps:P2812 xsd:string
+    } ? ;
+
+    # NE.se ID; frequency: [1/100]
+    p:P3222 {
+        ps:P3222 xsd:string
+    } ? ;
+
+    # Twitter username; frequency: [1/100]
+    p:P2002 {
+        ps:P2002 xsd:string
+    } ? ;
+
+    # National Diet Library Auth ID; frequency: [1/100]
+    p:P349 {
+        psn:P349 [ <http://id.ndl.go.jp/auth/ndlna>~ ] ;
+        ps:P349 xsd:string
+    } ? ;
+
+    # BBC Things ID; frequency: [1/100]
+    p:P1617 {
+        a [ wikibase:BestRank ] ;
+        psn:P1617 [ <http://www.bbc.co.uk/things>~ ] ;
+        ps:P1617 xsd:string
+    } ? ;
+
+    # Library of Congress authority ID; frequency: [1/100]
+    p:P244 {
+        psn:P244 [ <http://id.loc.gov/authorities/names>~ ] ;
+        ps:P244 xsd:string
+    } ? ;
+
+    # BabelNet ID; frequency: [1/100]
+    p:P2581 {
+        psn:P2581 [ <http://babelnet.org/rdf>~ ] ;
+        ps:P2581 xsd:string
+    } ? ;
+
+    # NYT topic ID; frequency: [1/100]
+    p:P3221 {
+        ps:P3221 xsd:string
+    } ? ;
+
+    # Comic Vine ID; frequency: [1/100]
+    p:P5905 {
+        ps:P5905 xsd:string
+    } ? ;
+
+    # Zhihu topic ID; frequency: [1/100]
+    p:P3553 {
+        ps:P3553 xsd:string
+    } ? ;
+
+    # WordLift ID; frequency: [1/100]
+    p:P6363 {
+        ps:P6363 [ <http://data.thenextweb.com/tnw/entity>~ ]
+    } ? ;
+
+    # National Library of Australia ID; frequency: [1/100]
+    p:P1315 {
+        ps:P1315 xsd:string
+    } ? ;
+
+    # Store norske leksikon ID; frequency: [1/100]
+    p:P4342 {
+        ps:P4342 xsd:string
+    } ?
+}
+
